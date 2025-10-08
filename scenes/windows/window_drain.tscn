@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=4 uid="uid://cxdc0m3in7sgp"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bqj8b4u1rx1pe" path="res://scenes/windows/window_drain.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b2qbwfhainj0o" path="res://textures/icons/computer_infected.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 199.0
+script = ExtResource("2")
+window = "drain"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Drain"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Infections" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "infected_computer"
+force_resource = true
+
+[node name="Boost" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boost_component"
+limit = -1.0
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Infections" to="." method="_on_file_resource_set"]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=4 uid="uid://fjinmavjthn7"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://7tbp5je82d1d" path="res://scenes/windows/window_storage.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dd5guxoabcwt7" path="res://textures/icons/database.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 346.0
+script = ExtResource("2")
+window = "storage"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Storage"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Text" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[node name="Image" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[node name="Sound" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[node name="Video" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[node name="Program" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[node name="Game" parent="PanelContainer/MainContainer" index="5" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Text" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Image" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Sound" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Video" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Program" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Game" to="." method="_on_connection_set"]

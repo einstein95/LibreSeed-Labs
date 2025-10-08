@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=4 uid="uid://5q4v78b56p66"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://73i2hwx6okww" path="res://scenes/windows/window_importer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bxa15l680rlxs" path="res://textures/icons/coal.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 207.0
+script = ExtResource("2")
+price = 5.0
+price_e = 27
+window = "boron_importer"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Coal Importer"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Money" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "money"
+
+[node name="Product" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boron"
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Money" to="." method="_on_file_resource_set"]

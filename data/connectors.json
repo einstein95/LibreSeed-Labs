@@ -1,0 +1,46 @@
+{
+	"white":{
+		"letter": "W",
+		"color": "ffffff",
+	},
+	"black":{
+		"letter": "",
+		"color": "000000",
+	},
+	"lime":{
+		"letter": "L",
+		"color": "00ffb8",
+	},
+	"cyan":{
+		"letter": "C",
+		"color": "00d6ff",
+	},
+	"orange":{
+		"letter": "O",
+		"color": "ff8500",
+	},
+	"red":{
+		"letter": "R",
+		"color": "ff4135",
+	},
+	"yellow":{
+		"letter": "Y",
+		"color": "ffff00",
+	},
+	"violet":{
+		"letter": "V",
+		"color": "a033ff",
+	},
+	"green":{
+		"letter": "G",
+		"color": "7aff45",
+	},
+	"blue":{
+		"letter": "B",
+		"color": "003eff"
+	},
+	"pink":{
+		"letter": "P",
+		"color": "ff00ef"
+	}
+}

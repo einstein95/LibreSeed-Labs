@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=4 uid="uid://dn58l6agmupxg"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dts2yqk4yysbs" path="res://scenes/windows/window_network.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b5ccw2loqluwh" path="res://textures/icons/web.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="5"]
+[ext_resource type="Script" uid="uid://citplohrg08kx" path="res://scripts/dim_button.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://8sorr10f66nw" path="res://textures/icons/money.png" id="7"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 270.0
+script = ExtResource("2")
+window = "network"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Network"
+
+[node name="PanelContainer" parent="." index="1"]
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Download" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "download_speed"
+limit = -1.0
+
+[node name="Upload" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "upload_speed"
+limit = -1.0
+
+[node name="Boost" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boost_component"
+limit = -1.0
+
+[node name="Overclock" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "overclock"
+limit = -1.0
+
+[node name="Heat" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "heat"
+limit = 100.0
+required = 100.0
+
+[node name="HeatProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer" index="5"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_type_variation = &"ProgressBarRed"
+value = 100.0
+show_percentage = false
+
+[node name="UpgradeButton" type="Button" parent="." index="2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom2"
+toggle_mode = true
+button_mask = 0
+script = ExtResource("6")
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="UpgradeButton" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="UpgradeButton/UpgradeContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "action_upgrade"
+horizontal_alignment = 1
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradeButton/UpgradeContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UpgradeButton/UpgradeContainer/CostContainer" index="0"]
+self_modulate = Color(1, 0.521569, 0, 1)
+custom_minimum_size = Vector2(23, 23)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UpgradeButton/UpgradeContainer/CostContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.521569, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "1"
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

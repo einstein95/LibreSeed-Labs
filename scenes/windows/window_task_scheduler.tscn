@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=4 uid="uid://bdxp1hkdoxc2g"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://3j2kgthmsh4n" path="res://scenes/windows/window_task_scheduler.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cm1dc2bcvy6wm" path="res://textures/icons/schedule.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 199.0
+script = ExtResource("2")
+window = "task_scheduler"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Task Scheduler"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="GPU" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+
+[node name="Clock" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "clock_speed"
+limit = -1.0

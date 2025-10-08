@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=4 uid="uid://3bclx3lyf11t"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://ccjounslt10yu" path="res://scenes/windows/window_miner_coal.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://e3t6sgx7owcx" path="res://textures/icons/drill.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://8sorr10f66nw" path="res://textures/icons/money.png" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 133.0
+script = ExtResource("2")
+window = "miner_coal"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Coal Mining Drill"
+
+[node name="PanelContainer" parent="." index="1"]
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Coal" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "coal"
+
+[node name="UpgradeButton" type="Button" parent="." index="2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom2"
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="UpgradeButton" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -4
+alignment = 1
+
+[node name="Label" type="Label" parent="UpgradeButton/UpgradeContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "action_upgrade"
+horizontal_alignment = 1
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradeButton/UpgradeContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UpgradeButton/UpgradeContainer/CostContainer" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UpgradeButton/UpgradeContainer/CostContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "1"
+vertical_alignment = 1
+
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

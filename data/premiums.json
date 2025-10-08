@@ -1,0 +1,131 @@
+{
+	"steam_daily_tokens":{
+		"name": "premium_daily_tokens",
+		"icon": "clock",
+		"description": "premium_daily_tokens_desc",
+		"platform": 0,
+		"default_price": 3.99,
+		"id": 3606990,
+		"reward": 1200,
+		"daily_reward": 200,
+		"features": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"android_daily_tokens":{
+		"name": "premium_daily_tokens",
+		"icon": "clock",
+		"description": "premium_daily_tokens_desc",
+		"platform": 2,
+		"default_price": 3.99,
+		"id": "daily_tokens",
+		"reward": 1200,
+		"daily_reward": 200,
+		"features": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"ios_daily_tokens":{
+		"name": "premium_daily_tokens",
+		"icon": "clock",
+		"description": "premium_daily_tokens_desc",
+		"platform": 3,
+		"default_price": 3.99,
+		"id": "daily_tokens",
+		"reward": 1200,
+		"daily_reward": 200,
+		"features": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"steam_chronomancer":{
+		"name": "premium_chronomancer",
+		"icon": "hourglass",
+		"description": "premium_chronomancer_desc",
+		"platform": 0,
+		"default_price": 7.99,
+		"id": 3958950,
+		"reward": 0,
+		"daily_reward": 0,
+		"features": [],
+		"attributes": {
+			"max_rest_time": [600, 0, 0],
+			"rest_time_multiplier": [1, 0, 0],
+			"online_rest_time_gain": [1, 0, 0]
+		},
+		"window_attributes": {}
+	},
+	"android_chronomancer":{
+		"name": "premium_chronomancer",
+		"icon": "hourglass",
+		"description": "premium_chronomancer_desc",
+		"platform": 2,
+		"default_price": 7.99,
+		"id": "chronomancer",
+		"reward": 0,
+		"daily_reward": 0,
+		"features": [],
+		"attributes": {
+			"max_rest_time": [600, 0, 0],
+			"rest_time_multiplier": [1, 0, 0],
+			"online_rest_time_gain": [1, 0, 0]
+		},
+		"window_attributes": {}
+	},
+	"ios_chronomancer":{
+		"name": "premium_chronomancer",
+		"icon": "hourglass",
+		"description": "premium_chronomancer_desc",
+		"platform": 3,
+		"default_price": 7.99,
+		"id": "chronomancer",
+		"reward": 0,
+		"daily_reward": 0,
+		"features": [],
+		"attributes": {
+			"max_rest_time": [600, 0, 0],
+			"rest_time_multiplier": [1, 0, 0],
+			"online_rest_time_gain": [1, 0, 0]
+		},
+		"window_attributes": {}
+	},
+	"steam_permanent_boost":{
+		"name": "premium_permanent_boost",
+		"icon": "rocket",
+		"description": "premium_permanent_boost_desc",
+		"platform": 0,
+		"default_price": 9.99,
+		"id": 3958960,
+		"reward": 0,
+		"daily_reward": 0,
+		"features": ["permanent_boost"],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"android_permanent_boost":{
+		"name": "premium_permanent_boost",
+		"icon": "rocket",
+		"description": "premium_permanent_boost_desc",
+		"platform": 2,
+		"default_price": 9.99,
+		"id": "permanent_boosts",
+		"reward": 0,
+		"daily_reward": 0,
+		"features": ["permanent_boost"],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"ios_permanent_boost":{
+		"name": "premium_permanent_boost",
+		"icon": "rocket",
+		"description": "premium_permanent_boost_desc",
+		"platform": 3,
+		"default_price": 9.99,
+		"id": "permanent_boosts",
+		"reward": 0,
+		"daily_reward": 0,
+		"features": ["permanent_boost"],
+		"attributes": {},
+		"window_attributes": {}
+	}
+}

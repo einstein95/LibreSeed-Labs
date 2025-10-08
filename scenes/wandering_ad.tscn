@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=4 uid="uid://dctu8vcfk5fqc"]
+
+[ext_resource type="Script" uid="uid://bsrhv5reu8xcj" path="res://scenes/wandering_ad.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dq76v6prte8pc" path="res://textures/random_glow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://i3xamvcxnvkk" path="res://textures/icons/player.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dj431pl2m3ptb" path="res://textures/circle_05.png" id="4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gpkgs"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_1nl7l"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0978261, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.896739, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_ejdqs"]
+curve = SubResource("Curve_1nl7l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1nl7l"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 1.07288e-05
+angular_velocity_min = -42.0
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.65
+scale_max = 0.65
+color = Color(1, 0.824514, 0, 1)
+alpha_curve = SubResource("CurveTexture_ejdqs")
+
+[node name="WanderingAd" type="Node2D"]
+script = ExtResource("1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_gpkgs")
+amount = 4
+texture = ExtResource("2")
+lifetime = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_1nl7l")
+
+[node name="Icon" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.521569, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Icon"]
+self_modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -88.0
+offset_right = 88.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-5, -5, 10, 10)
+
+[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

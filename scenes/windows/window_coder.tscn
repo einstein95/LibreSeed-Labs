@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=4 uid="uid://jxuxpw1x7l51"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dela64apmpgns" path="res://scenes/windows/window_coder.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://yu70ylac7533" path="res://textures/icons/code.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 194.0
+script = ExtResource("2")
+window = "coder"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Coding"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="CodeSpeed" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "code_speed"
+limit = -1.0
+
+[node name="Boost" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boost_code"
+limit = -1.0
+
+[node name="Contribution" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "contribution"
+force_resource = true
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer" index="3"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false

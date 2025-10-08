@@ -1,0 +1,4827 @@
+[gd_scene load_steps=131 format=4 uid="uid://cs3m72rweonfo"]
+
+[ext_resource type="Script" uid="uid://ciwfpbxpcr6uk" path="res://main.gd" id="1"]
+[ext_resource type="Script" uid="uid://dc5oh7tsxdhl5" path="res://scripts/main_2d.gd" id="2"]
+[ext_resource type="Script" uid="uid://cq11tjfbpbb3d" path="res://scripts/desktop.gd" id="3"]
+[ext_resource type="Script" uid="uid://dj66ytieonwff" path="res://scripts/lines.gd" id="4"]
+[ext_resource type="Script" uid="uid://bcmehwqmcvjie" path="res://scripts/connectors.gd" id="5"]
+[ext_resource type="Script" uid="uid://cmif0t3lfaifl" path="res://scripts/selection_panel.gd" id="6"]
+[ext_resource type="Script" uid="uid://cwiif3rhmhkyf" path="res://scripts/resource_description.gd" id="7"]
+[ext_resource type="Script" uid="uid://b3n7o7ktfd2wa" path="res://scenes/cursor_connector.gd" id="8"]
+[ext_resource type="Script" uid="uid://7xcvehl13lvd" path="res://scripts/wandering_timer.gd" id="9"]
+[ext_resource type="AudioStream" uid="uid://e5ig0xesmb6n" path="res://audio/sfx/ambience.wav" id="10"]
+[ext_resource type="Script" uid="uid://br3dc4yc2m2a3" path="res://scripts/research_screen.gd" id="11"]
+[ext_resource type="Shader" uid="uid://bo6mps4j85xqp" path="res://shaders/tiling.gdshader" id="12"]
+[ext_resource type="Texture2D" uid="uid://dm7wykmwilp8i" path="res://textures/icons/atom.png" id="13"]
+[ext_resource type="PackedScene" uid="uid://di5sswirceitl" path="res://scenes/research_tree.tscn" id="14"]
+[ext_resource type="Script" uid="uid://p04sf3a3ls4v" path="res://scripts/paint.gd" id="15"]
+[ext_resource type="Texture2D" uid="uid://bybdfw0kbdtnm" path="res://textures/smokes.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://djvnprj8a2j0" path="res://textures/spotlight_6.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dj431pl2m3ptb" path="res://textures/circle_05.png" id="18"]
+[ext_resource type="Script" uid="uid://d13q65ra0ilc" path="res://scripts/camera_2d.gd" id="19"]
+[ext_resource type="Texture2D" uid="uid://bw2phftp67lcv" path="res://textures/icons/chevron_down.png" id="20"]
+[ext_resource type="Script" uid="uid://dv0pnhx7w2bcd" path="res://scripts/desktop_pointer.gd" id="21"]
+[ext_resource type="Script" uid="uid://2xpkv277kr88" path="res://scripts/hud.gd" id="22"]
+[ext_resource type="Texture2D" uid="uid://dd5guxoabcwt7" path="res://textures/icons/database.png" id="23"]
+[ext_resource type="PackedScene" uid="uid://dxkm7wohrvl3b" path="res://scenes/currency_container.tscn" id="24"]
+[ext_resource type="PackedScene" uid="uid://dpkpum5hrr04g" path="res://scenes/currency_container_small.tscn" id="25"]
+[ext_resource type="Texture2D" uid="uid://cgnv7o1ilnfh" path="res://textures/icons/hourglass.png" id="26"]
+[ext_resource type="Script" uid="uid://f5s6nt075o1f" path="res://scripts/tools_bar.gd" id="27"]
+[ext_resource type="Texture2D" uid="uid://7lhpduaw8md2" path="res://textures/icons/cursor.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dcwdl7q551s0b" path="res://textures/icons/move.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://jgt8ypb1latb" path="res://textures/icons/selection.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://dmme5lnlcky7q" path="res://textures/icons/circle.png" id="31"]
+[ext_resource type="Script" uid="uid://bmdi6ifpapb4j" path="res://scripts/options_bar.gd" id="32"]
+[ext_resource type="Texture2D" uid="uid://xn8ygwin6tfb" path="res://textures/icons/pause.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://4a31n08xhe8t" path="res://textures/icons/diskette.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://cj8i7fk04bpqr" path="res://textures/icons/question_mark.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://4hv1wg7b5277" path="res://textures/icons/palette.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://b3f52fd42p62t" path="res://textures/icons/trash_bin.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://qetwq7cfqijs" path="res://textures/icons/x.png" id="38"]
+[ext_resource type="Script" uid="uid://naxrrrl1ikcw" path="res://scripts/windows_menu.gd" id="39"]
+[ext_resource type="Texture2D" uid="uid://berthf545d4ct" path="res://textures/icons/globe.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://bs6stk6nw31sk" path="res://textures/ui/scroll_gradient.png" id="41"]
+[ext_resource type="Script" uid="uid://beia3iowhqkq7" path="res://scripts/schematics_menu.gd" id="42"]
+[ext_resource type="Texture2D" uid="uid://10t4io8jkos0" path="res://textures/icons/home.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://cpkni7sy0o2sx" path="res://textures/icons/processor.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://dyjjeuy51vubu" path="res://textures/icons/gpu.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://2wu65e67ukhm" path="res://textures/icons/research.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://j7ija2tj0xsn" path="res://textures/icons/hacker.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://yu70ylac7533" path="res://textures/icons/code.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://dy6m106xy8nfi" path="res://textures/icons/tools.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://dpxk2w1e2e7sm" path="res://textures/icons/blueprint.png" id="50"]
+[ext_resource type="Script" uid="uid://74i055w68jx0" path="res://scripts/menus.gd" id="51"]
+[ext_resource type="Texture2D" uid="uid://byunqbjxj4x4f" path="res://textures/icons/up_arrow.png" id="52"]
+[ext_resource type="Script" uid="uid://emke25vfk5hr" path="res://scripts/upgrades_tab.gd" id="53"]
+[ext_resource type="Texture2D" uid="uid://b4q7n474vu0td" path="res://textures/icons/star.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://c1n8jsiypwtpb" path="res://textures/icons/work.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://ciada6qqipavq" path="res://textures/icons/bracket.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://bl6qjqtdhgw8p" path="res://textures/icons/breach.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://e7capmjjjbti" path="res://textures/icons/storage.png" id="58"]
+[ext_resource type="Script" uid="uid://j8ed4cnge76v" path="res://scripts/storage_tab.gd" id="59"]
+[ext_resource type="PackedScene" uid="uid://dwca30xnglskx" path="res://scenes/upgrade_panel.tscn" id="60"]
+[ext_resource type="Texture2D" uid="uid://8sorr10f66nw" path="res://textures/icons/money.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://ctd0qhiaqmdqt" path="res://textures/icons/token.png" id="62"]
+[ext_resource type="Script" uid="uid://c3ffi1kdb6dr0" path="res://scripts/tokens_tab.gd" id="63"]
+[ext_resource type="Texture2D" uid="uid://cjav8bxl60b23" path="res://textures/icons/portal.png" id="64"]
+[ext_resource type="Script" uid="uid://cc81k7sbohcq7" path="res://scripts/portal_tab.gd" id="65"]
+[ext_resource type="Texture2D" uid="uid://pqkxcagcgppm" path="res://textures/icons/heart.png" id="66"]
+[ext_resource type="Script" uid="uid://d4jphi4hi40wc" path="res://scripts/premiums_tab.gd" id="67"]
+[ext_resource type="Texture2D" uid="uid://mvvoqpjptjxg" path="res://textures/icons/badge01.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://bvwvixbed54vw" path="res://textures/icons/badge02.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://d1tji3r0vk8py" path="res://textures/icons/badge03.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://cui7w5kft4ct7" path="res://textures/icons/badge04.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://0j323xt07lg4" path="res://textures/icons/badge05.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://cekonnend1pmn" path="res://textures/icons/badge06.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://ca41apt8ebnrs" path="res://textures/icons/reload.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://dqpytoc2jesuv" path="res://textures/icons/book.png" id="75"]
+[ext_resource type="Script" uid="uid://cafqh7l6vqyxk" path="res://scripts/guides_tab.gd" id="76"]
+[ext_resource type="Texture2D" uid="uid://dguurojw0kuio" path="res://textures/icons/trophy.png" id="77"]
+[ext_resource type="Script" uid="uid://digmhrmxsktbr" path="res://scripts/achievements_tab.gd" id="78"]
+[ext_resource type="Texture2D" uid="uid://cwaaiy2h4uisf" path="res://textures/icons/cog.png" id="79"]
+[ext_resource type="Script" uid="uid://bbxfqcvdaq5rf" path="res://scripts/settings_tab.gd" id="80"]
+[ext_resource type="Texture2D" uid="uid://cfx2ybbx62f5a" path="res://textures/ui/steam.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://ccxcirl0rbf30" path="res://textures/ui/google_play.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://cag7s3jma41it" path="res://textures/ui/app_store.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://c0bog12nx1ag7" path="res://textures/ui/discord.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://bs6ay7dcrphy5" path="res://textures/icons/graph.png" id="85"]
+[ext_resource type="PackedScene" uid="uid://dr4g1xjc0kw1v" path="res://scenes/tutorial_panel.tscn" id="86"]
+[ext_resource type="Texture2D" uid="uid://cb3b68p1s5bql" path="res://textures/icons/circle_full.png" id="87"]
+[ext_resource type="Script" uid="uid://cu18kycgsngiy" path="res://scripts/drag_control.gd" id="88"]
+[ext_resource type="Script" uid="uid://3w3gmspd3wh5" path="res://scripts/interface_pointer.gd" id="89"]
+[ext_resource type="Script" uid="uid://bimov5er86d0r" path="res://scripts/popups.gd" id="90"]
+[ext_resource type="Script" uid="uid://x64ummcpnmkr" path="res://scripts/portal_popup.gd" id="91"]
+[ext_resource type="Script" uid="uid://4saa1gkhrbcb" path="res://scripts/wipe_popup.gd" id="92"]
+[ext_resource type="Script" uid="uid://d2sy47nbo12pn" path="res://scripts/rest_tab.gd" id="93"]
+[ext_resource type="Script" uid="uid://21afd0mgokmb" path="res://scripts/ad_prompt.gd" id="94"]
+[ext_resource type="Script" uid="uid://nb5304scgo1o" path="res://scripts/popup_schematic.gd" id="95"]
+[ext_resource type="Texture2D" uid="uid://mbrbl6fxx1" path="res://textures/icons/brain.png" id="96"]
+[ext_resource type="Script" uid="uid://hpjpfswkfe21" path="res://scripts/sync_popup.gd" id="97"]
+[ext_resource type="Shader" uid="uid://ycgwmt07wu8t" path="res://shaders/glitch_transition.gdshader" id="98"]
+[ext_resource type="AudioStream" uid="uid://deyvk3gromxot" path="res://audio/sfx/glitch.wav" id="99"]
+[ext_resource type="Script" uid="uid://edyl0fwnbext" path="res://scripts/market_simulation.gd" id="100"]
+[ext_resource type="AudioStream" uid="uid://ehftyup7sx8t" path="res://audio/bgm/Stardust.ogg" id="101"]
+[ext_resource type="AudioStream" uid="uid://bav3cy3iten1u" path="res://audio/bgm/Waves.ogg" id="102"]
+[ext_resource type="AudioStream" uid="uid://j122myttbdqd" path="res://audio/bgm/Tunnels.ogg" id="103"]
+
+[sub_resource type="Animation" id="Animation_5y3io"]
+resource_name = "Close"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(280, 325), Vector2(280, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1nwvn"]
+resource_name = "Popup"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(280, 0), Vector2(280, 325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InfoContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dfq0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InfoContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sef48"]
+_data = {
+&"Close": SubResource("Animation_5y3io"),
+&"Popup": SubResource("Animation_1nwvn"),
+&"RESET": SubResource("Animation_dfq0k")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmx32"]
+shader = ExtResource("12")
+shader_parameter/grid_size = Vector2(199, 199)
+shader_parameter/atom_size = Vector2(60, 60)
+shader_parameter/spacing = Vector2(120, 120)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_egsk6"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_oklv8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0933333, 1), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0, Vector2(0.9, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="CurveTexture" id="CurveTexture_v6p1s"]
+curve = SubResource("Curve_oklv8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4p3yn"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 2000.0
+angle_min = -720.0
+angle_max = 720.0
+radial_velocity_min = 2.99998
+radial_velocity_max = 4.99998
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+color = Color(0.698177, 0.702395, 0.960784, 0.0392157)
+alpha_curve = SubResource("CurveTexture_v6p1s")
+hue_variation_min = -1.0
+hue_variation_max = -0.91
+
+[sub_resource type="Curve" id="Curve_b5ee0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0933333, 1), 0.0, 0.0, 0, 0, Vector2(0.2, 0.4), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.4, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.4), 0.0, 0.0, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0.3), 0.0, 0.0, 0, 0, Vector2(0.9, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="CurveTexture" id="CurveTexture_m88k4"]
+curve = SubResource("Curve_b5ee0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8j2vl"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 2000.0
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.04
+scale_max = 0.08
+alpha_curve = SubResource("CurveTexture_m88k4")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="Curve" id="Curve_1nwvn"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6gqcj"]
+curve = SubResource("Curve_1nwvn")
+
+[sub_resource type="Curve" id="Curve_dfq0k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.720588, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_cqa3y"]
+curve = SubResource("Curve_dfq0k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sef48"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 65.0
+emission_ring_inner_radius = 65.0
+emission_ring_cone_angle = 90.0
+orbit_velocity_min = 0.18
+orbit_velocity_max = 0.2
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = 7.0
+tangential_accel_max = 10.0
+damping_min = 1.539
+damping_max = 1.539
+scale_min = 0.02
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_cqa3y")
+color = Color(0.804298, 0.593675, 1, 1)
+alpha_curve = SubResource("CurveTexture_6gqcj")
+hue_variation_min = 0.9
+hue_variation_max = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovcoh"]
+
+[sub_resource type="Animation" id="Animation_ppx11"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ovcoh"]
+resource_name = "notify"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.8, 2),
+"transitions": PackedFloat32Array(1, 0.5, 1, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yv1y"]
+_data = {
+&"RESET": SubResource("Animation_ppx11"),
+&"notify": SubResource("Animation_ovcoh")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjyto"]
+shader = ExtResource("98")
+shader_parameter/progress = 0.0
+shader_parameter/glitch_intensity = 1.0
+shader_parameter/speed = 0.921
+shader_parameter/rgb_shift = 0.402
+shader_parameter/pixel_size = 0.01
+shader_parameter/pixel_alpha = 0.0
+
+[sub_resource type="Animation" id="Animation_rm4vd"]
+resource_name = "Glitch"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/pixel_alpha")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pjyto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/pixel_alpha")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjyto"]
+_data = {
+&"Glitch": SubResource("Animation_rm4vd"),
+&"RESET": SubResource("Animation_pjyto")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fw32c"]
+streams_count = 3
+stream_0/stream = ExtResource("101")
+stream_1/stream = ExtResource("102")
+stream_2/stream = ExtResource("103")
+
+[sub_resource type="Environment" id="Environment_23xmf"]
+background_mode = 3
+background_canvas_max_layer = 100
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/5 = 0.0
+glow_hdr_threshold = 0.3
+adjustment_brightness = 1.3
+adjustment_saturation = 1.12
+
+[node name="Main" type="Node"]
+script = ExtResource("1")
+
+[node name="Main2D" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2")
+
+[node name="Dragger" type="Control" parent="Main2D"]
+custom_minimum_size = Vector2(20000, 20000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10000.0
+offset_top = -10000.0
+offset_right = 10000.0
+offset_bottom = 10000.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Desktop" type="Control" parent="Main2D"]
+anchors_preset = 0
+script = ExtResource("3")
+
+[node name="Background" type="ColorRect" parent="Main2D/Desktop"]
+layout_mode = 0
+offset_left = -10000.0
+offset_top = -10000.0
+offset_right = 10000.0
+offset_bottom = 10000.0
+mouse_filter = 2
+color = Color(0.129412, 0.164706, 0.235294, 1)
+
+[node name="Lines" type="Control" parent="Main2D/Desktop"]
+anchors_preset = 0
+script = ExtResource("4")
+
+[node name="Connectors" type="Control" parent="Main2D/Desktop"]
+anchors_preset = 0
+script = ExtResource("5")
+
+[node name="Windows" type="Control" parent="Main2D/Desktop"]
+use_parent_material = true
+anchors_preset = 0
+
+[node name="WindowSelections" type="Control" parent="Main2D/Desktop"]
+anchors_preset = 0
+
+[node name="SelectionPanel" type="Panel" parent="Main2D/Desktop"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SelectionPanel"
+script = ExtResource("6")
+
+[node name="ResourcePanel" type="Panel" parent="Main2D/Desktop"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 171.0
+offset_top = 680.0
+offset_right = 451.0
+offset_bottom = 1005.0
+mouse_filter = 2
+theme_type_variation = &"ResearchPanel"
+script = ExtResource("7")
+
+[node name="InfoContainer" type="VBoxContainer" parent="Main2D/Desktop/ResourcePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+text = "Program"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Variations" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = ""
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 18
+text = "File type resource"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FileInfoContainer" type="VBoxContainer" parent="Main2D/Desktop/ResourcePanel/InfoContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Quality" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer/FileInfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 18
+text = "Quality: 1"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer/FileInfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 18
+text = "Value: 100"
+horizontal_alignment = 1
+
+[node name="Size" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer/FileInfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 18
+text = "Size: 100b"
+horizontal_alignment = 1
+
+[node name="Research" type="Label" parent="Main2D/Desktop/ResourcePanel/InfoContainer/FileInfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 18
+text = "Research: 8"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main2D/Desktop/ResourcePanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_sef48")
+}
+
+[node name="CursorConnector" type="Node2D" parent="Main2D/Desktop"]
+visible = false
+script = ExtResource("8")
+
+[node name="Spawnables" type="Control" parent="Main2D/Desktop"]
+anchors_preset = 0
+
+[node name="TutorialPoint" type="Control" parent="Main2D/Desktop"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 200.0
+offset_right = 25.0
+offset_bottom = 200.0
+
+[node name="TokenTimer" type="Timer" parent="Main2D/Desktop"]
+wait_time = 240.0
+script = ExtResource("9")
+min_start_time = 60.0
+max_start_time = 240.0
+repeat_time = 240.0
+
+[node name="BankTimer" type="Timer" parent="Main2D/Desktop"]
+wait_time = 480.0
+script = ExtResource("9")
+requirements = ["research.breach_bank"]
+min_start_time = 240.0
+max_start_time = 480.0
+repeat_time = 480.0
+
+[node name="AdTimer" type="Timer" parent="Main2D/Desktop"]
+wait_time = 360.0
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer2D" parent="Main2D/Desktop"]
+stream = ExtResource("10")
+autoplay = true
+bus = &"SFX"
+
+[node name="InputBlocker" type="Control" parent="Main2D/Desktop"]
+visible = false
+custom_minimum_size = Vector2(20000, 20000)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10000.0
+offset_top = -10000.0
+offset_right = 10000.0
+offset_bottom = 10000.0
+
+[node name="Research" type="Node2D" parent="Main2D"]
+visible = false
+script = ExtResource("11")
+
+[node name="Background" type="TextureRect" parent="Main2D/Research"]
+self_modulate = Color(0.101961, 0.12549, 0.172549, 1)
+material = SubResource("ShaderMaterial_nmx32")
+offset_left = -11940.0
+offset_top = -11940.0
+offset_right = 11940.0
+offset_bottom = 11940.0
+mouse_filter = 2
+texture = ExtResource("13")
+
+[node name="Tree" parent="Main2D/Research" instance=ExtResource("14")]
+
+[node name="ResearchPanel" type="Panel" parent="Main2D/Research"]
+visible = false
+offset_left = 171.0
+offset_top = 680.0
+offset_right = 451.0
+offset_bottom = 1005.0
+mouse_filter = 2
+theme_type_variation = &"ResearchPanel"
+
+[node name="InfoContainer" type="VBoxContainer" parent="Main2D/Research/ResearchPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Name" type="Label" parent="Main2D/Research/ResearchPanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+text = "Checksum Validation"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="Main2D/Research/ResearchPanel/InfoContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 18
+text = "Unlocks the Verifier, which validates file integrity for increased value"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Main2D/Research/ResearchPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ButtonHighlighted"
+
+[node name="CostContainer" type="HBoxContainer" parent="Main2D/Research/ResearchPanel/InfoContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Main2D/Research/ResearchPanel/InfoContainer/Button/CostContainer"]
+self_modulate = Color(1, 0.521569, 0, 1)
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Main2D/Research/ResearchPanel/InfoContainer/Button/CostContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.521569, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main2D/Research/ResearchPanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_sef48")
+}
+
+[node name="Ascension" type="Node2D" parent="Main2D"]
+visible = false
+
+[node name="Paint" type="Node2D" parent="Main2D/Ascension"]
+modulate = Color(0.0352941, 0.0313726, 0.0666667, 1)
+script = ExtResource("15")
+
+[node name="Smokes" type="GPUParticles2D" parent="Main2D/Ascension"]
+material = SubResource("CanvasItemMaterial_egsk6")
+amount = 20
+texture = ExtResource("16")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-2000, -2000, 4000, 4000)
+process_material = SubResource("ParticleProcessMaterial_4p3yn")
+
+[node name="Stars" type="GPUParticles2D" parent="Main2D/Ascension"]
+amount = 300
+texture = ExtResource("17")
+lifetime = 8.0
+preprocess = 8.0
+visibility_rect = Rect2(-2000, -2000, 4000, 4000)
+process_material = SubResource("ParticleProcessMaterial_8j2vl")
+
+[node name="Portal" type="Control" parent="Main2D/Ascension"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Main2D/Ascension/Portal"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(75, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("18")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Main2D/Ascension/Portal"]
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(75, 75)
+amount = 80
+texture = ExtResource("18")
+lifetime = 5.0
+preprocess = 30.0
+fixed_fps = 60
+interpolate = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sef48")
+
+[node name="Popups" type="Node2D" parent="Main2D"]
+
+[node name="Camera2D" type="Camera2D" parent="Main2D"]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_speed = 12.0
+script = ExtResource("19")
+
+[node name="DesktopPointer" type="Sprite2D" parent="Main2D"]
+visible = false
+modulate = Color(1, 0.521569, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20")
+offset = Vector2(0, -320)
+script = ExtResource("21")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("22")
+research_unlocks = {
+NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Storage"): "upgrade.server",
+NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Portal"): "research.portal"
+}
+level_unlocks = {
+NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Upgrades"): 3,
+NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Tokens"): 4,
+NodePath("Main/MainContainer/Overlay/ExtrasButtons/Container/Support"): 5,
+NodePath("Main/MainContainer/Overlay/ScreenButtons/Container/Research"): 9,
+NodePath("Main/MainContainer/Overlay/BottomButtons/SchematicsButton/Schematics"): 6
+}
+
+[node name="Main" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MainContainer" type="MarginContainer" parent="HUD/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Overlay" type="Control" parent="HUD/Main/MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 354.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="StoragePanel" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"CurrencyPanel"
+
+[node name="StorageContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/StoragePanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/StoragePanel/StorageContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("23")
+expand_mode = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/StoragePanel/StorageContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/StoragePanel/StorageContainer/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "0b/100Mb"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/StoragePanel/StorageContainer/InfoContainer"]
+custom_minimum_size = Vector2(250, 6)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Currency" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="money" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency" instance=ExtResource("24")]
+layout_mode = 2
+
+[node name="research" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency" instance=ExtResource("24")]
+layout_mode = 2
+
+[node name="token" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency" instance=ExtResource("24")]
+layout_mode = 2
+
+[node name="Hack" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="corporation_data" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency/Hack" instance=ExtResource("25")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="government_data" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/Currency/Hack" instance=ExtResource("25")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RestPanel" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_type_variation = &"CurrencyPanel"
+
+[node name="RestContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RestButton" type="Button" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel/RestContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+icon = ExtResource("26")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TimeContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel/RestContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel/RestContainer/TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = " 600s "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel/RestContainer/TimeContainer"]
+custom_minimum_size = Vector2(100, 6)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+show_percentage = false
+
+[node name="ToolsBar" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_vertical = 0
+size_flags_horizontal = 2
+theme_type_variation = &"MenuButtonsPanel2"
+script = ExtResource("27")
+
+[node name="Tools" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/ToolsBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Cursor" type="Button" parent="HUD/Main/MainContainer/Overlay/ToolsBar/Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("28")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move" type="Button" parent="HUD/Main/MainContainer/Overlay/ToolsBar/Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("29")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Select" type="Button" parent="HUD/Main/MainContainer/Overlay/ToolsBar/Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("30")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ConnectionEdit" type="Button" parent="HUD/Main/MainContainer/Overlay/ToolsBar/Tools"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("31")
+icon_alignment = 1
+expand_icon = true
+
+[node name="OptionsBar" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = 20.0
+offset_right = 46.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 2
+theme_type_variation = &"MenuButtonsPanel2"
+script = ExtResource("32")
+
+[node name="WindowOptions" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/OptionsBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Pause" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("33")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Save" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("34")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Help" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("35")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Color" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("36")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Delete" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("37")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Cancel" type="Button" parent="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+icon = ExtResource("38")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pointers" type="Control" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WindowsMenu" type="Control" parent="HUD/Main/MainContainer/Overlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -493.0
+offset_top = -614.0
+offset_right = 493.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_type_variation = &"MenuButtonsPanel2"
+script = ExtResource("39")
+
+[node name="WindowPanel" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_right = 480.0
+offset_bottom = 370.0
+mouse_filter = 1
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="PanelContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = -14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("40")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Network"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count" type="Label" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+text = "0/1"
+horizontal_alignment = 2
+
+[node name="InfoPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"OverlayPanel"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = -15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Description" type="Label" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/InfoPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_constants/line_spacing = -4
+text = "Delivers Download and Upload Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Add" type="Button" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/InfoPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ButtonHighlighted"
+theme_override_constants/icon_max_width = 48
+text = "action_add"
+icon_alignment = 1
+expand_icon = true
+
+[node name="WindowsPanel" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+offset_top = -120.0
+offset_right = -483.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="WindowsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel/WindowsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="Windows" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel/WindowsContainer/ScrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Control" type="Control" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel/Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 150.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("41")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowsPanel/Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("41")
+expand_mode = 1
+flip_h = true
+
+[node name="SchematicsMenu" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -857.0
+offset_right = 375.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+theme_type_variation = &"MenuButtonsPanel2"
+script = ExtResource("42")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/SchematicsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/SchematicsMenu/MarginContainer"]
+layout_mode = 2
+text = "no_schematics_saved"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/SchematicsMenu/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/SchematicsMenu/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="Schematics" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/SchematicsMenu/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScreenButtons" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 104.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="Container" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/ScreenButtons"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Desktop" type="Button" parent="HUD/Main/MainContainer/Overlay/ScreenButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("43")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Research" type="Button" parent="HUD/Main/MainContainer/Overlay/ScreenButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("13")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BottomButtons" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -371.0
+offset_top = -104.0
+offset_right = 371.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+theme_type_variation = &"MenuButtonsPanel2"
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WindowsButtons" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/BottomButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="MenuButtons" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Network" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("40")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CPU" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("44")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GPU" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("45")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Research" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("46")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hacking" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("47")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Coding" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("48")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Utilities" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("49")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SchematicsButton" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/BottomButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="Schematics" type="Button" parent="HUD/Main/MainContainer/Overlay/BottomButtons/SchematicsButton"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("50")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Menus" type="Control" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1180.0
+offset_right = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("51")
+
+[node name="Upgrades" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("52")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_upgrades"
+
+[node name="Upgrades" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Upgrades" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("53")
+
+[node name="TabContainer" type="TabContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"EmptyTabContainer"
+current_tab = 0
+tabs_visible = false
+
+[node name="Main" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Hacking" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+metadata/_tab_index = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LevelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/InfoContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PointsPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/InfoContainer/LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="PointsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/InfoContainer/LevelContainer/PointsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/InfoContainer/LevelContainer/PointsPanel/PointsContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("54")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/InfoContainer/LevelContainer/PointsPanel/PointsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "8"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Hacking/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Breach" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Breach"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Breach/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Optimizations" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+metadata/_tab_index = 3
+
+[node name="PointsPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations/PointsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations/PointsPanel/HBoxContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("55")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations/PointsPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "8 Points"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="UpgradesContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Optimizations/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Applications" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+metadata/_tab_index = 4
+
+[node name="PointsPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications/PointsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications/PointsPanel/HBoxContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("56")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications/PointsPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "8 Points"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="UpgradesContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/TabContainer/Applications/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="ButtonsPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Main" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("52")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hacking" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("47")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Breach" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("57")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Optimizations" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("55")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Applications" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("56")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Storage" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="MainStorageContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage"]
+layout_mode = 2
+mouse_filter = 0
+theme_type_variation = &"MenuPanel"
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("58")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_server"
+
+[node name="Storage" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+script = ExtResource("59")
+
+[node name="Storage" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StatsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="storage_size" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer" instance=ExtResource("60")]
+layout_mode = 2
+
+[node name="ValuePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("58")
+expand_mode = 1
+
+[node name="InfoContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = -21.0
+offset_right = -16.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "server_stats"
+
+[node name="SizeContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer/SizeContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("23")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer/SizeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+text = "0b"
+
+[node name="ValueContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer/ValueContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("61")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/StatsContainer/ValuePanel/InfoContainer/ValueContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+text = "0/b"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 5
+
+[node name="StorageContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage/Storage/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Tokens" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("62")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_shop"
+
+[node name="Tokens" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Tokens" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("63")
+
+[node name="TabContainer" type="TabContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"EmptyTabContainer"
+current_tab = 0
+tabs_visible = false
+
+[node name="Perks" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Perks"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="PerksContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Perks/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Boosts" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Boosts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="BoostsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Boosts/MarginContainer"]
+layout_mode = 2
+
+[node name="Services" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Services"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="ServicesContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/TabContainer/Services/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Perks" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+button_pressed = true
+text = "menu_perks"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boosts" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+text = "menu_boosts"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Services" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+text = "menu_services"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Portal" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal"]
+layout_mode = 2
+mouse_filter = 0
+theme_type_variation = &"MenuPanel"
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("64")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_portal"
+
+[node name="Portal" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+script = ExtResource("65")
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StatsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ResearchPanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/StatsContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/StatsContainer/ResearchPanel"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("13")
+expand_mode = 1
+
+[node name="InfoContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/StatsContainer/ResearchPanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = -21.0
+offset_right = -16.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/StatsContainer/ResearchPanel/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "stats_max_research"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/StatsContainer/ResearchPanel/InfoContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="UpgradesContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Enter" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container"]
+custom_minimum_size = Vector2(170, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "action_enter"
+
+[node name="Support" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("66")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_support"
+
+[node name="Support" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Premiums" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("67")
+
+[node name="PremiumInfo" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums"]
+layout_mode = 2
+
+[node name="LevelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/LevelContainer"]
+modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("68")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/LevelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Support Level 0"
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
+layout_mode = 2
+theme_override_constants/line_spacing = -4
+text = "support_us"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ProgressContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TiersContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer"]
+layout_mode = 2
+
+[node name="Tier0" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("68")
+expand_mode = 1
+
+[node name="ProgressBar0" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Tier1" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("69")
+expand_mode = 1
+
+[node name="ProgressBar1" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Tier2" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("70")
+expand_mode = 1
+
+[node name="ProgressBar2" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Tier3" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("71")
+expand_mode = 1
+
+[node name="ProgressBar3" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Tier4" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("72")
+expand_mode = 1
+
+[node name="ProgressBar4" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Tier5" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("73")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="PremiumsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="ReloadButton" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/icon_disabled_color = Color(0.270064, 0.332386, 0.457031, 1)
+theme_override_colors/icon_hover_color = Color(0.567, 0.69465, 0.9, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.521569, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.567, 0.69465, 0.9, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ovcoh")
+icon = ExtResource("74")
+flat = true
+expand_icon = true
+
+[node name="Guide" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("75")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_guide"
+
+[node name="Guide" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Guide" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("76")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="GuidesContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Basics" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+button_pressed = true
+text = "menu_basics"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Nodes" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+text = "menu_nodes"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Achievements" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("77")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_achievements"
+
+[node name="Achievements" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Achievements" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("78")
+
+[node name="TabContainer" type="TabContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"EmptyTabContainer"
+current_tab = 0
+tabs_visible = false
+
+[node name="Achievements" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+metadata/_tab_index = 0
+
+[node name="Progress" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements"]
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+theme_override_constants/separation = 10
+
+[node name="ProgressContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress/ProgressContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("77")
+expand_mode = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress/ProgressContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress/ProgressContainer/InfoContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress/ProgressContainer/InfoContainer/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "progress"
+
+[node name="ProgressLabel" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress/ProgressContainer/InfoContainer/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.521569, 0, 1)
+text = "0/1"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/Progress"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+show_percentage = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="AchievementsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Achievements/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Requests" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Requests"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="RequestsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/TabContainer/Requests/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Achievements" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+button_pressed = true
+text = "menu_achievements"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Requests" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+toggle_mode = true
+text = "menu_requests"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Settings" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+theme_type_variation = &"ShadowPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("79")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/TitlePanel/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_settings"
+
+[node name="Settings" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"MenuPanel"
+
+[node name="Settings" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("80")
+
+[node name="TabContainer" type="TabContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"EmptyTabContainer"
+current_tab = 0
+tabs_visible = false
+
+[node name="Preferences" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="SettingsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LimitFPS" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/LimitFPS"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/LimitFPS/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_fps_limit"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/LimitFPS/LabelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "60"
+
+[node name="HSlider" type="HSlider" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/LimitFPS"]
+layout_mode = 2
+focus_mode = 0
+max_value = 240.0
+
+[node name="UiScale" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/UiScale"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/UiScale/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_ui_scale"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/UiScale/LabelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "small"
+
+[node name="HSlider" type="HSlider" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/UiScale"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+tick_count = 5
+
+[node name="Language" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_language"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="LanguageContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="English" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "english"
+icon_alignment = 1
+metadata/language = "en"
+
+[node name="French" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "french"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "fr"
+
+[node name="German" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "german"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "de"
+
+[node name="Indonesian" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "indonesian"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "id"
+
+[node name="Japanese" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "japanese"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "ja"
+
+[node name="Korean" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "korean"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "ko"
+
+[node name="Polish" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "polish"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "pl"
+
+[node name="Portuguese" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "portuguese"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "pt"
+
+[node name="Spanish" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "spanish"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "es"
+
+[node name="TrChinese" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Language/ScrollContainer/MarginContainer/LanguageContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"TabButton"
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "traditional_chinese"
+icon_alignment = 1
+expand_icon = true
+metadata/language = "zh"
+
+[node name="Colorblind" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Colorblind"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_colorblind_mode"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Colorblind"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="Scientific" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Scientific"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_scientific"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Scientific"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="Glow" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Glow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_glow"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Glow"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="MuteSFX" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteSFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_mute_sfx"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteSFX"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="VolumeSFX" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeSFX"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeSFX/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_volume_sfx"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeSFX/LabelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "100%"
+
+[node name="HSlider" type="HSlider" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeSFX"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="MuteWindows" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteWindows"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_mute_nodes"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteWindows"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="VolumeWindows" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_volume_nodes"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows/LabelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "100%"
+
+[node name="HSlider" type="HSlider" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="MuteBGM" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteBGM"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_mute_bgm"
+
+[node name="CheckButton" type="CheckButton" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteBGM"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+
+[node name="VolumeBGM" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "setting_volume_bgm"
+
+[node name="Value" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM/LabelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "100%"
+
+[node name="HSlider" type="HSlider" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="Links" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="Steam" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+icon = ExtResource("81")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GooglePlay" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+icon = ExtResource("82")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AppStore" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+icon = ExtResource("83")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Discord" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 68
+icon = ExtResource("84")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Credits" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -10
+
+[node name="CreditsButton" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_type_variation = &"ButtonExpand"
+toggle_mode = true
+text = "credits"
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits"]
+visible = false
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"MenuExpandPanel"
+
+[node name="Label" type="RichTextLabel" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/PanelContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "credits_desc"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+drag_and_drop_selection_enabled = false
+
+[node name="Quit" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 68
+text = "quit"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Save" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "sign_in"
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+visible = false
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+placeholder_text = "email"
+emoji_menu_enabled = false
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+caret_blink = true
+
+[node name="TextEdit2" type="TextEdit" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+visible = false
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+placeholder_text = "password"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Button" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "sign_in"
+
+[node name="Export" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+visible = false
+layout_mode = 2
+
+[node name="Code" type="TextEdit" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+placeholder_text = "code"
+emoji_menu_enabled = false
+wrap_mode = 1
+autowrap_mode = 1
+scroll_fit_content_width = true
+caret_blink = true
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export"]
+layout_mode = 2
+
+[node name="Export" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "export"
+
+[node name="Import" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "import"
+
+[node name="Sync" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "setting_sync_data"
+
+[node name="Wipe" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"TabButton"
+text = "setting_wipe_data"
+
+[node name="Stats" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="StatsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Stats/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_type_variation = &"MenuPanelTitle"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Settings" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("79")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Save" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("34")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Stats" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"TabButton"
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+icon = ExtResource("85")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Notifications" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 124.0
+offset_bottom = 187.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Notifications"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FixedNotification" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Notifications"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"CurrencyPanel"
+
+[node name="NotificationContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Notifications/FixedNotification"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Notifications/FixedNotification/NotificationContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("30")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Notifications/FixedNotification/NotificationContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Selection tool"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Main/MainContainer/Overlay/Notifications/FixedNotification"]
+libraries = {
+&"": SubResource("AnimationLibrary_1yv1y")
+}
+
+[node name="TutorialPanel" parent="HUD/Main/MainContainer/Overlay" instance=ExtResource("86")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = -371.0
+offset_top = -125.0
+offset_right = 371.0
+offset_bottom = 125.0
+grow_vertical = 2
+
+[node name="ProgressButtons" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/ProgressButtons"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Portal" type="Button" parent="HUD/Main/MainContainer/Overlay/ProgressButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("64")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Tokens" type="Button" parent="HUD/Main/MainContainer/Overlay/ProgressButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("62")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Storage" type="Button" parent="HUD/Main/MainContainer/Overlay/ProgressButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("58")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Upgrades" type="Button" parent="HUD/Main/MainContainer/Overlay/ProgressButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("52")
+icon_alignment = 1
+expand_icon = true
+
+[node name="New" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/ProgressButtons/Container/Upgrades"]
+visible = false
+modulate = Color(1, 0.521569, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("87")
+expand_mode = 1
+
+[node name="ExtrasButtons" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+grow_horizontal = 0
+theme_type_variation = &"MenuButtonsPanel2"
+
+[node name="Container" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Settings" type="Button" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("79")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Achievements" type="Button" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("77")
+icon_alignment = 1
+expand_icon = true
+
+[node name="New" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Achievements"]
+modulate = Color(1, 0.521569, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("87")
+expand_mode = 1
+
+[node name="Guide" type="Button" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("75")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Support" type="Button" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"ButtonMenu"
+toggle_mode = true
+icon = ExtResource("54")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DragControl" type="Control" parent="HUD/Main"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("88")
+
+[node name="UpDrag" type="Control" parent="HUD/Main/DragControl"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="RightDrag" type="Control" parent="HUD/Main/DragControl"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LeftDrag" type="Control" parent="HUD/Main/DragControl"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+
+[node name="DownDrag" type="Control" parent="HUD/Main/DragControl"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InterfacePointer" type="Sprite2D" parent="HUD/Main"]
+visible = false
+modulate = Color(1, 0.521569, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20")
+offset = Vector2(0, -320)
+script = ExtResource("89")
+
+[node name="Particles" type="Node2D" parent="HUD/Main"]
+
+[node name="Popups" type="ColorRect" parent="HUD/Main"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.364)
+script = ExtResource("90")
+
+[node name="Portal" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -40.0
+offset_right = 309.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("91")
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/Portal"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/Portal/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/Portal/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_enter_portal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/Portal/PortalContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/Portal/PortalContainer/MainPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/Portal/PortalContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "menu_enter_portal_desc"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UnlocksLabel" type="Label" parent="HUD/Main/Popups/Portal/PortalContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+text = "you_will_unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Milestones" type="VBoxContainer" parent="HUD/Main/Popups/Portal/PortalContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/Portal/PortalContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/Portal/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_cancel"
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/Portal/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Enter" type="Button" parent="HUD/Main/Popups/Portal/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+text = "action_enter"
+
+[node name="Wipe" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -40.0
+offset_right = 309.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("92")
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/Wipe"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/Wipe/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/Wipe/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_wipe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/Wipe/PortalContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/Wipe/PortalContainer/MainPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/Wipe/PortalContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "menu_wipe_desc"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/Wipe/PortalContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/Wipe/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_cancel"
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/Wipe/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Confirm" type="Button" parent="HUD/Main/Popups/Wipe/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+text = "action_confirm"
+
+[node name="RestTime" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -199.0
+offset_right = 382.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("93")
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/RestTime"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/RestTime/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/RestTime/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_rest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/RestTime/PortalContainer"]
+layout_mode = 2
+theme_type_variation = &"MenuPanelFlat"
+
+[node name="MainContainer" type="VBoxContainer" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="InfoContainer" type="HBoxContainer" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Panel" type="Panel" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/InfoContainer"]
+custom_minimum_size = Vector2(120, 150)
+layout_mode = 2
+theme_type_variation = &"BackPanelDark"
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/InfoContainer/Panel"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("26")
+expand_mode = 1
+
+[node name="LabelContainer" type="VBoxContainer" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/InfoContainer/LabelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "rest_time"
+
+[node name="Description" type="Label" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/InfoContainer/LabelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_constants/line_spacing = -4
+text = "rest_time_desc"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ProgressContainer" type="VBoxContainer" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/ProgressContainer"]
+layout_mode = 2
+
+[node name="Duration" type="Label" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/ProgressContainer/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0s"
+
+[node name="Max" type="Label" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/ProgressContainer/LabelContainer"]
+layout_mode = 2
+text = "1200s"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/MainContainer/ProgressContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+max_value = 1200.0
+step = 0.001
+value = 0.58
+show_percentage = false
+
+[node name="Toggle" type="CheckButton" parent="HUD/Main/Popups/RestTime/PortalContainer/MainPanel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 42
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/RestTime/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom2"
+text = "action_close"
+
+[node name="AdPrompt" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -183.0
+offset_right = 309.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("94")
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/AdPrompt"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_watch_ad"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "menu_watch_ad_desc"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UnlockLabel" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+text = "you_will_receive"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer/HBoxContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("62")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer/HBoxContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_cancel"
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Watch" type="Button" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+text = "action_watch"
+
+[node name="AddSchematic" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -119.0
+offset_right = 309.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("95")
+
+[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/AddSchematic"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/AddSchematic/PortalContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/AddSchematic/PortalContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_new_schematic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/AddSchematic/PortalContainer"]
+layout_mode = 2
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="IconsContainer" type="HBoxContainer" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("50")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("40")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("44")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("46")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button5" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("47")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button6" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("48")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button7" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer/IconsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+theme_type_variation = &"ButtonDarker"
+theme_override_constants/icon_max_width = 50
+toggle_mode = true
+icon = ExtResource("96")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="LineEdit" parent="HUD/Main/Popups/AddSchematic/PortalContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+placeholder_text = "schematic_name"
+max_length = 16
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/AddSchematic/PortalContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_cancel"
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Save" type="Button" parent="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+text = "action_save"
+
+[node name="SaveSync" type="PanelContainer" parent="HUD/Main/Popups"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -119.0
+offset_right = 309.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("97")
+
+[node name="SyncContainer" type="VBoxContainer" parent="HUD/Main/Popups/SaveSync"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/SaveSync/SyncContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="HUD/Main/Popups/SaveSync/SyncContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "menu_sync_save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/SaveSync/SyncContainer"]
+layout_mode = 2
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Description" type="Label" parent="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel/InfoContainer"]
+layout_mode = 2
+text = "menu_sync_save_desc"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Response" type="Label" parent="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_constants/line_spacing = 0
+text = "menu_sync_save_instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Code" type="LineEdit" parent="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel/InfoContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+placeholder_text = "input_code"
+alignment = 1
+max_length = 6
+context_menu_enabled = false
+emoji_menu_enabled = false
+virtual_keyboard_type = 2
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/SaveSync/SyncContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cancel" type="Button" parent="HUD/Main/Popups/SaveSync/SyncContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_cancel"
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/SaveSync/SyncContainer/Buttons"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Sync" type="Button" parent="HUD/Main/Popups/SaveSync/SyncContainer/Buttons"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+text = "action_export"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="HUD/Main/Popups/SaveSync"]
+timeout = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.133333, 0.168627, 0.235294, 1)
+
+[node name="GlitchFade" type="ColorRect" parent="HUD"]
+process_mode = 3
+visible = false
+material = SubResource("ShaderMaterial_pjyto")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/GlitchFade"]
+libraries = {
+&"": SubResource("AnimationLibrary_pjyto")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HUD/GlitchFade"]
+stream = ExtResource("99")
+bus = &"SFX"
+
+[node name="Boosts" type="Node" parent="."]
+
+[node name="Achievements" type="Node" parent="."]
+
+[node name="Requests" type="Node" parent="."]
+
+[node name="Effects" type="Node" parent="."]
+
+[node name="Markets" type="Node" parent="."]
+
+[node name="money" type="Node" parent="Markets"]
+script = ExtResource("100")
+
+[node name="litecoin" type="Node" parent="Markets"]
+script = ExtResource("100")
+max_value = 2.0
+
+[node name="bitcoin" type="Node" parent="Markets"]
+script = ExtResource("100")
+max_value = 3.0
+
+[node name="ethereum" type="Node" parent="Markets"]
+script = ExtResource("100")
+max_value = 5.0
+
+[node name="SecTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+autostart = true
+
+[node name="SaveTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="SaveTimer2" type="Timer" parent="."]
+wait_time = 69.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fw32c")
+bus = &"BGM"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_23xmf")
+
+[connection signal="gui_input" from="Main2D/Dragger" to="Main2D/Camera2D" method="_on_dragger_gui_input"]
+[connection signal="ready" from="Main2D/Desktop" to="Main2D/Desktop/Connectors" method="_on_desktop_ready"]
+[connection signal="child_entered_tree" from="Main2D/Desktop/Windows" to="Main2D/Desktop/Connectors" method="_on_windows_child_entered_tree"]
+[connection signal="timeout" from="Main2D/Desktop/TokenTimer" to="Main2D/Desktop" method="_on_token_timer_timeout"]
+[connection signal="timeout" from="Main2D/Desktop/BankTimer" to="Main2D/Desktop" method="_on_bank_timer_timeout"]
+[connection signal="timeout" from="Main2D/Desktop/AdTimer" to="Main2D/Desktop" method="_on_ad_timer_timeout"]
+[connection signal="gui_input" from="Main2D/Desktop/InputBlocker" to="Main2D/Desktop/SelectionPanel" method="_on_input_blocker_gui_input"]
+[connection signal="pressed" from="Main2D/Research/ResearchPanel/InfoContainer/Button" to="Main2D/Research" method="_on_research_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/TopLeftContainer/RestPanel/RestContainer/RestButton" to="HUD" method="_on_rest_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ToolsBar/Tools/Cursor" to="HUD/Main/MainContainer/Overlay/ToolsBar" method="_on_cursor_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ToolsBar/Tools/Move" to="HUD/Main/MainContainer/Overlay/ToolsBar" method="_on_move_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ToolsBar/Tools/Select" to="HUD/Main/MainContainer/Overlay/ToolsBar" method="_on_select_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ToolsBar/Tools/ConnectionEdit" to="HUD/Main/MainContainer/Overlay/ToolsBar" method="_on_connection_edit_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Pause" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_pause_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Save" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_save_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Help" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_help_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Color" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_color_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Delete" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_delete_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/OptionsBar/WindowOptions/Cancel" to="HUD/Main/MainContainer/Overlay/OptionsBar" method="_on_cancel_pressed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/WindowsMenu" to="HUD/Main/MainContainer/Overlay/WindowsMenu" method="_on_visibility_changed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/WindowsMenu/WindowPanel/PanelContainer/InfoPanel/InfoContainer/Add" to="HUD/Main/MainContainer/Overlay/WindowsMenu" method="_on_add_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ScreenButtons/Container/Desktop" to="HUD" method="_on_desktop_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ScreenButtons/Container/Research" to="HUD" method="_on_research_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/Network" to="HUD" method="_on_window_network_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/CPU" to="HUD" method="_on_window_cpu_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/GPU" to="HUD" method="_on_window_gpu_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/Research" to="HUD" method="_on_window_research_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/Hacking" to="HUD" method="_on_window_hacking_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/Coding" to="HUD" method="_on_window_coding_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/WindowsButtons/MenuButtons/Utilities" to="HUD" method="_on_window_utilities_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/BottomButtons/SchematicsButton/Schematics" to="HUD" method="_on_schematics_pressed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_visibility_changed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer/Main" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_main_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer/Hacking" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_hacking_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer/Breach" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_breach_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer/Optimizations" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_optimizations_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades/ButtonsPanel/ButtonsContainer/Applications" to="HUD/Main/MainContainer/Overlay/Menus/Upgrades/VBoxContainer/Upgrades/Upgrades" method="_on_applications_pressed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage" to="HUD/Main/MainContainer/Overlay/Menus/Storage/MainStorageContainer/Storage" method="_on_visibility_changed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer/Perks" to="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens" method="_on_perks_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer/Boosts" to="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens" method="_on_boosts_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer/Services" to="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens" method="_on_services_pressed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" to="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" method="_on_visibility_changed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/Enter" to="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" method="_on_enter_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/ReloadButton" to="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums" method="_on_reload_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer/Basics" to="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide" method="_on_basics_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer/Nodes" to="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide" method="_on_nodes_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel/ButtonsContainer/Achievements" to="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements" method="_on_achievements_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel/ButtonsContainer/Requests" to="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements" method="_on_requests_pressed"]
+[connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/LimitFPS/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_limit_fps_slider_drag_ended"]
+[connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/UiScale/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_ui_scale_slider_drag_ended"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Colorblind/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_colorblind_check_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Scientific/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_scientific_check_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Glow/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_glow_check_button_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteSFX/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_mute_sfx_check_button_pressed"]
+[connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeSFX/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_volume_sfx_slider_drag_ended"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteWindows/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_mute_windows_check_button_pressed"]
+[connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_volume_windows_slider_drag_ended"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteBGM/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_mute_bgm_check_button_pressed"]
+[connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_volume_bgm_slider_drag_ended"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/Steam" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_steam_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/GooglePlay" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_google_play_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/AppStore" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_app_store_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/Discord" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_discord_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_credits_button_pressed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/PanelContainer" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_credits_container_visibility_changed"]
+[connection signal="meta_clicked" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/PanelContainer/Label" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits" method="_on_label_meta_clicked"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Quit" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_quit_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export/Buttons/Export" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_export_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Export/Buttons/Import" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_import_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Sync" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_sync_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Save/Wipe" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_wipe_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer/Settings" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_settings_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer/Save" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_save_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/Panel/ButtonsContainer/Stats" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_stats_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ProgressButtons/Container/Portal" to="HUD" method="_on_portal_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ProgressButtons/Container/Tokens" to="HUD" method="_on_tasks_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ProgressButtons/Container/Storage" to="HUD" method="_on_storage_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ProgressButtons/Container/Upgrades" to="HUD" method="_on_upgrades_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Settings" to="HUD" method="_on_settings_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Achievements" to="HUD" method="_on_achievements_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Guide" to="HUD" method="_on_guide_pressed"]
+[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Support" to="HUD" method="_on_support_pressed"]
+[connection signal="mouse_entered" from="HUD/Main/DragControl/UpDrag" to="HUD/Main/DragControl" method="_on_up_drag_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Main/DragControl/UpDrag" to="HUD/Main/DragControl" method="_on_up_drag_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/Main/DragControl/RightDrag" to="HUD/Main/DragControl" method="_on_right_drag_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Main/DragControl/RightDrag" to="HUD/Main/DragControl" method="_on_right_drag_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/Main/DragControl/LeftDrag" to="HUD/Main/DragControl" method="_on_left_drag_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Main/DragControl/LeftDrag" to="HUD/Main/DragControl" method="_on_left_drag_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/Main/DragControl/DownDrag" to="HUD/Main/DragControl" method="_on_down_drag_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Main/DragControl/DownDrag" to="HUD/Main/DragControl" method="_on_down_drag_mouse_exited"]
+[connection signal="gui_input" from="HUD/Main/Popups" to="HUD/Main/Popups" method="_on_gui_input"]
+[connection signal="visibility_changed" from="HUD/Main/Popups/Portal" to="HUD/Main/Popups/Portal" method="_on_visibility_changed"]
+[connection signal="pressed" from="HUD/Main/Popups/Portal/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/Portal" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/Portal/PortalContainer/Buttons/Enter" to="HUD/Main/Popups/Portal" method="_on_enter_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/Wipe/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/Wipe" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/Wipe/PortalContainer/Buttons/Confirm" to="HUD/Main/Popups/Wipe" method="_on_confirm_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/Toggle" to="HUD/Main/Popups/RestTime" method="_on_toggle_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/RestTime/PortalContainer/Cancel" to="HUD/Main/Popups/RestTime" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/AdPrompt" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons/Watch" to="HUD/Main/Popups/AdPrompt" method="_on_watch_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/AddSchematic" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons/Save" to="HUD/Main/Popups/AddSchematic" method="_on_save_pressed"]
+[connection signal="text_changed" from="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel/InfoContainer/Code" to="HUD/Main/Popups/SaveSync" method="_on_code_text_changed"]
+[connection signal="pressed" from="HUD/Main/Popups/SaveSync/SyncContainer/Buttons/Cancel" to="HUD/Main/Popups/SaveSync" method="_on_cancel_pressed"]
+[connection signal="pressed" from="HUD/Main/Popups/SaveSync/SyncContainer/Buttons/Sync" to="HUD/Main/Popups/SaveSync" method="_on_sync_pressed"]
+[connection signal="request_completed" from="HUD/Main/Popups/SaveSync/HTTPRequest" to="HUD/Main/Popups/SaveSync" method="_on_http_request_request_completed"]
+[connection signal="timeout" from="SecTimer" to="." method="_on_sec_timer_timeout"]
+[connection signal="timeout" from="SaveTimer" to="." method="_on_save_timer_timeout"]
+[connection signal="timeout" from="SaveTimer2" to="." method="_on_save_timer2_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_2d_finished"]

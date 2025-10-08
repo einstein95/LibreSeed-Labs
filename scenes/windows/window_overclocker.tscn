@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=4 uid="uid://bq1n3jxjh6yo0"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bitxq5ao6llwb" path="res://scenes/windows/window_overclocker.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cm06ynd0owc2c" path="res://textures/icons/overclock.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 163.0
+script = ExtResource("2")
+window = "overclocker"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Overclocker"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Overclock" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "overclock"
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+max_value = 10.0
+scrollable = false
+tick_count = 11
+
+[connection signal="drag_ended" from="PanelContainer/MainContainer/RatioSlider" to="." method="_on_ratio_slider_drag_ended"]

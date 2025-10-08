@@ -1,0 +1,256 @@
+[gd_scene load_steps=6 format=4 uid="uid://de6b6nbknoxfp"]
+
+[ext_resource type="Theme" uid="uid://dcchhyk2rnupc" path="res://themes/desktop_main.tres" id="1"]
+[ext_resource type="Script" uid="uid://d2qtiw4udc3fq" path="res://scenes/windows/window_group.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cb3b68p1s5bql" path="res://textures/icons/circle_full.png" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1347"]
+bg_color = Color(0.76, 0.76, 0.76, 0.627451)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7rdi"]
+bg_color = Color(1, 1, 1, 0.627451)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="WindowContainer" type="VBoxContainer" groups=["window"]]
+show_behind_parent = true
+offset_right = 300.0
+offset_bottom = 200.0
+mouse_filter = 2
+theme = ExtResource("1")
+theme_override_constants/separation = -1
+script = ExtResource("2")
+can_select = true
+can_delete = true
+can_drag = true
+has_colors = true
+
+[node name="TitlePanel" type="Panel" parent="."]
+self_modulate = Color(0.0862745, 0.101961, 0.137255, 1)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1347")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(0.101961, 0.12549, 0.172549, 1)
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_type_variation = &"WindowPanelContainer"
+theme_override_styles/panel = SubResource("StyleBoxFlat_f7rdi")
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ExpandButtons" type="Control" parent="PanelContainer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeft" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+offset_left = -30.0
+offset_top = -30.0
+pivot_offset = Vector2(20, 20)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 12
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Top" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+grow_horizontal = 2
+pivot_offset = Vector2(10, 20)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 9
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TopRight" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = -30.0
+offset_right = 30.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 11
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Left" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_bottom = 15.0
+grow_vertical = 2
+pivot_offset = Vector2(20, 10)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 10
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BottomLeft" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_bottom = 30.0
+grow_vertical = 0
+pivot_offset = Vector2(20, 0)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 11
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Bottom" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_right = 15.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(10, 0)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 9
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BottomRight" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 12
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Right" type="Button" parent="PanelContainer/Control/ExpandButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(0, 10)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 10
+theme_type_variation = &"FlatButton"
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(0, 0, 20, 20)
+
+[connection signal="gui_input" from="TitlePanel" to="." method="_on_gui_input"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/TopLeft" to="." method="_on_top_left_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/TopLeft" to="." method="_on_top_left_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/Top" to="." method="_on_top_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/Top" to="." method="_on_top_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/TopRight" to="." method="_on_top_right_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/TopRight" to="." method="_on_top_right_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/Left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/BottomLeft" to="." method="_on_bottom_left_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/BottomLeft" to="." method="_on_bottom_left_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/Bottom" to="." method="_on_bottom_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/Bottom" to="." method="_on_bottom_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/BottomRight" to="." method="_on_bottom_right_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/BottomRight" to="." method="_on_bottom_right_button_up"]
+[connection signal="button_down" from="PanelContainer/Control/ExpandButtons/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="PanelContainer/Control/ExpandButtons/Right" to="." method="_on_right_button_up"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

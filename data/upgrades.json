@@ -1,0 +1,1628 @@
+{
+	"storage_size":{
+		"name": "upgrade_storage_size",
+		"icon": "database",
+		"description": "upgrade_storage_size_desc",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 42,
+		"cost_inc": 16,
+		"level": 0,
+		"requirement": ["upgrade.server"],
+		"attributes":{
+			"storage_size": [0, 0, 4]
+		},
+		"window_attributes":{}
+	},
+	"processing_value_multiplier":{
+		"name": "upgrade_processing_value_multiplier",
+		"icon": "processor_sell",
+		"description": "upgrade_processing_value_multiplier_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 46,
+		"currency": "money",
+		"cost": 2.6,
+		"cost_e": 4,
+		"cost_inc": 10,
+		"level": 4,
+		"requirement": [],
+		
+		"attributes":{
+			"processing_value_multiplier": [0, 0, 2]
+		},
+		"window_attributes":{}
+	},
+	"mining_multiplier":{
+		"name": "upgrade_mining_multiplier",
+		"icon": "pickaxe",
+		"description": "upgrade_mining_multiplier_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 43,
+		"currency": "money",
+		"cost": 8,
+		"cost_e": 7,
+		"cost_inc": 10,
+		"level": 7,
+		"requirement": [],
+		
+		"attributes":{
+			"mining_multiplier": [0, 0, 2]
+		},
+		"window_attributes":{}
+	},
+	"premium_texts":{
+		"name": "upgrade_premium_texts",
+		"icon": "document",
+		"description": "upgrade_premium_texts_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 8,
+		"cost_e": 2,
+		"cost_inc": 2,
+		"level": 3,
+		"requirement": [],
+		
+		"attributes":{
+			"text_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"processor":{
+		"name": "upgrade_processor",
+		"icon": "processor",
+		"description": "upgrade_processor_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 4,
+		"cost_e": 3,
+		"cost_inc": 2,
+		"level": 3,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"request_uploader":{
+		"name": "upgrade_request_uploader",
+		"icon": "star2",
+		"description": "upgrade_request_uploader_desc",
+		"category": "main",
+		"permanent": true,
+		"limit": 1,
+		"currency": "money",
+		"cost": 2.5,
+		"cost_e": 4,
+		"cost_inc": 2,
+		"level": 4,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"antivirus":{
+		"name": "upgrade_antivirus",
+		"icon": "antivirus",
+		"description": "upgrade_antivirus_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 5,
+		"cost_inc": 2,
+		"level": 4,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"image_downloader":{
+		"name": "upgrade_image_downloader",
+		"icon": "image",
+		"description": "upgrade_image_downloader_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 6,
+		"cost_e": 5,
+		"cost_inc": 2,
+		"level": 5,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"gpu":{
+		"name": "upgrade_gpu",
+		"icon": "gpu",
+		"description": "upgrade_gpu_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 4,
+		"cost_e": 6,
+		"cost_inc": 2,
+		"level": 6,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"premium_images":{
+		"name": "upgrade_premium_images",
+		"icon": "image",
+		"description": "upgrade_premium_images_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 5,
+		"cost_e": 6,
+		"cost_inc": 2,
+		"level": 6,
+		"requirement": [],
+		
+		"attributes":{
+			"image_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"antivirus_plus":{
+		"name": "upgrade_antivirus_plus",
+		"icon": "biohazard",
+		"description": "upgrade_antivirus_plus_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 1.2,
+		"cost_e": 8,
+		"cost_inc": 2,
+		"level": 7,
+		"requirement": ["upgrade.antivirus"],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"research":{
+		"name": "upgrade_research",
+		"icon": "research",
+		"description": "upgrade_research_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 9,
+		"cost_inc": 2,
+		"level": 8,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"dissymmetry":{
+		"name": "upgrade_dissymmetry",
+		"icon": "load",
+		"description": "upgrade_dissymmetry_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "research",
+		"cost": 1.2,
+		"cost_e": 2,
+		"cost_inc": 2,
+		"level": 9,
+		"requirement": [],
+		"attributes":{
+			"download_speed_multiplier": [0, 0, 2]
+		},
+		"window_attributes":{}
+	},
+	"sound_downloader":{
+		"name": "upgrade_sound_downloader",
+		"icon": "sound",
+		"description": "upgrade_sound_downloader_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 4,
+		"cost_e": 9,
+		"cost_inc": 2,
+		"level": 9,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"premium_sounds":{
+		"name": "upgrade_premium_sounds",
+		"icon": "sound",
+		"description": "upgrade_premium_sounds_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 3,
+		"cost_e": 10,
+		"cost_inc": 2,
+		"level": 10,
+		"requirement": [],
+		
+		"attributes":{
+			"sound_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"sync_efficiency":{
+		"name": "upgrade_sync_efficiency",
+		"icon": "schedule",
+		"description": "upgrade_sync_efficiency_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 5,
+		"currency": "research",
+		"cost": 2,
+		"cost_e": 3,
+		"cost_inc": 10,
+		"level": 10,
+		"requirement": ["research.scheduler"],
+		"attributes":{},
+		"window_attributes":{
+			"task_scheduler":{
+				"efficiency": [0.2, 0, 0]
+			}
+		}
+	},
+	"video_downloader":{
+		"name": "upgrade_video_downloader",
+		"icon": "video",
+		"description": "upgrade_video_downloader_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 3,
+		"cost_e": 13,
+		"cost_inc": 2,
+		"level": 13,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"main_core":{
+		"name": "upgrade_main_core",
+		"icon": "processor",
+		"description": "upgrade_main_core_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "research",
+		"cost": 1,
+		"cost_e": 6,
+		"cost_inc": 2,
+		"level": 13,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{
+			"processor":{
+				"main_core_multiplier": [1, 0, 0]
+			}
+		}
+	},
+	"premium_videos":{
+		"name": "upgrade_premium_videos",
+		"icon": "video",
+		"description": "upgrade_premium_videos_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 2,
+		"cost_e": 14,
+		"cost_inc": 2,
+		"level": 14,
+		"requirement": [],
+		
+		"attributes":{
+			"video_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_skills":{
+		"name": "upgrade_hack_skills",
+		"icon": "hacker",
+		"description": "upgrade_hack_skills_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 4,
+		"currency": "research",
+		"cost": 1,
+		"cost_e": 8,
+		"cost_inc": 100,
+		"level": 0,
+		"requirement": ["research.hack_skills"],
+		"attributes":{
+			"breach_skills": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"program_downloader":{
+		"name": "upgrade_program_downloader",
+		"icon": "executable",
+		"description": "upgrade_program_downloader_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 2,
+		"cost_e": 17,
+		"cost_inc": 2,
+		"level": 17,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"premium_programs":{
+		"name": "upgrade_premium_programs",
+		"icon": "executable",
+		"description": "upgrade_premium_programs_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 18,
+		"cost_inc": 2,
+		"level": 18,
+		"requirement": [],
+		
+		"attributes":{
+			"program_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"game_downloader":{
+		"name": "upgrade_game_downloader",
+		"icon": "controller",
+		"description": "upgrade_game_downloader_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 21,
+		"cost_inc": 2,
+		"level": 21,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"premium_games":{
+		"name": "upgrade_premium_games",
+		"icon": "controller",
+		"description": "upgrade_premium_games_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "money",
+		"cost": 9,
+		"cost_e": 21,
+		"cost_inc": 2,
+		"level": 21,
+		"requirement": [],
+		
+		"attributes":{
+			"game_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"improved_ai_texts":{
+		"name": "upgrade_improved_ai_texts",
+		"icon": "document",
+		"description": "upgrade_improved_ai_texts_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 5,
+		"cost_e": 12,
+		"cost_inc": 1.4,
+		"level": 21,
+		"requirement": ["research.ai_texts"],
+		
+		"attributes":{
+			"ai_text_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"improved_ai_images":{
+		"name": "upgrade_improved_ai_images",
+		"icon": "image",
+		"description": "upgrade_improved_ai_images_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 5,
+		"cost_e": 14,
+		"cost_inc": 1.4,
+		"level": 23,
+		"requirement": ["research.ai_images"],
+		
+		"attributes":{
+			"ai_image_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"improved_ai_sounds":{
+		"name": "upgrade_improved_ai_sounds",
+		"icon": "sound",
+		"description": "upgrade_improved_ai_sounds_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 1,
+		"cost_e": 17,
+		"cost_inc": 1.4,
+		"level": 25,
+		"requirement": ["research.ai_sounds"],
+		
+		"attributes":{
+			"ai_sound_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"heat_sink":{
+		"name": "upgrade_heat_sink",
+		"icon": "cooler",
+		"description": "upgrade_heat_sink_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 5,
+		"currency": "money",
+		"cost": 2.1,
+		"cost_e": 30,
+		"cost_inc": 100,
+		"level": 30,
+		"requirement": ["research.cooling"],
+		"attributes":{},
+		"window_attributes":{
+			"heat_sink":{
+				"limit": [1, 0, 0]
+			}
+		}
+	},
+	"improved_ai_videos":{
+		"name": "upgrade_improved_ai_videos",
+		"icon": "video",
+		"description": "upgrade_improved_ai_videos_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 1.5,
+		"cost_e": 19,
+		"cost_inc": 1.4,
+		"level": 28,
+		"requirement": ["research.ai_videos"],
+		
+		"attributes":{
+			"ai_video_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"improved_ai_program":{
+		"name": "upgrade_improved_ai_programs",
+		"icon": "executable",
+		"description": "upgrade_improved_ai_programs_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 1.5,
+		"cost_e": 21,
+		"cost_inc": 1.4,
+		"level": 30,
+		"requirement": ["research.ai_programs"],
+		
+		"attributes":{
+			"ai_program_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"improved_ai_games":{
+		"name": "upgrade_improved_ai_games",
+		"icon": "controller",
+		"description": "upgrade_improved_ai_games_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 9,
+		"currency": "research",
+		"cost": 3,
+		"cost_e": 23,
+		"cost_inc": 1.4,
+		"level": 32,
+		"requirement": ["research.ai_games"],
+		"attributes":{
+			"ai_game_value_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"server":{
+		"name": "upgrade_server",
+		"icon": "storage",
+		"description": "upgrade_server_desc",
+		"category": "main",
+		"permanent": false,
+		"limit": 1,
+		"currency": "money",
+		"cost": 1,
+		"cost_e": 39,
+		"cost_inc": 1,
+		"level": 39,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"hack_breach_damage":{
+		"name": "upgrade_hack_breach_damage",
+		"icon": "shot",
+		"description": "upgrade_hack_breach_damage_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 0,
+		"currency": "hack_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"breach_damage_multiplier": [0.1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_breach_speed":{
+		"name": "upgrade_hack_breach_speed",
+		"icon": "overclock",
+		"description": "upgrade_hack_breach_speed_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 0,
+		"currency": "hack_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"breach_speed_multiplier": [0.04, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_breach_critical_chance":{
+		"name": "upgrade_hack_breach_critical_chance",
+		"icon": "thunder",
+		"description": "upgrade_hack_breach_critical_chance_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 10,
+		"currency": "hack_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.critical_payload"],
+		"attributes":{
+			"breach_critical_chance": [0.02, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_breach_critical_multiplier":{
+		"name": "upgrade_hack_breach_critical_multiplier",
+		"icon": "thunder",
+		"description": "upgrade_hack_breach_critical_multiplier_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 5,
+		"currency": "hack_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.critical_payload"],
+		"attributes":{
+			"breach_critical_multiplier": [0, 0.12, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_infection_damage":{
+		"name": "upgrade_hack_infection_damage",
+		"icon": "virus",
+		"description": "upgrade_hack_infection_damage_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 0,
+		"currency": "hack_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.infection_damage"],
+		
+		"attributes":{
+			"infection_damage_multiplier": [0.1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_infection_specialist":{
+		"name": "upgrade_hack_infection_specialist",
+		"icon": "virus",
+		"description": "upgrade_hack_infection_specialist_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 1,
+		"currency": "hack_point",
+		"cost": 4,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.infection_damage"],
+		
+		"attributes":{
+			"breach_damage_multiplier": [0, 0, 0.6],
+			"infection_damage_multiplier": [0, 0, 2]
+		},
+		"window_attributes":{}
+	},
+	"hack_sneak_attack":{
+		"name": "upgrade_hack_sneak_attack",
+		"icon": "hourglass",
+		"description": "upgrade_hack_sneak_attack_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 5,
+		"currency": "hack_point",
+		"cost": 4,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"breach_time_multiplier": [0.2, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"hack_spoil":{
+		"name": "upgrade_hack_spoil",
+		"icon": "stars",
+		"description": "upgrade_hack_spoil_desc",
+		"category": "hacking",
+		"permanent": false,
+		"limit": 1,
+		"currency": "hack_point",
+		"cost": 5,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"breach_reward_multiplier": [1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"breach_money_multiplier":{
+		"name": "upgrade_breach_money_multiplier",
+		"icon": "money",
+		"description": "upgrade_breach_money_multiplier_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 0,
+		"currency": "corporation_data",
+		"cost": 5,
+		"cost_e": 0,
+		"cost_inc": 4,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"income_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"breach_research_multiplier":{
+		"name": "upgrade_breach_research_multiplier",
+		"icon": "atom",
+		"description": "upgrade_breach_research_multiplier_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 0,
+		"currency": "government_data",
+		"cost": 5,
+		"cost_e": 0,
+		"cost_inc": 4,
+		"level": 0,
+		"requirement": ["research.breach_government"],
+		
+		"attributes":{
+			"research_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"breach_price_multiplier":{
+		"name": "upgrade_breach_price_multiplier",
+		"icon": "discount",
+		"description": "upgrade_breach_price_multiplier_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 5,
+		"currency": "corporation_data",
+		"cost": 4,
+		"cost_e": 2,
+		"cost_inc": 2000,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"price_multiplier": [-0.05, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"breach_research_speed_multiplier":{
+		"name": "upgrade_breach_research_speed_multiplier",
+		"icon": "atom",
+		"description": "upgrade_breach_research_speed_multiplier_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 5,
+		"currency": "government_data",
+		"cost": 4,
+		"cost_e": 2,
+		"cost_inc": 2000,
+		"level": 0,
+		"requirement": ["research.breach_government"],
+		
+		"attributes":{
+			"research_speed_multiplier": [0.1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"breach_government_layers":{
+		"name": "upgrade_breach_government_layers",
+		"icon": "breach",
+		"description": "upgrade_breach_government_layers_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 0,
+		"currency": "corporation_data",
+		"cost": 2,
+		"cost_e": 4,
+		"cost_inc": 100,
+		"level": 0,
+		"requirement": ["research.breach_government"],
+		
+		"attributes":{},
+		"window_attributes":{
+			"breach_government":{
+				"layers_multiplier": [0, 0, 0.9]
+			}
+		}
+	},
+	"breach_corporation_layers":{
+		"name": "upgrade_breach_corporation_layers",
+		"icon": "breach",
+		"description": "upgrade_breach_corporation_layers_desc",
+		"category": "breach",
+		"permanent": false,
+		"limit": 0,
+		"currency": "government_data",
+		"cost": 1,
+		"cost_e": 2,
+		"cost_inc": 100,
+		"level": 0,
+		"requirement": ["research.breach_government"],
+		
+		"attributes":{},
+		"window_attributes":{
+			"breach_corps":{
+				"layers_multiplier": [0, 0, 0.9]
+			}
+		}
+	},
+	"optimization_download_size":{
+		"name": "upgrade_optimization_download_size",
+		"icon": "load",
+		"description": "upgrade_optimization_download_size_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+			"download_size_multiplier": [0, 0, 0.5],
+		},
+		"window_attributes":{}
+	},
+	"optimization_upload_size":{
+		"name": "upgrade_optimization_upload_size",
+		"icon": "save",
+		"description": "upgrade_optimization_upload_size_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+			"upload_size_multiplier": [0, 0, 0.5],
+		},
+		"window_attributes":{}
+	},
+	"optimization_hashing":{
+		"name": "upgrade_optimization_hashing",
+		"icon": "pickaxe",
+		"description": "upgrade_optimization_hashing_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+			"tether_value_multiplier": [0, 0, 2]
+		},
+		"window_attributes":{
+			"mine_litecoin":{
+				"cycles_multiplier": [0, 0, 0.5]
+			},
+			"mine_bitcoin":{
+				"cycles_multiplier": [0, 0, 0.5]
+			},
+			"mine_ethereum":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_virus_scanner":{
+		"name": "upgrade_optimization_virus_scanner",
+		"icon": "antivirus",
+		"description": "upgrade_optimization_virus_scanner_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{
+			"virus_scanner":{
+				"cycles_multiplier": [0, 0, 0.5]
+			},
+			"antivirus_pro":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_quarantine":{
+		"name": "upgrade_optimization_quarantine",
+		"icon": "biohazard",
+		"description": "upgrade_optimization_quarantine_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{
+			"quarantine":{
+				"cycles_multiplier": [0, 0, 0.5]
+			},
+			"antivirus_pro":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_verifier":{
+		"name": "upgrade_optimization_verifier",
+		"icon": "puzzle",
+		"description": "upgrade_optimization_verifier_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.verifier"],
+		"attributes":{},
+		"window_attributes":{
+			"verifier":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_compression":{
+		"name": "upgrade_optimization_compression",
+		"icon": "minimize",
+		"description": "upgrade_optimization_compression_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 3,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.compression"],
+		"attributes":{},
+		"window_attributes":{
+			"compressor":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_enhancement":{
+		"name": "upgrade_optimization_enhancement",
+		"icon": "up_arrow",
+		"description": "upgrade_optimization_enhancement_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 3,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.enhancement"],
+		"attributes":{},
+		"window_attributes":{
+			"enhancer":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_refinement":{
+		"name": "upgrade_optimization_refinement",
+		"icon": "filter",
+		"description": "upgrade_optimization_refinement_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.refinement"],
+		"attributes":{},
+		"window_attributes":{
+			"refiner":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_analysis":{
+		"name": "upgrade_optimization_analysis",
+		"icon": "magnifying_glass",
+		"description": "upgrade_optimization_analysis_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.analysis"],
+		"attributes":{},
+		"window_attributes":{
+			"analyzer":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_distillation":{
+		"name": "upgrade_optimization_distillation",
+		"icon": "connections",
+		"description": "upgrade_optimization_distillation_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.distillation"],
+		"attributes":{},
+		"window_attributes":{
+			"distillator":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_hashing":{
+		"name": "upgrade_optimization_hashing",
+		"icon": "pickaxe",
+		"description": "upgrade_optimization_hashing_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+			"mining_multiplier": [0, 0, 2],
+		},
+		"window_attributes":{}
+	},
+	"optimization_decompiler":{
+		"name": "upgrade_optimization_decompiler",
+		"icon": "document",
+		"description": "upgrade_optimization_decompiler_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_decompiler"],
+		"attributes":{},
+		"window_attributes":{
+			"decompiler":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_decomposer":{
+		"name": "upgrade_optimization_decomposer",
+		"icon": "image",
+		"description": "upgrade_optimization_decomposer_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_decomposer"],
+		"attributes":{},
+		"window_attributes":{
+			"decomposer":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_demuxer":{
+		"name": "upgrade_optimization_demuxer",
+		"icon": "sound",
+		"description": "upgrade_optimization_demuxer_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_demuxer"],
+		"attributes":{},
+		"window_attributes":{
+			"demuxer":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_scrapper":{
+		"name": "upgrade_optimization_scrapper",
+		"icon": "video",
+		"description": "upgrade_optimization_scrapper_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_scrapper"],
+		"attributes":{},
+		"window_attributes":{
+			"scrapper":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_ripper":{
+		"name": "upgrade_optimization_ripper",
+		"icon": "executable",
+		"description": "upgrade_optimization_ripper_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_ripper"],
+		"attributes":{},
+		"window_attributes":{
+			"ripper":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_movie_maker":{
+		"name": "upgrade_optimization_movie_maker",
+		"icon": "video",
+		"description": "upgrade_optimization_movie_maker_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_movie_maker"],
+		"attributes":{},
+		"window_attributes":{
+			"movie_maker":{
+				"cycles_multiplier": [0, 0, 0.5]
+			}
+		}
+	},
+	"optimization_compiler":{
+		"name": "upgrade_optimization_compiler",
+		"icon": "executable",
+		"description": "upgrade_optimization_compiler_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_compiler"],
+		"attributes":{},
+		"window_attributes":{
+			"compiler":{
+				"cycles_multiplier": [0, 0, 0.5],
+			}
+		}
+	},
+	"optimization_game_engine":{
+		"name": "upgrade_optimization_game_engine",
+		"icon": "controller",
+		"description": "upgrade_optimization_game_engine_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_game_engine"],
+		"attributes":{},
+		"window_attributes":{
+			"game_engine":{
+				"cycles_multiplier": [0, 0, 0.5],
+			}
+		}
+	},
+	"optimization_movie_renderer":{
+		"name": "upgrade_optimization_movie_renderer",
+		"icon": "video",
+		"description": "upgrade_optimization_movie_renderer_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_movie_renderer"],
+		"attributes":{},
+		"window_attributes":{
+			"movie_renderer":{
+				"cycles_multiplier": [0, 0, 0.5],
+			}
+		}
+	},
+	"optimization_trainer":{
+		"name": "upgrade_optimization_trainer",
+		"icon": "brain",
+		"description": "upgrade_optimization_trainer_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 1,
+		"currency": "optimization_point",
+		"cost": 3,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.ai"],
+		"attributes":{},
+		"window_attributes":{
+			"trainer":{
+				"cycles_multiplier": [0, 0, 0.5],
+			}
+		}
+	},
+	"optimization_encompressor":{
+		"name": "upgrade_optimization_encompressor",
+		"icon": "star",
+		"description": "upgrade_optimization_encompressor_desc",
+		"category": "optimizations",
+		"permanent": false,
+		"limit": 3,
+		"currency": "optimization_point",
+		"cost": 4,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_encompressor"],
+		"attributes":{},
+		"window_attributes":{
+			"encompressor":{
+				"cycles_multiplier": [0, 0, 0.5],
+			}
+		}
+	},
+	"application_decompiler":{
+		"name": "window_decompiler",
+		"icon": "document",
+		"description": "window_decompiler_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_decomposer":{
+		"name": "window_decomposer",
+		"icon": "image",
+		"description": "window_decomposer_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_demuxer":{
+		"name": "window_demuxer",
+		"icon": "sound",
+		"description": "window_demuxer_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_scrapper":{
+		"name": "window_scrapper",
+		"icon": "video",
+		"description": "window_scrapper_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_ripper":{
+		"name": "window_ripper",
+		"icon": "executable",
+		"description": "window_ripper_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_movie_maker":{
+		"name": "window_movie_maker",
+		"icon": "video",
+		"description": "window_movie_maker_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_compiler":{
+		"name": "window_compiler",
+		"icon": "executable",
+		"description": "window_compiler_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_game_engine":{
+		"name": "window_game_engine",
+		"icon": "controller",
+		"description": "window_game_engine_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_movie_renderer":{
+		"name": "window_movie_renderer",
+		"icon": "video",
+		"description": "window_movie_renderer_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 1,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["upgrade.application_movie_maker"],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"application_encompressor":{
+		"name": "window_encompressor",
+		"icon": "star",
+		"description": "window_encompressor_desc",
+		"category": "applications",
+		"permanent": false,
+		"limit": 1,
+		"currency": "application_point",
+		"cost": 2,
+		"cost_e": 0,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.enhancement", "research.compression"],
+		"attributes": {},
+		"window_attributes": {}
+	},
+	"optimization":{
+		"name": "upgrade_optimization",
+		"icon": "work",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 1,
+		"cost_inc": 2,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+		},
+		"window_attributes":{}
+	},
+	"application":{
+		"name": "upgrade_application",
+		"icon": "bracket",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 6,
+		"cost_e": 2,
+		"cost_inc": 4,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+		},
+		"window_attributes":{}
+	},
+	"driver":{
+		"name": "upgrade_driver",
+		"icon": "tools",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 1,
+		"cost_e": 4,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		"attributes":{
+			"bandwidth_multiplier": [0, 0, 1.2],
+			"clock_multiplier": [0, 0, 1.2],
+			"gpu_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"research_bandwidth_multiplier":{
+		"name": "",
+		"icon": "",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"bandwidth_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"research_clock_multiplier":{
+		"name": "",
+		"icon": "",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"clock_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"research_gpu_multiplier":{
+		"name": "",
+		"icon": "",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"gpu_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"research_hack_power_multiplier":{
+		"name": "",
+		"icon": "",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"hack_power_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"research_code_speed_multiplier":{
+		"name": "",
+		"icon": "",
+		"description": "",
+		"category": "",
+		"permanent": false,
+		"limit": 0,
+		"currency": "",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 5,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"code_speed_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	}
+}

@@ -1,0 +1,280 @@
+[gd_scene load_steps=13 format=4 uid="uid://dvgorjm2j52c6"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bhs4cpiphox3s" path="res://scenes/windows/window_breach_fixed.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cqcn426550lca" path="res://textures/icons/corporation.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dpa5bh0fewhq0" path="res://textures/icons/skull.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cvom6n44f1v2i" path="res://textures/icons/shield.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bl6qjqtdhgw8p" path="res://textures/icons/breach.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://cgnv7o1ilnfh" path="res://textures/icons/hourglass.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="9"]
+[ext_resource type="Script" uid="uid://citplohrg08kx" path="res://scripts/dim_button.gd" id="10"]
+[ext_resource type="AudioStream" uid="uid://cnedscgai8lbp" path="res://audio/sfx/task_completed2.wav" id="11"]
+[ext_resource type="AudioStream" uid="uid://dyex3vyrmhnac" path="res://audio/sfx/error.wav" id="12"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 346.0
+script = ExtResource("2")
+reward_stat = "max_corporation_data"
+defense = 2
+base_time = 5.0
+stat = "corporation_breached"
+firewall_ratio = 0.2
+window = "breach_corps"
+can_pause = false
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Breach: Corporation"
+
+[node name="PanelContainer" parent="." index="1"]
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Level" type="Control" parent="PanelContainer/MainContainer" index="0"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ResourceButton" type="Button" parent="PanelContainer/MainContainer/Level" index="0"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 2
+theme_type_variation = &"ItemButton"
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MainContainer/Level/ResourceButton" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="Info" type="VBoxContainer" parent="PanelContainer/MainContainer/Level" index="1"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 313.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/MainContainer/Level/Info" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "threat"
+
+[node name="Count" type="Label" parent="PanelContainer/MainContainer/Level/Info" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 20
+text = "Level 0/10"
+
+[node name="Firewall" type="VBoxContainer" parent="PanelContainer/MainContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Firewall" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MainContainer/Firewall/ProgressContainer" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Firewall/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "firewall"
+
+[node name="Amount" type="Label" parent="PanelContainer/MainContainer/Firewall/ProgressContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1/10"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Firewall" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarBlue"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Breached" type="VBoxContainer" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Breached" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MainContainer/Breached/ProgressContainer" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Breached/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "breached"
+
+[node name="Amount" type="Label" parent="PanelContainer/MainContainer/Breached/ProgressContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1/10"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Breached" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarRed"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="BreachDamage" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("7")]
+layout_mode = 2
+default_resource = "payload_damage"
+force_resource = true
+
+[node name="InfectionDamage" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("7")]
+layout_mode = 2
+default_resource = "infection_damage"
+force_resource = true
+
+[node name="Vulnerability" parent="PanelContainer/MainContainer" index="5" instance=ExtResource("7")]
+layout_mode = 2
+default_resource = "vulnerability"
+limit = -1.0
+force_resource = true
+
+[node name="Time" type="VBoxContainer" parent="PanelContainer/MainContainer" index="6"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Time" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MainContainer/Time/ProgressContainer" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Time/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "time_left"
+
+[node name="Amount" type="Label" parent="PanelContainer/MainContainer/Time/ProgressContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "10s"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Time" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Result" parent="PanelContainer/MainContainer" index="7" instance=ExtResource("9")]
+layout_mode = 2
+default_resource = "corporation_data"
+
+[node name="ActionContainer" type="HBoxContainer" parent="." index="2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ReduceButton" type="Button" parent="ActionContainer" index="0"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+theme_override_constants/line_spacing = -8
+theme_override_font_sizes/font_size = 20
+text = "action_reduce_threat"
+autowrap_mode = 3
+script = ExtResource("10")
+
+[node name="ColorRect" type="ColorRect" parent="ActionContainer" index="1"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="AddButton" type="Button" parent="ActionContainer" index="2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+theme_override_constants/line_spacing = -8
+theme_override_font_sizes/font_size = 20
+text = "action_add_threat"
+autowrap_mode = 3
+script = ExtResource("10")
+
+[node name="SuccessAudioStream" type="AudioStreamPlayer2D" parent="." index="4"]
+stream = ExtResource("11")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"
+
+[node name="FailAudioStream" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("12")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"
+
+[connection signal="pressed" from="ActionContainer/ReduceButton" to="." method="_on_reduce_button_pressed"]
+[connection signal="pressed" from="ActionContainer/AddButton" to="." method="_on_add_button_pressed"]

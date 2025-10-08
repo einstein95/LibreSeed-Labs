@@ -1,0 +1,26 @@
+{
+	"default":{
+		"name": "Default",
+		"file": "desktop_main",
+		"bg_color": "222b3c", 
+		"icon_color": "91b1e6"
+	},
+	"green":{
+		"name": "Green",
+		"file": "desktop_green",
+		"bg_color": "223d29",
+		"icon_color": "91e691"
+	},
+	"squared":{
+		"name": "Squared",
+		"file": "desktop_squared",
+		"bg_color": "",
+		"icon_color": "91b1e6"
+	},
+	"light":{
+		"name": "Light",
+		"file": "desktop_light",
+		"bg_color": "",
+		"icon_color": "10141b"
+	}
+}

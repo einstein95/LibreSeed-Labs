@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=4 uid="uid://b12dpel4c8ejv"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dwql4pora20r4" path="res://scenes/windows/window_pcb_assembler.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://5yjay48nb2i2" path="res://textures/icons/pcb.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 346.0
+script = ExtResource("2")
+window = "pcb_assembler"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "PCB Assembler"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Plastic" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "plastic"
+required = 1.0
+
+[node name="Wire" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "wire"
+required = 4.0
+
+[node name="Power" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "power"
+limit = -1.0
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer" index="3"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="SizeLabel" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Progress" index="1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"DownloadBar"
+max_value = 1.0
+step = 0.001
+value = 0.42
+show_percentage = false
+
+[node name="PCB" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "pcb"
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Power" to="." method="_on_file_resource_set"]

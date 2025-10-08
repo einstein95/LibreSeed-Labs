@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=4 uid="uid://b4oduwhlw3634"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dts6udxps010y" path="res://scenes/windows/window_synchronizer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ca41apt8ebnrs" path="res://textures/icons/reload.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://b7m6072sbijyd" path="res://scenes/output_connector.tscn" id="6"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 503.0
+script = ExtResource("2")
+window = "gpu_synchronizer"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "GPU Synchronizer"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Input" type="VBoxContainer" parent="PanelContainer/MainContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="0" parent="PanelContainer/MainContainer/Input" index="0" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+exporting = [NodePath("../../Output")]
+
+[node name="1" parent="PanelContainer/MainContainer/Input" index="1" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+exporting = [NodePath("../../Output")]
+
+[node name="2" parent="PanelContainer/MainContainer/Input" index="2" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+exporting = [NodePath("../../Output")]
+
+[node name="3" parent="PanelContainer/MainContainer/Input" index="3" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+exporting = [NodePath("../../Output")]
+
+[node name="4" parent="PanelContainer/MainContainer/Input" index="4" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+exporting = [NodePath("../../Output")]
+
+[node name="Output" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "gpu_speed"
+
+[node name="OutputConnector2" parent="PanelContainer/MainContainer/Output" index="2" instance=ExtResource("6")]
+layout_mode = 1
+
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input/0" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input/1" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input/2" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input/3" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input/4" to="." method="_on_connection_set"]

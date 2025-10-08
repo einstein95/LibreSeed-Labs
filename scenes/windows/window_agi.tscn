@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=4 uid="uid://b3j3dhk4s0ylk"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dh7vahykaiq4g" path="res://scenes/windows/window_agi.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://mbrbl6fxx1" path="res://textures/icons/brain.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 272.0
+script = ExtResource("2")
+window = "agi"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "AGI"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="TextNeuron" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_text"
+force_resource = true
+
+[node name="ImageNeuron" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_image"
+force_resource = true
+
+[node name="SoundNeuron" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_sound"
+force_resource = true
+
+[node name="VideoNeuron" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_video"
+force_resource = true
+
+[node name="ProgramNeuron" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_program"
+force_resource = true
+
+[node name="GameNeuron" parent="PanelContainer/MainContainer" index="5" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "neuron_game"
+force_resource = true
+
+[node name="AI" parent="PanelContainer/MainContainer" index="6" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "ai"
+limit = -1.0
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/AI" to="." method="_on_file_resource_set"]

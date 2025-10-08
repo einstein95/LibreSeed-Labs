@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=4 uid="uid://ct5qujyn57c46"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cjotlp4rhg4mj" path="res://scenes/windows/window_empowerer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cm06ynd0owc2c" path="res://textures/icons/overclock.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 207.0
+script = ExtResource("2")
+window = "empowerer"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Empowerer"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Power" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "power"
+limit = -1.0
+
+[node name="Boost" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boost_empower"
+limit = -1.0
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Power" to="." method="_on_file_resource_set"]

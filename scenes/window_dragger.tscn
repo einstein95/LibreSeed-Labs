@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=4 uid="uid://6ujnx54ohf7d"]
+
+[ext_resource type="Texture2D" uid="uid://berthf545d4ct" path="res://textures/icons/globe.png" id="1"]
+[ext_resource type="Script" uid="uid://bwk8ltgnch8hb" path="res://scenes/window_dragger.gd" id="2"]
+
+[node name="WindowDragger" type="Button"]
+custom_minimum_size = Vector2(110, 110)
+mouse_filter = 2
+theme_type_variation = &"ButtonSelection"
+theme_override_constants/icon_max_width = 70
+button_mask = 0
+icon = ExtResource("1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2")

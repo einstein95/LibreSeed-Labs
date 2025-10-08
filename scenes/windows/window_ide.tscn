@@ -1,0 +1,373 @@
+[gd_scene load_steps=8 format=4 uid="uid://dyfinyr2xjffy"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://do80ymmtxr4y3" path="res://scenes/windows/window_ide.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://yu70ylac7533" path="res://textures/icons/code.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://cwaaiy2h4uisf" path="res://textures/icons/cog.png" id="5"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="6"]
+[ext_resource type="AudioStream" uid="uid://c63l7f2dpo21x" path="res://audio/sfx/task_completed.wav" id="7"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 272.0
+script = ExtResource("2")
+window = "ide"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "IDE"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="CodeSpeed" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "code_speed"
+limit = -1.0
+
+[node name="bool" type="VBoxContainer" parent="PanelContainer/MainContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResourceContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/bool" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ExpandButton" type="Button" parent="PanelContainer/MainContainer/bool/ResourceContainer" index="0"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"SettingButton"
+theme_override_constants/icon_max_width = 16
+toggle_mode = true
+icon = ExtResource("5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Resource" parent="PanelContainer/MainContainer/bool/ResourceContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
+default_resource = "bool"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer/bool" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/bool/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/bool/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0op"
+
+[node name="GoalLabel" type="Label" parent="PanelContainer/MainContainer/bool/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1op"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/bool/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="RatioContainer" type="VBoxContainer" parent="PanelContainer/MainContainer/bool" index="2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RatioLabelContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/bool/RatioContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/bool/RatioContainer/RatioLabelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ratio"
+
+[node name="RatioLabel" type="Label" parent="PanelContainer/MainContainer/bool/RatioContainer/RatioLabelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "5 : 5"
+horizontal_alignment = 2
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer/bool/RatioContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 0.5
+scrollable = false
+
+[node name="int" type="VBoxContainer" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResourceContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/int" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ExpandButton" type="Button" parent="PanelContainer/MainContainer/int/ResourceContainer" index="0"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"SettingButton"
+theme_override_constants/icon_max_width = 16
+toggle_mode = true
+icon = ExtResource("5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Resource" parent="PanelContainer/MainContainer/int/ResourceContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
+default_resource = "int"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer/int" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/int/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/int/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0op"
+
+[node name="GoalLabel" type="Label" parent="PanelContainer/MainContainer/int/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1op"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/int/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="RatioContainer" type="VBoxContainer" parent="PanelContainer/MainContainer/int" index="2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RatioLabelContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/int/RatioContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/int/RatioContainer/RatioLabelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ratio"
+
+[node name="RatioLabel" type="Label" parent="PanelContainer/MainContainer/int/RatioContainer/RatioLabelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "5 : 5"
+horizontal_alignment = 2
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer/int/RatioContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 0.5
+scrollable = false
+
+[node name="float" type="VBoxContainer" parent="PanelContainer/MainContainer" index="3"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResourceContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/float" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ExpandButton" type="Button" parent="PanelContainer/MainContainer/float/ResourceContainer" index="0"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"SettingButton"
+theme_override_constants/icon_max_width = 16
+toggle_mode = true
+icon = ExtResource("5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Resource" parent="PanelContainer/MainContainer/float/ResourceContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
+default_resource = "float"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer/float" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/float/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/float/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0op"
+
+[node name="GoalLabel" type="Label" parent="PanelContainer/MainContainer/float/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1op"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/float/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="RatioContainer" type="VBoxContainer" parent="PanelContainer/MainContainer/float" index="2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RatioLabelContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/float/RatioContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/float/RatioContainer/RatioLabelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ratio"
+
+[node name="RatioLabel" type="Label" parent="PanelContainer/MainContainer/float/RatioContainer/RatioLabelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "5 : 5"
+horizontal_alignment = 2
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer/float/RatioContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 0.5
+scrollable = false
+
+[node name="char" type="VBoxContainer" parent="PanelContainer/MainContainer" index="4"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResourceContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/char" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ExpandButton" type="Button" parent="PanelContainer/MainContainer/char/ResourceContainer" index="0"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"SettingButton"
+theme_override_constants/icon_max_width = 16
+toggle_mode = true
+icon = ExtResource("5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Resource" parent="PanelContainer/MainContainer/char/ResourceContainer" index="1" instance=ExtResource("6")]
+layout_mode = 2
+default_resource = "char"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer/char" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/char/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/char/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0op"
+
+[node name="GoalLabel" type="Label" parent="PanelContainer/MainContainer/char/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1op"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/char/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="RatioContainer" type="VBoxContainer" parent="PanelContainer/MainContainer/char" index="2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RatioLabelContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/char/RatioContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/char/RatioContainer/RatioLabelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ratio"
+
+[node name="RatioLabel" type="Label" parent="PanelContainer/MainContainer/char/RatioContainer/RatioLabelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "5 : 5"
+horizontal_alignment = 2
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer/char/RatioContainer" index="1"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 0.5
+scrollable = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("7")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"
+
+[connection signal="pressed" from="PanelContainer/MainContainer/bool/ResourceContainer/ExpandButton" to="." method="_on_var_bool_expand_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/MainContainer/bool/RatioContainer/RatioSlider" to="." method="_on_var_bool_ratio_slider_drag_ended"]
+[connection signal="pressed" from="PanelContainer/MainContainer/int/ResourceContainer/ExpandButton" to="." method="_on_var_int_expand_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/MainContainer/int/RatioContainer/RatioSlider" to="." method="_on_var_int_ratio_slider_drag_ended"]
+[connection signal="pressed" from="PanelContainer/MainContainer/float/ResourceContainer/ExpandButton" to="." method="_on_var_float_expand_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/MainContainer/float/RatioContainer/RatioSlider" to="." method="_on_var_float_ratio_slider_drag_ended"]
+[connection signal="pressed" from="PanelContainer/MainContainer/char/ResourceContainer/ExpandButton" to="." method="_on_var_char_expand_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/MainContainer/char/RatioContainer/RatioSlider" to="." method="_on_var_char_ratio_slider_drag_ended"]

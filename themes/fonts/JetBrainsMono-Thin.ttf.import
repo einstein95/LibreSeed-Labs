@@ -1,0 +1,15 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://ndx7iw5sojnv"
+path="res://.godot/imported/JetBrainsMono-Thin.ttf-cb646c1e3d84636a4b7c722c058d7e99.fontdata"
+
+[deps]
+
+source_file="res://themes/fonts/JetBrainsMono-Thin.ttf"
+dest_files=["res://.godot/imported/JetBrainsMono-Thin.ttf-cb646c1e3d84636a4b7c722c058d7e99.fontdata"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=4 uid="uid://b2bvvqt4hdxfp"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://sbug1pcyvpe4" path="res://scenes/windows/window_bin.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b3f52fd42p62t" path="res://textures/icons/trash_bin.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 134.0
+script = ExtResource("2")
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "window_bin"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Input" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_file"
+override_connector = "square"
+override_color = "white"
+
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input" to="." method="_on_input_connection_set"]

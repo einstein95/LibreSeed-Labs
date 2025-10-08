@@ -1,0 +1,338 @@
+{
+	"text":{
+		"file": "text",
+		"variation": "",
+		"requirement": [],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"text_scanned":{
+		"file": "text",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"text_verified":{
+		"file": "text",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"text_corrupted":{
+		"file": "text",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"text_compressed":{
+		"file": "text",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"text_improved":{
+		"file": "text",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"text_ai":{
+		"file": "text",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	},
+	"image":{
+		"file": "image",
+		"variation": "",
+		"requirement": ["upgrade.image_downloader"],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"image_scanned":{
+		"file": "image",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"image_verified":{
+		"file": "image",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"image_corrupted":{
+		"file": "image",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"image_compressed":{
+		"file": "image",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"image_improved":{
+		"file": "image",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"image_ai":{
+		"file": "image",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	},
+	"sound":{
+		"file": "sound",
+		"variation": "",
+		"requirement": ["upgrade.sound_downloader"],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"sound_scanned":{
+		"file": "sound",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"sound_verified":{
+		"file": "sound",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"sound_corrupted":{
+		"file": "sound",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"sound_compressed":{
+		"file": "sound",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"sound_improved":{
+		"file": "sound",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"sound_ai":{
+		"file": "sound",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	},
+	"video":{
+		"file": "video",
+		"variation": "",
+		"requirement": ["upgrade.video_downloader"],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"video_scanned":{
+		"file": "video",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"video_verified":{
+		"file": "video",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"video_corrupted":{
+		"file": "video",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"video_compressed":{
+		"file": "video",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"video_improved":{
+		"file": "video",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"video_ai":{
+		"file": "video",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	},
+	"program":{
+		"file": "program",
+		"variation": "",
+		"requirement": ["upgrade.program_downloader"],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"program_scanned":{
+		"file": "program",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"program_verified":{
+		"file": "program",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"program_corrupted":{
+		"file": "program",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"program_compressed":{
+		"file": "program",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"program_improved":{
+		"file": "program",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"program_ai":{
+		"file": "program",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	},
+	"game":{
+		"file": "game",
+		"variation": "",
+		"requirement": ["upgrade.game_downloader"],
+		"goal": 1,
+		"goal_e": 2,
+		"reward": 20
+	},
+	"game_scanned":{
+		"file": "game",
+		"variation": "0b1",
+		"requirement": ["upgrade.antivirus"],
+		"goal": 1,
+		"goal_e": 3,
+		"reward": 25
+	},
+	"game_verified":{
+		"file": "game",
+		"variation": "0b10",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"game_corrupted":{
+		"file": "game",
+		"variation": "0b10000000000000",
+		"requirement": ["research.verifier"],
+		"goal": 1,
+		"goal_e": 4,
+		"reward": 25
+	},
+	"game_compressed":{
+		"file": "game",
+		"variation": "0b100",
+		"requirement": ["research.compression"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"game_improved":{
+		"file": "game",
+		"variation": "0b100000",
+		"requirement": ["research.enhancement"],
+		"goal": 1,
+		"goal_e": 5,
+		"reward": 30
+	},
+	"game_ai":{
+		"file": "game",
+		"variation": "0b100000000000000",
+		"requirement": ["research.ai"],
+		"goal": 1,
+		"goal_e": 15,
+		"reward": 40
+	}
+}

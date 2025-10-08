@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=4 uid="uid://uchgv5f822ot"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://ci8gsdrsv0ca0" path="res://scenes/windows/window_basic_generator.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://8008iq3ny556" path="res://textures/icons/solar_panel.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 134.0
+script = ExtResource("2")
+current = 3.0
+window = "solar_generator"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Solar Generator"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Power" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "power"
+limit = -1.0

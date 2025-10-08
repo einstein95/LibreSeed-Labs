@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=4 uid="uid://vew46xv6ck14"]
+
+[ext_resource type="Texture2D" uid="uid://j7ija2tj0xsn" path="res://textures/icons/hacker.png" id="1"]
+[ext_resource type="Script" uid="uid://cwfjws1rmfh2v" path="res://scenes/new_research_panel.gd" id="2"]
+
+[node name="Icon" type="TextureRect"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("2")

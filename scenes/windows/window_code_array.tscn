@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=4 uid="uid://cdr0pt3jxlp7v"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://qfrrf6hvx7ro" path="res://scenes/windows/window_code_array.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c3nnjk2fssepf" path="res://textures/icons/brackets.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 199.0
+script = ExtResource("2")
+window = "code_array"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Code array"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Variable" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+required = 2.0
+placeholder_name = "input_variable"
+override_connector = "triangle_down"
+override_color = "cyan"
+
+[node name="Array" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Variable" to="." method="_on_variable_resource_set"]

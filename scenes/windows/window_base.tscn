@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=4 uid="uid://b46qouyu3lx2m"]
+
+[ext_resource type="Theme" uid="uid://dcchhyk2rnupc" path="res://themes/desktop_main.tres" id="1"]
+[ext_resource type="Script" uid="uid://co71e1ny8dm07" path="res://scenes/windows/window_base.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://g7tan0u6thu5" path="res://textures/icons/wifi.png" id="3"]
+[ext_resource type="Script" uid="uid://brteo5ih45380" path="res://scripts/themed_icon.gd" id="4"]
+
+[node name="WindowBase" type="VBoxContainer" groups=["selectable", "window"]]
+offset_right = 350.0
+offset_bottom = 69.0
+size_flags_vertical = 0
+mouse_filter = 2
+theme = ExtResource("1")
+theme_override_constants/separation = -1
+script = ExtResource("2")
+can_select = true
+can_delete = true
+can_drag = true
+can_multi_select = true
+can_pause = true
+can_export = true
+
+[node name="TitlePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_type_variation = &"WindowTitlePanel"
+
+[node name="TitleContainer" type="HBoxContainer" parent="TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="TitlePanel/TitleContainer"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3")
+expand_mode = 1
+script = ExtResource("4")
+
+[node name="Title" type="Label" parent="TitlePanel/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Photon-Mesh Network 5"
+text_overrun_behavior = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_type_variation = &"WindowPanelContainer"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(0, 0, 20, 20)
+
+[connection signal="gui_input" from="TitlePanel" to="." method="_on_gui_input"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

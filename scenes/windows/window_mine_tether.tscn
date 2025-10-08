@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=4 uid="uid://g305c4irdw01"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bnx6402jp1qyn" path="res://scenes/windows/window_mine_tether.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://2t3jye36pplx" path="res://textures/icons/pickaxe.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+[ext_resource type="AudioStream" uid="uid://c63l7f2dpo21x" path="res://audio/sfx/task_completed.wav" id="6"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 199.0
+script = ExtResource("2")
+window = "mine_tether"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Miner"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="GPU" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "gpu_speed"
+limit = -1.0
+
+[node name="Money" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "money"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("6")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"

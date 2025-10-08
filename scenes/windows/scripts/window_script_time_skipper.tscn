@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=4 uid="uid://cc48vn7ska3vi"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://gp1sht7bo3p0" path="res://scenes/windows/scripts/window_script_time_skipper.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cgnv7o1ilnfh" path="res://textures/icons/hourglass.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="AudioStream" uid="uid://c63l7f2dpo21x" path="res://audio/sfx/task_completed.wav" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 133.0
+script = ExtResource("2")
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Time Skipper"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Charge" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "charge"
+limit = 50.0
+required = 50.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("5")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"

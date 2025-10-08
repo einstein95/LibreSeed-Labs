@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=4 uid="uid://c3lwihd6bdj2q"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://uuo758sbw2fy" path="res://scenes/windows/window_payload_launcher.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dssygixb2h60p" path="res://textures/icons/shot.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 248.0
+script = ExtResource("2")
+multiplier = 1.0
+attribute = "breach_damage_multiplier"
+window = "payload_launcher"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Breach"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="HackPower" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "hack_power"
+limit = -1.0
+
+[node name="Damage" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "payload_damage"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SpeedContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Progress/SpeedContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "breach_speed"
+
+[node name="SpeedLabel" type="Label" parent="PanelContainer/MainContainer/Progress/SpeedContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1/s"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarRed"
+max_value = 1.0
+step = 0.001
+show_percentage = false

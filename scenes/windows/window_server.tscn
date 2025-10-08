@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=4 uid="uid://db1eovufhbhyk"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dwc0megikogqk" path="res://scenes/windows/window_server.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://e7capmjjjbti" path="res://textures/icons/storage.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://8sorr10f66nw" path="res://textures/icons/money.png" id="5"]
+[ext_resource type="Script" uid="uid://brteo5ih45380" path="res://scripts/themed_icon.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="7"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 251.0
+script = ExtResource("2")
+window = "server"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Server"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Upload" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "upload_speed"
+limit = -1.0
+
+[node name="StorageValue" type="Control" parent="PanelContainer/MainContainer" index="1"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ResourceButton" type="Button" parent="PanelContainer/MainContainer/StorageValue" index="0"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 2
+theme_type_variation = &"ItemButton"
+toggle_mode = true
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MainContainer/StorageValue/ResourceButton" index="0"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+script = ExtResource("6")
+
+[node name="Info" type="VBoxContainer" parent="PanelContainer/MainContainer/StorageValue" index="1"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 313.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/MainContainer/StorageValue/Info" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "storage_value"
+
+[node name="Count" type="Label" parent="PanelContainer/MainContainer/StorageValue/Info" index="1"]
+layout_mode = 2
+theme_type_variation = &"SubLabel"
+theme_override_font_sizes/font_size = 20
+text = "1.0x"
+
+[node name="Money" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("7")]
+layout_mode = 2
+default_resource = "money"

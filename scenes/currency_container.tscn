@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=4 uid="uid://dxkm7wohrvl3b"]
+
+[ext_resource type="Script" uid="uid://c5t3xmddtyn67" path="res://scenes/currency_container.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://8sorr10f66nw" path="res://textures/icons/money.png" id="2"]
+
+[sub_resource type="Animation" id="Animation_fidtv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Popup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Popup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i5s7w"]
+resource_name = "popup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Popup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Popup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arsk2"]
+_data = {
+&"RESET": SubResource("Animation_fidtv"),
+&"popup": SubResource("Animation_i5s7w")
+}
+
+[node name="CurrencyContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 80)
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_type_variation = &"CurrencyPanel"
+script = ExtResource("1")
+
+[node name="Container" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Container"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="Production" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+text = "1.00/s"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Popup" type="Node2D" parent="."]
+visible = false
+position = Vector2(239, 40)
+
+[node name="Label" type="Label" parent="Popup"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -26.5
+offset_right = 46.0
+offset_bottom = 26.5
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 40
+text = "+1"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_arsk2")
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

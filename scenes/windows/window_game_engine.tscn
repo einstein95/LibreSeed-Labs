@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=4 uid="uid://bby37p3juo7t4"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://ddl7m4r0w2l0a" path="res://scenes/windows/window_game_engine.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bbtpypicku8gl" path="res://textures/icons/controller.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+[ext_resource type="AudioStream" uid="uid://cj82i5en5pyam" path="res://audio/sfx/task_completed3.wav" id="6"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 346.0
+script = ExtResource("2")
+window = "game_engine"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Game Engine"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Clock" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "clock_speed"
+limit = -1.0
+
+[node name="Video" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "video"
+required = 1280000.0
+force_resource = true
+
+[node name="Program" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "program"
+required = 800.0
+force_resource = true
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer" index="3"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressLabel" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0b"
+
+[node name="SizeLabel" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "10b"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarOrange"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Game" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "game"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("6")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Clock" to="." method="_on_file_resource_set"]
+[connection signal="resource_set" from="PanelContainer/MainContainer/Video" to="." method="_on_video_resource_set"]
+[connection signal="resource_set" from="PanelContainer/MainContainer/Program" to="." method="_on_program_resource_set"]
+[connection signal="resource_set" from="PanelContainer/MainContainer/Game" to="." method="_on_game_resource_set"]

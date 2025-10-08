@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=4 uid="uid://dq2ukjpmuo53u"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dtmmrbq2xx6bp" path="res://scenes/windows/window_focus_attack.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://byr0t1puqhy3i" path="res://textures/icons/crosshair.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 187.0
+script = ExtResource("2")
+window = "focus_attack"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Unleash Attack"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Input" parent="PanelContainer/MainContainer" index="0" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_damage"
+override_connector = "pentagon"
+override_color = "red"
+exporting = [NodePath("../Output")]
+
+[node name="Input2" parent="PanelContainer/MainContainer" index="1" node_paths=PackedStringArray("exporting") instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_damage"
+override_connector = "pentagon"
+override_color = "red"
+exporting = [NodePath("../Output")]
+
+[node name="Output" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("5")]
+layout_mode = 2
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Input" to="." method="_on_input_resource_set"]
+[connection signal="resource_set" from="PanelContainer/MainContainer/Input2" to="." method="_on_input_2_resource_set"]

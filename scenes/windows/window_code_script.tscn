@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://7obsjukwprmf"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://djbkwpfyit7j1" path="res://scenes/windows/window_code_script.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bqe6ee5pb845j" path="res://textures/icons/code_file.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 187.0
+script = ExtResource("2")
+window = "code_script"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Code script"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Requirements" type="VBoxContainer" parent="PanelContainer/MainContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Bool" parent="PanelContainer/MainContainer/Requirements" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "bool"
+required = 1.0
+force_resource = true
+
+[node name="Int" parent="PanelContainer/MainContainer/Requirements" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "int"
+required = 1.0
+force_resource = true
+
+[node name="Float" parent="PanelContainer/MainContainer/Requirements" index="2" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "float"
+required = 1.0
+force_resource = true
+
+[node name="Char" parent="PanelContainer/MainContainer/Requirements" index="3" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "char"
+required = 1.0
+force_resource = true
+
+[node name="Code" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "code_script"

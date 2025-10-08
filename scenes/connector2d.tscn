@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=4 uid="uid://bhaw2x7imocg"]
+
+[ext_resource type="Script" uid="uid://5aim41fqebrj" path="res://scenes/connector_2d.gd" id="1"]
+
+[node name="Connector" type="Line2D"]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+width = 4.0
+joint_mode = 1
+script = ExtResource("1")

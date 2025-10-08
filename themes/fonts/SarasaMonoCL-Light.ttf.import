@@ -1,0 +1,15 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c2et1f3ut47rf"
+path="res://.godot/imported/SarasaMonoCL-Light.ttf-5c64ccd34952285e021129c30e9d0b19.fontdata"
+
+[deps]
+
+source_file="res://themes/fonts/SarasaMonoCL-Light.ttf"
+dest_files=["res://.godot/imported/SarasaMonoCL-Light.ttf-5c64ccd34952285e021129c30e9d0b19.fontdata"]
+
+[params]
+
+dummy_value_ignore_me=0

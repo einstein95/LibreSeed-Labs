@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=4 uid="uid://df0t7w0kr8mwu"]
+
+[ext_resource type="Texture2D" uid="uid://ctd0qhiaqmdqt" path="res://textures/icons/token.png" id="1"]
+[ext_resource type="Script" uid="uid://cj3l06nniae00" path="res://particles/particle.gd" id="2"]
+
+[sub_resource type="Curve" id="Curve_57vvk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13587, 0), 0.0, 0.0, 0, 0, Vector2(0.146739, 1), 0.0, 0.0, 0, 0, Vector2(0.652174, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_f8h0j"]
+curve = SubResource("Curve_57vvk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tg5a7"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 252.26
+initial_velocity_max = 344.15
+gravity = Vector3(0, 0, 0)
+damping_min = 200.0
+damping_max = 200.0
+scale_min = 0.06
+scale_max = 0.08
+color = Color(1, 0.521569, 0, 1)
+alpha_curve = SubResource("CurveTexture_f8h0j")
+
+[node name="TokenBurst" type="GPUParticles2D"]
+modulate = Color(2, 2, 2, 1)
+emitting = false
+amount = 10
+texture = ExtResource("1")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tg5a7")
+script = ExtResource("2")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

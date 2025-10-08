@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=4 uid="uid://cn5qu2wptc5cw"]
+
+[ext_resource type="Script" uid="uid://dcq4uwmm8ts6h" path="res://scenes/research_button.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://g7tan0u6thu5" path="res://textures/icons/wifi.png" id="2"]
+
+[node name="ResearchButton" type="Button"]
+offset_right = 80.0
+offset_bottom = 80.0
+focus_mode = 0
+theme_type_variation = &"ModifierButton"
+toggle_mode = true
+script = ExtResource("1")
+
+[node name="Icon" type="TextureRect" parent="."]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=4 uid="uid://bvjoa7h0afxc"]
+
+[ext_resource type="FontFile" uid="uid://u70unhihfaex" path="res://themes/fonts/fontello.ttf" id="1"]
+
+[resource]
+base_font = ExtResource("1")
+variation_transform = Transform2D(0.9, 0, 0, 0.9, 0, 0)

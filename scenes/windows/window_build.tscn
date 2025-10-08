@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=4 uid="uid://claeoxlvpxdgb"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cv24jmk36wh74" path="res://scenes/windows/window_build.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b4d847ovgt2uf" path="res://textures/icons/hammer.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 187.0
+script = ExtResource("2")
+window = "build"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Build"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Upgrade" type="Control" parent="PanelContainer/MainContainer" index="0"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ResourceButton" type="Button" parent="PanelContainer/MainContainer/Upgrade" index="0"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 2
+theme_type_variation = &"ItemButton"
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MainContainer/Upgrade/ResourceButton" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Info" type="VBoxContainer" parent="PanelContainer/MainContainer/Upgrade" index="1"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 313.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/MainContainer/Upgrade/Info" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "invalid_project"
+
+[node name="Version" type="Label" parent="PanelContainer/MainContainer/Upgrade/Info" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 20
+text = "invalid_project_desc"
+
+[node name="Code" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_code"
+override_connector = "triangle_down"
+override_color = "orange"
+
+[node name="Progress" type="VBoxContainer" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Progress" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "progress"
+
+[node name="Amount" type="Label" parent="PanelContainer/MainContainer/Progress/ProgressContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "1/10"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Progress" index="1"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"UploadBar"
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Points" type="Control" parent="PanelContainer/MainContainer" index="3"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ResourceButton" type="Button" parent="PanelContainer/MainContainer/Points" index="0"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 2
+theme_type_variation = &"ItemButton"
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MainContainer/Points/ResourceButton" index="0"]
+self_modulate = Color(0.567, 0.69465, 0.9, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Info" type="VBoxContainer" parent="PanelContainer/MainContainer/Points" index="1"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 313.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/MainContainer/Points/Info" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "hardware_multiplier"
+
+[node name="Count" type="Label" parent="PanelContainer/MainContainer/Points/Info" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.776471, 0.811765, 1)
+theme_override_font_sizes/font_size = 20
+text = "1.0x"
+
+[connection signal="resource_set" from="PanelContainer/MainContainer/Code" to="." method="_on_code_resource_set"]

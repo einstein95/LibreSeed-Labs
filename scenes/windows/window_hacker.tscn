@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=4 uid="uid://bbjggpi6f2tua"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://d1geso7oc0mdx" path="res://scenes/windows/window_hacker.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://j7ija2tj0xsn" path="res://textures/icons/hacker.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 129.0
+script = ExtResource("2")
+window = "hacker"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Hacking"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="HackPower" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "hack_power"
+limit = -1.0
+
+[node name="Trojan" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "trojan"
+
+[node name="Boost" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "boost_hack"
+limit = -1.0
+
+[node name="Experience" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "hack_experience"
+force_resource = true
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer" index="4"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ProgressBarGreen"
+max_value = 1.0
+step = 0.001
+show_percentage = false

@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=4 uid="uid://q2taa6w3fwk1"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://8jy4k2178kev" path="res://scenes/windows/window_portal.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cjav8bxl60b23" path="res://textures/icons/portal.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://bkwfereat3li2" path="res://scenes/resource_container.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://dj431pl2m3ptb" path="res://textures/circle_05.png" id="5"]
+
+[sub_resource type="Curve" id="Curve_7okp4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7mvrd"]
+curve = SubResource("Curve_7okp4")
+
+[sub_resource type="Curve" id="Curve_7vuda"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.720588, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fs853"]
+curve = SubResource("Curve_7vuda")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mtu1t"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 65.0
+emission_ring_inner_radius = 65.0
+emission_ring_cone_angle = 90.0
+orbit_velocity_min = 0.18
+orbit_velocity_max = 0.2
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = 7.0
+tangential_accel_max = 10.0
+damping_min = 1.539
+damping_max = 1.539
+scale_min = 0.02
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_fs853")
+color = Color(0.804298, 0.593675, 1, 1)
+alpha_curve = SubResource("CurveTexture_7mvrd")
+hue_variation_min = 0.9
+hue_variation_max = 1.0
+
+[node name="Portal" instance=ExtResource("1")]
+offset_bottom = 113.0
+script = ExtResource("2")
+options = ["help", "multi_selection"]
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "window_portal"
+
+[node name="PanelContainer" parent="." index="1"]
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Research" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "research"
+
+[node name="Control" type="Control" parent="PanelContainer/MainContainer" index="1"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MainContainer/Control" index="0"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(165, 100)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="PanelContainer/MainContainer/Control" index="1"]
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(165, 100)
+amount = 80
+texture = ExtResource("5")
+lifetime = 5.0
+preprocess = 30.0
+fixed_fps = 60
+interpolate = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_mtu1t")
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "queue"
+horizontal_alignment = 1
+
+[node name="ResearchContainer" type="HFlowContainer" parent="PanelContainer/MainContainer" index="3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="." index="2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Open" type="Button" parent="Buttons" index="0"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom1"
+text = "action_open"
+clip_text = true
+
+[node name="ColorRect" type="ColorRect" parent="Buttons" index="1"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.101961, 0.12549, 0.172549, 1)
+
+[node name="Enter" type="Button" parent="Buttons" index="2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom3"
+disabled = true
+text = "action_enter"
+clip_text = true
+
+[connection signal="pressed" from="Buttons/Open" to="." method="_on_open_pressed"]
+[connection signal="pressed" from="Buttons/Enter" to="." method="_on_enter_pressed"]

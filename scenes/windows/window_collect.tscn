@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=4 uid="uid://c1xe24613wq1p"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://byokifn71qfh0" path="res://scenes/windows/window_collect.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cwuffif1plntt" path="res://textures/icons/store.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="Script" uid="uid://dfcqieer47kgq" path="res://scripts/desktop_button.gd" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 134.0
+script = ExtResource("2")
+window = "collect"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Collect"
+
+[node name="PanelContainer" parent="." index="1"]
+theme_type_variation = &"WindowPanelContainerFlatBottom"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Input" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_currency"
+override_connector = "triangle"
+override_color = "white"
+
+[node name="Input2" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_currency"
+override_connector = "triangle"
+override_color = "white"
+
+[node name="Input3" parent="PanelContainer/MainContainer" index="2" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_currency"
+override_connector = "triangle"
+override_color = "white"
+
+[node name="Input4" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_currency"
+override_connector = "triangle"
+override_color = "white"
+
+[node name="Input5" parent="PanelContainer/MainContainer" index="4" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "input_currency"
+override_connector = "triangle"
+override_color = "white"
+
+[node name="CollectButton" type="Button" parent="." index="2"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"WindowButtonBottom2"
+button_mask = 0
+text = "action_collect"
+script = ExtResource("5")
+
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input2" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input3" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input4" to="." method="_on_connection_set"]
+[connection signal="connection_in_set" from="PanelContainer/MainContainer/Input5" to="." method="_on_connection_set"]
+[connection signal="pressed" from="CollectButton" to="." method="_on_collect_button_pressed"]

@@ -1,0 +1,209 @@
+{
+	"first_upload":{
+		"name": "achievement_first_upload",
+		"icon": "save",
+		"description": "achievement_first_upload_desc",
+		"script": "achievement_stat",
+		"stat": "uploads",
+		"requirement": 1,
+		"requirement_e": 0,
+		"reward": 25
+	},
+	"variety_downloader":{
+		"name": "achievement_variety_downloader",
+		"icon": "load",
+		"description": "achievement_variety_downloader_desc",
+		"script": "achievement_active_windows",
+		"requirement": ["download_text", "download_image", "download_sound", "download_video",
+		"download_program", "download_game"],
+		"reward": 25
+	},
+	"infected":{
+		"name": "achievement_infected",
+		"icon": "virus",
+		"description": "achievement_infected_desc",
+		"script": "achievement_infected",
+		"reward": 25
+	},
+	"quarantined":{
+		"name": "achievement_quarantined",
+		"icon": "biohazard",
+		"description": "achievement_quarantined_desc",
+		"script": "achievement_quarantined",
+		"reward": 25
+	},
+	"redownloaded":{
+		"name": "achievement_redownloaded",
+		"icon": "return",
+		"description": "achievement_redownloaded_desc",
+		"script": "achievement_redownloaded",
+		"reward": 25
+	},
+	"wasted_effort":{
+		"name": "achievement_wasted_effort",
+		"icon": "trash_bin",
+		"description": "achievement_wasted_effort_desc",
+		"script": "achievement_wasted_effort",
+		"reward": 25
+	},
+	"reborn":{
+		"name": "achievement_reborn",
+		"icon": "portal",
+		"description": "achievement_reborn_desc",
+		"script": "achievement_stat",
+		"stat": "reborns",
+		"requirement": 1,
+		"requirement_e": 0,
+		"reward": 50
+	},
+	"hacking":{
+		"name": "achievement_hacking",
+		"icon": "hacker",
+		"description": "achievement_hacking_desc",
+		"script": "achievement_research",
+		"requirement": "hacking",
+		"reward": 50
+	},
+	"serial_breacher":{
+		"name": "achievement_serial_breacher",
+		"icon": "breach",
+		"description": "achievement_serial_breacher_desc",
+		"script": "achievement_serial_breacher",
+		"reward": 25
+	},
+	"grand_heist":{
+		"name": "achievement_grand_heist",
+		"icon": "institution",
+		"description": "achievement_grand_heist_desc",
+		"script": "achievement_stat",
+		"stat": "bank_breached",
+		"requirement": 1,
+		"requirement_e": 1,
+		"reward": 50
+	},
+	"trojan":{
+		"name": "achievement_trojan",
+		"icon": "trojan",
+		"description": "achievement_trojan_desc",
+		"script": "achievement_trojan",
+		"reward": 25
+	},
+	"coding":{
+		"name": "achievement_coding",
+		"icon": "code",
+		"description": "achievement_coding_desc",
+		"script": "achievement_research",
+		"requirement": "coding",
+		"reward": 50
+	},
+	"its_a_feature":{
+		"name": "achievement_its_a_feature",
+		"icon": "bug",
+		"description": "achievement_its_a_feature_desc",
+		"script": "achievement_its_a_feature",
+		"reward": 25
+	},
+	"fully_optimized":{
+		"name": "achievement_fully_optimized",
+		"icon": "work",
+		"description": "achievement_fully_optimized_desc",
+		"script": "achievement_upgrade",
+		"requirement": ["optimization_download_size", "optimization_upload_size",
+		"optimization_hashing", "optimization_virus_scanner", "optimization_quarantine",
+		"optimization_verifier", "optimization_compression", "optimization_enhancement",
+		"optimization_refinement", "optimization_analysis", "optimization_distillation",
+		"optimization_hashing", "optimization_decompiler", "optimization_decomposer",
+		"optimization_demuxer", "optimization_scrapper", "optimization_ripper",
+		"optimization_movie_maker", "optimization_compiler", "optimization_game_engine",
+		"optimization_trainer", "optimization_movie_renderer"],
+		"reward": 50
+	},
+	"aspirant_dev":{
+		"name": "achievement_aspirant_dev",
+		"icon": "bracket",
+		"description": "achievement_aspirant_dev_desc",
+		"script": "achievement_upgrade",
+		"requirement": ["application_decompiler", 
+		"application_decomposer", "application_demuxer", "application_scrapper", "application_ripper", 
+		"application_movie_maker", "application_compiler", "application_game_engine", 
+		"application_movie_renderer", "application_encompressor"],
+		"reward": 50
+	},
+	"agi":{
+		"name": "achievement_agi",
+		"icon": "brain",
+		"description": "achievement_agi_desc",
+		"script": "achievement_research",
+		"requirement": "agi",
+		"reward": 50
+	},
+	"text_completionist":{
+		"name": "achievement_text_completionist",
+		"icon": "document",
+		"description": "achievement_text_completionist_desc",
+		"requirement": ["text", "text_scanned", "text_verified", "text_corrupted",
+		"text_compressed", "text_improved", "text_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"image_completionist":{
+		"name": "achievement_image_completionist",
+		"icon": "image",
+		"description": "achievement_image_completionist_desc",
+		"requirement": ["image", "image_scanned", "image_verified", "image_corrupted",
+		"image_compressed", "image_improved", "image_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"sound_completionist":{
+		"name": "achievement_sound_completionist",
+		"icon": "sound",
+		"description": "achievement_sound_completionist_desc",
+		"requirement": ["sound", "sound_scanned", "sound_verified", "sound_corrupted",
+		"sound_compressed", "sound_improved", "sound_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"video_completionist":{
+		"name": "achievement_video_completionist",
+		"icon": "video",
+		"description": "achievement_video_completionist_desc",
+		"requirement": ["video", "video_scanned", "video_verified", "video_corrupted",
+		"video_compressed", "video_improved", "video_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"program_completionist":{
+		"name": "achievement_program_completionist",
+		"icon": "executable",
+		"description": "achievement_program_completionist_desc",
+		"requirement": ["program", "program_scanned", "program_verified", "program_corrupted",
+		"program_compressed", "program_improved", "program_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"game_completionist":{
+		"name": "achievement_game_completionist",
+		"icon": "controller",
+		"description": "achievement_game_completionist_desc",
+		"requirement": ["game", "game_scanned", "game_verified", "game_corrupted",
+		"game_compressed", "game_improved", "game_ai"],
+		"script": "achievement_requests_and",
+		"reward": 100
+	},
+	"completionist":{
+		"name": "achievement_completionist",
+		"icon": "trophy",
+		"description": "achievement_completionist_desc",
+		"script": "achievement_requests",
+		"reward": 250
+	},
+	"out_of_memory":{
+		"name": "achievement_out_of_memory",
+		"icon": "x",
+		"description": "achievement_out_of_memory_desc",
+		"script": "achievement_max_windows",
+		"requirement": 100,
+		"reward": 25
+	}
+}

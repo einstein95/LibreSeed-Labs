@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=4 uid="uid://cl8ax8isayt8v"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://wxu0ucuqtdqs" path="res://scenes/windows/window_enrichment_chamber.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cn6y8drxs7nn" path="res://textures/icons/enrichment_chamber.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4efojcll7i7" path="res://scenes/output_container.tscn" id="5"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 134.0
+script = ExtResource("2")
+window = "enrichment_chamber"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Enrichment Chamber"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Power" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "power"
+limit = 200.0
+required = 200.0
+
+[node name="Coal" parent="PanelContainer/MainContainer" index="1" instance=ExtResource("4")]
+layout_mode = 2
+default_resource = "coal"
+required = 50.0
+force_resource = true
+
+[node name="Production" type="VBoxContainer" parent="PanelContainer/MainContainer" index="2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProductionContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/Production" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/Production/ProductionContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "production:"
+
+[node name="ProductionLabel" type="Label" parent="PanelContainer/MainContainer/Production/ProductionContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "0.1/s"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MainContainer/Production" index="1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"DownloadBar"
+max_value = 1.0
+step = 0.001
+value = 0.42
+show_percentage = false
+
+[node name="EnrichedCoal" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("5")]
+layout_mode = 2
+default_resource = "coal_enriched"

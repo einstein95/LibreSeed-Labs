@@ -1,0 +1,32 @@
+{
+	"text":{
+		"requirement": 1,
+		"requirement_e": 18,
+		"upgrade": "storage_text"
+	},
+	"image":{
+		"requirement": 1,
+		"requirement_e": 16,
+		"upgrade": "storage_image"
+	},
+	"sound":{
+		"requirement": 1,
+		"requirement_e": 14,
+		"upgrade": "storage_sound"
+	},
+	"video":{
+		"requirement": 1,
+		"requirement_e": 12,
+		"upgrade": "storage_video"
+	},
+	"program":{
+		"requirement": 1,
+		"requirement_e": 10,
+		"upgrade": "storage_program"
+	},
+	"game":{
+		"requirement": 1,
+		"requirement_e": 8,
+		"upgrade": "storage_game"
+	}
+}

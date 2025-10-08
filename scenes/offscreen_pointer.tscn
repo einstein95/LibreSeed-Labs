@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=4 uid="uid://8qeol7ipk1e8"]
+
+[ext_resource type="Texture2D" uid="uid://ulsfqgfd4vcw" path="res://textures/icons/chevron_up.png" id="1"]
+[ext_resource type="Script" uid="uid://bsn6lrqxmy0en" path="res://scripts/offscreen_pointer.gd" id="2"]
+
+[node name="Sprite2D" type="Sprite2D"]
+self_modulate = Color(1, 0.521569, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1")
+script = ExtResource("2")

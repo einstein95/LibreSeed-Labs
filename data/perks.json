@@ -1,0 +1,311 @@
+{
+	"auto_collect":{
+		"name": "perk_auto_collect",
+		"icon": "store",
+		"description": "perk_auto_collect_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 4,
+		"cost_e": 1,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"groups":{
+		"name": "perk_groups",
+		"icon": "window",
+		"description": "perk_groups_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 5,
+		"cost_e": 1,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"download_manager":{
+		"name": "perk_download_manager",
+		"icon": "load",
+		"description": "perk_download_manager_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 2,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"network_limiter":{
+		"name": "perk_network_limiter",
+		"icon": "stop",
+		"description": "perk_network_limiter_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 2,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"thread_manager":{
+		"name": "perk_thread_manager",
+		"icon": "hierarchy",
+		"description": "perk_thread_manager_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 3,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"antivirus_pro":{
+		"name": "perk_antivirus_pro",
+		"icon": "shield2",
+		"description": "perk_antivirus_pro_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 3,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 7,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"ide":{
+		"name": "perk_ide",
+		"icon": "code",
+		"description": "perk_ide_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.coding"],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"mine_tether":{
+		"name": "perk_mine_tether",
+		"icon": "tether",
+		"description": "perk_mine_tether_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 1.5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 6,
+		"requirement": [],
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"automated_crypto_seller":{
+		"name": "perk_automated_crypto_seller",
+		"icon": "sell_auto",
+		"description": "perk_automated_crypto_seller_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 3,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 6,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{}
+	},
+	"cheapskate":{
+		"name": "perk_cheapskate",
+		"icon": "money",
+		"description": "perk_cheapskate_desc",
+		"type": 4,
+		"limit": 2,
+		"currency": "token",
+		"cost": 1.2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"price_multiplier": [-0.05, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"token_multiplier":{
+		"name": "perk_token_multiplier",
+		"icon": "token",
+		"description": "perk_token_multiplier_desc",
+		"type": 4,
+		"limit": 5,
+		"currency": "token",
+		"cost": 1.5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"token_multiplier": [0.2, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"max_rest_time":{
+		"name": "perk_max_rest_time",
+		"icon": "hourglass",
+		"description": "perk_max_rest_time_desc",
+		"type": 4,
+		"limit": 5,
+		"currency": "token",
+		"cost": 1.2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"max_rest_time": [30, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"rest_time_multiplier":{
+		"name": "perk_rest_time_multiplier",
+		"icon": "hourglass",
+		"description": "perk_rest_time_multiplier_desc",
+		"type": 4,
+		"limit": 5,
+		"currency": "token",
+		"cost": 1.2,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"rest_time_multiplier": [0.1, 0, 0]
+		},
+		"window_attributes":{}
+	},
+	"plus_network":{
+		"name": "perk_plus_network",
+		"icon": "wifi",
+		"description": "perk_plus_network_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 3,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{
+			"network":{
+				"limit": [1, 0, 0]
+			}
+		}
+	},
+	"plus_laboratory":{
+		"name": "perk_plus_laboratory",
+		"icon": "research",
+		"description": "perk_plus_laboratory_desc",
+		"type": 4,
+		"limit": 1,
+		"currency": "token",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 9,
+		"requirement": [],
+		
+		"attributes":{},
+		"window_attributes":{
+			"data_lab":{
+				"limit": [1, 0, 0]
+			}
+		}
+	},
+	"system_upgrade":{
+		"name": "perk_system_upgrade",
+		"icon": "up_arrow",
+		"description": "perk_system_upgrade_desc",
+		"type": 4,
+		"limit": 4,
+		"currency": "token",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": [],
+		
+		"attributes":{
+			"bandwidth_multiplier": [0, 0, 1.2],
+			"clock_multiplier": [0, 0, 1.2],
+			"gpu_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"hack_specialization":{
+		"name": "perk_hack_specialization",
+		"icon": "hacker",
+		"description": "perk_hack_specialization_desc",
+		"type": 4,
+		"limit": 4,
+		"currency": "token",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.hacking"],
+		
+		"attributes":{
+			"hack_power_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	},
+	"code_specialization":{
+		"name": "perk_code_specialization",
+		"icon": "code",
+		"description": "perk_code_specialization_desc",
+		"type": 4,
+		"limit": 4,
+		"currency": "token",
+		"cost": 5,
+		"cost_e": 2,
+		"cost_inc": 1,
+		"level": 0,
+		"requirement": ["research.coding"],
+		
+		"attributes":{
+			"code_speed_multiplier": [0, 0, 1.2]
+		},
+		"window_attributes":{}
+	}
+}

@@ -1,0 +1,13 @@
+[gd_resource type="FontVariation" load_steps=5 format=4 uid="uid://o1lo3q4dynmn"]
+
+[ext_resource type="FontFile" uid="uid://ndx7iw5sojnv" path="res://themes/fonts/JetBrainsMono-Thin.ttf" id="1"]
+[ext_resource type="FontFile" uid="uid://c3n2lrs5eo5fu" path="res://themes/fonts/NotoSansJP-Light.ttf" id="2"]
+[ext_resource type="FontFile" uid="uid://c2et1f3ut47rf" path="res://themes/fonts/SarasaMonoCL-Light.ttf" id="3"]
+[ext_resource type="FontVariation" uid="uid://bvjoa7h0afxc" path="res://themes/fonts/new_font_variation.tres" id="4"]
+
+[resource]
+fallbacks = [ExtResource("2"), ExtResource("3"), ExtResource("4")]
+base_font = ExtResource("1")
+spacing_glyph = -2
+spacing_space = -5
+baseline_offset = 0.05

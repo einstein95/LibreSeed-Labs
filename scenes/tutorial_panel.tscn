@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=4 uid="uid://dr4g1xjc0kw1v"]
+
+[ext_resource type="Script" uid="uid://by2r6icu6ft03" path="res://scenes/tutorial_panel.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ulsfqgfd4vcw" path="res://textures/icons/chevron_up.png" id="2"]
+
+[node name="TutorialPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 250)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -112.5
+offset_right = 286.0
+offset_bottom = 112.5
+grow_horizontal = 2
+theme_type_variation = &"ShadowPanelContainer"
+script = ExtResource("1")
+
+[node name="TutorialContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="TitlePanel" type="Panel" parent="TutorialContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"OverlayPanelTitle"
+
+[node name="Title" type="Label" parent="TutorialContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "menu_tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionContainer" type="PanelContainer" parent="TutorialContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_type_variation = &"OverlayPanel"
+
+[node name="Description" type="Label" parent="TutorialContainer/DescriptionContainer"]
+custom_minimum_size = Vector2(0, 143)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_spacing = 0
+text = "Get money"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+visible_characters_behavior = 1
+
+[node name="TextureRect" type="TextureRect" parent="TutorialContainer/DescriptionContainer"]
+modulate = Color(1, 0.521569, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("2")
+expand_mode = 1
+flip_v = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

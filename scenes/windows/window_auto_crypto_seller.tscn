@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=4 uid="uid://iq58pheag8uw"]
+
+[ext_resource type="PackedScene" uid="uid://b46qouyu3lx2m" path="res://scenes/windows/window_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://d3t7vh7qqqb7t" path="res://scenes/windows/window_auto_crypto_seller.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bab57sd8rsw0l" path="res://textures/icons/sell_auto.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://co5icrrrwscgg" path="res://scenes/input_container.tscn" id="4"]
+[ext_resource type="Script" uid="uid://dlyft4adk2jfe" path="res://scripts/trend_graph.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://dwbpr0py5mv2a" path="res://textures/icons/trending.png" id="6"]
+[ext_resource type="Script" uid="uid://brteo5ih45380" path="res://scripts/themed_icon.gd" id="7"]
+[ext_resource type="PackedScene" uid="uid://bkwfereat3li2" path="res://scenes/resource_container.tscn" id="8"]
+[ext_resource type="AudioStream" uid="uid://dsnvkw6uf6ul" path="res://audio/sfx/cash_register.wav" id="9"]
+
+[node name="WindowBase" instance=ExtResource("1")]
+offset_bottom = 134.0
+script = ExtResource("2")
+window = "auto_crypto_seller"
+
+[node name="Icon" parent="TitlePanel/TitleContainer" index="0"]
+texture = ExtResource("3")
+
+[node name="Title" parent="TitlePanel/TitleContainer" index="1"]
+text = "Crypto Seller"
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Coin" parent="PanelContainer/MainContainer" index="0" instance=ExtResource("4")]
+layout_mode = 2
+placeholder_name = "insert_coin"
+override_connector = "triangle_down"
+override_color = "red"
+
+[node name="Graph" type="Control" parent="PanelContainer/MainContainer" index="1"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5")
+max_points = 30
+line_color = Color(0.568627, 0.694118, 0.901961, 1)
+background_color = Color(0.0862745, 0.101961, 0.137255, 1)
+grid_color = Color(0.101961, 0.12549, 0.172549, 1)
+line_width = 1.0
+min_range = 0.0
+max_range = 1.0
+
+[node name="Value" type="Control" parent="PanelContainer/MainContainer" index="2"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ResourceButton" type="Button" parent="PanelContainer/MainContainer/Value" index="0"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 2
+theme_type_variation = &"ItemButton"
+toggle_mode = true
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MainContainer/Value/ResourceButton" index="0"]
+self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+texture = ExtResource("6")
+expand_mode = 1
+script = ExtResource("7")
+
+[node name="Info" type="VBoxContainer" parent="PanelContainer/MainContainer/Value" index="1"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 313.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/MainContainer/Value/Info" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "value"
+
+[node name="Count" type="Label" parent="PanelContainer/MainContainer/Value/Info" index="1"]
+layout_mode = 2
+theme_type_variation = &"SubLabel"
+theme_override_font_sizes/font_size = 20
+text = "0%"
+
+[node name="Money" parent="PanelContainer/MainContainer" index="3" instance=ExtResource("8")]
+layout_mode = 2
+default_resource = "money"
+
+[node name="RatioContainer" type="VBoxContainer" parent="PanelContainer/MainContainer" index="4"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RatioLabelContainer" type="HBoxContainer" parent="PanelContainer/MainContainer/RatioContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MainContainer/RatioContainer/RatioLabelContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "sell at"
+
+[node name="RatioLabel" type="Label" parent="PanelContainer/MainContainer/RatioContainer/RatioLabelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "100%"
+horizontal_alignment = 2
+
+[node name="RatioSlider" type="HSlider" parent="PanelContainer/MainContainer/RatioContainer" index="1"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+scrollable = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("9")
+max_distance = 1200.0
+max_polyphony = 5
+bus = &"Window SFX"
+
+[connection signal="drag_ended" from="PanelContainer/MainContainer/RatioContainer/RatioSlider" to="." method="_on_ratio_slider_drag_ended"]

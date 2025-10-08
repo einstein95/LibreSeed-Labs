@@ -1,0 +1,15 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c3n2lrs5eo5fu"
+path="res://.godot/imported/NotoSansJP-Light.ttf-b29ab6e530affcee02c7de7d8582db4e.fontdata"
+
+[deps]
+
+source_file="res://themes/fonts/NotoSansJP-Light.ttf"
+dest_files=["res://.godot/imported/NotoSansJP-Light.ttf-b29ab6e530affcee02c7de7d8582db4e.fontdata"]
+
+[params]
+
+dummy_value_ignore_me=0

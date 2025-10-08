@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=4 uid="uid://l56j83uyphym"]
+
+[ext_resource type="Script" uid="uid://d1dcc8u8nbv7f" path="res://scenes/connector_selection.gd" id="1"]
+
+[node name="ConnectorSelection" type="PanelContainer"]
+offset_right = 22.0
+offset_bottom = 22.0
+pivot_offset = Vector2(11, 11)
+mouse_filter = 2
+theme_type_variation = &"SelectionPanelContainer"
+script = ExtResource("1")
