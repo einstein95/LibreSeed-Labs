@@ -1,6 +1,6 @@
 # LibreSeed Labs
 
-![LibreSeed Labs Banner](https://raw.githubusercontent.com/Official-Husko/LibreSeed-Labs/refs/heads/main/textures/app_icon_432.png)
+![LibreSeed Labs Banner](https://raw.githubusercontent.com/Official-Husko/LibreSeed-Labs/refs/heads/main/textures/app_icons/app_icon_432.png)
 
 ---
 
