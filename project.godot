@@ -29,7 +29,6 @@ Resources="*res://scripts/resources.gd"
 Signals="*res://scripts/signals.gd"
 Utils="*res://scripts/utils.gd"
 GlobalSteam="*res://scripts/steam.gd"
-Premiums="*res://scripts/premiums.gd"
 Globals="*res://scripts/globals.gd"
 Attributes="*res://scripts/attributes.gd"
 Sound="*res://scripts/sound.gd"
@@ -50,7 +49,7 @@ mouse_cursor/custom_image="uid://bwj1chmw3dsf0"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/admob/plugin.cfg", "res://addons/android_IAPP/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
@@ -156,8 +155,6 @@ locale/translations=PackedStringArray("res://locale/locale.en.translation", "res
 
 textures/canvas_textures/default_texture_filter=2
 rendering_device/fallback_to_d3d12=false
-renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/enabled=false
 environment/defaults/default_clear_color=Color(0.133333, 0.168627, 0.235294, 1)

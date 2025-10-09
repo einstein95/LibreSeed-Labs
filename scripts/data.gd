@@ -3,7 +3,7 @@ extends Node
 const to_load: Array[String] = ["attributes", "connectors", "resources", "symbols", 
 "currencies", "files", "windows", "upgrades", "storage", "guides", "research", 
 "milestones", "perks", "boosts", "services", "stats", "achievements", "requests", 
-"premiums", "themes"]
+"themes"]
 
 var attributes: Dictionary
 var connectors: Dictionary
@@ -23,7 +23,6 @@ var guides: Dictionary
 var stats: Dictionary
 var achievements: Dictionary
 var requests: Dictionary
-var premiums: Dictionary
 var themes: Dictionary
 var schematics: Dictionary
 

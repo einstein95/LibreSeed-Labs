@@ -6,12 +6,9 @@ var last_recorded_time: int
 func _ready() -> void :
     Signals.setting_set.connect(_on_setting_set)
     Signals.reboot.connect(_on_reboot)
-    Signals.date_changed.connect(_on_date_changed)
     Signals.new_hack_level.connect(_on_new_hack_level)
     Signals.new_code_level.connect(_on_new_code_level)
     Signals.add_timed_effect.connect(_on_add_timed_effect)
-    Premiums.updated.connect(_on_premiums_updated)
-
     get_tree().auto_accept_quit = false
     get_tree().create_timer(60).timeout.connect( func() -> void : $AudioStreamPlayer.play())
 
@@ -31,13 +28,6 @@ func _ready() -> void :
         var request: Node = load("res://scripts/achievements/request.gd").new()
         request.name = i
         $Requests.add_child(request)
-
-    for i: String in Premiums.premiums:
-        if Premiums.premiums[i]:
-            if !Globals.premiums_claimed[i]:
-                Globals.claim_premium(i)
-            if !Globals.daily_premiums_claimed[i]:
-                Globals.claim_daily_premium(i)
 
     if Time.get_unix_time_from_system() - Globals.last_recorded_time > 4:
         Globals.add_offline_time((Time.get_unix_time_from_system() - Globals.last_recorded_time) * Attributes.get_attribute("rest_time_multiplier") / 72)
@@ -121,23 +111,6 @@ func _on_reboot() -> void :
     get_tree().create_timer(1).timeout.connect(
         func() -> void : get_tree().change_scene_to_file("res://reboot.tscn")
         )
-
-
-func _on_premiums_updated() -> void :
-    for i: String in Premiums.premiums:
-        if Premiums.premiums[i]:
-            if !Globals.premiums_claimed[i]:
-                Globals.claim_premium(i)
-            if !Globals.daily_premiums_claimed[i]:
-                Globals.claim_daily_premium(i)
-
-
-func _on_date_changed() -> void :
-    for i: String in Premiums.premiums:
-        if Premiums.premiums[i]:
-            if !Globals.daily_premiums_claimed[i]:
-                Globals.claim_daily_premium(i)
-
 
 func _on_new_hack_level() -> void :
     Signals.notify.emit("hacker", "new_hack_level")

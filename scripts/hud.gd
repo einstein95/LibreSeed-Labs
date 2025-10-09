@@ -51,8 +51,6 @@ func _ready() -> void :
     Signals.tokens_claimed.connect(_on_tokens_claimed)
     Signals.spawn_ui_particle.connect(_on_spawn_ui_particle)
     Signals.spawn_placer.connect(_on_spawn_placer)
-    Premiums.updated.connect(_on_premium_updated)
-
     update_unlockables()
 
     $ColorRect.visible = true
@@ -79,7 +77,6 @@ func _ready() -> void :
     update_size()
     update_offline_multiplier()
     update_claimables()
-    update_premium()
     update_tutorial()
 
 
@@ -228,24 +225,6 @@ func update_offline_multiplier() -> void :
 func update_claimables() -> void :
     var is_new: bool = Globals.achievements.values().count(1) > 0 or Globals.requests.values().count(1) > 0
     $Main / MainContainer / Overlay / ExtrasButtons / Container / Achievements / New.visible = is_new
-
-
-func update_premium() -> void :
-    var icon: String
-    if Premiums.level >= 5:
-        icon = "res://textures/icons/badge06.png"
-    elif Premiums.level >= 4:
-        icon = "res://textures/icons/badge05.png"
-    elif Premiums.level >= 3:
-        icon = "res://textures/icons/badge04.png"
-    elif Premiums.level >= 2:
-        icon = "res://textures/icons/badge03.png"
-    elif Premiums.level >= 1:
-        icon = "res://textures/icons/badge02.png"
-    elif Premiums.level >= 0:
-        icon = "res://textures/icons/badge01.png"
-    $Main / MainContainer / Overlay / ExtrasButtons / Container / Support.icon = load(icon)
-
 
 func update_tutorial() -> void :
     if Globals.tutorial_step == Utils.tutorial_steps.OPEN_MENU:
@@ -530,7 +509,6 @@ func _on_fixed_notify(icon: String, text: String) -> void :
     $Main / MainContainer / Overlay / Notifications / FixedNotification / AnimationPlayer.play("notify")
     $Main / MainContainer / Overlay / Notifications / FixedNotification / AnimationPlayer.seek(0, true)
 
-
 func _on_new_achievement(achievement: String) -> void :
     var instance: PanelContainer = load("res://scenes/achievement_notification.tscn").instantiate()
     instance.achievement = achievement
@@ -538,10 +516,8 @@ func _on_new_achievement(achievement: String) -> void :
     Sound.play("new_achievement")
     update_claimables()
 
-
 func _on_achievement_claimed(achievement: String) -> void :
     update_claimables()
-
 
 func _on_new_request(request: String) -> void :
     var instance: PanelContainer = load("res://scenes/request_notification.tscn").instantiate()
@@ -550,44 +526,32 @@ func _on_new_request(request: String) -> void :
     Sound.play("new_achievement")
     update_claimables()
 
-
 func _on_request_claimed(request: String) -> void :
     update_claimables()
-
 
 func _on_new_unlock(unlock: String) -> void :
     check_new_windows()
     update_unlockables()
 
-
 func _on_new_perk(perk: String, levels: int) -> void :
     update_offline_multiplier()
 
-
 func _on_offline_multiplier_set() -> void :
     update_offline_multiplier()
-
 
 func _on_create_pointer(visibility_notifier: VisibleOnScreenNotifier2D) -> void :
     var pointer: Sprite2D = load("res://scenes/offscreen_pointer.tscn").instantiate()
     pointer.pointing = visibility_notifier
     $Main / MainContainer / Overlay / Pointers.add_child(pointer)
 
-
 func _on_tokens_claimed() -> void :
     var instance: PanelContainer = load("res://scenes/premium_notification.tscn").instantiate()
     $Main / MainContainer / Overlay / Notifications / Container.add_child(instance)
     Sound.play("new_achievement")
 
-
 func _on_spawn_ui_particle(particle: GPUParticles2D, pos: Vector2) -> void :
     $Main / Particles.add_child(particle)
     particle.global_position = pos
-
-
-func _on_premium_updated() -> void :
-    update_premium()
-
 
 func _on_windows_buttons_category_set() -> void :
     update_buttons()
