@@ -1,0 +1,171 @@
+name: Build & Release (Godot)
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "*" # run on any tag push
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Export ${{ matrix.preset_name }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # ---- Linux ----
+          - preset_name: "Linux x86_64"
+            out_path: "bin/linux/x86_64/LibreSeed Labs.x86_64"
+            zip_name: "LibreSeed-Labs-linux-x86_64"
+          - preset_name: "Linux x68_32"
+            out_path: "bin/linux/x86_32/LibreSeed Labs.x86_32"
+            zip_name: "LibreSeed-Labs-linux-x86_32"
+          - preset_name: "Linux arm64"
+            out_path: "bin/linux/arm64/LibreSeed Labs.arm64"
+            zip_name: "LibreSeed-Labs-linux-arm64"
+          - preset_name: "Linux arm32"
+            out_path: "bin/linux/arm32/LibreSeed Labs.arm32"
+            zip_name: "LibreSeed-Labs-linux-arm32"
+          # ---- Windows ----
+          - preset_name: "Windows Desktop x64"
+            out_path: "bin/windows/x64/LibreSeed Labs.exe"
+            zip_name: "LibreSeed-Labs-windows-x64"
+          - preset_name: "Windows Desktop x32"
+            out_path: "bin/windows/x32/LibreSeed Labs.exe"
+            zip_name: "LibreSeed-Labs-windows-x32"
+          - preset_name: "Windows Desktop arm64"
+            out_path: "bin/windows/arm64/LibreSeed Labs.exe"
+            zip_name: "LibreSeed-Labs-windows-arm64"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Godot 4.5 (with export templates)
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: "4.5"
+          include-templates: true
+          use-dotnet: false
+
+      - name: Determine version & update project.godot
+        id: ver
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_VERSION=$(grep -Po 'config/version="\K[^"]+' project.godot)
+          SHORT_SHA=$(git rev-parse --short HEAD)
+
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            BUILD_VERSION="${GITHUB_REF_NAME}"
+            PRE_RELEASE="false"
+            TAG_NAME="${GITHUB_REF_NAME}"
+          else
+            BUILD_VERSION="${BASE_VERSION}-${SHORT_SHA}"
+            PRE_RELEASE="true"
+            TAG_NAME="${BUILD_VERSION}"
+          fi
+
+          # Write computed version back into project.godot for this build
+          sed -i -E 's/(config\/version=")[^"]+(")/\1'"${BUILD_VERSION}"'\2/' project.godot
+
+          echo "base=${BASE_VERSION}"       >> "$GITHUB_OUTPUT"
+          echo "build=${BUILD_VERSION}"     >> "$GITHUB_OUTPUT"
+          echo "pre=${PRE_RELEASE}"         >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG_NAME}"            >> "$GITHUB_OUTPUT"
+
+          echo "Resolved base version: ${BASE_VERSION}"
+          echo "Build version: ${BUILD_VERSION}"
+          echo "Will tag as: ${TAG_NAME} (pre=${PRE_RELEASE})"
+
+      - name: Show effective version in project.godot
+        run: grep -n 'config/version=' project.godot || true
+
+      - name: Export ${{ matrix.preset_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$(dirname "${{ matrix.out_path }}")"
+
+          # Export (quotes are important due to spaces in names)
+          godot --headless --path . --export-release "${{ matrix.preset_name }}" "${{ matrix.out_path }}"
+
+          # Package: create versioned folder and zip it
+          OUTDIR="$(dirname "${{ matrix.out_path }}")"
+          cd "${OUTDIR}/.."
+
+          FOLDER="${{ matrix.zip_name }}-${{ steps.ver.outputs.build }}"
+          mkdir -p "${FOLDER}"
+          cp -R "$(basename "${OUTDIR}")"/* "${FOLDER}/" || true
+
+          zip -r "${FOLDER}.zip" "${FOLDER}"
+
+          echo "zip_path=$(pwd)/${FOLDER}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifact (per-target)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.zip_name }}-${{ steps.ver.outputs.build }}
+          path: |
+            bin/**/${{ matrix.zip_name }}-${{ steps.ver.outputs.build }}.zip
+          if-no-files-found: error
+
+  release:
+    name: Create Release & Upload Assets
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (for version derivation on non-tag builds)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version (release job)
+        id: ver
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Try to read the (possibly updated) base version; fall back if absent
+          BASE_VERSION=$(grep -Po 'config/version="\K[^"]+' project.godot 2>/dev/null || echo "0.0.0")
+          SHORT_SHA=$(git rev-parse --short HEAD)
+
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            BUILD_VERSION="${GITHUB_REF_NAME}"
+            PRE_RELEASE="false"
+            TAG_NAME="${GITHUB_REF_NAME}"
+          else
+            BUILD_VERSION="${BASE_VERSION}-${SHORT_SHA}"
+            PRE_RELEASE="true"
+            TAG_NAME="${BUILD_VERSION}"
+          fi
+
+          echo "build=${BUILD_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "pre=${PRE_RELEASE}"     >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG_NAME}"        >> "$GITHUB_OUTPUT"
+
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./dist
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.ver.outputs.tag }}
+          name: LibreSeed Labs ${{ steps.ver.outputs.build }}
+          prerelease: ${{ steps.ver.outputs.pre }}
+          generateReleaseNotes: true
+          artifacts: dist/**/*
