@@ -55,7 +55,7 @@ jobs:
       - name: Set up Godot 4.5 (with export templates)
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: "4.5"
+          version: "4.5.0"
           include-templates: true
           use-dotnet: false
 
