@@ -26,7 +26,7 @@ func _ready() -> void :
 	tween.tween_property($LogoContainer, "position:y", size.y / 2 - $LogoContainer.size.y / 2, 0.4)
 	$AnimationPlayer.play("FadeIn")
 
-	$LogoContainer / Name.text = tr("labs_os") + " " + ProjectSettings.get_setting("application/config/version")
+	$LogoContainer / Name.text = "LibreLabs OS" + " " + ProjectSettings.get_setting("application/config/version")
 
 
 func check_loaded() -> void :
