@@ -14,8 +14,6 @@ func _ready() -> void :
 		$TabContainer / Preferences / MarginContainer / SettingsContainer / UiScale / HSlider.min_value = 0.8
 		$TabContainer / Preferences / MarginContainer / SettingsContainer / UiScale / HSlider.max_value = 1.3
 		$TabContainer / Preferences / MarginContainer / SettingsContainer / UiScale / HSlider.tick_count = 6
-		$TabContainer / Preferences / MarginContainer / SettingsContainer / Links / GooglePlay.visible = false
-		$TabContainer / Preferences / MarginContainer / SettingsContainer / Links / AppStore.visible = false
 	else:
 		$TabContainer / Preferences / MarginContainer / SettingsContainer / UiScale / HSlider.min_value = 0.5
 		$TabContainer / Preferences / MarginContainer / SettingsContainer / UiScale / HSlider.max_value = 1.0
@@ -35,13 +33,6 @@ func _ready() -> void :
 
 	for i: Button in $TabContainer / Preferences / MarginContainer / SettingsContainer / Language / ScrollContainer / MarginContainer / LanguageContainer.get_children():
 		i.pressed.connect(_on_language_button_pressed.bind(i.get_meta("language")))
-
-	var parsened_text: String = tr("credits_desc")
-	parsened_text = parsened_text.replace("[h]", "[font_size=40][color=ff8500]")
-	parsened_text = parsened_text.replace("[/h]", "[/color][/font_size]")
-	parsened_text = parsened_text.replace("[l]", "[color=ffaf59]")
-	parsened_text = parsened_text.replace("[/l]", "[/color]")
-	$TabContainer / Preferences / MarginContainer / SettingsContainer / Credits / PanelContainer / Label.text = parsened_text
 
 	update_settings_label()
 
@@ -191,39 +182,6 @@ func _on_wipe_pressed() -> void :
 func _on_sync_pressed() -> void :
 	Signals.popup.emit("SaveSync")
 	Sound.play("click")
-
-
-func _on_credits_button_pressed() -> void :
-	$TabContainer / Preferences / MarginContainer / SettingsContainer / Credits / PanelContainer.visible = $TabContainer / Preferences / MarginContainer / SettingsContainer / Credits / CreditsButton.button_pressed
-	Sound.play("click")
-
-
-func _on_credits_container_visibility_changed() -> void :
-	if !$TabContainer / Preferences / MarginContainer / SettingsContainer / Credits / PanelContainer.visible: return
-	await (get_tree().process_frame)
-	await (get_tree().process_frame)
-	$TabContainer / Preferences.set_deferred("scroll_vertical", $TabContainer / Preferences / MarginContainer / SettingsContainer / Credits.position.y)
-
-
-func _on_steam_pressed() -> void :
-	OS.shell_open("https://store.steampowered.com/app/3606890/Upload_Labs/")
-	Sound.play("click")
-
-
-func _on_google_play_pressed() -> void :
-	OS.shell_open("https://play.google.com/store/apps/details?id=com.enigmadev.uploadlabs")
-	Sound.play("click")
-
-
-func _on_app_store_pressed() -> void :
-	OS.shell_open("")
-	Sound.play("click")
-
-
-func _on_discord_pressed() -> void :
-	OS.shell_open("https://discord.com/invite/qPCBgfbMXT")
-	Sound.play("click")
-
 
 func _on_quit_pressed() -> void :
 	get_tree().quit()
