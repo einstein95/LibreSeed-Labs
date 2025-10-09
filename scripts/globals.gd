@@ -160,7 +160,6 @@ func _process(delta: float) -> void :
 func process(delta: float) -> void :
 	add_offline_time(Attributes.get_attribute("online_rest_time_gain") * Attributes.get_attribute("rest_time_multiplier") * delta / 72)
 	if offline_multiplier > 1:
-		offline_time = max(offline_time - delta, 0)
 		if offline_time <= 0:
 			set_offline_multiplier(1)
 

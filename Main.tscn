@@ -79,10 +79,6 @@
 [ext_resource type="Script" uid="uid://digmhrmxsktbr" path="res://scripts/achievements_tab.gd" id="78"]
 [ext_resource type="Texture2D" uid="uid://cwaaiy2h4uisf" path="res://textures/icons/cog.png" id="79"]
 [ext_resource type="Script" uid="uid://bbxfqcvdaq5rf" path="res://scripts/settings_tab.gd" id="80"]
-[ext_resource type="Texture2D" uid="uid://cfx2ybbx62f5a" path="res://textures/ui/steam.png" id="81"]
-[ext_resource type="Texture2D" uid="uid://ccxcirl0rbf30" path="res://textures/ui/google_play.png" id="82"]
-[ext_resource type="Texture2D" uid="uid://cag7s3jma41it" path="res://textures/ui/app_store.png" id="83"]
-[ext_resource type="Texture2D" uid="uid://c0bog12nx1ag7" path="res://textures/ui/discord.png" id="84"]
 [ext_resource type="Texture2D" uid="uid://bs6ay7dcrphy5" path="res://textures/icons/graph.png" id="85"]
 [ext_resource type="PackedScene" uid="uid://dr4g1xjc0kw1v" path="res://scenes/tutorial_panel.tscn" id="86"]
 [ext_resource type="Texture2D" uid="uid://cb3b68p1s5bql" path="res://textures/icons/circle_full.png" id="87"]
@@ -1076,7 +1072,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
-text = " 600s "
+text = " ∞ "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3277,50 +3273,6 @@ step = 0.01
 [node name="Links" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
 layout_mode = 2
 
-[node name="Steam" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"TabButton"
-theme_override_constants/icon_max_width = 48
-icon = ExtResource("81")
-icon_alignment = 1
-expand_icon = true
-
-[node name="GooglePlay" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"TabButton"
-theme_override_constants/icon_max_width = 48
-icon = ExtResource("82")
-icon_alignment = 1
-expand_icon = true
-
-[node name="AppStore" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"TabButton"
-theme_override_constants/icon_max_width = 48
-icon = ExtResource("83")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Discord" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"TabButton"
-theme_override_constants/icon_max_width = 68
-icon = ExtResource("84")
-icon_alignment = 1
-expand_icon = true
-
 [node name="Credits" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer"]
 layout_mode = 2
 mouse_filter = 2
@@ -4612,10 +4564,6 @@ environment = SubResource("Environment_23xmf")
 [connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeWindows/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_volume_windows_slider_drag_ended"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/MuteBGM/CheckButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_mute_bgm_check_button_pressed"]
 [connection signal="drag_ended" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/VolumeBGM/HSlider" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_volume_bgm_slider_drag_ended"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/Steam" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_steam_pressed"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/GooglePlay" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_google_play_pressed"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/AppStore" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_app_store_pressed"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Links/Discord" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_discord_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_credits_button_pressed"]
 [connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/CreditsButton" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings/TabContainer/Preferences/MarginContainer/SettingsContainer/Credits/PanelContainer" to="HUD/Main/MainContainer/Overlay/Menus/Settings/VBoxContainer/Settings/Settings" method="_on_credits_container_visibility_changed"]

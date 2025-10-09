@@ -1,1 +1,4 @@
 res://scenes/boost_panel.gd
+res://scripts/globals.gd
+res://scripts/hud.gd
+res://scripts/settings_tab.gd
