@@ -1,6 +1,1 @@
-res://scripts/attributes.gd
-res://boot.gd
-res://main.gd
-res://scripts/data.gd
-res://scripts/globals.gd
-res://scripts/hud.gd
+res://scenes/boost_panel.gd

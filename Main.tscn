@@ -66,7 +66,6 @@
 [ext_resource type="Texture2D" uid="uid://cjav8bxl60b23" path="res://textures/icons/portal.png" id="64"]
 [ext_resource type="Script" uid="uid://cc81k7sbohcq7" path="res://scripts/portal_tab.gd" id="65"]
 [ext_resource type="Texture2D" uid="uid://pqkxcagcgppm" path="res://textures/icons/heart.png" id="66"]
-[ext_resource type="Script" uid="uid://d4jphi4hi40wc" path="res://scripts/premiums_tab.gd" id="67"]
 [ext_resource type="Texture2D" uid="uid://mvvoqpjptjxg" path="res://textures/icons/badge01.png" id="68"]
 [ext_resource type="Texture2D" uid="uid://bvwvixbed54vw" path="res://textures/icons/badge02.png" id="69"]
 [ext_resource type="Texture2D" uid="uid://d1tji3r0vk8py" path="res://textures/icons/badge03.png" id="70"]
@@ -2506,165 +2505,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"MenuPanel"
 
-[node name="Premiums" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support"]
-layout_mode = 2
-theme_override_constants/separation = 10
-script = ExtResource("67")
-
-[node name="PremiumInfo" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums"]
-layout_mode = 2
-
-[node name="LevelContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/LevelContainer"]
-modulate = Color(0.567, 0.69465, 0.9, 1)
-custom_minimum_size = Vector2(54, 54)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("68")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/LevelContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Support Level 0"
-
-[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
-layout_mode = 2
-theme_override_constants/line_spacing = -4
-text = "support_us"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="ProgressContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="TiersContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer"]
-layout_mode = 2
-
-[node name="Tier0" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("68")
-expand_mode = 1
-
-[node name="ProgressBar0" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 1.0
-show_percentage = false
-
-[node name="Tier1" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("69")
-expand_mode = 1
-
-[node name="ProgressBar1" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 1.0
-show_percentage = false
-
-[node name="Tier2" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("70")
-expand_mode = 1
-
-[node name="ProgressBar2" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 1.0
-show_percentage = false
-
-[node name="Tier3" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("71")
-expand_mode = 1
-
-[node name="ProgressBar3" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 1.0
-show_percentage = false
-
-[node name="Tier4" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("72")
-expand_mode = 1
-
-[node name="ProgressBar4" type="ProgressBar" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 1.0
-show_percentage = false
-
-[node name="Tier5" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/PremiumInfo/ProgressContainer/TiersContainer"]
-self_modulate = Color(0.568627, 0.694118, 0.901961, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("73")
-expand_mode = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums"]
-layout_mode = 2
-size_flags_vertical = 3
-vertical_scroll_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_right = 5
-
-[node name="PremiumsContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums/ScrollContainer/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 5
-
 [node name="ReloadButton" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -4757,7 +4597,6 @@ environment = SubResource("Environment_23xmf")
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens/Panel/ButtonsContainer/Services" to="HUD/Main/MainContainer/Overlay/Menus/Tokens/VBoxContainer/Tokens/Tokens" method="_on_services_pressed"]
 [connection signal="visibility_changed" from="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" to="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" method="_on_visibility_changed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal/Container/Enter" to="HUD/Main/MainContainer/Overlay/Menus/Portal/PortalContainer/Portal" method="_on_enter_pressed"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/ReloadButton" to="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support/Premiums" method="_on_reload_button_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer/Basics" to="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide" method="_on_basics_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide/Panel/ButtonsContainer/Nodes" to="HUD/Main/MainContainer/Overlay/Menus/Guide/VBoxContainer/Guide/Guide" method="_on_nodes_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements/Panel/ButtonsContainer/Achievements" to="HUD/Main/MainContainer/Overlay/Menus/Achievements/VBoxContainer/Achievements/Achievements" method="_on_achievements_pressed"]
