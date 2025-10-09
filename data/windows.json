@@ -10,10 +10,10 @@
 		"requirement": "upgrade.processor",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"minimum_level": 0,
 			"minimum_cores": 1,
-			"maximum_cores": 5,
+			"maximum_cores": 99,
 			"extra_cores": 0,
 			"main_core_multiplier": 1
 		},
@@ -398,7 +398,7 @@
 		"network_quantum_field_relay", "network_fluxgrid", "network_infinite_conduit",
 		"network_infinity_oscilator"],
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"minimum_level": 0
 		},
 		"data": {},
@@ -639,7 +639,7 @@
 		"requirement": "upgrade.gpu",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"minimum_level": 0
 		},
 		"data": {},
@@ -739,7 +739,7 @@
 		"requirement": "research.token_mining",
 		"hidden": false,
 		"attributes":{
-			"limit": 1
+			"limit": -1
 		},
 		"data": {},
 		"guide": "window_mine_token"
@@ -998,7 +998,7 @@
 		"requirement": "",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"layers_multiplier": 1,
 			"time_multiplier": 1,
 			"reward_multiplier": 1
@@ -1020,7 +1020,7 @@
 		"requirement": "research.breach_corporation",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"layers_multiplier": 1,
 			"time_multiplier": 1,
 			"reward_multiplier": 1
@@ -1042,7 +1042,7 @@
 		"requirement": "research.breach_government",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"layers_multiplier": 1,
 			"time_multiplier": 1,
 			"reward_multiplier": 1
@@ -1064,7 +1064,7 @@
 		"requirement": "",
 		"hidden": false,
 		"attributes":{
-			"limit": 1,
+			"limit": -1,
 			"layers_multiplier": 1,
 			"time_multiplier": 1,
 			"reward_multiplier": 1
