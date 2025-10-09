@@ -35,7 +35,7 @@
 		"icon": "load",
 		"description": "perk_download_manager_desc",
 		"type": 4,
-		"limit": 1,
+		"limit": 0,
 		"currency": "token",
 		"cost": 2,
 		"cost_e": 2,
