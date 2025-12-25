@@ -38,7 +38,7 @@ var volume_windows: float = 0.4
 var mute_bgm: bool
 var volume_bgm: float = 0.8
 var show_completed: bool
-var scale: float
+var scale: float = 0.7
 var language: String
 var glow: bool
 var cur_theme: String = "default"
@@ -52,9 +52,7 @@ func _init() -> void:
     for i: String in to_load:
         load_data(i)
 
-    if OS.get_name() in ["Windows", "Linux", "macOS"]:
-        scale = 0.7
-    elif OS.get_name() == "Android":
+    if OS.get_name() == "Android":
         scale = snappedf(0.6 * DisplayServer.screen_get_scale(), 0.1)
         glow = false
     elif OS.get_name() == "iOS":
