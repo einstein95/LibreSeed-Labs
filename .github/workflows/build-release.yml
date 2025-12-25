@@ -47,7 +47,7 @@ jobs:
             zip_name: "LibreSeed-Labs-windows-arm64"
           # ---- macOS ----
           - preset_name: "macOS"
-            out_path: "bin/mac/LibreSeed Labs.dmg"
+            out_path: "bin/mac/LibreSeed Labs.app"
             zip_name: "LibreSeed-Labs-macOS"
           # ---- Browser ----
           - preset_name: "Web"
