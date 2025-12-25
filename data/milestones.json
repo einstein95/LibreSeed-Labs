@@ -1,46 +1,66 @@
 {
-	"system":{
-		"name": "milestone_system",
-		"icon": "processor",
-		"description": "milestone_system_desc",
-		"limit": 0,
-		"cost": 1,
-		"cost_e": 6,
-		"cost_inc": 100,
-		"requirement": [],
-		"attributes": {
-			"bandwidth_multiplier": [0, 0, 2],
-			"clock_multiplier": [0, 0, 2],
-			"gpu_multiplier": [0, 0, 2]
-		},
-		"window_attributes": {}
-	},
-	"hacking":{
-		"name": "milestone_hacking",
-		"icon": "hacker",
-		"description": "milestone_hacking_desc",
-		"limit": 0,
-		"cost": 1,
-		"cost_e": 8,
-		"cost_inc": 100,
-		"requirement": [],
-		"attributes": {
-			"hack_power_multiplier": [0, 0, 2]
-		},
-		"window_attributes": {}
-	},
-	"coding":{
-		"name": "milestone_coding",
-		"icon": "code",
-		"description": "milestone_coding_desc",
-		"limit": 0,
-		"cost": 1,
-		"cost_e": 10,
-		"cost_inc": 100,
-		"requirement": [],
-		"attributes": {
-			"code_speed_multiplier": [0, 0, 2]
-		},
-		"window_attributes": {}
-	}
+    "system": {
+        "name": "milestone_system",
+        "icon": "processor",
+        "description": "milestone_system_desc",
+        "limit": 0,
+        "cost": 1,
+        "cost_e": 6,
+        "cost_inc": 100,
+        "requirement": [],
+        "attributes": {
+            "bandwidth_multiplier": [
+                0,
+                0,
+                2
+            ],
+            "clock_multiplier": [
+                0,
+                0,
+                2
+            ],
+            "gpu_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "hacking": {
+        "name": "milestone_hacking",
+        "icon": "hacker",
+        "description": "milestone_hacking_desc",
+        "limit": 0,
+        "cost": 1,
+        "cost_e": 8,
+        "cost_inc": 100,
+        "requirement": [],
+        "attributes": {
+            "hack_power_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "coding": {
+        "name": "milestone_coding",
+        "icon": "code",
+        "description": "milestone_coding_desc",
+        "limit": 0,
+        "cost": 1,
+        "cost_e": 10,
+        "cost_inc": 100,
+        "requirement": [],
+        "attributes": {
+            "code_speed_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    }
 }

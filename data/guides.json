@@ -1,717 +1,1113 @@
 {
-	"connections":{
-		"name": "guide_connections",
-		"icon": "circle_empty",
-		"type": 0,
-		"entries":[
-			{"text": "guide_connections_desc", "level": 0, "requirement": ""}
-		]
-	},
-	"files":{
-		"name": "guide_files",
-		"icon": "document",
-		"type": 0,
-		"entries":[
-			{"text": "guide_files_desc", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_scanned", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_infected", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_validated", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_corrupted", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_compressed", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_enhanced", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_refined", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_analyzed", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_distilled", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_trojan", "level": 0, "requirement": ""},
-			{"text": "guide_file_modifiers_ai", "level": 0, "requirement": ""}
-		]
-	},
-	"tokens":{
-		"name": "guide_tokens",
-		"icon": "token",
-		"type": 0,
-		"entries":[
-			{"text": "guide_tokens_desc", "level": 3, "requirement": ""}
-		]
-	},
-	"rest_time":{
-		"name": "guide_rest_time",
-		"icon": "hourglass",
-		"type": 0,
-		"entries":[
-			{"text": "guide_rest_time_desc", "level": 0, "requirement": ""}
-		]
-	},
-	"portal":{
-		"name": "guide_portal",
-		"icon": "portal",
-		"type": 0,
-		"entries":[
-			{"text": "guide_portal_desc", "level": 11, "requirement": ""}
-		]
-	},
-	"breach":{
-		"name": "guide_breach",
-		"icon": "breach",
-		"type": 0,
-		"entries":[
-			{"text": "guide_breach_desc", "level": 0, "requirement": "research.hacking"}
-		]
-	},
-	"server":{
-		"name": "guide_server",
-		"icon": "storage",
-		"type": 0,
-		"entries":[
-			{"text": "guide_server_desc", "level": 39, "requirement": ""}
-		]
-	},
-	"window_network":{
-		"name": "window_network",
-		"icon": "web",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_network", "level": 0, "requirement": ""}
-		]
-	},
-	"window_network_exchanger":{
-		"name": "window_network_exchanger",
-		"icon": "bandwidth",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_network_exchanger", "level": 0, "requirement": "research.network_exchanger"}
-		]
-	},
-	"window_network_limiter":{
-		"name": "window_network_limiter",
-		"icon": "stop",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_network_limiter", "level": 0, "requirement": "perk.network_limiter"}
-		]
-	},
-	"window_downloader":{
-		"name": "window_downloader",
-		"icon": "load",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_downloader", "level": 0, "requirement": ""}
-		]
-	},
-	"window_download_manager":{
-		"name": "window_download_manager",
-		"icon": "load",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_download_manager", "level": 0, "requirement": "perk.download_manager"}
-		]
-	},
-	"window_uploader":{
-		"name": "window_uploader",
-		"icon": "save",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_uploader", "level": 0, "requirement": ""}
-		]
-	},
-	"window_redownloader":{
-		"name": "window_redownloader",
-		"icon": "return",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_redownloader", "level": 0, "requirement": "research.redownload"}
-		]
-	},
-	"window_storage":{
-		"name": "window_storage",
-		"icon": "database",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_storage", "level": 0, "requirement": "upgrade.server"}
-		]
-	},
-	"window_server":{
-		"name": "window_server",
-		"icon": "storage",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_server", "level": 0, "requirement": "upgrade.server"}
-		]
-	},
-	"window_processor":{
-		"name": "window_processor",
-		"icon": "processor",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_processor", "level": 0, "requirement": "upgrade.processor"}
-		]
-	},
-	"window_synchronizer":{
-		"name": "window_synchronizer",
-		"icon": "reload",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_synchronizer", "level": 0, "requirement": "research.synchronizer"}
-		]
-	},
-	"window_thread_manager":{
-		"name": "window_thread_manager",
-		"icon": "hierarchy",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_thread_manager", "level": 0, "requirement": "perk.thread_manager"}
-		]
-	},
-	"window_processing_seller":{
-		"name": "window_processing_seller",
-		"icon": "money",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_processing_seller", "level": 0, "requirement": "upgrade.processor"}
-		]
-	},
-	"window_virus_scanner":{
-		"name": "window_virus_scanner",
-		"icon": "antivirus",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_virus_scanner", "level": 0, "requirement": "upgrade.antivirus"}
-		]
-	},
-	"window_quarantine":{
-		"name": "window_quarantine",
-		"icon": "biohazard",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_quarantine", "level": 0, "requirement": "upgrade.antivirus_plus"}
-		]
-	},
-	"window_antivirus_pro":{
-		"name": "window_antivirus_pro",
-		"icon": "shield2",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_antivirus_pro", "level": 0, "requirement": "perk.antivirus_pro"}
-		]
-	},
-	"window_verifier":{
-		"name": "window_verifier",
-		"icon": "puzzle",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_verifier", "level": 0, "requirement": "research.refinement"}
-		]
-	},
-	"window_compressor":{
-		"name": "window_compressor",
-		"icon": "minimize",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_compressor", "level": 0, "requirement": "research.compression"}
-		]
-	},
-	"window_enhancer":{
-		"name": "window_enhancer",
-		"icon": "up_arrow",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_enhancer", "level": 0, "requirement": "research.enhancement"}
-		]
-	},
-	"window_encompressor":{
-		"name": "window_encompressor",
-		"icon": "star",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_encompressor", "level": 0, "requirement": "upgrade.application_encompressor"}
-		]
-	},
-	"window_refiner":{
-		"name": "window_refiner",
-		"icon": "filter",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_refiner", "level": 0, "requirement": "research.refinement"}
-		]
-	},
-	"window_analyzer":{
-		"name": "window_analyzer",
-		"icon": "magnifying_glass",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_analyzer", "level": 0, "requirement": "research.analysis"}
-		]
-	},
-	"window_distillator":{
-		"name": "window_distillator",
-		"icon": "connections",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_distillator", "level": 0, "requirement": "research.distillation"}
-		]
-	},
-	"window_decompiler":{
-		"name": "window_decompiler",
-		"icon": "document",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_decompiler", "level": 0, "requirement": "upgrade.application_decompiler"}
-		]
-	},
-	"window_decomposer":{
-		"name": "window_decomposer",
-		"icon": "image",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_decomposer", "level": 0, "requirement": "upgrade.application_decomposer"}
-		]
-	},
-	"window_demuxer":{
-		"name": "window_demuxer",
-		"icon": "sound",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_demuxer", "level": 0, "requirement": "upgrade.application_demuxer"}
-		]
-	},
-	"window_scrapper":{
-		"name": "window_scrapper",
-		"icon": "video",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_scrapper", "level": 0, "requirement": "upgrade.application_scrapper"}
-		]
-	},
-	"window_ripper":{
-		"name": "window_ripper",
-		"icon": "executable",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_ripper", "level": 0, "requirement": "upgrade.application_ripper"}
-		]
-	},
-	"window_movie_maker":{
-		"name": "window_movie_maker",
-		"icon": "video",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_movie_maker", "level": 0, "requirement": "upgrade.application_movie_maker"}
-		]
-	},
-	"window_compiler":{
-		"name": "window_compiler",
-		"icon": "executable",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_compiler", "level": 0, "requirement": "upgrade.application_compiler"}
-		]
-	},
-	"window_game_engine":{
-		"name": "window_game_engine",
-		"icon": "controller",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_game_engine", "level": 0, "requirement": "upgrade.application_game_engine"}
-		]
-	},
-	"window_gpu_cluster":{
-		"name": "window_gpu_cluster",
-		"icon": "gpu",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_gpu_cluster", "level": 0, "requirement": "upgrade.gpu"}
-		]
-	},
-	"window_gpu_synchronizer":{
-		"name": "window_gpu_synchronizer",
-		"icon": "reload",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_gpu_synchronizer", "level": 0, "requirement": "research.synchronizer"}
-		]
-	},
-	"window_mine":{
-		"name": "window_mine",
-		"icon": "pickaxe",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_mine", "level": 0, "requirement": "upgrade.gpu"}
-		]
-	},
-	"window_mine_token":{
-		"name": "window_mine_token",
-		"icon": "pickaxe",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_mine_token", "level": 0, "requirement": "research.token_mining"}
-		]
-	},
-	"window_crypto_seller":{
-		"name": "window_crypto_seller",
-		"icon": "money",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_crypto_seller", "level": 0, "requirement": "upgrade.gpu"}
-		]
-	},
-	"window_auto_crypto_seller":{
-		"name": "window_auto_crypto_seller",
-		"icon": "money",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_auto_crypto_seller", "level": 0, "requirement": "perk.automated_crypto_seller"}
-		]
-	},
-	"window_task_scheduler":{
-		"name": "window_task_scheduler",
-		"icon": "schedule",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_task_scheduler", "level": 0, "requirement": "research.scheduler"}
-		]
-	},
-	"window_movie_renderer":{
-		"name": "window_movie_renderer",
-		"icon": "video",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_movie_renderer", "level": 0, "requirement": "upgrade.application_movie_renderer"}
-		]
-	},
-	"window_trainer":{
-		"name": "window_trainer",
-		"icon": "connections",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_trainer", "level": 0, "requirement": "research.ai"}
-		]
-	},
-	"window_file_generator":{
-		"name": "window_file_generator",
-		"icon": "brain",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_file_generator", "level": 0, "requirement": "research.ai_texts"}
-		]
-	},
-	"window_data_lab":{
-		"name": "window_data_lab",
-		"icon": "research",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_data_lab", "level": 0, "requirement": "upgrade.research"}
-		]
-	},
-	"window_agi":{
-		"name": "window_agi",
-		"icon": "brain",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_agi", "level": 0, "requirement": "research.agi"}
-		]
-	},
-	"window_hacker":{
-		"name": "window_hacker",
-		"icon": "hacker",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_hacker", "level": 0, "requirement": "research.hacking"}
-		]
-	},
-	"window_payload_launcher":{
-		"name": "window_payload_launcher",
-		"icon": "shot",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_payload_launcher", "level": 0, "requirement": "research.hacking"}
-		]
-	},
-	"window_build_infection":{
-		"name": "window_build_infection",
-		"icon": "virus",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_build_infection", "level": 0, "requirement": "research.infection_damage"}
-		]
-	},
-	"window_execute_injection":{
-		"name": "window_execute_injection",
-		"icon": "breach",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_execute_injection", "level": 0, "requirement": "research.injection"}
-		]
-	},
-	"window_infect_payload":{
-		"name": "window_infect_payload",
-		"icon": "virus",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_infect_payload", "level": 0, "requirement": "research.infect_payload"}
-		]
-	},
-	"window_critical_payload":{
-		"name": "window_critical_payload",
-		"icon": "thunder",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_critical_payload", "level": 0, "requirement": "research.critical_payload"}
-		]
-	},
-	"window_ghost_attack":{
-		"name": "window_ghost_attack",
-		"icon": "ghost",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_ghost_attack", "level": 0, "requirement": "research.ghost_attack"}
-		]
-	},
-	"window_breach_anonymous":{
-		"name": "window_breach_anonymous",
-		"icon": "incognito",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_breach_anonymous", "level": 0, "requirement": "research.hacking"}
-		]
-	},
-	"window_breach_corps":{
-		"name": "window_breach_corps",
-		"icon": "corporation",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_breach_corps", "level": 0, "requirement": "research.breach_corporation"}
-		]
-	},
-	"window_breach_government":{
-		"name": "window_breach_government",
-		"icon": "government",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_breach_government", "level": 0, "requirement": "research.breach_government"}
-		]
-	},
-	"window_breach_bank":{
-		"name": "window_breach_bank",
-		"icon": "institution",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_breach_bank", "level": 0, "requirement": "research.breach_bank"}
-		]
-	},
-	"window_inject_trojan":{
-		"name": "window_inject_trojan",
-		"icon": "trojan",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_inject_trojan", "level": 0, "requirement": "research.trojan"}
-		]
-	},
-	"window_drain":{
-		"name": "window_drain",
-		"icon": "computer_infected",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_drain", "level": 0, "requirement": "research.trojan"}
-		]
-	},
-	"window_coder":{
-		"name": "window_coder",
-		"icon": "code",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_coder", "level": 0, "requirement": "research.coding"}
-		]
-	},
-	"window_ide":{
-		"name": "window_ide",
-		"icon": "code",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_ide", "level": 0, "requirement": "perk.ide"}
-		]
-	},
-	"window_commit":{
-		"name": "window_commit",
-		"icon": "commit",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_commit", "level": 0, "requirement": "research.coding"}
-		]
-	},
-	"window_build":{
-		"name": "window_build",
-		"icon": "hammer",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_build", "level": 0, "requirement": "research.coding"}
-		]
-	},
-	"window_code_bugfix":{
-		"name": "window_code_bugfix",
-		"icon": "bug",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_bugfix", "level": 0, "requirement": "research.coding"}
-		]
-	},
-	"window_code_optimization":{
-		"name": "window_code_optimization",
-		"icon": "work",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_optimization", "level": 0, "requirement": "research.optimizations"}
-		]
-	},
-	"window_code_application":{
-		"name": "window_code_application",
-		"icon": "bracket",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_application", "level": 0, "requirement": "research.applications"}
-		]
-	},
-	"window_code_driver":{
-		"name": "window_code_driver",
-		"icon": "tools",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_driver", "level": 0, "requirement": "research.drivers"}
-		]
-	},
-	"window_code_variable":{
-		"name": "window_code_variable",
-		"icon": "letter_x",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_variable", "level": 0, "requirement": "research.coding"}
-		]
-	},
-	"window_variable_combiner":{
-		"name": "window_variable_combiner",
-		"icon": "combine",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_variable_combiner", "level": 0, "requirement": "research.optimizations"}
-		]
-	},
-	"window_code_array":{
-		"name": "window_code_array",
-		"icon": "brackets",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_array", "level": 0, "requirement": "research.applications"}
-		]
-	},
-	"window_code_hashmap":{
-		"name": "window_code_hashmap",
-		"icon": "brackets_curly",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_code_hashmap", "level": 0, "requirement": "research.drivers"}
-		]
-	},
-	"window_debug":{
-		"name": "window_debug",
-		"icon": "play",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_debug", "level": 0, "requirement": "research.debugging"}
-		]
-	},
-	"window_fix_code":{
-		"name": "window_fix_code",
-		"icon": "check",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_fix_code", "level": 0, "requirement": "research.debugging"}
-		]
-	},
-	"window_optimize_code":{
-		"name": "window_optimize_code",
-		"icon": "wrench",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_optimize_code", "level": 0, "requirement": "research.code_optimization"}
-		]
-	},
-	"window_collect":{
-		"name": "window_collect",
-		"icon": "store",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_collect", "level": 0, "requirement": ""}
-		]
-	},
-	"window_group":{
-		"name": "window_group",
-		"icon": "window",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_group", "level": 0, "requirement": "perk.groups"}
-		]
-	},
-	"window_inventory":{
-		"name": "window_inventory",
-		"icon": "box",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_inventory", "level": 0, "requirement": ""}
-		]
-	},
-	"window_splitter":{
-		"name": "window_splitter",
-		"icon": "split",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_splitter", "level": 0, "requirement": ""}
-		]
-	},
-	"window_folder":{
-		"name": "window_folder",
-		"icon": "folder",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_folder", "level": 0, "requirement": ""}
-		]
-	},
-	"window_allocator":{
-		"name": "window_allocator",
-		"icon": "pie_chart",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_allocator", "level": 0, "requirement": ""}
-		]
-	},
-	"window_repository":{
-		"name": "window_repository",
-		"icon": "library",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_repository", "level": 0, "requirement": ""}
-		]
-	},
-	"window_segmenter":{
-		"name": "window_segmenter",
-		"icon": "dissolving",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_segmenter", "level": 0, "requirement": ""}
-		]
-	},
-	"window_overclocker":{
-		"name": "window_overclocker",
-		"icon": "overclock",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_overclocker", "level": 0, "requirement": "research.overclocking"}
-		]
-	},
-	"window_heat_sink":{
-		"name": "window_heat_sink",
-		"icon": "cooler",
-		"type": 1,
-		"entries":[
-			{"text": "guide_window_heat_sink", "level": 0, "requirement": "research.cooling"}
-		]
-	}
+    "connections": {
+        "name": "guide_connections",
+        "icon": "circle_empty",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_connections_desc",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "files": {
+        "name": "guide_files",
+        "icon": "document",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_files_desc",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_scanned",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_infected",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_validated",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_corrupted",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_compressed",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_enhanced",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_refined",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_analyzed",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_distilled",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_trojan",
+                "level": 0,
+                "requirement": ""
+            },
+            {
+                "text": "guide_file_modifiers_ai",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "tokens": {
+        "name": "guide_tokens",
+        "icon": "token",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_tokens_desc",
+                "level": 3,
+                "requirement": ""
+            }
+        ]
+    },
+    "rest_time": {
+        "name": "guide_rest_time",
+        "icon": "hourglass",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_rest_time_desc",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "portal": {
+        "name": "guide_portal",
+        "icon": "portal",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_portal_desc",
+                "level": 11,
+                "requirement": ""
+            }
+        ]
+    },
+    "breach": {
+        "name": "guide_breach",
+        "icon": "breach",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_breach_desc",
+                "level": 0,
+                "requirement": "research.hacking"
+            }
+        ]
+    },
+    "server": {
+        "name": "guide_server",
+        "icon": "storage",
+        "type": 0,
+        "entries": [
+            {
+                "text": "guide_server_desc",
+                "level": 39,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_network": {
+        "name": "window_network",
+        "icon": "web",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_network",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_network_exchanger": {
+        "name": "window_network_exchanger",
+        "icon": "bandwidth",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_network_exchanger",
+                "level": 0,
+                "requirement": "research.network_exchanger"
+            }
+        ]
+    },
+    "window_network_limiter": {
+        "name": "window_network_limiter",
+        "icon": "stop",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_network_limiter",
+                "level": 0,
+                "requirement": "perk.network_limiter"
+            }
+        ]
+    },
+    "window_downloader": {
+        "name": "window_downloader",
+        "icon": "load",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_downloader",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_download_manager": {
+        "name": "window_download_manager",
+        "icon": "load",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_download_manager",
+                "level": 0,
+                "requirement": "perk.download_manager"
+            }
+        ]
+    },
+    "window_uploader": {
+        "name": "window_uploader",
+        "icon": "save",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_uploader",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_redownloader": {
+        "name": "window_redownloader",
+        "icon": "return",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_redownloader",
+                "level": 0,
+                "requirement": "research.redownload"
+            }
+        ]
+    },
+    "window_storage": {
+        "name": "window_storage",
+        "icon": "database",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_storage",
+                "level": 0,
+                "requirement": "upgrade.server"
+            }
+        ]
+    },
+    "window_server": {
+        "name": "window_server",
+        "icon": "storage",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_server",
+                "level": 0,
+                "requirement": "upgrade.server"
+            }
+        ]
+    },
+    "window_processor": {
+        "name": "window_processor",
+        "icon": "processor",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_processor",
+                "level": 0,
+                "requirement": "upgrade.processor"
+            }
+        ]
+    },
+    "window_synchronizer": {
+        "name": "window_synchronizer",
+        "icon": "reload",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_synchronizer",
+                "level": 0,
+                "requirement": "research.synchronizer"
+            }
+        ]
+    },
+    "window_thread_manager": {
+        "name": "window_thread_manager",
+        "icon": "hierarchy",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_thread_manager",
+                "level": 0,
+                "requirement": "perk.thread_manager"
+            }
+        ]
+    },
+    "window_processing_seller": {
+        "name": "window_processing_seller",
+        "icon": "money",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_processing_seller",
+                "level": 0,
+                "requirement": "upgrade.processor"
+            }
+        ]
+    },
+    "window_virus_scanner": {
+        "name": "window_virus_scanner",
+        "icon": "antivirus",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_virus_scanner",
+                "level": 0,
+                "requirement": "upgrade.antivirus"
+            }
+        ]
+    },
+    "window_quarantine": {
+        "name": "window_quarantine",
+        "icon": "biohazard",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_quarantine",
+                "level": 0,
+                "requirement": "upgrade.antivirus_plus"
+            }
+        ]
+    },
+    "window_antivirus_pro": {
+        "name": "window_antivirus_pro",
+        "icon": "shield2",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_antivirus_pro",
+                "level": 0,
+                "requirement": "perk.antivirus_pro"
+            }
+        ]
+    },
+    "window_verifier": {
+        "name": "window_verifier",
+        "icon": "puzzle",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_verifier",
+                "level": 0,
+                "requirement": "research.refinement"
+            }
+        ]
+    },
+    "window_compressor": {
+        "name": "window_compressor",
+        "icon": "minimize",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_compressor",
+                "level": 0,
+                "requirement": "research.compression"
+            }
+        ]
+    },
+    "window_enhancer": {
+        "name": "window_enhancer",
+        "icon": "up_arrow",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_enhancer",
+                "level": 0,
+                "requirement": "research.enhancement"
+            }
+        ]
+    },
+    "window_encompressor": {
+        "name": "window_encompressor",
+        "icon": "star",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_encompressor",
+                "level": 0,
+                "requirement": "upgrade.application_encompressor"
+            }
+        ]
+    },
+    "window_refiner": {
+        "name": "window_refiner",
+        "icon": "filter",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_refiner",
+                "level": 0,
+                "requirement": "research.refinement"
+            }
+        ]
+    },
+    "window_analyzer": {
+        "name": "window_analyzer",
+        "icon": "magnifying_glass",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_analyzer",
+                "level": 0,
+                "requirement": "research.analysis"
+            }
+        ]
+    },
+    "window_distillator": {
+        "name": "window_distillator",
+        "icon": "connections",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_distillator",
+                "level": 0,
+                "requirement": "research.distillation"
+            }
+        ]
+    },
+    "window_decompiler": {
+        "name": "window_decompiler",
+        "icon": "document",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_decompiler",
+                "level": 0,
+                "requirement": "upgrade.application_decompiler"
+            }
+        ]
+    },
+    "window_decomposer": {
+        "name": "window_decomposer",
+        "icon": "image",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_decomposer",
+                "level": 0,
+                "requirement": "upgrade.application_decomposer"
+            }
+        ]
+    },
+    "window_demuxer": {
+        "name": "window_demuxer",
+        "icon": "sound",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_demuxer",
+                "level": 0,
+                "requirement": "upgrade.application_demuxer"
+            }
+        ]
+    },
+    "window_scrapper": {
+        "name": "window_scrapper",
+        "icon": "video",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_scrapper",
+                "level": 0,
+                "requirement": "upgrade.application_scrapper"
+            }
+        ]
+    },
+    "window_ripper": {
+        "name": "window_ripper",
+        "icon": "executable",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_ripper",
+                "level": 0,
+                "requirement": "upgrade.application_ripper"
+            }
+        ]
+    },
+    "window_movie_maker": {
+        "name": "window_movie_maker",
+        "icon": "video",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_movie_maker",
+                "level": 0,
+                "requirement": "upgrade.application_movie_maker"
+            }
+        ]
+    },
+    "window_compiler": {
+        "name": "window_compiler",
+        "icon": "executable",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_compiler",
+                "level": 0,
+                "requirement": "upgrade.application_compiler"
+            }
+        ]
+    },
+    "window_game_engine": {
+        "name": "window_game_engine",
+        "icon": "controller",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_game_engine",
+                "level": 0,
+                "requirement": "upgrade.application_game_engine"
+            }
+        ]
+    },
+    "window_gpu_cluster": {
+        "name": "window_gpu_cluster",
+        "icon": "gpu",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_gpu_cluster",
+                "level": 0,
+                "requirement": "upgrade.gpu"
+            }
+        ]
+    },
+    "window_gpu_synchronizer": {
+        "name": "window_gpu_synchronizer",
+        "icon": "reload",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_gpu_synchronizer",
+                "level": 0,
+                "requirement": "research.synchronizer"
+            }
+        ]
+    },
+    "window_mine": {
+        "name": "window_mine",
+        "icon": "pickaxe",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_mine",
+                "level": 0,
+                "requirement": "upgrade.gpu"
+            }
+        ]
+    },
+    "window_mine_token": {
+        "name": "window_mine_token",
+        "icon": "pickaxe",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_mine_token",
+                "level": 0,
+                "requirement": "research.token_mining"
+            }
+        ]
+    },
+    "window_crypto_seller": {
+        "name": "window_crypto_seller",
+        "icon": "money",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_crypto_seller",
+                "level": 0,
+                "requirement": "upgrade.gpu"
+            }
+        ]
+    },
+    "window_auto_crypto_seller": {
+        "name": "window_auto_crypto_seller",
+        "icon": "money",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_auto_crypto_seller",
+                "level": 0,
+                "requirement": "perk.automated_crypto_seller"
+            }
+        ]
+    },
+    "window_task_scheduler": {
+        "name": "window_task_scheduler",
+        "icon": "schedule",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_task_scheduler",
+                "level": 0,
+                "requirement": "research.scheduler"
+            }
+        ]
+    },
+    "window_movie_renderer": {
+        "name": "window_movie_renderer",
+        "icon": "video",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_movie_renderer",
+                "level": 0,
+                "requirement": "upgrade.application_movie_renderer"
+            }
+        ]
+    },
+    "window_trainer": {
+        "name": "window_trainer",
+        "icon": "connections",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_trainer",
+                "level": 0,
+                "requirement": "research.ai"
+            }
+        ]
+    },
+    "window_file_generator": {
+        "name": "window_file_generator",
+        "icon": "brain",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_file_generator",
+                "level": 0,
+                "requirement": "research.ai_texts"
+            }
+        ]
+    },
+    "window_data_lab": {
+        "name": "window_data_lab",
+        "icon": "research",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_data_lab",
+                "level": 0,
+                "requirement": "upgrade.research"
+            }
+        ]
+    },
+    "window_agi": {
+        "name": "window_agi",
+        "icon": "brain",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_agi",
+                "level": 0,
+                "requirement": "research.agi"
+            }
+        ]
+    },
+    "window_hacker": {
+        "name": "window_hacker",
+        "icon": "hacker",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_hacker",
+                "level": 0,
+                "requirement": "research.hacking"
+            }
+        ]
+    },
+    "window_payload_launcher": {
+        "name": "window_payload_launcher",
+        "icon": "shot",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_payload_launcher",
+                "level": 0,
+                "requirement": "research.hacking"
+            }
+        ]
+    },
+    "window_build_infection": {
+        "name": "window_build_infection",
+        "icon": "virus",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_build_infection",
+                "level": 0,
+                "requirement": "research.infection_damage"
+            }
+        ]
+    },
+    "window_execute_injection": {
+        "name": "window_execute_injection",
+        "icon": "breach",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_execute_injection",
+                "level": 0,
+                "requirement": "research.injection"
+            }
+        ]
+    },
+    "window_infect_payload": {
+        "name": "window_infect_payload",
+        "icon": "virus",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_infect_payload",
+                "level": 0,
+                "requirement": "research.infect_payload"
+            }
+        ]
+    },
+    "window_critical_payload": {
+        "name": "window_critical_payload",
+        "icon": "thunder",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_critical_payload",
+                "level": 0,
+                "requirement": "research.critical_payload"
+            }
+        ]
+    },
+    "window_ghost_attack": {
+        "name": "window_ghost_attack",
+        "icon": "ghost",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_ghost_attack",
+                "level": 0,
+                "requirement": "research.ghost_attack"
+            }
+        ]
+    },
+    "window_breach_anonymous": {
+        "name": "window_breach_anonymous",
+        "icon": "incognito",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_breach_anonymous",
+                "level": 0,
+                "requirement": "research.hacking"
+            }
+        ]
+    },
+    "window_breach_corps": {
+        "name": "window_breach_corps",
+        "icon": "corporation",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_breach_corps",
+                "level": 0,
+                "requirement": "research.breach_corporation"
+            }
+        ]
+    },
+    "window_breach_government": {
+        "name": "window_breach_government",
+        "icon": "government",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_breach_government",
+                "level": 0,
+                "requirement": "research.breach_government"
+            }
+        ]
+    },
+    "window_breach_bank": {
+        "name": "window_breach_bank",
+        "icon": "institution",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_breach_bank",
+                "level": 0,
+                "requirement": "research.breach_bank"
+            }
+        ]
+    },
+    "window_inject_trojan": {
+        "name": "window_inject_trojan",
+        "icon": "trojan",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_inject_trojan",
+                "level": 0,
+                "requirement": "research.trojan"
+            }
+        ]
+    },
+    "window_drain": {
+        "name": "window_drain",
+        "icon": "computer_infected",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_drain",
+                "level": 0,
+                "requirement": "research.trojan"
+            }
+        ]
+    },
+    "window_coder": {
+        "name": "window_coder",
+        "icon": "code",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_coder",
+                "level": 0,
+                "requirement": "research.coding"
+            }
+        ]
+    },
+    "window_ide": {
+        "name": "window_ide",
+        "icon": "code",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_ide",
+                "level": 0,
+                "requirement": "perk.ide"
+            }
+        ]
+    },
+    "window_commit": {
+        "name": "window_commit",
+        "icon": "commit",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_commit",
+                "level": 0,
+                "requirement": "research.coding"
+            }
+        ]
+    },
+    "window_build": {
+        "name": "window_build",
+        "icon": "hammer",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_build",
+                "level": 0,
+                "requirement": "research.coding"
+            }
+        ]
+    },
+    "window_code_bugfix": {
+        "name": "window_code_bugfix",
+        "icon": "bug",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_bugfix",
+                "level": 0,
+                "requirement": "research.coding"
+            }
+        ]
+    },
+    "window_code_optimization": {
+        "name": "window_code_optimization",
+        "icon": "work",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_optimization",
+                "level": 0,
+                "requirement": "research.optimizations"
+            }
+        ]
+    },
+    "window_code_application": {
+        "name": "window_code_application",
+        "icon": "bracket",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_application",
+                "level": 0,
+                "requirement": "research.applications"
+            }
+        ]
+    },
+    "window_code_driver": {
+        "name": "window_code_driver",
+        "icon": "tools",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_driver",
+                "level": 0,
+                "requirement": "research.drivers"
+            }
+        ]
+    },
+    "window_code_variable": {
+        "name": "window_code_variable",
+        "icon": "letter_x",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_variable",
+                "level": 0,
+                "requirement": "research.coding"
+            }
+        ]
+    },
+    "window_variable_combiner": {
+        "name": "window_variable_combiner",
+        "icon": "combine",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_variable_combiner",
+                "level": 0,
+                "requirement": "research.optimizations"
+            }
+        ]
+    },
+    "window_code_array": {
+        "name": "window_code_array",
+        "icon": "brackets",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_array",
+                "level": 0,
+                "requirement": "research.applications"
+            }
+        ]
+    },
+    "window_code_hashmap": {
+        "name": "window_code_hashmap",
+        "icon": "brackets_curly",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_code_hashmap",
+                "level": 0,
+                "requirement": "research.drivers"
+            }
+        ]
+    },
+    "window_debug": {
+        "name": "window_debug",
+        "icon": "play",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_debug",
+                "level": 0,
+                "requirement": "research.debugging"
+            }
+        ]
+    },
+    "window_fix_code": {
+        "name": "window_fix_code",
+        "icon": "check",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_fix_code",
+                "level": 0,
+                "requirement": "research.debugging"
+            }
+        ]
+    },
+    "window_optimize_code": {
+        "name": "window_optimize_code",
+        "icon": "wrench",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_optimize_code",
+                "level": 0,
+                "requirement": "research.code_optimization"
+            }
+        ]
+    },
+    "window_collect": {
+        "name": "window_collect",
+        "icon": "store",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_collect",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_group": {
+        "name": "window_group",
+        "icon": "window",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_group",
+                "level": 0,
+                "requirement": "perk.groups"
+            }
+        ]
+    },
+    "window_inventory": {
+        "name": "window_inventory",
+        "icon": "box",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_inventory",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_splitter": {
+        "name": "window_splitter",
+        "icon": "split",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_splitter",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_folder": {
+        "name": "window_folder",
+        "icon": "folder",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_folder",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_allocator": {
+        "name": "window_allocator",
+        "icon": "pie_chart",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_allocator",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_repository": {
+        "name": "window_repository",
+        "icon": "library",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_repository",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_segmenter": {
+        "name": "window_segmenter",
+        "icon": "dissolving",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_segmenter",
+                "level": 0,
+                "requirement": ""
+            }
+        ]
+    },
+    "window_overclocker": {
+        "name": "window_overclocker",
+        "icon": "overclock",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_overclocker",
+                "level": 0,
+                "requirement": "research.overclocking"
+            }
+        ]
+    },
+    "window_heat_sink": {
+        "name": "window_heat_sink",
+        "icon": "cooler",
+        "type": 1,
+        "entries": [
+            {
+                "text": "guide_window_heat_sink",
+                "level": 0,
+                "requirement": "research.cooling"
+            }
+        ]
+    }
 }

@@ -1,170 +1,170 @@
 {
-	"max_money":{
-		"name": "stats_max_money",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_research":{
-		"name": "stats_max_research",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_tokens":{
-		"name": "stats_max_tokens",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"downloads":{
-		"name": "stats_downloads",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"uploads":{
-		"name": "stats_uploads",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"scanned":{
-		"name": "stats_scanned",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"quarantined":{
-		"name": "stats_quarantined",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"verified":{
-		"name": "stats_verified",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"redownloaded":{
-		"name": "stats_redownloaded",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"compressed":{
-		"name": "stats_compressed",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"enhanced":{
-		"name": "stats_enhanced",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"refined":{
-		"name": "stats_refined",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"analyzed":{
-		"name": "stats_analyzed",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"distilled":{
-		"name": "stats_distilled",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"researched":{
-		"name": "stats_researched",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_hack_experience":{
-		"name": "stats_max_hack_experience",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_corporation_data":{
-		"name": "stats_max_corporation_data",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_government_intel":{
-		"name": "stats_max_government_intel",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"anonymous_breached":{
-		"name": "stats_anonymous_breached",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"corporation_breached":{
-		"name": "stats_corporation_breached",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"government_breached":{
-		"name": "stats_government_breached",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"bank_breached":{
-		"name": "stats_bank_breached",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"commits":{
-		"name": "stats_commits",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"max_neurons":{
-		"name": "stats_max_neurons",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"generated":{
-		"name": "stats_generated",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"reborns":{
-		"name": "stats_reborns",
-		"type": 0,
-		"hidden": false,
-		"suffix": ""
-	},
-	"elapsed_time":{
-		"name": "stats_elapsed_time",
-		"type": 4,
-		"hidden": false,
-		"suffix": ""
-	},
-	"time_played":{
-		"name": "stats_time_played",
-		"type": 4,
-		"hidden": false,
-		"suffix": ""
-	}
+    "max_money": {
+        "name": "stats_max_money",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_research": {
+        "name": "stats_max_research",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_tokens": {
+        "name": "stats_max_tokens",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "downloads": {
+        "name": "stats_downloads",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "uploads": {
+        "name": "stats_uploads",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "scanned": {
+        "name": "stats_scanned",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "quarantined": {
+        "name": "stats_quarantined",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "verified": {
+        "name": "stats_verified",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "redownloaded": {
+        "name": "stats_redownloaded",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "compressed": {
+        "name": "stats_compressed",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "enhanced": {
+        "name": "stats_enhanced",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "refined": {
+        "name": "stats_refined",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "analyzed": {
+        "name": "stats_analyzed",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "distilled": {
+        "name": "stats_distilled",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "researched": {
+        "name": "stats_researched",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_hack_experience": {
+        "name": "stats_max_hack_experience",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_corporation_data": {
+        "name": "stats_max_corporation_data",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_government_intel": {
+        "name": "stats_max_government_intel",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "anonymous_breached": {
+        "name": "stats_anonymous_breached",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "corporation_breached": {
+        "name": "stats_corporation_breached",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "government_breached": {
+        "name": "stats_government_breached",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "bank_breached": {
+        "name": "stats_bank_breached",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "commits": {
+        "name": "stats_commits",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "max_neurons": {
+        "name": "stats_max_neurons",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "generated": {
+        "name": "stats_generated",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "reborns": {
+        "name": "stats_reborns",
+        "type": 0,
+        "hidden": false,
+        "suffix": ""
+    },
+    "elapsed_time": {
+        "name": "stats_elapsed_time",
+        "type": 4,
+        "hidden": false,
+        "suffix": ""
+    },
+    "time_played": {
+        "name": "stats_time_played",
+        "type": 4,
+        "hidden": false,
+        "suffix": ""
+    }
 }

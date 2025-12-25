@@ -1,680 +1,797 @@
 {
-	"research":{
-		"name": "research_research",
-		"icon": "research",
-		"description": "research_research_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 0,
-		"cost_e": 0,
-		"cost_inc": 1,
-		"requirement": [],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"synchronizer":{
-		"name": "research_synchronizer",
-		"icon": "reload",
-		"description": "research_synchronizer_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2,
-		"cost_e": 1,
-		"cost_inc": 1,
-		"requirement": ["research"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"verifier":{
-		"name": "research_verifier",
-		"icon": "puzzle",
-		"description": "research_verifier_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 8,
-		"cost_e": 1,
-		"cost_inc": 1,
-		"requirement": ["research"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"redownload":{
-		"name": "research_redownload",
-		"icon": "return",
-		"description": "research_redownload_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 3,
-		"cost_e": 3,
-		"cost_inc": 1,
-		"requirement": ["verifier"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"network_exchanger":{
-		"name": "research_network_exchanger",
-		"icon": "bandwidth",
-		"description": "research_network_exchanger_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 3,
-		"cost_e": 2,
-		"cost_inc": 1,
-		"requirement": ["research"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"scheduler":{
-		"name": "research_scheduler",
-		"icon": "schedule",
-		"description": "research_scheduler_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 6,
-		"cost_e": 2,
-		"cost_inc": 1,
-		"requirement": ["synchronizer"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"refinement":{
-		"name": "research_refinement",
-		"icon": "filter",
-		"description": "research_refinement_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 3,
-		"cost_inc": 1,
-		"requirement": ["verifier"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"bitcoin":{
-		"name": "research_bitcoin",
-		"icon": "bitcoin",
-		"description": "research_bitcoin_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 4,
-		"cost_inc": 1,
-		"requirement": ["refinement"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"hacking":{
-		"name": "research_hacking",
-		"icon": "hacker",
-		"description": "research_hacking_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 4,
-		"cost_inc": 1,
-		"requirement": ["bitcoin"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"breach_corporation":{
-		"name": "research_breach_corporation",
-		"icon": "corporation",
-		"description": "research_breach_corporation_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2.5,
-		"cost_e": 4,
-		"cost_inc": 1,
-		"requirement": ["hacking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"breach_government":{
-		"name": "research_breach_government",
-		"icon": "government",
-		"description": "research_breach_government_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 5,
-		"cost_inc": 1,
-		"requirement": ["breach_corporation"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"breach_bank":{
-		"name": "research_breach_bank",
-		"icon": "institution",
-		"description": "research_breach_bank_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 7,
-		"cost_e": 6,
-		"cost_inc": 1,
-		"requirement": ["breach_government"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"trojan":{
-		"name": "research_trojan",
-		"icon": "trojan",
-		"description": "research_trojan_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 10,
-		"cost_inc": 1,
-		"requirement": ["breach_bank"],
-		"upgrades": {},
-		"attributes":{
-			"trojan_multiplier": [1, 0, 0]
-		},
-		"window_attributes":{}
-	},
-	"infection_damage":{
-		"name": "research_infection_damage",
-		"icon": "virus",
-		"description": "research_infection_damage_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2,
-		"cost_e": 6,
-		"cost_inc": 1,
-		"requirement": ["hacking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"injection":{
-		"name": "research_injection",
-		"icon": "breach",
-		"description": "research_injection_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["infection_damage"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"hack_skills":{
-		"name": "research_hack_skills",
-		"icon": "stars",
-		"description": "research_hack_skills_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 4,
-		"cost_e": 7,
-		"cost_inc": 1,
-		"requirement": ["infection_damage"],
-		"upgrades": {},
-		"attributes":{
-			"breach_skills": [1, 0, 0]
-		},
-		"window_attributes":{}
-	},
-	"critical_payload":{
-		"name": "research_critical_payload",
-		"icon": "thunder",
-		"description": "research_critical_payload_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 0,
-		"cost_e": 8,
-		"cost_inc": 1,
-		"requirement": ["hack_skills"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ghost_attack":{
-		"name": "research_ghost_attack",
-		"icon": "ghost",
-		"description": "research_ghost_attack_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 3,
-		"cost_e": 8,
-		"cost_inc": 1,
-		"requirement": ["critical_payload"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"infect_payload":{
-		"name": "research_infect_payload",
-		"icon": "virus",
-		"description": "research_infect_payload_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 8,
-		"cost_e": 9,
-		"cost_inc": 1,
-		"requirement": ["ghost_attack"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"compression":{
-		"name": "research_compression",
-		"icon": "minimize",
-		"description": "research_compression_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1.5,
-		"cost_e": 5,
-		"cost_inc": 1,
-		"requirement": ["hacking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"compression_level2":{
-		"name": "research_compression_level2",
-		"icon": "minimize",
-		"description": "research_compression_level_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 8,
-		"cost_inc": 1,
-		"requirement": ["compression"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{
-			"compressor":{
-				"level": [1, 0, 0]
-			}
-		}
-	},
-	"compression_level3":{
-		"name": "research_compression_level3",
-		"icon": "minimize",
-		"description": "research_compression_level_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["compression_level2"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{
-			"compressor":{
-				"level": [1, 0, 0]
-			}
-		}
-	},
-	"enhancement":{
-		"name": "research_enhancement",
-		"icon": "up_arrow",
-		"description": "research_enhancement_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1.5,
-		"cost_e": 5,
-		"cost_inc": 1,
-		"requirement": ["hacking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"enhancement_level2":{
-		"name": "research_enhancement_level2",
-		"icon": "up_arrow",
-		"description": "research_enhancement_level_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 8,
-		"cost_inc": 1,
-		"requirement": ["enhancement"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{
-			"enhancer":{
-				"level": [1, 0, 0]
-			}
-		}
-	},
-	"enhancement_level3":{
-		"name": "research_enhancement_level3",
-		"icon": "up_arrow",
-		"description": "research_enhancement_level_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["enhancement_level2"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{
-			"enhancer":{
-				"level": [1, 0, 0]
-			}
-		}
-	},
-	"portal":{
-		"name": "research_portal",
-		"icon": "portal",
-		"description": "research_portal_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 6,
-		"cost_inc": 1,
-		"requirement": ["compression", "enhancement"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ethereum":{
-		"name": "research_ethereum",
-		"icon": "ethereum",
-		"description": "research_ethereum_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 6,
-		"cost_inc": 1,
-		"requirement": ["portal"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"analysis":{
-		"name": "research_analysis",
-		"icon": "magnifying_glass",
-		"description": "research_analysis_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 4,
-		"cost_e": 7,
-		"cost_inc": 1,
-		"requirement": ["ethereum"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"coding":{
-		"name": "research_coding",
-		"icon": "code",
-		"description": "research_coding_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 9,
-		"cost_inc": 1,
-		"requirement": ["analysis"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"optimizations":{
-		"name": "research_optimizations",
-		"icon": "work",
-		"description": "research_optimizations_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 9,
-		"cost_inc": 1,
-		"requirement": ["coding"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"code_optimization":{
-		"name": "research_code_optimization",
-		"icon": "wrench",
-		"description": "research_code_optimization_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1.6,
-		"cost_e": 14,
-		"cost_inc": 1,
-		"requirement": ["optimizations"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"applications":{
-		"name": "research_applications",
-		"icon": "bracket",
-		"description": "research_applications_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["optimizations"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"drivers":{
-		"name": "research_drivers",
-		"icon": "tools",
-		"description": "research_drivers_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 15,
-		"cost_inc": 1,
-		"requirement": ["applications"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"debugging":{
-		"name": "research_debugging",
-		"icon": "play",
-		"description": "research_debugging_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 10,
-		"cost_inc": 1,
-		"requirement": ["coding"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"bug_fixing":{
-		"name": "research_bug_fixing",
-		"icon": "check",
-		"description": "research_bug_fixing_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2,
-		"cost_e": 13,
-		"cost_inc": 1,
-		"requirement": ["debugging"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"token_mining":{
-		"name": "research_token_mining",
-		"icon": "token",
-		"description": "research_token_mining_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1.1,
-		"cost_e": 11,
-		"cost_inc": 1,
-		"requirement": ["coding"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai":{
-		"name": "research_ai",
-		"icon": "brain",
-		"description": "research_ai_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["token_mining"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_texts":{
-		"name": "research_ai_texts",
-		"icon": "document",
-		"description": "research_ai_texts_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 12,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_images":{
-		"name": "research_ai_images",
-		"icon": "image",
-		"description": "research_ai_images_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 14,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"overclocking":{
-		"name": "research_overclocking",
-		"icon": "overclock",
-		"description": "research_overclocking_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 4,
-		"cost_e": 14,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"cooling":{
-		"name": "research_cooling",
-		"icon": "cooler",
-		"description": "research_cooling_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2,
-		"cost_e": 15,
-		"cost_inc": 1,
-		"requirement": ["overclocking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_sounds":{
-		"name": "research_ai_sounds",
-		"icon": "sound",
-		"description": "research_ai_sounds_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 2,
-		"cost_e": 16,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"distillation":{
-		"name": "research_distillation",
-		"icon": "connections",
-		"description": "research_distillation_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 7.6,
-		"cost_e": 16,
-		"cost_inc": 1,
-		"requirement": ["overclocking"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_videos":{
-		"name": "research_ai_videos",
-		"icon": "video",
-		"description": "research_ai_videos_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 4,
-		"cost_e": 18,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_programs":{
-		"name": "research_ai_programs",
-		"icon": "executable",
-		"description": "research_ai_programs_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 5,
-		"cost_e": 20,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"ai_games":{
-		"name": "research_ai_games",
-		"icon": "controller",
-		"description": "research_ai_games_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 8,
-		"cost_e": 22,
-		"cost_inc": 1,
-		"requirement": ["ai"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	},
-	"agi":{
-		"name": "research_agi",
-		"icon": "brain",
-		"description": "research_agi_desc",
-		"limit": 1,
-		"currency": "research",
-		"cost": 1,
-		"cost_e": 25,
-		"cost_inc": 1,
-		"requirement": ["distillation"],
-		"upgrades": {},
-		"attributes":{},
-		"window_attributes":{}
-	}
+    "research": {
+        "name": "research_research",
+        "icon": "research",
+        "description": "research_research_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 0,
+        "cost_e": 0,
+        "cost_inc": 1,
+        "requirement": [],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "synchronizer": {
+        "name": "research_synchronizer",
+        "icon": "reload",
+        "description": "research_synchronizer_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2,
+        "cost_e": 1,
+        "cost_inc": 1,
+        "requirement": [
+            "research"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "verifier": {
+        "name": "research_verifier",
+        "icon": "puzzle",
+        "description": "research_verifier_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 8,
+        "cost_e": 1,
+        "cost_inc": 1,
+        "requirement": [
+            "research"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "redownload": {
+        "name": "research_redownload",
+        "icon": "return",
+        "description": "research_redownload_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 3,
+        "cost_e": 3,
+        "cost_inc": 1,
+        "requirement": [
+            "verifier"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "network_exchanger": {
+        "name": "research_network_exchanger",
+        "icon": "bandwidth",
+        "description": "research_network_exchanger_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 3,
+        "cost_e": 2,
+        "cost_inc": 1,
+        "requirement": [
+            "research"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "scheduler": {
+        "name": "research_scheduler",
+        "icon": "schedule",
+        "description": "research_scheduler_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 6,
+        "cost_e": 2,
+        "cost_inc": 1,
+        "requirement": [
+            "synchronizer"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "refinement": {
+        "name": "research_refinement",
+        "icon": "filter",
+        "description": "research_refinement_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 3,
+        "cost_inc": 1,
+        "requirement": [
+            "verifier"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "bitcoin": {
+        "name": "research_bitcoin",
+        "icon": "bitcoin",
+        "description": "research_bitcoin_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 4,
+        "cost_inc": 1,
+        "requirement": [
+            "refinement"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "hacking": {
+        "name": "research_hacking",
+        "icon": "hacker",
+        "description": "research_hacking_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 4,
+        "cost_inc": 1,
+        "requirement": [
+            "bitcoin"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "breach_corporation": {
+        "name": "research_breach_corporation",
+        "icon": "corporation",
+        "description": "research_breach_corporation_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2.5,
+        "cost_e": 4,
+        "cost_inc": 1,
+        "requirement": [
+            "hacking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "breach_government": {
+        "name": "research_breach_government",
+        "icon": "government",
+        "description": "research_breach_government_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 5,
+        "cost_inc": 1,
+        "requirement": [
+            "breach_corporation"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "breach_bank": {
+        "name": "research_breach_bank",
+        "icon": "institution",
+        "description": "research_breach_bank_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 7,
+        "cost_e": 6,
+        "cost_inc": 1,
+        "requirement": [
+            "breach_government"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "trojan": {
+        "name": "research_trojan",
+        "icon": "trojan",
+        "description": "research_trojan_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 10,
+        "cost_inc": 1,
+        "requirement": [
+            "breach_bank"
+        ],
+        "upgrades": {},
+        "attributes": {
+            "trojan_multiplier": [
+                1,
+                0,
+                0
+            ]
+        },
+        "window_attributes": {}
+    },
+    "infection_damage": {
+        "name": "research_infection_damage",
+        "icon": "virus",
+        "description": "research_infection_damage_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2,
+        "cost_e": 6,
+        "cost_inc": 1,
+        "requirement": [
+            "hacking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "injection": {
+        "name": "research_injection",
+        "icon": "breach",
+        "description": "research_injection_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "infection_damage"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "hack_skills": {
+        "name": "research_hack_skills",
+        "icon": "stars",
+        "description": "research_hack_skills_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 4,
+        "cost_e": 7,
+        "cost_inc": 1,
+        "requirement": [
+            "infection_damage"
+        ],
+        "upgrades": {},
+        "attributes": {
+            "breach_skills": [
+                1,
+                0,
+                0
+            ]
+        },
+        "window_attributes": {}
+    },
+    "critical_payload": {
+        "name": "research_critical_payload",
+        "icon": "thunder",
+        "description": "research_critical_payload_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 0,
+        "cost_e": 8,
+        "cost_inc": 1,
+        "requirement": [
+            "hack_skills"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ghost_attack": {
+        "name": "research_ghost_attack",
+        "icon": "ghost",
+        "description": "research_ghost_attack_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 3,
+        "cost_e": 8,
+        "cost_inc": 1,
+        "requirement": [
+            "critical_payload"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "infect_payload": {
+        "name": "research_infect_payload",
+        "icon": "virus",
+        "description": "research_infect_payload_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 8,
+        "cost_e": 9,
+        "cost_inc": 1,
+        "requirement": [
+            "ghost_attack"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "compression": {
+        "name": "research_compression",
+        "icon": "minimize",
+        "description": "research_compression_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1.5,
+        "cost_e": 5,
+        "cost_inc": 1,
+        "requirement": [
+            "hacking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "compression_level2": {
+        "name": "research_compression_level2",
+        "icon": "minimize",
+        "description": "research_compression_level_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 8,
+        "cost_inc": 1,
+        "requirement": [
+            "compression"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {
+            "compressor": {
+                "level": [
+                    1,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "compression_level3": {
+        "name": "research_compression_level3",
+        "icon": "minimize",
+        "description": "research_compression_level_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "compression_level2"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {
+            "compressor": {
+                "level": [
+                    1,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "enhancement": {
+        "name": "research_enhancement",
+        "icon": "up_arrow",
+        "description": "research_enhancement_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1.5,
+        "cost_e": 5,
+        "cost_inc": 1,
+        "requirement": [
+            "hacking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "enhancement_level2": {
+        "name": "research_enhancement_level2",
+        "icon": "up_arrow",
+        "description": "research_enhancement_level_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 8,
+        "cost_inc": 1,
+        "requirement": [
+            "enhancement"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {
+            "enhancer": {
+                "level": [
+                    1,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "enhancement_level3": {
+        "name": "research_enhancement_level3",
+        "icon": "up_arrow",
+        "description": "research_enhancement_level_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "enhancement_level2"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {
+            "enhancer": {
+                "level": [
+                    1,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "portal": {
+        "name": "research_portal",
+        "icon": "portal",
+        "description": "research_portal_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 6,
+        "cost_inc": 1,
+        "requirement": [
+            "compression",
+            "enhancement"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ethereum": {
+        "name": "research_ethereum",
+        "icon": "ethereum",
+        "description": "research_ethereum_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 6,
+        "cost_inc": 1,
+        "requirement": [
+            "portal"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "analysis": {
+        "name": "research_analysis",
+        "icon": "magnifying_glass",
+        "description": "research_analysis_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 4,
+        "cost_e": 7,
+        "cost_inc": 1,
+        "requirement": [
+            "ethereum"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "coding": {
+        "name": "research_coding",
+        "icon": "code",
+        "description": "research_coding_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 9,
+        "cost_inc": 1,
+        "requirement": [
+            "analysis"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "optimizations": {
+        "name": "research_optimizations",
+        "icon": "work",
+        "description": "research_optimizations_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 9,
+        "cost_inc": 1,
+        "requirement": [
+            "coding"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "code_optimization": {
+        "name": "research_code_optimization",
+        "icon": "wrench",
+        "description": "research_code_optimization_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1.6,
+        "cost_e": 14,
+        "cost_inc": 1,
+        "requirement": [
+            "optimizations"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "applications": {
+        "name": "research_applications",
+        "icon": "bracket",
+        "description": "research_applications_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "optimizations"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "drivers": {
+        "name": "research_drivers",
+        "icon": "tools",
+        "description": "research_drivers_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 15,
+        "cost_inc": 1,
+        "requirement": [
+            "applications"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "debugging": {
+        "name": "research_debugging",
+        "icon": "play",
+        "description": "research_debugging_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 10,
+        "cost_inc": 1,
+        "requirement": [
+            "coding"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "bug_fixing": {
+        "name": "research_bug_fixing",
+        "icon": "check",
+        "description": "research_bug_fixing_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2,
+        "cost_e": 13,
+        "cost_inc": 1,
+        "requirement": [
+            "debugging"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "token_mining": {
+        "name": "research_token_mining",
+        "icon": "token",
+        "description": "research_token_mining_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1.1,
+        "cost_e": 11,
+        "cost_inc": 1,
+        "requirement": [
+            "coding"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai": {
+        "name": "research_ai",
+        "icon": "brain",
+        "description": "research_ai_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "token_mining"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_texts": {
+        "name": "research_ai_texts",
+        "icon": "document",
+        "description": "research_ai_texts_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 12,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_images": {
+        "name": "research_ai_images",
+        "icon": "image",
+        "description": "research_ai_images_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 14,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "overclocking": {
+        "name": "research_overclocking",
+        "icon": "overclock",
+        "description": "research_overclocking_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 4,
+        "cost_e": 14,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "cooling": {
+        "name": "research_cooling",
+        "icon": "cooler",
+        "description": "research_cooling_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2,
+        "cost_e": 15,
+        "cost_inc": 1,
+        "requirement": [
+            "overclocking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_sounds": {
+        "name": "research_ai_sounds",
+        "icon": "sound",
+        "description": "research_ai_sounds_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 2,
+        "cost_e": 16,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "distillation": {
+        "name": "research_distillation",
+        "icon": "connections",
+        "description": "research_distillation_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 7.6,
+        "cost_e": 16,
+        "cost_inc": 1,
+        "requirement": [
+            "overclocking"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_videos": {
+        "name": "research_ai_videos",
+        "icon": "video",
+        "description": "research_ai_videos_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 4,
+        "cost_e": 18,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_programs": {
+        "name": "research_ai_programs",
+        "icon": "executable",
+        "description": "research_ai_programs_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 5,
+        "cost_e": 20,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "ai_games": {
+        "name": "research_ai_games",
+        "icon": "controller",
+        "description": "research_ai_games_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 8,
+        "cost_e": 22,
+        "cost_inc": 1,
+        "requirement": [
+            "ai"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    },
+    "agi": {
+        "name": "research_agi",
+        "icon": "brain",
+        "description": "research_agi_desc",
+        "limit": 1,
+        "currency": "research",
+        "cost": 1,
+        "cost_e": 25,
+        "cost_inc": 1,
+        "requirement": [
+            "distillation"
+        ],
+        "upgrades": {},
+        "attributes": {},
+        "window_attributes": {}
+    }
 }

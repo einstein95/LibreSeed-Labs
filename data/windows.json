@@ -1,1730 +1,1740 @@
 {
-	"processor":{
-		"name": "window_processor",
-		"icon": "processor",
-		"description": "window_processor_desc",
-		"scene": "window_processor",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.processor",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"minimum_level": 0,
-			"minimum_cores": 1,
-			"maximum_cores": 99,
-			"extra_cores": 0,
-			"main_core_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_processor"
-	},
-	"synchronizer":{
-		"name": "window_synchronizer",
-		"icon": "reload",
-		"description": "window_synchronizer_desc",
-		"scene": "window_synchronizer",
-		"group": "",
-		"category": "cpu",
-		"level": 7,
-		"requirement": "research.synchronizer",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_synchronizer"
-	},
-	"thread_manager":{
-		"name": "window_thread_manager",
-		"icon": "hierarchy",
-		"description": "window_thread_manager_desc",
-		"scene": "window_thread_manager",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "perk.thread_manager",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_thread_manager"
-	},
-	"processing_seller":{
-		"name": "window_processing_seller",
-		"icon": "processor_sell",
-		"description": "window_processing_seller_desc",
-		"scene": "window_processing_seller",
-		"group": "",
-		"category": "cpu",
-		"level": 3,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_processing_seller"
-	},
-	"virus_scanner":{
-		"name": "window_virus_scanner",
-		"icon": "antivirus",
-		"description": "window_virus_scanner_desc",
-		"scene": "window_virus_scanner",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.antivirus",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1,
-			"virus_chance": 0.5
-		},
-		"data": {},
-		"guide": "window_virus_scanner"
-	},
-	"quarantine":{
-		"name": "window_quarantine",
-		"icon": "biohazard",
-		"description": "window_quarantine_desc",
-		"scene": "window_quarantine",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.antivirus_plus",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_quarantine"
-	},
-	"antivirus_pro":{
-		"name": "window_antivirus_pro",
-		"icon": "shield2",
-		"description": "window_antivirus_pro_desc",
-		"scene": "window_antivirus_pro",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "perk.antivirus_pro",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_antivirus_pro"
-	},
-	"verifier":{
-		"name": "window_verifier",
-		"icon": "puzzle",
-		"description": "window_verifier_desc",
-		"scene": "window_verifier",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.verifier",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1,
-			"corrupt_chance": 0.5
-		},
-		"data": {},
-		"guide": "window_verifier"
-	},
-	"compressor":{
-		"name": "window_compressor",
-		"icon": "minimize",
-		"description": "window_compressor_desc",
-		"scene": "window_compressor",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.compression",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1,
-			"level": 0
-		},
-		"data": {},
-		"guide": "window_compressor"
-	},
-	"enhancer":{
-		"name": "window_enhancer",
-		"icon": "up_arrow",
-		"description": "window_enhancer_desc",
-		"scene": "window_enhancer",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.enhancement",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1,
-			"level": 0
-		},
-		"data": {},
-		"guide": "window_enhancer"
-	},
-	"encompressor":{
-		"name": "window_encompressor",
-		"icon": "star",
-		"description": "window_encompressor_desc",
-		"scene": "window_encompressor",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_encompressor",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1,
-			"level": 0
-		},
-		"data": {},
-		"guide": "window_encompressor"
-	},
-	"refiner":{
-		"name": "window_refiner",
-		"icon": "filter",
-		"description": "window_refiner_desc",
-		"scene": "window_refiner",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.refinement",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_refiner"
-	},
-	"analyzer":{
-		"name": "window_analyzer",
-		"icon": "magnifying_glass",
-		"description": "window_analyzer_desc",
-		"scene": "window_analyzer",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.analysis",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_analyzer"
-	},
-	"distillator":{
-		"name": "window_distillator",
-		"icon": "connections",
-		"description": "window_distillator_desc",
-		"scene": "window_distillator",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "research.distillation",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_distillator"
-	},
-	"decompiler":{
-		"name": "window_decompiler",
-		"icon": "document",
-		"description": "window_decompiler_desc",
-		"scene": "window_decompiler",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_decompiler",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_decompiler"
-	},
-	"decomposer":{
-		"name": "window_decomposer",
-		"icon": "image",
-		"description": "window_decomposer_desc",
-		"scene": "window_decomposer",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_decomposer",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_decomposer"
-	},
-	"demuxer":{
-		"name": "window_demuxer",
-		"icon": "sound",
-		"description": "window_demuxer_desc",
-		"scene": "window_demuxer",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_demuxer",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_demuxer"
-	},
-	"scrapper":{
-		"name": "window_scrapper",
-		"icon": "video",
-		"description": "window_scrapper_desc",
-		"scene": "window_scrapper",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_scrapper",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_scrapper"
-	},
-	"ripper":{
-		"name": "window_ripper",
-		"icon": "executable",
-		"description": "window_ripper_desc",
-		"scene": "window_ripper",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_ripper",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_ripper"
-	},
-	"movie_maker":{
-		"name": "window_movie_maker",
-		"icon": "video",
-		"description": "window_movie_maker_desc",
-		"scene": "window_movie_maker",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_movie_maker",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_movie_maker"
-	},
-	"compiler":{
-		"name": "window_compiler",
-		"icon": "executable",
-		"description": "window_compiler_desc",
-		"scene": "window_compiler",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_compiler",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_compiler"
-	},
-	"game_engine":{
-		"name": "window_game_engine",
-		"icon": "controller",
-		"description": "window_game_engine_desc",
-		"scene": "window_game_engine",
-		"group": "",
-		"category": "cpu",
-		"level": 0,
-		"requirement": "upgrade.application_game_engine",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_game_engine"
-	},
-	"network":{
-		"name": "window_network",
-		"icon": "web",
-		"description": "window_network_desc",
-		"scene": "window_network",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"names": ["network_bits_communicator", "network_radio_transceiver", 
-		"network_1g", "network_2g", "network_dial_up", 
-		"network_3g", "network_dsl", "network_4g",
-		"network_satellite", "network_5g", "network_6g", "network_fiber_optics", 
-		"network_lifi", "network_photon_mesh", "network_data_tunneling_communicator", 
-		"network_graviton_transceiver", "network_data_entangloporter", "network_antimatter_relay", 
-		"network_quantum_field_relay", "network_fluxgrid", "network_infinite_conduit",
-		"network_infinity_oscilator"],
-		"attributes":{
-			"limit": -1,
-			"minimum_level": 0
-		},
-		"data": {},
-		"guide": "window_network"
-	},
-	"network_exchanger":{
-		"name": "window_network_exchanger",
-		"icon": "bandwidth",
-		"description": "window_network_exchanger_desc",
-		"scene": "window_network_exchanger",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "research.network_exchanger",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_network_exchanger"
-	},
-	"network_limiter":{
-		"name": "window_network_limiter",
-		"icon": "stop",
-		"description": "window_network_limiter_desc",
-		"scene": "window_network_limiter",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "perk.network_limiter",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_network_limiter"
-	},
-	"upload":{
-		"name": "window_uploader",
-		"icon": "save",
-		"description": "window_uploader_desc",
-		"scene": "window_upload",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_uploader"
-	},
-	"request_uploader":{
-		"name": "window_request_uploader",
-		"icon": "star2",
-		"description": "window_request_uploader_desc",
-		"scene": "window_request_uploader",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.request_uploader",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": ""
-	},
-	"download_manager":{
-		"name": "window_download_manager",
-		"icon": "load",
-		"description": "window_download_manager_desc",
-		"scene": "window_download_manager",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "perk.download_manager",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_download_manager"
-	},
-	"download_text":{
-		"name": "window_downloader_text",
-		"icon": "document",
-		"description": "window_downloader_text_desc",
-		"scene": "window_download_text",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"download_image":{
-		"name": "window_downloader_image",
-		"icon": "image",
-		"description": "window_downloader_image_desc",
-		"scene": "window_download_image",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.image_downloader",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"download_sound":{
-		"name": "window_downloader_sound",
-		"icon": "sound",
-		"description": "window_downloader_sound_desc",
-		"scene": "window_download_sound",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.sound_downloader",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"download_video":{
-		"name": "window_downloader_video",
-		"icon": "video",
-		"description": "window_downloader_video_desc",
-		"scene": "window_download_video",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.video_downloader",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"download_program":{
-		"name": "window_downloader_program",
-		"icon": "executable",
-		"description": "window_downloader_program_desc",
-		"scene": "window_download_program",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.program_downloader",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"download_game":{
-		"name": "window_downloader_game",
-		"icon": "controller",
-		"description": "window_downloader_game_desc",
-		"scene": "window_download_game",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.game_downloader",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_downloader"
-	},
-	"redownloader":{
-		"name": "window_redownloader",
-		"icon": "return",
-		"description": "window_redownloader_desc",
-		"scene": "window_redownloader",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "research.redownload",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_redownloader"
-	},
-	"storage":{
-		"name": "window_storage",
-		"icon": "database",
-		"description": "window_storage_desc",
-		"scene": "window_storage",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.server",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_storage"
-	},
-	"server":{
-		"name": "window_server",
-		"icon": "storage",
-		"description": "window_server_desc",
-		"scene": "window_server",
-		"group": "",
-		"category": "network",
-		"level": 0,
-		"requirement": "upgrade.server",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_server"
-	},
-	"gpu_cluster":{
-		"name": "window_gpu_cluster",
-		"icon": "gpu",
-		"description": "window_gpu_cluster_desc",
-		"scene": "window_gpu_cluster",
-		"group": "",
-		"category": "gpu",
-		"level": 6,
-		"requirement": "upgrade.gpu",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"minimum_level": 0
-		},
-		"data": {},
-		"guide": "window_gpu_cluster"
-	},
-	"gpu_synchronizer":{
-		"name": "window_gpu_synchronizer",
-		"icon": "reload",
-		"description": "window_gpu_synchronizer_desc",
-		"scene": "window_gpu_synchronizer",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.synchronizer",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_gpu_synchronizer"
-	},
-	"mine_litecoin":{
-		"name": "window_mine_litecoin",
-		"icon": "litecoin",
-		"description": "window_mine_litecoin_desc",
-		"scene": "window_mine_litecoin",
-		"group": "",
-		"category": "gpu",
-		"level": 6,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_miner"
-	},
-	"mine_bitcoin":{
-		"name": "window_mine_bitcoin",
-		"icon": "bitcoin",
-		"description": "window_mine_bitcoin_desc",
-		"scene": "window_mine_bitcoin",
-		"group": "",
-		"category": "gpu",
-		"level": 6,
-		"requirement": "research.bitcoin",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_miner"
-	},
-	"mine_ethereum":{
-		"name": "window_mine_ethereum",
-		"icon": "ethereum",
-		"description": "window_mine_ethereum_desc",
-		"scene": "window_mine_ethereum",
-		"group": "",
-		"category": "gpu",
-		"level": 6,
-		"requirement": "research.ethereum",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_miner"
-	},
-	"mine_tether":{
-		"name": "window_mine_tether",
-		"icon": "tether",
-		"description": "window_mine_tether_desc",
-		"scene": "window_mine_tether",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "perk.mine_tether",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_miner"
-	},
-	"mine_token":{
-		"name": "window_mine_token",
-		"icon": "token",
-		"description": "window_mine_token_desc",
-		"scene": "window_mine_token",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.token_mining",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_mine_token"
-	},
-	"task_scheduler":{
-		"name": "window_task_scheduler",
-		"icon": "schedule",
-		"description": "window_task_scheduler_desc",
-		"scene": "window_task_scheduler",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.scheduler",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"efficiency": 1.0
-		},
-		"data": {},
-		"guide": "window_task_scheduler"
-	},
-	"movie_renderer":{
-		"name": "window_movie_renderer",
-		"icon": "video",
-		"description": "window_movie_renderer_desc",
-		"scene": "window_movie_renderer",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "upgrade.application_movie_renderer",
-		"hidden": true,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_movie_renderer"
-	},
-	"trainer":{
-		"name": "window_trainer",
-		"icon": "connections",
-		"description": "window_trainer_desc",
-		"scene": "window_trainer",
-		"group": "",
-		"category": "gpu",
-		"level": 14,
-		"requirement": "research.ai",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"cycles_multiplier": 1
-		},
-		"data": {},
-		"guide": "window_trainer"
-	},
-	"generator_text":{
-		"name": "window_generator_text",
-		"icon": "document",
-		"description": "window_generator_text_desc",
-		"scene": "window_generate_text",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_texts",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"generator_image":{
-		"name": "window_generator_image",
-		"icon": "image",
-		"description": "window_generator_image_desc",
-		"scene": "window_generate_image",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_images",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"generator_sound":{
-		"name": "window_generator_sound",
-		"icon": "sound",
-		"description": "window_generator_sound_desc",
-		"scene": "window_generate_sound",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_sounds",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"generator_video":{
-		"name": "window_generator_video",
-		"icon": "video",
-		"description": "window_generator_video_desc",
-		"scene": "window_generate_video",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_videos",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"generator_program":{
-		"name": "window_generator_program",
-		"icon": "executable",
-		"description": "window_generator_program_desc",
-		"scene": "window_generate_program",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_programs",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"generator_game":{
-		"name": "window_generator_game",
-		"icon": "controller",
-		"description": "window_generator_game_desc",
-		"scene": "window_generate_game",
-		"group": "",
-		"category": "gpu",
-		"level": 0,
-		"requirement": "research.ai_games",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_file_generator"
-	},
-	"data_lab":{
-		"name": "window_data_lab",
-		"icon": "research",
-		"description": "window_data_lab_desc",
-		"scene": "window_data_lab",
-		"group": "",
-		"category": "research",
-		"level": 0,
-		"requirement": "upgrade.research",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": "window_data_lab"
-	},
-	"agi":{
-		"name": "window_agi",
-		"icon": "brain",
-		"description": "window_agi_desc",
-		"scene": "window_agi",
-		"group": "",
-		"category": "research",
-		"level": 0,
-		"requirement": "research.agi",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": "window_agi"
-	},
-	"research":{
-		"name": "window_research",
-		"icon": "atom",
-		"description": "window_research_desc",
-		"scene": "window_boost_research",
-		"group": "",
-		"category": "research",
-		"level": 0,
-		"requirement": "research.agi",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": ""
-	},
-	"hack":{
-		"name": "window_hack",
-		"icon": "hacker",
-		"description": "window_hack_desc",
-		"scene": "window_boost_hack",
-		"group": "",
-		"category": "research",
-		"level": 0,
-		"requirement": "research.agi",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": ""
-	},
-	"code":{
-		"name": "window_code",
-		"icon": "code",
-		"description": "window_code_desc",
-		"scene": "window_boost_code",
-		"group": "",
-		"category": "research",
-		"level": 0,
-		"requirement": "research.agi",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": ""
-	},
-	"hacker":{
-		"name": "window_hacker",
-		"icon": "hacker",
-		"description": "window_hacker_desc",
-		"scene": "window_hacker",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.hacking",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": "window_hacker"
-	},
-	"breach_anonymous":{
-		"name": "window_breach_anonymous",
-		"icon": "incognito",
-		"description": "window_breach_anonymous_desc",
-		"scene": "window_breach_anonymous",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"layers_multiplier": 1,
-			"time_multiplier": 1,
-			"reward_multiplier": 1
-		},
-		"data": {
-			"level": 0,
-			"max_level": 0
-		},
-		"guide": "window_breach_anonymous"
-	},
-	"breach_corps":{
-		"name": "window_breach_corps",
-		"icon": "corporation",
-		"description": "window_breach_corps_desc",
-		"scene": "window_breach_corps",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.breach_corporation",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"layers_multiplier": 1,
-			"time_multiplier": 1,
-			"reward_multiplier": 1
-		},
-		"data": {
-			"level": 0,
-			"max_level": 0
-		},
-		"guide": "window_breach_corps"
-	},
-	"breach_government":{
-		"name": "window_breach_government",
-		"icon": "government",
-		"description": "window_breach_government_desc",
-		"scene": "window_breach_government",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.breach_government",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"layers_multiplier": 1,
-			"time_multiplier": 1,
-			"reward_multiplier": 1
-		},
-		"data": {
-			"level": 0,
-			"max_level": 0
-		},
-		"guide": "window_breach_government"
-	},
-	"breach_bank":{
-		"name": "window_breach_bank",
-		"icon": "institution",
-		"description": "window_breach_bank_desc",
-		"scene": "window_breach_bank",
-		"group": "",
-		"category": "",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1,
-			"layers_multiplier": 1,
-			"time_multiplier": 1,
-			"reward_multiplier": 1
-		},
-		"data": {
-			"level": 0,
-			"max_level": 0
-		},
-		"guide": "window_breach_bank"
-	},
-	"payload_launcher":{
-		"name": "window_payload_launcher",
-		"icon": "shot",
-		"description": "window_payload_launcher_desc",
-		"scene": "window_payload_launcher",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-		},
-		"guide": "window_payload_launcher"
-	},
-	"build_infection":{
-		"name": "window_build_infection",
-		"icon": "virus",
-		"description": "window_build_infection_desc",
-		"scene": "window_build_infection",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.infection_damage",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-		},
-		"guide": "window_build_infection"
-	},
-	"execute_injection":{
-		"name": "window_execute_injection",
-		"icon": "breach",
-		"description": "window_execute_injection_desc",
-		"scene": "window_execute_injection",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.injection",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {
-		},
-		"guide": "window_execute_injection"
-	},
-	"infect_payload":{
-		"name": "window_infect_payload",
-		"icon": "virus",
-		"description": "window_infect_payload_desc",
-		"scene": "window_infect_payload",
-		"group": "breach_skills",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.infect_payload",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-		},
-		"guide": "window_infect_payload"
-	},
-	"critical_payload":{
-		"name": "window_critical_payload",
-		"icon": "thunder",
-		"description": "window_critical_payload_desc",
-		"scene": "window_critical_payload",
-		"group": "breach_skills",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.critical_payload",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-		},
-		"guide": "window_critical_payload"
-	},
-	"ghost_attack":{
-		"name": "window_ghost_attack",
-		"icon": "ghost",
-		"description": "window_ghost_attack_desc",
-		"scene": "window_ghost_attack",
-		"group": "breach_skills",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.ghost_attack",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-		},
-		"guide": "window_ghost_attack"
-	},
-	"inject_trojan":{
-		"name": "window_inject_trojan",
-		"icon": "trojan",
-		"description": "window_inject_trojan_desc",
-		"scene": "window_inject_trojan",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.trojan",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_inject_trojan"
-	},
-	"drain":{
-		"name": "window_drain",
-		"icon": "computer_infected",
-		"description": "window_drain_desc",
-		"scene": "window_drain",
-		"group": "",
-		"category": "hacking",
-		"level": 0,
-		"requirement": "research.trojan",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": "window_drain"
-	},
-	"coder":{
-		"name": "window_coder",
-		"icon": "code",
-		"description": "window_coder_desc",
-		"scene": "window_coder",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.coding",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": "window_coder"
-	},
-	"ide":{
-		"name": "window_ide",
-		"icon": "code",
-		"description": "window_ide_desc",
-		"scene": "window_ide",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "perk.ide",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_ide"
-	},
-	"commit":{
-		"name": "window_commit",
-		"icon": "commit",
-		"description": "window_commit_desc",
-		"scene": "window_commit",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_commit"
-	},
-	"build":{
-		"name": "window_build",
-		"icon": "hammer",
-		"description": "window_build_desc",
-		"scene": "window_build",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.optimizations",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_build"
-	},
-	"code_bugfix":{
-		"name": "window_code_bugfix",
-		"icon": "bug",
-		"description": "window_code_bugfix_desc",
-		"scene": "window_code_bugfix",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-			"level": 0
-		},
-		"guide": "window_code_bugfix"
-	},
-	"code_optimization":{
-		"name": "window_code_optimization",
-		"icon": "work",
-		"description": "window_code_optimization_desc",
-		"scene": "window_code_optimization",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.optimizations",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-			"level": 0
-		},
-		"guide": "window_code_optimization"
-	},
-	"code_application":{
-		"name": "window_code_application",
-		"icon": "bracket",
-		"description": "window_code_application_desc",
-		"scene": "window_code_application",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.applications",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {
-			"level": 0
-		},
-		"guide": "window_code_application"
-	},
-	"code_driver":{
-		"name": "window_code_driver",
-		"icon": "tools",
-		"description": "window_code_driver_desc",
-		"scene": "window_code_driver",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.drivers",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_driver"
-	},
-	"code_bool":{
-		"name": "window_code_bool",
-		"icon": "contrast",
-		"description": "window_code_bool_desc",
-		"scene": "window_code_bool",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_bool"
-	},
-	"code_int":{
-		"name": "window_code_int",
-		"icon": "hashtag",
-		"description": "window_code_int_desc",
-		"scene": "window_code_int",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_int"
-	},
-	"code_char":{
-		"name": "window_code_char",
-		"icon": "letter_x",
-		"description": "window_code_char_desc",
-		"scene": "window_code_char",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_char"
-	},
-	"code_float":{
-		"name": "window_code_float",
-		"icon": "pi",
-		"description": "window_code_float_desc",
-		"scene": "window_code_float",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_float"
-	},
-	"variable_combiner":{
-		"name": "window_variable_combiner",
-		"icon": "combine",
-		"description": "window_variable_combiner_desc",
-		"scene": "window_variable_combiner",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.optimizations",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_variable_combiner"
-	},
-	"code_array":{
-		"name": "window_code_array",
-		"icon": "brackets",
-		"description": "window_code_array_desc",
-		"scene": "window_code_array",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.applications",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_array"
-	},
-	"code_hashmap":{
-		"name": "window_code_hashmap",
-		"icon": "brackets_curly",
-		"description": "window_code_hashmap_desc",
-		"scene": "window_code_hashmap",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.drivers",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_code_hashmap"
-	},
-	"debug":{
-		"name": "window_debug",
-		"icon": "play",
-		"description": "window_debug_desc",
-		"scene": "window_debug",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.debugging",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_debug"
-	},
-	"fix_code":{
-		"name": "window_fix_code",
-		"icon": "check",
-		"description": "window_fix_code_desc",
-		"scene": "window_fix_code",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.bug_fixing",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_fix_code"
-	},
-	"optimize_code":{
-		"name": "window_optimize_code",
-		"icon": "wrench",
-		"description": "window_optimize_code_desc",
-		"scene": "window_optimize_code",
-		"group": "",
-		"category": "coding",
-		"level": 0,
-		"requirement": "research.code_optimization",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_optimize_code"
-	},
-	"collect":{
-		"name": "window_collect",
-		"icon": "store",
-		"description": "window_collect_desc",
-		"scene": "window_collect",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_collect"
-	},
-	"auto_collect":{
-		"name": "window_auto_collect",
-		"icon": "store",
-		"description": "window_auto_collect_desc",
-		"scene": "window_auto_collect",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "perk.auto_collect",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_collect"
-	},
-	"group":{
-		"name": "window_group",
-		"icon": "window",
-		"description": "window_group_desc",
-		"scene": "window_group",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "perk.groups",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_group"
-	},
-	"crypto_seller":{
-		"name": "window_crypto_seller",
-		"icon": "sell",
-		"description": "window_crypto_seller_desc",
-		"scene": "window_crypto_seller",
-		"group": "",
-		"category": "utility",
-		"level": 6,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_crypto_seller"
-	},
-	"auto_crypto_seller":{
-		"name": "window_auto_crypto_seller",
-		"icon": "sell_auto",
-		"description": "window_auto_crypto_seller_desc",
-		"scene": "window_auto_crypto_seller",
-		"group": "",
-		"category": "utility",
-		"level": 6,
-		"requirement": "perk.automated_crypto_seller",
-		"hidden": true,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_auto_crypto_seller"
-	},
-	"inventory":{
-		"name": "window_inventory",
-		"icon": "box",
-		"description": "window_inventory_desc",
-		"scene": "window_inventory",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_inventory"
-	},
-	"splitter":{
-		"name": "window_splitter",
-		"icon": "split",
-		"description": "window_splitter_desc",
-		"scene": "window_splitter",
-		"group": "",
-		"category": "utility",
-		"level": 1,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_splitter"
-	},
-	"folder":{
-		"name": "window_folder",
-		"icon": "folder",
-		"description": "window_folder_desc",
-		"scene": "window_folder",
-		"group": "",
-		"category": "utility",
-		"level": 2,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_folder"
-	},
-	"allocator":{
-		"name": "window_allocator",
-		"icon": "pie_chart",
-		"description": "window_allocator_desc",
-		"scene": "window_allocator",
-		"group": "",
-		"category": "utility",
-		"level": 2,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_allocator"
-	},
-	"repository":{
-		"name": "window_repository",
-		"icon": "library",
-		"description": "window_repository_desc",
-		"scene": "window_repository",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "research.coding",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_repository"
-	},
-	"segmenter":{
-		"name": "window_segmenter",
-		"icon": "dissolving",
-		"description": "window_segmenter_desc",
-		"scene": "window_segmenter",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "research.coding",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_segmenter"
-	},
-	"overclocker":{
-		"name": "window_overclocker",
-		"icon": "overclock",
-		"description": "window_overclocker_desc",
-		"scene": "window_overclocker",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "research.overclocking",
-		"hidden": false,
-		"attributes":{
-			"limit": -1
-		},
-		"data": {},
-		"guide": "window_overclocker"
-	},
-	"heat_sink":{
-		"name": "window_heat_sink",
-		"icon": "cooler",
-		"description": "window_heat_sink_desc",
-		"scene": "window_heat_sink",
-		"group": "",
-		"category": "utility",
-		"level": 0,
-		"requirement": "research.cooling",
-		"hidden": false,
-		"attributes":{
-			"limit": 0
-		},
-		"data": {},
-		"guide": "window_heat_sink"
-	},
-	"color_tester":{
-		"name": "Color Tester",
-		"icon": "window",
-		"description": "",
-		"scene": "window_color_test",
-		"group": "",
-		"category": "",
-		"level": 0,
-		"requirement": "",
-		"hidden": false,
-		"attributes":{
-			"limit": 1
-		},
-		"data": {},
-		"guide": ""
-	}
+    "processor": {
+        "name": "window_processor",
+        "icon": "processor",
+        "description": "window_processor_desc",
+        "scene": "window_processor",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.processor",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "minimum_level": 0,
+            "minimum_cores": 1,
+            "maximum_cores": 99,
+            "extra_cores": 0,
+            "main_core_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_processor"
+    },
+    "synchronizer": {
+        "name": "window_synchronizer",
+        "icon": "reload",
+        "description": "window_synchronizer_desc",
+        "scene": "window_synchronizer",
+        "group": "",
+        "category": "cpu",
+        "level": 7,
+        "requirement": "research.synchronizer",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_synchronizer"
+    },
+    "thread_manager": {
+        "name": "window_thread_manager",
+        "icon": "hierarchy",
+        "description": "window_thread_manager_desc",
+        "scene": "window_thread_manager",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "perk.thread_manager",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_thread_manager"
+    },
+    "processing_seller": {
+        "name": "window_processing_seller",
+        "icon": "processor_sell",
+        "description": "window_processing_seller_desc",
+        "scene": "window_processing_seller",
+        "group": "",
+        "category": "cpu",
+        "level": 3,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_processing_seller"
+    },
+    "virus_scanner": {
+        "name": "window_virus_scanner",
+        "icon": "antivirus",
+        "description": "window_virus_scanner_desc",
+        "scene": "window_virus_scanner",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.antivirus",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1,
+            "virus_chance": 0.5
+        },
+        "data": {},
+        "guide": "window_virus_scanner"
+    },
+    "quarantine": {
+        "name": "window_quarantine",
+        "icon": "biohazard",
+        "description": "window_quarantine_desc",
+        "scene": "window_quarantine",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.antivirus_plus",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_quarantine"
+    },
+    "antivirus_pro": {
+        "name": "window_antivirus_pro",
+        "icon": "shield2",
+        "description": "window_antivirus_pro_desc",
+        "scene": "window_antivirus_pro",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "perk.antivirus_pro",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_antivirus_pro"
+    },
+    "verifier": {
+        "name": "window_verifier",
+        "icon": "puzzle",
+        "description": "window_verifier_desc",
+        "scene": "window_verifier",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.verifier",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1,
+            "corrupt_chance": 0.5
+        },
+        "data": {},
+        "guide": "window_verifier"
+    },
+    "compressor": {
+        "name": "window_compressor",
+        "icon": "minimize",
+        "description": "window_compressor_desc",
+        "scene": "window_compressor",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.compression",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1,
+            "level": 0
+        },
+        "data": {},
+        "guide": "window_compressor"
+    },
+    "enhancer": {
+        "name": "window_enhancer",
+        "icon": "up_arrow",
+        "description": "window_enhancer_desc",
+        "scene": "window_enhancer",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.enhancement",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1,
+            "level": 0
+        },
+        "data": {},
+        "guide": "window_enhancer"
+    },
+    "encompressor": {
+        "name": "window_encompressor",
+        "icon": "star",
+        "description": "window_encompressor_desc",
+        "scene": "window_encompressor",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_encompressor",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1,
+            "level": 0
+        },
+        "data": {},
+        "guide": "window_encompressor"
+    },
+    "refiner": {
+        "name": "window_refiner",
+        "icon": "filter",
+        "description": "window_refiner_desc",
+        "scene": "window_refiner",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.refinement",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_refiner"
+    },
+    "analyzer": {
+        "name": "window_analyzer",
+        "icon": "magnifying_glass",
+        "description": "window_analyzer_desc",
+        "scene": "window_analyzer",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.analysis",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_analyzer"
+    },
+    "distillator": {
+        "name": "window_distillator",
+        "icon": "connections",
+        "description": "window_distillator_desc",
+        "scene": "window_distillator",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "research.distillation",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_distillator"
+    },
+    "decompiler": {
+        "name": "window_decompiler",
+        "icon": "document",
+        "description": "window_decompiler_desc",
+        "scene": "window_decompiler",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_decompiler",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_decompiler"
+    },
+    "decomposer": {
+        "name": "window_decomposer",
+        "icon": "image",
+        "description": "window_decomposer_desc",
+        "scene": "window_decomposer",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_decomposer",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_decomposer"
+    },
+    "demuxer": {
+        "name": "window_demuxer",
+        "icon": "sound",
+        "description": "window_demuxer_desc",
+        "scene": "window_demuxer",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_demuxer",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_demuxer"
+    },
+    "scrapper": {
+        "name": "window_scrapper",
+        "icon": "video",
+        "description": "window_scrapper_desc",
+        "scene": "window_scrapper",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_scrapper",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_scrapper"
+    },
+    "ripper": {
+        "name": "window_ripper",
+        "icon": "executable",
+        "description": "window_ripper_desc",
+        "scene": "window_ripper",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_ripper",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_ripper"
+    },
+    "movie_maker": {
+        "name": "window_movie_maker",
+        "icon": "video",
+        "description": "window_movie_maker_desc",
+        "scene": "window_movie_maker",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_movie_maker",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_movie_maker"
+    },
+    "compiler": {
+        "name": "window_compiler",
+        "icon": "executable",
+        "description": "window_compiler_desc",
+        "scene": "window_compiler",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_compiler",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_compiler"
+    },
+    "game_engine": {
+        "name": "window_game_engine",
+        "icon": "controller",
+        "description": "window_game_engine_desc",
+        "scene": "window_game_engine",
+        "group": "",
+        "category": "cpu",
+        "level": 0,
+        "requirement": "upgrade.application_game_engine",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_game_engine"
+    },
+    "network": {
+        "name": "window_network",
+        "icon": "web",
+        "description": "window_network_desc",
+        "scene": "window_network",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "names": [
+            "network_bits_communicator",
+            "network_radio_transceiver",
+            "network_1g",
+            "network_2g",
+            "network_dial_up",
+            "network_3g",
+            "network_dsl",
+            "network_4g",
+            "network_satellite",
+            "network_5g",
+            "network_6g",
+            "network_fiber_optics",
+            "network_lifi",
+            "network_photon_mesh",
+            "network_data_tunneling_communicator",
+            "network_graviton_transceiver",
+            "network_data_entangloporter",
+            "network_antimatter_relay",
+            "network_quantum_field_relay",
+            "network_fluxgrid",
+            "network_infinite_conduit",
+            "network_infinity_oscilator"
+        ],
+        "attributes": {
+            "limit": -1,
+            "minimum_level": 0
+        },
+        "data": {},
+        "guide": "window_network"
+    },
+    "network_exchanger": {
+        "name": "window_network_exchanger",
+        "icon": "bandwidth",
+        "description": "window_network_exchanger_desc",
+        "scene": "window_network_exchanger",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "research.network_exchanger",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_network_exchanger"
+    },
+    "network_limiter": {
+        "name": "window_network_limiter",
+        "icon": "stop",
+        "description": "window_network_limiter_desc",
+        "scene": "window_network_limiter",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "perk.network_limiter",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_network_limiter"
+    },
+    "upload": {
+        "name": "window_uploader",
+        "icon": "save",
+        "description": "window_uploader_desc",
+        "scene": "window_upload",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_uploader"
+    },
+    "request_uploader": {
+        "name": "window_request_uploader",
+        "icon": "star2",
+        "description": "window_request_uploader_desc",
+        "scene": "window_request_uploader",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.request_uploader",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": ""
+    },
+    "download_manager": {
+        "name": "window_download_manager",
+        "icon": "load",
+        "description": "window_download_manager_desc",
+        "scene": "window_download_manager",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "perk.download_manager",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_download_manager"
+    },
+    "download_text": {
+        "name": "window_downloader_text",
+        "icon": "document",
+        "description": "window_downloader_text_desc",
+        "scene": "window_download_text",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "download_image": {
+        "name": "window_downloader_image",
+        "icon": "image",
+        "description": "window_downloader_image_desc",
+        "scene": "window_download_image",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.image_downloader",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "download_sound": {
+        "name": "window_downloader_sound",
+        "icon": "sound",
+        "description": "window_downloader_sound_desc",
+        "scene": "window_download_sound",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.sound_downloader",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "download_video": {
+        "name": "window_downloader_video",
+        "icon": "video",
+        "description": "window_downloader_video_desc",
+        "scene": "window_download_video",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.video_downloader",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "download_program": {
+        "name": "window_downloader_program",
+        "icon": "executable",
+        "description": "window_downloader_program_desc",
+        "scene": "window_download_program",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.program_downloader",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "download_game": {
+        "name": "window_downloader_game",
+        "icon": "controller",
+        "description": "window_downloader_game_desc",
+        "scene": "window_download_game",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.game_downloader",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_downloader"
+    },
+    "redownloader": {
+        "name": "window_redownloader",
+        "icon": "return",
+        "description": "window_redownloader_desc",
+        "scene": "window_redownloader",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "research.redownload",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_redownloader"
+    },
+    "storage": {
+        "name": "window_storage",
+        "icon": "database",
+        "description": "window_storage_desc",
+        "scene": "window_storage",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.server",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_storage"
+    },
+    "server": {
+        "name": "window_server",
+        "icon": "storage",
+        "description": "window_server_desc",
+        "scene": "window_server",
+        "group": "",
+        "category": "network",
+        "level": 0,
+        "requirement": "upgrade.server",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_server"
+    },
+    "gpu_cluster": {
+        "name": "window_gpu_cluster",
+        "icon": "gpu",
+        "description": "window_gpu_cluster_desc",
+        "scene": "window_gpu_cluster",
+        "group": "",
+        "category": "gpu",
+        "level": 6,
+        "requirement": "upgrade.gpu",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "minimum_level": 0
+        },
+        "data": {},
+        "guide": "window_gpu_cluster"
+    },
+    "gpu_synchronizer": {
+        "name": "window_gpu_synchronizer",
+        "icon": "reload",
+        "description": "window_gpu_synchronizer_desc",
+        "scene": "window_gpu_synchronizer",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.synchronizer",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_gpu_synchronizer"
+    },
+    "mine_litecoin": {
+        "name": "window_mine_litecoin",
+        "icon": "litecoin",
+        "description": "window_mine_litecoin_desc",
+        "scene": "window_mine_litecoin",
+        "group": "",
+        "category": "gpu",
+        "level": 6,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_miner"
+    },
+    "mine_bitcoin": {
+        "name": "window_mine_bitcoin",
+        "icon": "bitcoin",
+        "description": "window_mine_bitcoin_desc",
+        "scene": "window_mine_bitcoin",
+        "group": "",
+        "category": "gpu",
+        "level": 6,
+        "requirement": "research.bitcoin",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_miner"
+    },
+    "mine_ethereum": {
+        "name": "window_mine_ethereum",
+        "icon": "ethereum",
+        "description": "window_mine_ethereum_desc",
+        "scene": "window_mine_ethereum",
+        "group": "",
+        "category": "gpu",
+        "level": 6,
+        "requirement": "research.ethereum",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_miner"
+    },
+    "mine_tether": {
+        "name": "window_mine_tether",
+        "icon": "tether",
+        "description": "window_mine_tether_desc",
+        "scene": "window_mine_tether",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "perk.mine_tether",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_miner"
+    },
+    "mine_token": {
+        "name": "window_mine_token",
+        "icon": "token",
+        "description": "window_mine_token_desc",
+        "scene": "window_mine_token",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.token_mining",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_mine_token"
+    },
+    "task_scheduler": {
+        "name": "window_task_scheduler",
+        "icon": "schedule",
+        "description": "window_task_scheduler_desc",
+        "scene": "window_task_scheduler",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.scheduler",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "efficiency": 1.0
+        },
+        "data": {},
+        "guide": "window_task_scheduler"
+    },
+    "movie_renderer": {
+        "name": "window_movie_renderer",
+        "icon": "video",
+        "description": "window_movie_renderer_desc",
+        "scene": "window_movie_renderer",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "upgrade.application_movie_renderer",
+        "hidden": true,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_movie_renderer"
+    },
+    "trainer": {
+        "name": "window_trainer",
+        "icon": "connections",
+        "description": "window_trainer_desc",
+        "scene": "window_trainer",
+        "group": "",
+        "category": "gpu",
+        "level": 14,
+        "requirement": "research.ai",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "cycles_multiplier": 1
+        },
+        "data": {},
+        "guide": "window_trainer"
+    },
+    "generator_text": {
+        "name": "window_generator_text",
+        "icon": "document",
+        "description": "window_generator_text_desc",
+        "scene": "window_generate_text",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_texts",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "generator_image": {
+        "name": "window_generator_image",
+        "icon": "image",
+        "description": "window_generator_image_desc",
+        "scene": "window_generate_image",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_images",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "generator_sound": {
+        "name": "window_generator_sound",
+        "icon": "sound",
+        "description": "window_generator_sound_desc",
+        "scene": "window_generate_sound",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_sounds",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "generator_video": {
+        "name": "window_generator_video",
+        "icon": "video",
+        "description": "window_generator_video_desc",
+        "scene": "window_generate_video",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_videos",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "generator_program": {
+        "name": "window_generator_program",
+        "icon": "executable",
+        "description": "window_generator_program_desc",
+        "scene": "window_generate_program",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_programs",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "generator_game": {
+        "name": "window_generator_game",
+        "icon": "controller",
+        "description": "window_generator_game_desc",
+        "scene": "window_generate_game",
+        "group": "",
+        "category": "gpu",
+        "level": 0,
+        "requirement": "research.ai_games",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_file_generator"
+    },
+    "data_lab": {
+        "name": "window_data_lab",
+        "icon": "research",
+        "description": "window_data_lab_desc",
+        "scene": "window_data_lab",
+        "group": "",
+        "category": "research",
+        "level": 0,
+        "requirement": "upgrade.research",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_data_lab"
+    },
+    "agi": {
+        "name": "window_agi",
+        "icon": "brain",
+        "description": "window_agi_desc",
+        "scene": "window_agi",
+        "group": "",
+        "category": "research",
+        "level": 0,
+        "requirement": "research.agi",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_agi"
+    },
+    "research": {
+        "name": "window_research",
+        "icon": "atom",
+        "description": "window_research_desc",
+        "scene": "window_boost_research",
+        "group": "",
+        "category": "research",
+        "level": 0,
+        "requirement": "research.agi",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": ""
+    },
+    "hack": {
+        "name": "window_hack",
+        "icon": "hacker",
+        "description": "window_hack_desc",
+        "scene": "window_boost_hack",
+        "group": "",
+        "category": "research",
+        "level": 0,
+        "requirement": "research.agi",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": ""
+    },
+    "code": {
+        "name": "window_code",
+        "icon": "code",
+        "description": "window_code_desc",
+        "scene": "window_boost_code",
+        "group": "",
+        "category": "research",
+        "level": 0,
+        "requirement": "research.agi",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": ""
+    },
+    "hacker": {
+        "name": "window_hacker",
+        "icon": "hacker",
+        "description": "window_hacker_desc",
+        "scene": "window_hacker",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.hacking",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_hacker"
+    },
+    "breach_anonymous": {
+        "name": "window_breach_anonymous",
+        "icon": "incognito",
+        "description": "window_breach_anonymous_desc",
+        "scene": "window_breach_anonymous",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "layers_multiplier": 1,
+            "time_multiplier": 1,
+            "reward_multiplier": 1
+        },
+        "data": {
+            "level": 0,
+            "max_level": 0
+        },
+        "guide": "window_breach_anonymous"
+    },
+    "breach_corps": {
+        "name": "window_breach_corps",
+        "icon": "corporation",
+        "description": "window_breach_corps_desc",
+        "scene": "window_breach_corps",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.breach_corporation",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "layers_multiplier": 1,
+            "time_multiplier": 1,
+            "reward_multiplier": 1
+        },
+        "data": {
+            "level": 0,
+            "max_level": 0
+        },
+        "guide": "window_breach_corps"
+    },
+    "breach_government": {
+        "name": "window_breach_government",
+        "icon": "government",
+        "description": "window_breach_government_desc",
+        "scene": "window_breach_government",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.breach_government",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "layers_multiplier": 1,
+            "time_multiplier": 1,
+            "reward_multiplier": 1
+        },
+        "data": {
+            "level": 0,
+            "max_level": 0
+        },
+        "guide": "window_breach_government"
+    },
+    "breach_bank": {
+        "name": "window_breach_bank",
+        "icon": "institution",
+        "description": "window_breach_bank_desc",
+        "scene": "window_breach_bank",
+        "group": "",
+        "category": "",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1,
+            "layers_multiplier": 1,
+            "time_multiplier": 1,
+            "reward_multiplier": 1
+        },
+        "data": {
+            "level": 0,
+            "max_level": 0
+        },
+        "guide": "window_breach_bank"
+    },
+    "payload_launcher": {
+        "name": "window_payload_launcher",
+        "icon": "shot",
+        "description": "window_payload_launcher_desc",
+        "scene": "window_payload_launcher",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_payload_launcher"
+    },
+    "build_infection": {
+        "name": "window_build_infection",
+        "icon": "virus",
+        "description": "window_build_infection_desc",
+        "scene": "window_build_infection",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.infection_damage",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_build_infection"
+    },
+    "execute_injection": {
+        "name": "window_execute_injection",
+        "icon": "breach",
+        "description": "window_execute_injection_desc",
+        "scene": "window_execute_injection",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.injection",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_execute_injection"
+    },
+    "infect_payload": {
+        "name": "window_infect_payload",
+        "icon": "virus",
+        "description": "window_infect_payload_desc",
+        "scene": "window_infect_payload",
+        "group": "breach_skills",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.infect_payload",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_infect_payload"
+    },
+    "critical_payload": {
+        "name": "window_critical_payload",
+        "icon": "thunder",
+        "description": "window_critical_payload_desc",
+        "scene": "window_critical_payload",
+        "group": "breach_skills",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.critical_payload",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_critical_payload"
+    },
+    "ghost_attack": {
+        "name": "window_ghost_attack",
+        "icon": "ghost",
+        "description": "window_ghost_attack_desc",
+        "scene": "window_ghost_attack",
+        "group": "breach_skills",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.ghost_attack",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_ghost_attack"
+    },
+    "inject_trojan": {
+        "name": "window_inject_trojan",
+        "icon": "trojan",
+        "description": "window_inject_trojan_desc",
+        "scene": "window_inject_trojan",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.trojan",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_inject_trojan"
+    },
+    "drain": {
+        "name": "window_drain",
+        "icon": "computer_infected",
+        "description": "window_drain_desc",
+        "scene": "window_drain",
+        "group": "",
+        "category": "hacking",
+        "level": 0,
+        "requirement": "research.trojan",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_drain"
+    },
+    "coder": {
+        "name": "window_coder",
+        "icon": "code",
+        "description": "window_coder_desc",
+        "scene": "window_coder",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.coding",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": "window_coder"
+    },
+    "ide": {
+        "name": "window_ide",
+        "icon": "code",
+        "description": "window_ide_desc",
+        "scene": "window_ide",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "perk.ide",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_ide"
+    },
+    "commit": {
+        "name": "window_commit",
+        "icon": "commit",
+        "description": "window_commit_desc",
+        "scene": "window_commit",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_commit"
+    },
+    "build": {
+        "name": "window_build",
+        "icon": "hammer",
+        "description": "window_build_desc",
+        "scene": "window_build",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.optimizations",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_build"
+    },
+    "code_bugfix": {
+        "name": "window_code_bugfix",
+        "icon": "bug",
+        "description": "window_code_bugfix_desc",
+        "scene": "window_code_bugfix",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {
+            "level": 0
+        },
+        "guide": "window_code_bugfix"
+    },
+    "code_optimization": {
+        "name": "window_code_optimization",
+        "icon": "work",
+        "description": "window_code_optimization_desc",
+        "scene": "window_code_optimization",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.optimizations",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {
+            "level": 0
+        },
+        "guide": "window_code_optimization"
+    },
+    "code_application": {
+        "name": "window_code_application",
+        "icon": "bracket",
+        "description": "window_code_application_desc",
+        "scene": "window_code_application",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.applications",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {
+            "level": 0
+        },
+        "guide": "window_code_application"
+    },
+    "code_driver": {
+        "name": "window_code_driver",
+        "icon": "tools",
+        "description": "window_code_driver_desc",
+        "scene": "window_code_driver",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.drivers",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_driver"
+    },
+    "code_bool": {
+        "name": "window_code_bool",
+        "icon": "contrast",
+        "description": "window_code_bool_desc",
+        "scene": "window_code_bool",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_bool"
+    },
+    "code_int": {
+        "name": "window_code_int",
+        "icon": "hashtag",
+        "description": "window_code_int_desc",
+        "scene": "window_code_int",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_int"
+    },
+    "code_char": {
+        "name": "window_code_char",
+        "icon": "letter_x",
+        "description": "window_code_char_desc",
+        "scene": "window_code_char",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_char"
+    },
+    "code_float": {
+        "name": "window_code_float",
+        "icon": "pi",
+        "description": "window_code_float_desc",
+        "scene": "window_code_float",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_float"
+    },
+    "variable_combiner": {
+        "name": "window_variable_combiner",
+        "icon": "combine",
+        "description": "window_variable_combiner_desc",
+        "scene": "window_variable_combiner",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.optimizations",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_variable_combiner"
+    },
+    "code_array": {
+        "name": "window_code_array",
+        "icon": "brackets",
+        "description": "window_code_array_desc",
+        "scene": "window_code_array",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.applications",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_array"
+    },
+    "code_hashmap": {
+        "name": "window_code_hashmap",
+        "icon": "brackets_curly",
+        "description": "window_code_hashmap_desc",
+        "scene": "window_code_hashmap",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.drivers",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_code_hashmap"
+    },
+    "debug": {
+        "name": "window_debug",
+        "icon": "play",
+        "description": "window_debug_desc",
+        "scene": "window_debug",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.debugging",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_debug"
+    },
+    "fix_code": {
+        "name": "window_fix_code",
+        "icon": "check",
+        "description": "window_fix_code_desc",
+        "scene": "window_fix_code",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.bug_fixing",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_fix_code"
+    },
+    "optimize_code": {
+        "name": "window_optimize_code",
+        "icon": "wrench",
+        "description": "window_optimize_code_desc",
+        "scene": "window_optimize_code",
+        "group": "",
+        "category": "coding",
+        "level": 0,
+        "requirement": "research.code_optimization",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_optimize_code"
+    },
+    "collect": {
+        "name": "window_collect",
+        "icon": "store",
+        "description": "window_collect_desc",
+        "scene": "window_collect",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_collect"
+    },
+    "auto_collect": {
+        "name": "window_auto_collect",
+        "icon": "store",
+        "description": "window_auto_collect_desc",
+        "scene": "window_auto_collect",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "perk.auto_collect",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_collect"
+    },
+    "group": {
+        "name": "window_group",
+        "icon": "window",
+        "description": "window_group_desc",
+        "scene": "window_group",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "perk.groups",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_group"
+    },
+    "crypto_seller": {
+        "name": "window_crypto_seller",
+        "icon": "sell",
+        "description": "window_crypto_seller_desc",
+        "scene": "window_crypto_seller",
+        "group": "",
+        "category": "utility",
+        "level": 6,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_crypto_seller"
+    },
+    "auto_crypto_seller": {
+        "name": "window_auto_crypto_seller",
+        "icon": "sell_auto",
+        "description": "window_auto_crypto_seller_desc",
+        "scene": "window_auto_crypto_seller",
+        "group": "",
+        "category": "utility",
+        "level": 6,
+        "requirement": "perk.automated_crypto_seller",
+        "hidden": true,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_auto_crypto_seller"
+    },
+    "inventory": {
+        "name": "window_inventory",
+        "icon": "box",
+        "description": "window_inventory_desc",
+        "scene": "window_inventory",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_inventory"
+    },
+    "splitter": {
+        "name": "window_splitter",
+        "icon": "split",
+        "description": "window_splitter_desc",
+        "scene": "window_splitter",
+        "group": "",
+        "category": "utility",
+        "level": 1,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_splitter"
+    },
+    "folder": {
+        "name": "window_folder",
+        "icon": "folder",
+        "description": "window_folder_desc",
+        "scene": "window_folder",
+        "group": "",
+        "category": "utility",
+        "level": 2,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_folder"
+    },
+    "allocator": {
+        "name": "window_allocator",
+        "icon": "pie_chart",
+        "description": "window_allocator_desc",
+        "scene": "window_allocator",
+        "group": "",
+        "category": "utility",
+        "level": 2,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_allocator"
+    },
+    "repository": {
+        "name": "window_repository",
+        "icon": "library",
+        "description": "window_repository_desc",
+        "scene": "window_repository",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "research.coding",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_repository"
+    },
+    "segmenter": {
+        "name": "window_segmenter",
+        "icon": "dissolving",
+        "description": "window_segmenter_desc",
+        "scene": "window_segmenter",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "research.coding",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_segmenter"
+    },
+    "overclocker": {
+        "name": "window_overclocker",
+        "icon": "overclock",
+        "description": "window_overclocker_desc",
+        "scene": "window_overclocker",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "research.overclocking",
+        "hidden": false,
+        "attributes": {
+            "limit": -1
+        },
+        "data": {},
+        "guide": "window_overclocker"
+    },
+    "heat_sink": {
+        "name": "window_heat_sink",
+        "icon": "cooler",
+        "description": "window_heat_sink_desc",
+        "scene": "window_heat_sink",
+        "group": "",
+        "category": "utility",
+        "level": 0,
+        "requirement": "research.cooling",
+        "hidden": false,
+        "attributes": {
+            "limit": 0
+        },
+        "data": {},
+        "guide": "window_heat_sink"
+    },
+    "color_tester": {
+        "name": "Color Tester",
+        "icon": "window",
+        "description": "",
+        "scene": "window_color_test",
+        "group": "",
+        "category": "",
+        "level": 0,
+        "requirement": "",
+        "hidden": false,
+        "attributes": {
+            "limit": 1
+        },
+        "data": {},
+        "guide": ""
+    }
 }

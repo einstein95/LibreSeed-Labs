@@ -1,100 +1,121 @@
 {
-	"money":{
-		"name": "boost_money",
-		"icon": "money",
-		"description": "boost_money_desc",
-		"level": 0,
-		"cost": 20,
-		"duration": 600,
-		"requirement": "",
-		"attributes":{
-			"income_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"bandwidth":{
-		"name": "boost_bandwidth",
-		"icon": "wifi",
-		"description": "boost_bandwidth_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "",
-		"attributes":{
-			"bandwidth_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"clock":{
-		"name": "boost_clock",
-		"icon": "processor",
-		"description": "boost_clock_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "upgrade.processor",
-		"attributes":{
-			"clock_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"gpu":{
-		"name": "boost_gpu",
-		"icon": "gpu",
-		"description": "boost_gpu_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "upgrade.gpu",
-		"attributes":{
-			"gpu_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"research":{
-		"name": "boost_research",
-		"icon": "research",
-		"description": "boost_research_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "upgrade.research",
-		"attributes":{
-			"research_speed_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"hack_power":{
-		"name": "boost_hack_power",
-		"icon": "hacker",
-		"description": "boost_hack_power_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "research.hacking",
-		"attributes":{
-			"hack_power_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	},
-	"code_speed":{
-		"name": "boost_code_speed",
-		"icon": "code",
-		"description": "boost_code_speed_desc",
-		"level": 0,
-		"cost": 10,
-		"duration": 600,
-		"requirement": "research.coding",
-		"attributes":{
-			"code_speed_multiplier": [0,0,2]
-		},
-		"window_attributes":{
-		}
-	}
+    "money": {
+        "name": "boost_money",
+        "icon": "money",
+        "description": "boost_money_desc",
+        "level": 0,
+        "cost": 20,
+        "duration": 600,
+        "requirement": "",
+        "attributes": {
+            "income_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "bandwidth": {
+        "name": "boost_bandwidth",
+        "icon": "wifi",
+        "description": "boost_bandwidth_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "",
+        "attributes": {
+            "bandwidth_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "clock": {
+        "name": "boost_clock",
+        "icon": "processor",
+        "description": "boost_clock_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "upgrade.processor",
+        "attributes": {
+            "clock_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "gpu": {
+        "name": "boost_gpu",
+        "icon": "gpu",
+        "description": "boost_gpu_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "upgrade.gpu",
+        "attributes": {
+            "gpu_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "research": {
+        "name": "boost_research",
+        "icon": "research",
+        "description": "boost_research_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "upgrade.research",
+        "attributes": {
+            "research_speed_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "hack_power": {
+        "name": "boost_hack_power",
+        "icon": "hacker",
+        "description": "boost_hack_power_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "research.hacking",
+        "attributes": {
+            "hack_power_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    },
+    "code_speed": {
+        "name": "boost_code_speed",
+        "icon": "code",
+        "description": "boost_code_speed_desc",
+        "level": 0,
+        "cost": 10,
+        "duration": 600,
+        "requirement": "research.coding",
+        "attributes": {
+            "code_speed_multiplier": [
+                0,
+                0,
+                2
+            ]
+        },
+        "window_attributes": {}
+    }
 }

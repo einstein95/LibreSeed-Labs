@@ -1,344 +1,344 @@
 {
-	"download_speed_multiplier":{
-		"name": "attribute_download_speed_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"upload_speed_multiplier":{
-		"name": "attribute_upload_speed_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"bandwidth_multiplier":{
-		"name": "attribute_bandwidth_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"clock_multiplier":{
-		"name": "attribute_clock_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"gpu_multiplier":{
-		"name": "attribute_gpu_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"research_speed_multiplier":{
-		"name": "attribute_research_speed_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"hack_power_multiplier":{
-		"name": "attribute_hack_power_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"code_speed_multiplier":{
-		"name": "attribute_code_speed_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"download_size_multiplier":{
-		"name": "attribute_download_size_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"upload_size_multiplier":{
-		"name": "attribute_upload_size_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"files_multiplier":{
-		"name": "attribute_files_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"income_multiplier":{
-		"name": "attribute_income_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"token_multiplier":{
-		"name": "attribute_token_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"bandwidth_value_multiplier":{
-		"name": "attribute_bandwidth_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"upload_value_multiplier":{
-		"name": "attribute_upload_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"processing_value_multiplier":{
-		"name": "attribute_processing_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"mining_multiplier":{
-		"name": "attribute_mining_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"litecoin_value_multiplier":{
-		"name": "attribute_litecoin_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"bitcoin_value_multiplier":{
-		"name": "attribute_bitcoin_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"ethereum_value_multiplier":{
-		"name": "attribute_ethereum_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"tether_value_multiplier":{
-		"name": "attribute_tether_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"storage_size":{
-		"name": "attribute_storage_size",
-		"type": 1,
-		"hidden": false,
-		"default": 1e24
-	},
-	"storage_value_multiplier":{
-		"name": "attribute_storage_value_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"neuron_multiplier":{
-		"name": "attribute_neuron_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"research_multiplier":{
-		"name": "attribute_research_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"trojan_multiplier":{
-		"name": "attribute_trojan_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 0
-	},
-	"breach_reward_multiplier":{
-		"name": "attribute_breach_reward_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"hack_utilities":{
-		"name": "attribute_hack_utilities",
-		"type": 0,
-		"hidden": false,
-		"default": 0
-	},
-	"power_multiplier":{
-		"name": "attribute_power_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"empower_power":{
-		"name": "attribute_empower_power",
-		"type": 2,
-		"hidden": false,
-		"default": 0.1
-	},
-	"price_multiplier":{
-		"name": "attribute_price_multiplier",
-		"type": 2,
-		"hidden": false,
-		"default": 1
-	},
-	"breach_damage_multiplier":{
-		"name": "attribute_breach_damage_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"infection_damage_multiplier":{
-		"name": "attribute_infection_damage_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"breach_layers_multiplier":{
-		"name": "attribute_breach_layers_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"breach_speed_multiplier":{
-		"name": "attribute_breach_speed_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"breach_critical_chance":{
-		"name": "attribute_breach_critical_chance",
-		"type": 2,
-		"hidden": false,
-		"default": 0.1
-	},
-	"breach_critical_multiplier":{
-		"name": "attribute_breach_critical_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1.5
-	},
-	"breach_time_multiplier":{
-		"name": "attribute_breach_time_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"text_value_multiplier":{
-		"name": "attribute_text_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"code_value_multiplier":{
-		"name": "attribute_code_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"image_value_multiplier":{
-		"name": "attribute_image_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"sound_value_multiplier":{
-		"name": "attribute_sound_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"video_value_multiplier":{
-		"name": "attribute_video_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"program_value_multiplier":{
-		"name": "attribute_program_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"game_value_multiplier":{
-		"name": "attribute_game_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_text_value_multiplier":{
-		"name": "attribute_ai_text_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_code_value_multiplier":{
-		"name": "attribute_ai_code_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_image_value_multiplier":{
-		"name": "attribute_ai_image_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_sound_value_multiplier":{
-		"name": "attribute_ai_sound_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_video_value_multiplier":{
-		"name": "attribute_ai_video_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_program_value_multiplier":{
-		"name": "attribute_ai_program_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"ai_game_value_multiplier":{
-		"name": "attribute_ai_game_value_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	},
-	"max_rest_time":{
-		"name": "attribute_max_rest_time",
-		"type": 0,
-		"hidden": false,
-		"default": 600
-	},
-	"rest_time_multiplier":{
-		"name": "attribute_rest_time_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"online_rest_time_gain":{
-		"name": "attribute_online_rest_time_gain",
-		"type": 1,
-		"hidden": false,
-		"default": 0
-	},
-	"time_multiplier":{
-		"name": "attribute_time_multiplier",
-		"type": 1,
-		"hidden": false,
-		"default": 1
-	},
-	"offline_time_multiplier":{
-		"name": "attribute_offline_time_multiplier",
-		"type": 1,
-		"hidden": true,
-		"default": 1
-	}
+    "download_speed_multiplier": {
+        "name": "attribute_download_speed_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "upload_speed_multiplier": {
+        "name": "attribute_upload_speed_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "bandwidth_multiplier": {
+        "name": "attribute_bandwidth_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "clock_multiplier": {
+        "name": "attribute_clock_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "gpu_multiplier": {
+        "name": "attribute_gpu_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "research_speed_multiplier": {
+        "name": "attribute_research_speed_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "hack_power_multiplier": {
+        "name": "attribute_hack_power_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "code_speed_multiplier": {
+        "name": "attribute_code_speed_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "download_size_multiplier": {
+        "name": "attribute_download_size_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "upload_size_multiplier": {
+        "name": "attribute_upload_size_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "files_multiplier": {
+        "name": "attribute_files_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "income_multiplier": {
+        "name": "attribute_income_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "token_multiplier": {
+        "name": "attribute_token_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "bandwidth_value_multiplier": {
+        "name": "attribute_bandwidth_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "upload_value_multiplier": {
+        "name": "attribute_upload_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "processing_value_multiplier": {
+        "name": "attribute_processing_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "mining_multiplier": {
+        "name": "attribute_mining_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "litecoin_value_multiplier": {
+        "name": "attribute_litecoin_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "bitcoin_value_multiplier": {
+        "name": "attribute_bitcoin_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "ethereum_value_multiplier": {
+        "name": "attribute_ethereum_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "tether_value_multiplier": {
+        "name": "attribute_tether_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "storage_size": {
+        "name": "attribute_storage_size",
+        "type": 1,
+        "hidden": false,
+        "default": 1e24
+    },
+    "storage_value_multiplier": {
+        "name": "attribute_storage_value_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "neuron_multiplier": {
+        "name": "attribute_neuron_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "research_multiplier": {
+        "name": "attribute_research_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "trojan_multiplier": {
+        "name": "attribute_trojan_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 0
+    },
+    "breach_reward_multiplier": {
+        "name": "attribute_breach_reward_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "hack_utilities": {
+        "name": "attribute_hack_utilities",
+        "type": 0,
+        "hidden": false,
+        "default": 0
+    },
+    "power_multiplier": {
+        "name": "attribute_power_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "empower_power": {
+        "name": "attribute_empower_power",
+        "type": 2,
+        "hidden": false,
+        "default": 0.1
+    },
+    "price_multiplier": {
+        "name": "attribute_price_multiplier",
+        "type": 2,
+        "hidden": false,
+        "default": 1
+    },
+    "breach_damage_multiplier": {
+        "name": "attribute_breach_damage_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "infection_damage_multiplier": {
+        "name": "attribute_infection_damage_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "breach_layers_multiplier": {
+        "name": "attribute_breach_layers_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "breach_speed_multiplier": {
+        "name": "attribute_breach_speed_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "breach_critical_chance": {
+        "name": "attribute_breach_critical_chance",
+        "type": 2,
+        "hidden": false,
+        "default": 0.1
+    },
+    "breach_critical_multiplier": {
+        "name": "attribute_breach_critical_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1.5
+    },
+    "breach_time_multiplier": {
+        "name": "attribute_breach_time_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "text_value_multiplier": {
+        "name": "attribute_text_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "code_value_multiplier": {
+        "name": "attribute_code_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "image_value_multiplier": {
+        "name": "attribute_image_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "sound_value_multiplier": {
+        "name": "attribute_sound_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "video_value_multiplier": {
+        "name": "attribute_video_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "program_value_multiplier": {
+        "name": "attribute_program_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "game_value_multiplier": {
+        "name": "attribute_game_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_text_value_multiplier": {
+        "name": "attribute_ai_text_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_code_value_multiplier": {
+        "name": "attribute_ai_code_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_image_value_multiplier": {
+        "name": "attribute_ai_image_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_sound_value_multiplier": {
+        "name": "attribute_ai_sound_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_video_value_multiplier": {
+        "name": "attribute_ai_video_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_program_value_multiplier": {
+        "name": "attribute_ai_program_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "ai_game_value_multiplier": {
+        "name": "attribute_ai_game_value_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    },
+    "max_rest_time": {
+        "name": "attribute_max_rest_time",
+        "type": 0,
+        "hidden": false,
+        "default": 600
+    },
+    "rest_time_multiplier": {
+        "name": "attribute_rest_time_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "online_rest_time_gain": {
+        "name": "attribute_online_rest_time_gain",
+        "type": 1,
+        "hidden": false,
+        "default": 0
+    },
+    "time_multiplier": {
+        "name": "attribute_time_multiplier",
+        "type": 1,
+        "hidden": false,
+        "default": 1
+    },
+    "offline_time_multiplier": {
+        "name": "attribute_offline_time_multiplier",
+        "type": 1,
+        "hidden": true,
+        "default": 1
+    }
 }

@@ -1,66 +1,66 @@
 {
-	"money":{
-		"name": "resource_money",
-		"icon": "money",
-		"metric": false,
-		"production": true,
-		"level": 0,
-		"requirement": ""
-	},
-	"research":{
-		"name": "resource_research",
-		"icon": "atom",
-		"metric": false,
-		"production": true,
-		"level": 9,
-		"requirement": ""
-	},
-	"token":{
-		"name": "resource_token",
-		"icon": "token",
-		"metric": false,
-		"production": true,
-		"level": 0,
-		"requirement": ""
-	},
-	"hack_point":{
-		"name": "resource_hack_point",
-		"icon": "star",
-		"metric": false,
-		"production": false,
-		"level": 0,
-		"requirement": ""
-	},
-	"corporation_data":{
-		"name": "resource_corporation_data",
-		"icon": "data",
-		"metric": false,
-		"production": false,
-		"level": 0,
-		"requirement": "research.breach_corporation"
-	},
-	"government_data":{
-		"name": "resource_government_data",
-		"icon": "eye_ball",
-		"metric": false,
-		"production": false,
-		"level": 0,
-		"requirement": "research.breach_government"
-	},
-	"optimization_point":{
-		"name": "resource_optimization_point",
-		"icon": "work",
-		"metric": false,
-		"production": false,
-		"level": 0,
-		"requirement": ""
-	},
-	"application_point":{
-		"name": "resource_application_point",
-		"icon": "bracket",
-		"metric": false,
-		"production": false,
-		"level": 0,
-		"requirement": ""
-	}
+    "money": {
+        "name": "resource_money",
+        "icon": "money",
+        "metric": false,
+        "production": true,
+        "level": 0,
+        "requirement": ""
+    },
+    "research": {
+        "name": "resource_research",
+        "icon": "atom",
+        "metric": false,
+        "production": true,
+        "level": 9,
+        "requirement": ""
+    },
+    "token": {
+        "name": "resource_token",
+        "icon": "token",
+        "metric": false,
+        "production": true,
+        "level": 0,
+        "requirement": ""
+    },
+    "hack_point": {
+        "name": "resource_hack_point",
+        "icon": "star",
+        "metric": false,
+        "production": false,
+        "level": 0,
+        "requirement": ""
+    },
+    "corporation_data": {
+        "name": "resource_corporation_data",
+        "icon": "data",
+        "metric": false,
+        "production": false,
+        "level": 0,
+        "requirement": "research.breach_corporation"
+    },
+    "government_data": {
+        "name": "resource_government_data",
+        "icon": "eye_ball",
+        "metric": false,
+        "production": false,
+        "level": 0,
+        "requirement": "research.breach_government"
+    },
+    "optimization_point": {
+        "name": "resource_optimization_point",
+        "icon": "work",
+        "metric": false,
+        "production": false,
+        "level": 0,
+        "requirement": ""
+    },
+    "application_point": {
+        "name": "resource_application_point",
+        "icon": "bracket",
+        "metric": false,
+        "production": false,
+        "level": 0,
+        "requirement": ""
+    }
 }
