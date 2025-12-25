@@ -5,5 +5,5 @@ func can_purchase() -> bool:
     return true
 
 
-func apply() -> void :
+func apply() -> void:
     pass

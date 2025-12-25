@@ -1,16 +1,16 @@
 extends Node2D
 
-@onready var lines: = $Lines
-@onready var research_buttons: = $Research
+@onready var lines := $Lines
+@onready var research_buttons := $Research
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.research_queued.connect(_on_research_queued)
 
     update_lines()
 
 
-func update_lines() -> void :
+func update_lines() -> void:
     RenderingServer.canvas_item_clear(lines.get_canvas_item())
 
     for i: Button in research_buttons.get_children():
@@ -35,7 +35,7 @@ func update_lines() -> void :
                         var t: float = float(step) / abs(target.angle_degrees - i.angle_degrees) if target.angle_degrees != i.angle_degrees else 0
 
                         var pos = Vector2(
-                            (50 + target.radius * 128) * cos(deg_to_rad(current_angle)), 
+                            (50 + target.radius * 128) * cos(deg_to_rad(current_angle)),
                             (50 + target.radius * 128) * sin(deg_to_rad(current_angle))
                         )
 
@@ -45,14 +45,5 @@ func update_lines() -> void :
                 RenderingServer.canvas_item_set_parent(line, lines.get_canvas_item())
 
 
-
-
-
-
-
-
-
-
-
-func _on_research_queued(research: String, levels: int) -> void :
+func _on_research_queued(research: String, levels: int) -> void:
     update_lines()

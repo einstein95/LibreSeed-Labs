@@ -13,16 +13,16 @@ var max_history_size: int = 50
 var ticks: int = 40
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.tick.connect(_on_tick)
 
     value_history.append(current_value)
 
 
-func tick(delta: float) -> void :
+func tick(delta: float) -> void:
     if ticks <= 0:
         ticks = 40
-        var random_change: float = randf_range( - base_volatility, base_volatility)
+        var random_change: float = randf_range(-base_volatility, base_volatility)
 
         if trend_duration > 0:
             random_change += trend_strength
@@ -49,21 +49,22 @@ func tick(delta: float) -> void :
         ticks -= 1
 
 
-func start_new_trend() -> void :
+func start_new_trend() -> void:
     trend_strength = randf_range(-0.25, 0.5)
     trend_duration = randi_range(3, 8)
 
 
 func calculate_momentum() -> float:
-    if value_history.size() < 5: return 0.0
+    if value_history.size() < 5:
+        return 0.0
 
     var recent_change: float = current_value - value_history[-5]
     return recent_change * 0.1
 
 
-func crash_market(severity: float = 1.0) -> void :
+func crash_market(severity: float = 1.0) -> void:
     crash_severity = clamp(severity, 0.1, 1.0)
 
 
-func _on_tick() -> void :
+func _on_tick() -> void:
     tick(0.05)

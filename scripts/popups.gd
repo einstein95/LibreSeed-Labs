@@ -4,11 +4,11 @@ var can_close: bool
 var cur_popup: String
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.popup.connect(_on_popup)
 
 
-func popup() -> void :
+func popup() -> void:
     visible = true
     modulate.a = 0
     var tween: Tween = create_tween()
@@ -16,7 +16,7 @@ func popup() -> void :
     tween.tween_property(self, "modulate:a", 1, 0.2)
 
 
-func set_popup(popup: String) -> void :
+func set_popup(popup: String) -> void:
     if has_node(cur_popup):
         get_node(cur_popup).visible = false
 
@@ -37,7 +37,7 @@ func set_popup(popup: String) -> void :
     Sound.play("open")
 
 
-func _on_popup(popup: String) -> void :
+func _on_popup(popup: String) -> void:
     if popup.is_empty():
         visible = false
         can_close = false
@@ -45,13 +45,15 @@ func _on_popup(popup: String) -> void :
 
     if !visible:
         popup()
-        get_tree().create_timer(0.15).timeout.connect( func() -> void : can_close = true)
+        get_tree().create_timer(0.15).timeout.connect(func() -> void: can_close = true)
 
     set_popup(popup)
 
 
-func _on_gui_input(event: InputEvent) -> void :
-    if !can_close: return
+func _on_gui_input(event: InputEvent) -> void:
+    if !can_close:
+        return
+
     if event is InputEventMouseButton and event.is_released():
         Signals.popup.emit("")
         Sound.play("close")

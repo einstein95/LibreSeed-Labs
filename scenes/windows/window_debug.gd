@@ -1,33 +1,37 @@
 extends WindowIndexed
 
-const goals: Dictionary = {"code_bugfix": 4, "code_optimization": 6, "code_application": 20, 
-"code_driver": 80}
+const goals: Dictionary = {
+    "code_bugfix": 4,
+    "code_optimization": 6,
+    "code_application": 20,
+    "code_driver": 80
+}
 
-@onready var progress_label: = $PanelContainer / MainContainer / Progress / ProgressContainer / ProgressLabel
-@onready var progress_bar: = $PanelContainer / MainContainer / Progress / ProgressBar
-@onready var code_speed: = $PanelContainer / MainContainer / CodeSpeed
-@onready var code: = $PanelContainer / MainContainer / Code
-@onready var fixed: = $PanelContainer / MainContainer / Fixed
-@onready var bugged: = $PanelContainer / MainContainer / Bugged
-@onready var audio_player: = $AudioStreamPlayer2D
+@onready var progress_label := $PanelContainer/MainContainer/Progress/ProgressContainer/ProgressLabel
+@onready var progress_bar := $PanelContainer/MainContainer/Progress/ProgressBar
+@onready var code_speed := $PanelContainer/MainContainer/CodeSpeed
+@onready var code := $PanelContainer/MainContainer/Code
+@onready var fixed := $PanelContainer/MainContainer/Fixed
+@onready var bugged := $PanelContainer/MainContainer/Bugged
+@onready var audio_player := $AudioStreamPlayer2D
 
 var progress: float
 var goal: float = 5
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
 
     update_goal()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, progress / goal, 1.0 - exp(-50.0 * delta))
     progress_label.text = Utils.print_string(progress, false) + "ops"
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if floorf(code.count) >= 1:
         progress += code_speed.count * delta
         if progress >= goal:
@@ -60,14 +64,16 @@ func process(delta: float) -> void :
     bugged.production = min(code_speed.count / goal, code.production) * 0.5
 
 
-func update_goal() -> void :
-    if !goals.has(code.resource): return
+func update_goal() -> void:
+    if !goals.has(code.resource):
+        return
+
     goal = goals[code.resource]
 
-    $PanelContainer / MainContainer / Progress / ProgressContainer / SizeLabel.text = Utils.print_string(goal, false) + "ops"
+    $PanelContainer/MainContainer/Progress/ProgressContainer/SizeLabel.text = Utils.print_string(goal, false) + "ops"
 
 
-func _on_code_resource_set() -> void :
+func _on_code_resource_set() -> void:
     progress = 0
 
     if code.variation == 0:

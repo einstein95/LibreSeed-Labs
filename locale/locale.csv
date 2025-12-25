@@ -567,7 +567,6 @@ guide_window_downloader,,,,,,Downloads files using Download Speed.,Descarga arch
 window_thread_manager,,,,,,Thread Manager,Administrador de hilos,,,,,,スレッドマネージャー,,,,,Gerenciador de Thread,,,,,,,
 window_breach_corps,,,,,,Breach Corporations,,,,Infiltrer Entreprises,,,企業データ侵入,,,,,Invadir Corporações,,,,,,,
 upgrade_game_downloader_desc,,,,,,Unlocks the Game Downloader,Desbloquea el Descargador de juegos,,,Débloque le Downloader de jeux,,,ゲームダウンローダーをアンロックします,,,,,Desbloqueia o Downloader de Jogo,,,,,,,
-support_us,,,,,,Support us by purchasing items and gain badges!,¡Apóyanos comprando artículos y ganando insignias!,,,Soutenez-nous en achetant des articles et gagnez des badges !,Dukung kami dengan membeli item dan dapatkan lencana!,,アイテムを購入して私達を支援し、バッジを獲得しましょう！,아이템을 구매하여 저희를 도와주시면 뱃지도 드립니다!,,,Wesprzyj nas kupując przedmioty i otrzymaj odznaki!,Apoie-nos comprando itens e ganhe emblemas!,,,,,,,
 guide_file_modifiers_ai,,,,,," AI: Increases quality by 2x, value by 10m.x, but removes research and neuron yield"," IA: aumenta la calidad en 2x, el valor en 10m.x, pero elimina la investigación y el rendimiento neuronal.",,," IA: Augmente la qualité par x2, la valeur par x10m., mais supprime le rendement des recherches et des Neurons"," AI: Menaikkan kualitas sebesar 2x, Nilai sebesar 10jt.x, namun menghilangkan penelitian dan hasil neuron",, AI:クオリティが2倍、数量が10m倍になるが、リサーチとニューロン生産量が0になる,,,,," IA: Aumenta a qualidade em 2x, valor por 10m.x, mas remove ganhos de Pesquisa e neurônio",,,,,,,
 window_virus_scanner_desc,,,,,,Scans files for viruses. Scanned files are worth 4x more. Infected files are worth 4x less,Analiza archivos en busca de virus. Los archivos analizados valen 4 veces más. Los archivos infectados valen 4 veces menos.,,,Analyse les fichiers à la recherche de virus. Les fichiers numérisés valent 4 fois plus. Les fichiers infectés valent 4 fois moins,Pindai file untuk mencari virus. file yang dipindai bernilai 4x lebih tinggi. file yang terinfeksi bernilai 4x lebih rendah,,ファイルのウイルスをスキャンします。スキャンしたファイルの価値は4倍になります。感染したファイルの価値は1/4になります,파일을 스캔해 바이러스를 확인함. 스캔한 파일은 가치가 4배 증가. 감염된 파일은 가치가 4배 하락,,,,Procura por vírus em arquivos. Arquivos escaneados valem 4x mais. Arquivos infectados valem 4x menos,,,,,,,
 breach_bank_success,,,,,,Bank breach completed,,,,Intrusion bancaire réussie,Penerobosan bank selesai,,銀行データ侵入に成功しました,은행 침투 성공,,,Naruszenie bezpieczeństwa banku zakończone,Banco invadido com sucesso,,,,,,,
@@ -782,7 +781,6 @@ resource_sound_desc,,,,,,Sound file used in uploading and research.,,,,Fichier a
 upgrade_hack_infection_damage_desc,,,,,,Increases Infection Damage by 10%,Aumenta el daño por infección en un 10%,,,,,,感染ダメージを10%増やします,,,,,Aumenta o Dano de Infecção em 10%,,,,,,,
 upgrade_optimization_decompiler,,,,,,Optimized Decompilation,,,,,,,デコンパイル最適化,,,,,Decompilação Otimizada,,,,,,,
 research_agi,,,,,,Artificial General Intelligence,Inteligencia Artificial General,,,,Artificial General Intelligence,,汎用人工知能,,,,,Inteligência Artificial Geral,,,,,,,
-menu_support,,,,,,Support,Apoyo,,,Assistance,Dukungan,,寄付,서포트,,,Wsparcie,Suporte,,,,,,,支持
 setting_language,,,,,,Language,Idioma,,,Langue,Bahasa,,言語,언어,,,Język,Idioma,,,,,,,語言
 window_task_scheduler_desc,,,,,,Converts GPU Speed into Clock Speed,Convierte la velocidad de la GPU en velocidad de reloj,,,Convertit le vitesse du GPU en vitesse d'horloge,,,GPU速度をクロック速度に変換します,GPU 속도를 클럭 속도로 치환,,,,Converte Velocidade de GPU em Velocidade de Clock,,,,,,,
 resource_hashmap_char_desc,,,,,,HashMap variable produced from an Array[String] and an Array[char].,,,,HashMap générée à partir d'un Array[String] et d'un Array[Char].,Variabel HashMap yang diproduksi dari Array[String] dan Array[char].,,Array[String]とArray[char]のペアからなるHashmap型の変数です,배열[String]과 배열[char]로 생산되는 해쉬맵 변수,,,"Zmienna typu HashMap wytworzona z Arrary[String] oraz Array[char]
@@ -873,7 +871,6 @@ window_breach_bank_desc,,,,,,"Starts a bank breach, granting Tokens on success",
 action_confirm,,,,,,Confirm,Confirmar,,,Confirmer,Konfirmasi,,確認,확인,,,Potwierdź,Confirmar,,,,,,,確定
 hack_points,,,,,,Hack Points,Puntos de hackeo,,,Points de piratage,Poin Retas,,ハックポイント,해킹 포인트,,,Punkty Hakowania,Pontos de Hack,,,,,,,
 menu_shop,,,,,,Shop,Tienda,,,Boutique,Toko,,ショップ,상점,,,Sklep,Loja,,,,,,,商店
-premium_daily_tokens,,,,,,Daily Tokens,Tokens diarios,,,,,,デイリートークン,,,,,Fichas Diárias,,,,,,,每日代幣
 action_add_threat,,,,,,Increase Threat,,,,Augmenter la menace,Naikkan Ancaman,,脅威レベルを上げる,위협 상향,,,Zwiększ zagrożenie,Aumentar Risco,,,,,,,增加風險
 big,,,,,,Big,Grande,,,Grand,Besar,,大,크게,,,Duży,Grande,,,,,,,中
 request_completed,,,,,,Request Completed,Solicitud completada,,,Requête terminée,Permintaan Selesai,,依頼が完了しました,리퀘스트 완료됨,,,Źądanie Ukończone,Pedido Entregue,,,,,,,
@@ -1075,10 +1072,6 @@ Waves by Danijel Zambo
 [h]翻譯[/h]
 葡萄牙文: EnigmaDev Studios
 "
-premium_permanent_boost_desc,,,,,,"Boosts become permanent
-+1 Support Level",,,,,,,"ブーストの効果時間が無限になります
-サポートレベルが1上がります",,,,,"Impulsos se tornam permanentes
-+1 Nível de Suporte",,,,,,,
 window_downloader,,,,,,Downloader,Descargador,,,Downloader,Pengunduh,,ダウンローダー,다운로더,,,,Downloader,,,,,,,下載器
 window_network_exchanger,,,,,,Network Exchanger,Intercambiador de red,,,Echangeur Réseau,,,ネットワーク交換器,,,,,Inversor de Rede,,,,,,,
 guide_portal,,,,,,Portal,Portal,,,Portail,,,ポータル,,,,,Portal,,,,,,,
@@ -1338,7 +1331,6 @@ traditional_chinese,,,,,,Traditional Chinese,Chino Tradicional,,,Chinois traditi
 critical,,,,,,Critical,Crítico,,,Critique,Kritikal,,クリティカル,위험함,,,Krytyczne,Crítico,,,,,,,
 window_breach_anonymous_desc,,,,,,"Starts a breach against anonymous, awarding with Hack Experience on success",,,,"Déclenche une attaque contre Anonymous, récompensant par de l’expérience en hacking en cas de succès",,,個人データに侵入します。成功するとハック経験値を入手します,,,,,"Começa uma brecha contra os anonymous, concedendo Experiência em Hack em caso de sucesso",,,,,,,
 window_fix_code_desc,,,,,,Fixes a bugged code using bug fixes to improve its value,,,,Fix le code buggé en utilisant des correctifs pour augmenter sa valeur,,,バグ修正コードを使用してバグのあるコードを修正し、コードの価値を向上させます,,,,,Arruma códigos bugados usando bug fixes para aprimorar seu valor,,,,,,,
-premium_chronomancer,,,,,,Time Generator,Generador de tiempo,,,,,,時間生成器,,,,,Gerador de Tempo,,,,,,,
 achievement_completionist_desc,,,,,,Complete all requests,Completar todas las solicitudes,,,,Selesaikan semua permintaan,,全ての依頼を完了する,,,,,Conclua todos os pedidos,,,,,,,
 boost_clock,,,,,,Overclock,Overclock,,,Overclock,Overclock,,オーバークロック,오버클럭,,,Podkręcenie,Overclock,,,,,,,
 stats_redownloaded,,,,,,Files Redownloaded,Archivos descargados nuevamente,,,Fichiers Redownloadés,File Diundah kembali,,再ダウンロードしたファイル,,,,,Arquivos Rebaixados,,,,,,,已重新下載檔案
@@ -1382,7 +1374,6 @@ upgrade_hack_breach_critical_chance,,,,,,Critical Chance,Oportunidad de daño cr
 stats_max_money,,,,,,Total Money,Dinero total,,,Argent Total,Total Uang,,合計クレジット,,,,,Dinheiro Total,,,,,,,
 research_ethereum,,,,,,Ethereum Mining,Minería de Ethereum,,,,,,イーサリアムマイニング,,,,,Mineração de Ethereum,,,,,,,
 window_server_desc,,,,,,Provides income based on the variety of files stored,Proporciona ingresos en función de la variedad de archivos almacenados,,,Fournit des revenus en fonction de la variété de fichiers stockés,Memberikan penghasilan berdasarkan keragaman file yang disimpan,,ファイルの種類の数に応じて収益を得ます,저장된 파일에 따라 수입 생산,,,,Fornece renda baseado nos arquivos armazenados,,,,,,,
-premium_permanent_boost,,,,,,Permanent Boosts,Impulsos permanentes,,,,,,無限ブースト,,,,,Impulsos Permanentes,,,,,,,
 resource_clock_speed,,,,,,Clock Speed,Velocidad del reloj,,,Fréquence d'horloge,Kecepatan Clock,,クロック速度,클럭 속도,,,Prędkość Taktowania,Velocidade de Clock,,,,,,,CPU 速度
 upgrade_hack_sneak_attack_desc,,,,,,Increases breach time limit by 1 second,,,,,,,データ侵入の時間制限を1秒増やします,,,,,Aumenta o limite de tempo de brecha em 1 segundo,,,,,,,
 resource_array_int,,,,,,Array[int],Array[int],,,Array[Int],Array[int],,Array[int],배열[int],,,"Array[int]
@@ -1449,10 +1440,6 @@ guide_window_code_array,,,,,,Codes an array of the inserted variable,,,,,,,入�
 research_ai_programs,,,,,,Program Synthesis,Sintetización de programas,,,,,,バイブコーディング,,,,,Síntese de Programas,,,,,,,
 no_new_unlocks,,,,,,No new milestone achieved,,,,Aucun nouveau jalon atteint,Tidak ada titik capai baru yang diperoleh,,達成したマイルストーンはありません,새로운 이정표에 도달하지 못함,,,Nie osiągnięto nowego kamienia milowego,Nenhum marco alcançado,,,,,,,
 boost_money,,,,,,Money Printer,Impresora de dinero,,,,,,貨幣印刷機,,,,,Impressor de Dinheiro,,,,,,,
-<!MissingKey:Instantly receive 5000 Tokens>,,,,,,"Instantly receive 5000 Tokens
-+1 Support Level",,,,,,,"5000トークンをすぐに入手します
-サポートレベルが1上がります",,,,,"Instantaneamente receba 5000 Fichas
-+1 Nível de Suporte",,,,,,,
 window_downloader_program,,,,,,Program Downloader,Descargador de programas,,,Downloader de programme,,,プログラムダウンローダー,,,,,Downloader de Programa,,,,,,,
 window_mine_bitcoin_desc,,,,,,"Uses GPU Speed to mine Bitcoin, a coin with medium volatility","Utiliza la velocidad de la GPU para minar Bitcoin, una moneda con media volatilidad",,,"Utilise la vitesse du GPU pour miner du Bitcoin, une pièce à volatilité moyenne","Menggunakan Kecepatan GPU untuk menambang Bitcoin, Koin dengan ketidakstabilan sedang",,GPU速度を使用し、ビットコイン(中変動率の暗号通貨)を入手します,"GPU 속도를 사용해 Bitcoin을 채굴, 변동성 중간",,,,"Usa Velocidade de GPU para minerar Bitcoin, uma criptomoeda de volatilidade média",,,,,,,
 achievement_fully_optimized,,,,,,Back-end Dev,Desarrollo back-end,,,,Pengembang Back-end,,バックエンド開発者,,,,,Desenvolvedor Back-end,,,,,,,
@@ -1523,13 +1510,6 @@ A quantidade de ciclos (C) necessária é baseada em 2x o tamanho do arquivo.",,
 resource_heat_desc,,,,,,Generated from overclocking.,Generado a partir del overclocking.,,,Généré à partir de l'overclocking.,Dihasilkan dari melakukan overclock.,,オーバークロックで生成されます,오버클럭으로 생산됨.,,,Wygenerowane przez podkręcenie.,Gerado através do overclocking.,,,,,,,
 guide_file_modifiers_scanned,,,,,, Scanned: Increases value by 4x, Escaneado: Aumenta el valor en 4x,,, Scanné: Augmente la valeur par x4, Dipindai: Menaikkan nilai sebesar 4x,, スキャン:価値が4倍になる,,,,, Escaneado: Aumenta o valor em 4x,,,,,,,
 research_infect_payload_desc,,,,,,"Unlocks the Infect Payload skill, allowing Payload Damage to get extra Infection Damage",,,,"Débloque la compétence Charge virale, permettant aux dégâts de charge d'ajouter des dégâts d'infection supplémentaires",,,ペイロードダメージに感染ダメージを付与する感染ペイロードスキルをアンロックします,,,,,"Desbloqueia a habilidade ""Infectar Payload"", permitindo que Dano de Payload adquira Dano de Infecção",,,,,,,
-premium_daily_tokens_desc,,,,,,"Instantly receive 1400 Tokens
-Receive 200 Tokens daily
-+1 Support Level",,,,,,,"1400トークンをすぐに入手します
-毎日200トークンが支給されます
-サポートレベルが1上がります",,,,,"Instantaneamente receba 1400 Fichas
-Receba 200 Fichas diariamente
-+1 Nível de Suporte",,,,,,,
 window_hacker_desc,,,,,,Provides Hack Power based on Hack Experience,,,,Fournit une puissance de hacking basée sur l'expérience de hacking,,,ハック経験値に基づいてハックパワーを生産します,해킹 경험에 비례해 해킹 파워 제공,,,,Fornece Poder de Hack baseado na Experiência em Hack,,,,,,,
 upgrade_improved_ai_sounds_desc,,,,,,Increases the value of generated Sound by 100%,,,,Augmente la valeur des sons générés de 100 %,,,生成音声の価値を100%増やします,,,,,Aumenta o valor de Sons gerados em 100%,,,,,,,
 upgrade_improved_ai_games_desc,,,,,,Increases the value of generated Game by 100%,,,,Augmente la valeur des Jeux générés de 100 %,,,生成ゲームの価値を100%増やします,,,,,Aumenta o valor de Jogos gerados em 100%,,,,,,,
@@ -1562,13 +1542,6 @@ window_data_lab_desc,,,,,,Uses files to generate Research,,,,Utilise des fichier
 resource_array_vector,,,,,,Array[Vector],Array[Vector],,,Array[Vector],Array[Vector],,Array[Vector],배열[Vector],,,"Array[Vector]
 ",Array[Vector],,,,,,,Array[Vector]
 window_antivirus_pro_desc,,,,,,"Scans and removes virus from files, increasing value by 4x","Escanea y elimina virus de los archivos, aumentando el valor 4 veces",,,"Analyse et supprime les virus des fichiers, augmentant la valeur de 4 fois","Pindai dan bersihkan file dari virus, menaikkan nilainya sebanyak 4x",,ファイルのウイルスをスキャン&除去し、価値を4倍にします,"파일을 스캔하고 바이러스도 제거하며, 가치를 4배 증가시킴",,,,"Procura e remove vírus de arquivos, aumentando seu valor em 4x",,,,,,,
-premium_chronomancer_desc,,,,,,"Doubles Rest Time production and capacity
-Produce Rest Time while online
-+1 Support Level",,,,,,,"休憩時間の生成量と上限が2倍になります
-オンライン中も休憩時間を生産します
-サポートレベルが1上がります",,,,,"Dobra a capacidade e ganho do Tempo de Descanso
-Produz Tempo de Descanso enquanto online
-+1 Nível de Suporte",,,,,,,
 spanish,,,,,,Spanish,Español,,,Espagnol,Spanyol,,スペイン語,,,,Hiszpański,Espanhol,,,,,,,西班牙文
 window_build,,,,,,Build,,,,Compiler,,,ビルド,,,,,Compilar,,,,,,,
 upgrade_optimization_ripper,,,,,,Optimized Rip,,,,,,,リップ最適化,,,,,Extração Otimizada,,,,,,,
@@ -1664,7 +1637,6 @@ loading,,,,,,Loading,Cargando,,,Chargement,Memuat,,ロード中,로딩중,,,Ład
 resource_array_bitflag,,,,,,Array[BitFlag],Array[BitFlag],,,Array[BitFlag],Array[BitFlag],,Array[BitFlag],배열[BitFlag],,,"Array[BitFlag]
 ",Array[BitFlag],,,,,,,Array[BitFlag]
 <!MissingKey:Huge>,,,,,,Huge,Muy grande,,,Énorme,Sangat Besar,,極大,아주 크게,,,Ogromny,Enorme,,,,,,,偏大
-support_level,,,,,,Support Level,Nivel de apoyo,,,Rang de soutien,Level Dukungan,,サポートレベル,서포트 레벨,,,Poziom Wsparcia,Nível de Suporte,,,,,,,
 polish,,,,,,Polish,Polaco,,,Polonais,Polandia,,ポーランド語,,,,Polski,Polonês,,,,,,,波蘭文
 mk.,,,,,,Mk.,Mk.,,,Mk.,Mk.,,Mk.,Mk.,,,Gen.,Mk.,,,,,,,Mk.
 window_code_optimization_desc,,,,,,Code optimizations using advanced variables,,,,Optimise le code en utilisant des variables avancées,,,上級変数を使用して最適化をコーディングします,,,,,Programa otimizações usando variáveis avançadas,,,,,,,

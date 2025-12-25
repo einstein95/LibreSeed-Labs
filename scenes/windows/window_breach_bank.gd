@@ -1,7 +1,7 @@
 extends "res://scenes/windows/window_breach.gd"
 
 
-func fail() -> void :
+func fail() -> void:
     super ()
 
     if !closing:
@@ -11,7 +11,7 @@ func fail() -> void :
     Sound.play("error")
 
 
-func breach() -> void :
+func breach() -> void:
     super ()
     Globals.bank_level += 1
     Globals.currencies["token"] += 20

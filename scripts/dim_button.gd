@@ -4,7 +4,7 @@ var timer: Timer = Timer.new()
 var times_holding: int
 
 
-func _init() -> void :
+func _init() -> void:
     button_down.connect(_on_button_down)
     button_up.connect(_on_button_up)
 
@@ -16,17 +16,17 @@ func _init() -> void :
     toggle_mode = true
 
 
-func _on_button_down() -> void :
+func _on_button_down() -> void:
     timer.start(0.5)
 
 
-func _on_button_up() -> void :
+func _on_button_up() -> void:
     timer.stop()
     times_holding = 0
     cancel_press = false
 
 
-func press() -> void :
+func press() -> void:
     if !disabled and !dragged:
         pressed.emit()
         times_holding += 1

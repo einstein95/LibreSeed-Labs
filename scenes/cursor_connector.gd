@@ -5,17 +5,17 @@ var is_input: bool
 var color: Color
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.connection_set.connect(_on_connection_set)
 
     set_process(false)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     queue_redraw()
 
 
-func _draw() -> void :
+func _draw() -> void:
     var point_x: float
     if is_input:
         point_x = from_connector.global_position.x - 45
@@ -26,7 +26,7 @@ func _draw() -> void :
     draw_line(Vector2(point_x, get_global_mouse_position().y), get_global_mouse_position(), color, 2, true)
 
 
-func _on_connection_set() -> void :
+func _on_connection_set() -> void:
     set_process(Globals.connection_type > 0)
     visible = Globals.connection_type > 0
 

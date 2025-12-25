@@ -1,15 +1,15 @@
 extends WindowIndexed
 
-@onready var code_speed: = $PanelContainer / MainContainer / CodeSpeed
-@onready var boost: = $PanelContainer / MainContainer / Boost
-@onready var contribution: = $PanelContainer / MainContainer / Contribution
-@onready var progress_bar: = $PanelContainer / MainContainer / ProgressBar
+@onready var code_speed := $PanelContainer/MainContainer/CodeSpeed
+@onready var boost := $PanelContainer/MainContainer/Boost
+@onready var contribution := $PanelContainer/MainContainer/Contribution
+@onready var progress_bar := $PanelContainer/MainContainer/ProgressBar
 
 var speed: float
 var required: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.new_code_level.connect(_on_new_code_level)
     Signals.new_unlock.connect(_on_new_unlock)
@@ -17,12 +17,12 @@ func _ready() -> void :
     update_all()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, contribution.count / required, 1.0 - exp(-50.0 * delta))
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     code_speed.count = speed * (1 + boost.count) * Attributes.get_attribute("code_speed_multiplier")
 
     var levels: int
@@ -35,7 +35,7 @@ func process(delta: float) -> void :
         Globals.add_code_levels(levels)
 
 
-func update_all() -> void :
+func update_all() -> void:
     speed = 2 * pow(1.5, Globals.code_level)
 
     required = Globals.get_code_required_exp(Globals.code_level)
@@ -50,14 +50,14 @@ func get_window_name() -> String:
     return super () + " " + tr("lv.") + " " + str(Globals.code_level + 1)
 
 
-func _on_new_code_level() -> void :
+func _on_new_code_level() -> void:
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(2, 2, 2), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
-    $TitlePanel / TitleContainer / Title.visible_ratio = 0
+    $TitlePanel/TitleContainer/Title.visible_ratio = 0
     tween = create_tween()
-    tween.tween_property($TitlePanel / TitleContainer / Title, "visible_ratio", 1, 0.25)
+    tween.tween_property($TitlePanel/TitleContainer/Title, "visible_ratio", 1, 0.25)
 
     tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD)
@@ -70,5 +70,5 @@ func _on_new_code_level() -> void :
     update_all()
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_all()

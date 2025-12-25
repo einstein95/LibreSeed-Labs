@@ -1,7 +1,7 @@
 extends Control
 
 
-func _ready() -> void :
+func _ready() -> void:
 	if Data.wiping:
 		Globals.wipe()
 		Data.wiping = false
@@ -26,10 +26,10 @@ func _ready() -> void :
 	tween.tween_property($LogoContainer, "position:y", size.y / 2 - $LogoContainer.size.y / 2, 0.4)
 	$AnimationPlayer.play("FadeIn")
 
-	$LogoContainer / Name.text = "LibreLabs OS" + " " + ProjectSettings.get_setting("application/config/version")
+	$LogoContainer/Name.text = "LibreLabs OS " + ProjectSettings.get_setting("application/config/version")
 
 
-func check_loaded() -> void :
+func check_loaded() -> void:
 	if ResourceLoader.load_threaded_get_status("res://Main.tscn") == 3:
 		var tween: Tween = create_tween()
 		tween.tween_property(self, "modulate:a", 0, 0.5)
@@ -39,5 +39,5 @@ func check_loaded() -> void :
 		timer.timeout.connect(check_loaded)
 
 
-func change_scene() -> void :
+func change_scene() -> void:
 	get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get("res://Main.tscn"))

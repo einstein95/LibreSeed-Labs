@@ -3,7 +3,7 @@ extends "res://scripts/achievements/achievement_tick.gd"
 var amount: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     amount = Data.achievements[name].requirement
     super ()
 

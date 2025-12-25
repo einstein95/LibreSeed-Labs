@@ -1,18 +1,18 @@
 extends Control
 
 @export_range(0.0, 1.0) var texture_scale: float = 1.0:
-    set(s): texture_scale = s;update()
+    set(s): texture_scale = s; update()
 @export var texture: Texture2D:
-    set(t): texture = t;update()
+    set(t): texture = t; update()
 var rid: RID
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     rid = RenderingServer.canvas_item_create()
     RenderingServer.canvas_item_set_parent(rid, get_canvas_item())
 
 
-func _ready() -> void :
+func _ready() -> void:
     update()
 
 
@@ -25,7 +25,7 @@ func _set(property: StringName, value: Variant) -> bool:
         return false
 
 
-func update() -> void :
+func update() -> void:
     if rid:
         RenderingServer.canvas_item_clear(rid)
         if texture:
@@ -34,5 +34,5 @@ func update() -> void :
             RenderingServer.canvas_item_add_texture_rect(rid, Rect2(tex_position, tex_size), texture, false, self_modulate)
 
 
-func _exit_tree() -> void :
+func _exit_tree() -> void:
     RenderingServer.free_rid(rid)

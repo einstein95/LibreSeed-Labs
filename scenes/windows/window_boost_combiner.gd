@@ -1,10 +1,10 @@
 extends WindowIndexed
 
-@onready var inputs: = $PanelContainer / MainContainer / Inputs
-@onready var added: = $PanelContainer / MainContainer / Added
+@onready var inputs := $PanelContainer/MainContainer/Inputs
+@onready var added := $PanelContainer/MainContainer/Added
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     var boost_empower: float
     var boost_overclock: float
     var boost: float

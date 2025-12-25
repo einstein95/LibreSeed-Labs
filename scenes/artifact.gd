@@ -4,7 +4,7 @@ var stopped: bool
 var dir: Vector2
 
 
-func _ready() -> void :
+func _ready() -> void:
     dir = Vector2([-1, 1].pick_random(), [-1, 1].pick_random())
 
     scale = Vector2(0, 0)
@@ -17,7 +17,8 @@ func _ready() -> void :
 
 
 func _process(delta: float):
-    if stopped: return
+    if stopped:
+        return
 
     position += dir * delta * 50
     if position.x >= get_parent().size.x - 24:

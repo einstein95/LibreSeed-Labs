@@ -1,12 +1,12 @@
 extends WindowIndexed
 
-@onready var progress_label: = $PanelContainer / MainContainer / Progress / ProgressContainer / ProgressLabel
-@onready var progress_bar: = $PanelContainer / MainContainer / Progress / ProgressBar
-@onready var upload: = $PanelContainer / MainContainer / Upload
-@onready var file: = $PanelContainer / MainContainer / File
-@onready var result: = $PanelContainer / MainContainer / Result
-@onready var infections: = $PanelContainer / MainContainer / Infections
-@onready var audio_player: = $AudioStreamPlayer2D
+@onready var progress_label := $PanelContainer/MainContainer/Progress/ProgressContainer/ProgressLabel
+@onready var progress_bar := $PanelContainer/MainContainer/Progress/ProgressBar
+@onready var upload := $PanelContainer/MainContainer/Upload
+@onready var file := $PanelContainer/MainContainer/File
+@onready var result := $PanelContainer/MainContainer/Result
+@onready var infections := $PanelContainer/MainContainer/Infections
+@onready var audio_player := $AudioStreamPlayer2D
 
 var progress: float
 var goal: float = 5
@@ -16,7 +16,7 @@ var multipliers: Array[String]
 var multiplier: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.connection_set.connect(_on_connection_set)
     Signals.tutorial_step.connect(_on_tutorial_step)
@@ -29,13 +29,13 @@ func _ready() -> void :
     update_tutorial()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, progress / goal, 1.0 - exp(-50.0 * delta))
     progress_label.text = Utils.print_metric(progress, false) + "b"
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     multiplier = 1.0
     for i: String in multipliers:
         multiplier *= Attributes.get_attribute(i)
@@ -66,7 +66,7 @@ func process(delta: float) -> void :
     infections.production = min(upload.count / goal, file.production) * base_infection
 
 
-func grab(g: bool) -> void :
+func grab(g: bool) -> void:
     if g:
         if Globals.tutorial_step == Utils.tutorial_steps.DRAG_UPLOADER:
             Globals.set_tutorial_step(Utils.tutorial_steps.DRAG_UPLOADER + 1)
@@ -80,7 +80,7 @@ func grab(g: bool) -> void :
     super (g)
 
 
-func update_type() -> void :
+func update_type() -> void:
     multipliers.clear()
     if Data.files.has(file.resource):
         goal = Utils.get_file_size(file.resource, file.variation) * Attributes.get_attribute("upload_size_multiplier")
@@ -104,22 +104,22 @@ func update_type() -> void :
         infections.visible = true
     else:
         infections.visible = false
-    $PanelContainer / MainContainer / Progress / ProgressContainer / SizeLabel.text = Utils.print_metric(goal, false) + "b"
+    $PanelContainer/MainContainer/Progress/ProgressContainer/SizeLabel.text = Utils.print_metric(goal, false) + "b"
 
 
-func update_tutorial() -> void :
+func update_tutorial() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.DRAG_UPLOADER:
         Signals.interface_point_to.emit(null)
         Signals.desktop_point_to.emit($TitlePanel)
     elif Globals.tutorial_step == Utils.tutorial_steps.CONNECT_FILE:
         Signals.interface_point_to.emit(null)
-        Signals.desktop_point_to.emit($PanelContainer / MainContainer / File / InputConnector)
+        Signals.desktop_point_to.emit($PanelContainer/MainContainer/File/InputConnector)
     elif Globals.tutorial_step == Utils.tutorial_steps.CONNECT_UPLOADER:
         Signals.interface_point_to.emit(null)
-        Signals.desktop_point_to.emit($PanelContainer / MainContainer / Upload / InputConnector)
+        Signals.desktop_point_to.emit($PanelContainer/MainContainer/Upload/InputConnector)
     elif Globals.tutorial_step == Utils.tutorial_steps.DRAG_MONEY_CONNECTOR:
         Signals.interface_point_to.emit(null)
-        Signals.desktop_point_to.emit($PanelContainer / MainContainer / Result / OutputConnector)
+        Signals.desktop_point_to.emit($PanelContainer/MainContainer/Result/OutputConnector)
 
     var title_steps: Array[int] = [Utils.tutorial_steps.DRAG_UPLOADER, Utils.tutorial_steps.MOVE_UPLOADER]
 
@@ -142,27 +142,27 @@ func update_tutorial() -> void :
     var upload_steps: Array[int] = [Utils.tutorial_steps.CONNECT_UPLOADER]
     var file_steps: Array[int] = [Utils.tutorial_steps.CONNECT_FILE]
     var money_steps: Array[int] = [Utils.tutorial_steps.DRAG_MONEY_CONNECTOR, Utils.tutorial_steps.CONNECT_MONEY]
-    $PanelContainer / MainContainer / Upload / InputConnector.disabled = !Globals.tutorial_done and !upload_steps.has(Globals.tutorial_step)
-    $PanelContainer / MainContainer / File / InputConnector.disabled = !Globals.tutorial_done and !file_steps.has(Globals.tutorial_step)
-    $PanelContainer / MainContainer / Result / OutputConnector.disabled = !Globals.tutorial_done and !money_steps.has(Globals.tutorial_step)
+    $PanelContainer/MainContainer/Upload/InputConnector.disabled = !Globals.tutorial_done and !upload_steps.has(Globals.tutorial_step)
+    $PanelContainer/MainContainer/File/InputConnector.disabled = !Globals.tutorial_done and !file_steps.has(Globals.tutorial_step)
+    $PanelContainer/MainContainer/Result/OutputConnector.disabled = !Globals.tutorial_done and !money_steps.has(Globals.tutorial_step)
 
 
-func _on_file_resource_set() -> void :
+func _on_file_resource_set() -> void:
     progress = 0
     result.set_resource(Data.files[file.resource].upload)
 
     update_type()
 
 
-func _on_upload_size_changed() -> void :
+func _on_upload_size_changed() -> void:
     update_type()
 
 
-func _on_tutorial_step() -> void :
+func _on_tutorial_step() -> void:
     update_tutorial()
 
 
-func _on_connection_set() -> void :
+func _on_connection_set() -> void:
     if Globals.connection_type == 1:
         if Globals.tutorial_step == Utils.tutorial_steps.DRAG_MONEY_CONNECTOR:
             Globals.set_tutorial_step(Utils.tutorial_steps.DRAG_MONEY_CONNECTOR + 1)
@@ -171,12 +171,12 @@ func _on_connection_set() -> void :
             Globals.set_tutorial_step(Utils.tutorial_steps.DRAG_MONEY_CONNECTOR)
 
 
-func _on_upload_connection_set() -> void :
+func _on_upload_connection_set() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.CONNECT_UPLOADER:
         Globals.set_tutorial_step(Utils.tutorial_steps.CONNECT_UPLOADER + 1)
 
 
-func _on_file_connection_set() -> void :
+func _on_file_connection_set() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.CONNECT_FILE:
         Globals.set_tutorial_step(Utils.tutorial_steps.CONNECT_FILE + 1)
 

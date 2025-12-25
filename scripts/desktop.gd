@@ -6,7 +6,7 @@ var resources: Dictionary
 var connections: Dictionary
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     Globals.desktop = self
     Signals.register_resource.connect(_on_register_resource)
 
@@ -30,7 +30,7 @@ func _enter_tree() -> void :
         $Windows.add_child(instance)
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.screen_transition_started.connect(_on_screen_transition_started)
     Signals.screen_transition_finished.connect(_on_screen_transition_finished)
     Signals.create_window.connect(_on_create_window)
@@ -49,14 +49,14 @@ func _ready() -> void :
     Signals.desktop_ready.emit()
 
     if !Globals.tutorial_done:
-        Signals.create_connection.emit($ / root / Main / Main2D / Desktop / Windows / Downloader / PanelContainer / MainContainer / File.id, 
-        $ / root / Main / Main2D / Desktop / Windows / Bin / PanelContainer / MainContainer / Input.id)
+        Signals.create_connection.emit($/root/Main/Main2D/Desktop/Windows/Downloader/PanelContainer/MainContainer/File.id,
+        $/root/Main/Main2D/Desktop/Windows/Bin/PanelContainer/MainContainer/Input.id)
 
     $Background.color = Color(Data.themes[Data.cur_theme].bg_color)
     Data.loading.clear()
 
 
-func _input(event: InputEvent) -> void :
+func _input(event: InputEvent) -> void:
     if event is InputEventKey and event.is_released():
         if Input.is_key_pressed(KEY_CTRL):
             if event.keycode == KEY_C and Globals.selections.size() > 0:
@@ -70,12 +70,18 @@ func _input(event: InputEvent) -> void :
                 var data: String = DisplayServer.clipboard_get()
                 var file: ConfigFile = ConfigFile.new()
                 if file.parse(data) == OK:
-                    if !file.has_section("schematic"): return
-                    if !file.has_section_key("schematic", "windows"): return
-                    if !file.has_section_key("schematic", "connectors"): return
+                    if !file.has_section("schematic"):
+                        return
+
+                    if !file.has_section_key("schematic", "windows"):
+                        return
+
+                    if !file.has_section_key("schematic", "connectors"):
+                        return
+
                     var dictionary: Dictionary = {
-                        "windows": file.get_value("schematic", "windows"), 
-                        "connectors": file.get_value("schematic", "connectors"), 
+                        "windows": file.get_value("schematic", "windows"),
+                        "connectors": file.get_value("schematic", "connectors"),
                         "rect": file.get_value("schematic", "rect")
                     }
                     paste(dictionary.duplicate(true))
@@ -85,7 +91,9 @@ func add_windows_from_data(data: Dictionary) -> WindowsWaiter:
     var windows: Array[WindowContainer]
 
     for window: String in data:
-        if !ResourceLoader.exists("res://scenes/windows/" + data[window].filename): continue
+        if !ResourceLoader.exists("res://scenes/windows/" + data[window].filename):
+            continue
+
         var new_object: Control = get_node_or_null("Desktop/Windows/" + window)
         if !new_object:
             new_object = load("res://scenes/windows/" + data[window].filename).instantiate()
@@ -115,7 +123,9 @@ func copy(windows: Array[WindowContainer]) -> Dictionary:
             connections[resource.id] = resource.outputs_id
 
     for window: WindowContainer in windows:
-        if !window.can_export: continue
+        if !window.can_export:
+            continue
+
         var data: Dictionary = window.export()
         dict["windows"][str(window.name)] = data
         for resource: String in data.container_data:
@@ -134,12 +144,13 @@ func copy(windows: Array[WindowContainer]) -> Dictionary:
     return dict
 
 
-func paste(data: Dictionary) -> void :
+func paste(data: Dictionary) -> void:
     var seed: int = randi() / 10
     var new_windows: Dictionary
     var to_connect: Dictionary[String, Array]
     for window: String in data.windows:
-        if !Utils.can_add_window(data.windows[window].window): continue
+        if !Utils.can_add_window(data.windows[window].window):
+            continue
 
         for resource: String in data.windows[window].container_data:
             var new_name: String = Utils.generate_id_from_seed(data.windows[window].container_data[resource].id.hash() + seed)
@@ -171,7 +182,7 @@ func paste(data: Dictionary) -> void :
     $Connectors.connector_data.clear()
 
 
-func update_heatspot() -> void :
+func update_heatspot() -> void:
     var sum: Vector2
     for i: WindowContainer in $Windows.get_children():
         sum += i.position
@@ -183,76 +194,30 @@ func update_heatspot() -> void :
     $AmbiencePlayer.max_distance = 2000 * (0.02 * Globals.max_window_count + 1)
 
 
-func update_tutorial() -> void :
+func update_tutorial() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.MOVE_UPLOADER:
         Signals.interface_point_to.emit(null)
         Signals.desktop_point_to.emit($TutorialPoint)
 
 
 func get_blocker_visibility() -> bool:
-    if Globals.cur_screen == 0 and Globals.tool == Utils.tools.SELECT: return true
+    if Globals.cur_screen == 0 and Globals.tool == Utils.tools.SELECT:
+        return true
 
     return false
 
 
 func get_resource(id: String) -> ResourceContainer:
-    if resources.has(id):
-        return resources[id]
-    else:
-        return null
+    return resources[id] if resources.has(id) else null
 
 
-func _on_create_window(window: WindowContainer) -> void :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+func _on_create_window(window: WindowContainer) -> void:
     window.name = find_window_name(str(window.name))
-
-
-
     $Windows.add_child(window)
-
     Sound.play("open")
 
 
-func _on_register_resource(id: String, resource: ResourceContainer) -> void :
+func _on_register_resource(id: String, resource: ResourceContainer) -> void:
     var new_id: String = id
     while resources.has(new_id):
         new_id = Utils.generate_simple_id()
@@ -260,6 +225,7 @@ func _on_register_resource(id: String, resource: ResourceContainer) -> void :
 
     if id != new_id:
         Signals.resource_renamed.emit(id, new_id)
+
 func find_window_name(cur_name: String) -> String:
     var id: int
     while $Windows.has_node(cur_name + str(id)):
@@ -268,66 +234,69 @@ func find_window_name(cur_name: String) -> String:
     return cur_name + str(id)
 
 
-func _on_window_created(window: WindowContainer) -> void :
+func _on_window_created(window: WindowContainer) -> void:
     update_heatspot()
 
 
-func _on_window_deleted(window: WindowContainer) -> void :
+func _on_window_deleted(window: WindowContainer) -> void:
     update_heatspot()
 
 
-func _on_place_schematic(schematic: String) -> void :
+func _on_place_schematic(schematic: String) -> void:
     paste(Data.schematics[schematic].duplicate(true))
 
 
-func _on_token_timer_timeout() -> void :
+func _on_token_timer_timeout() -> void:
     var token: Node2D = load("res://scenes/wandering_token.tscn").instantiate()
     $Spawnables.add_child(token)
 
 
-func _on_bank_timer_timeout() -> void :
+func _on_bank_timer_timeout() -> void:
     if Globals.window_count["breach_bank"] == 0:
         var bank: Node2D = load("res://scenes/wandering_bank.tscn").instantiate()
         $Spawnables.add_child(bank)
 
 
-func _on_ad_timer_timeout() -> void :
+func _on_ad_timer_timeout() -> void:
     var token: Node2D = load("res://scenes/wandering_ad.tscn").instantiate()
     $Spawnables.add_child(token)
 
 
-func _on_selection_set() -> void :
+func _on_selection_set() -> void:
     for i: WindowContainer in Globals.selections:
         var selection: PanelContainer = load("res://scenes/window_selection.tscn").instantiate()
         selection.selection = i
         $WindowSelections.add_child(selection)
+
     for i: Control in Globals.connector_selection:
         var selection: PanelContainer = load("res://scenes/connector_selection.tscn").instantiate()
         selection.selection = i
         $WindowSelections.add_child(selection)
 
 
-func _on_tool_set() -> void :
+func _on_tool_set() -> void:
     $InputBlocker.visible = get_blocker_visibility()
 
 
-func _on_dragging_set() -> void :
+func _on_dragging_set() -> void:
     update_heatspot()
 
 
-func _on_tutorial_step() -> void :
+func _on_tutorial_step() -> void:
     update_tutorial()
 
 
-func _on_screen_transition_started() -> void :
+func _on_screen_transition_started() -> void:
     if Globals.cur_screen == 0:
         var tween: Tween = create_tween()
         tween.tween_property($AmbiencePlayer, "volume_db", -40, 0.5)
+
     $InputBlocker.visible = true
 
 
-func _on_screen_transition_finished() -> void :
+func _on_screen_transition_finished() -> void:
     if Globals.cur_screen == 0:
         var tween: Tween = create_tween()
         tween.tween_property($AmbiencePlayer, "volume_db", heatspot_volume, 0.5)
+
     $InputBlocker.visible = get_blocker_visibility()

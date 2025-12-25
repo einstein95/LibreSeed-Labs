@@ -3,7 +3,7 @@ extends Sprite2D
 var following: Control
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.desktop_point_to.connect(_on_desktop_point_to)
 
     var tween: Tween = create_tween()
@@ -15,11 +15,11 @@ func _ready() -> void :
     set_process(false)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     position = following.global_position + Vector2(following.size.x * following.scale.x / 2, 0)
 
 
-func _on_desktop_point_to(node: Control) -> void :
+func _on_desktop_point_to(node: Control) -> void:
     following = node
     visible = is_instance_valid(following)
     set_process(is_instance_valid(following))

@@ -1,14 +1,14 @@
 extends WindowIndexed
 
-@onready var requirements: = $PanelContainer / MainContainer / Requirements
-@onready var code: = $PanelContainer / MainContainer / Code
+@onready var requirements := $PanelContainer/MainContainer/Requirements
+@onready var code := $PanelContainer/MainContainer/Code
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if check_requirements():
         var count: float = INF
         for i: ResourceContainer in requirements.get_children():

@@ -1,26 +1,26 @@
 extends WindowIndexed
 
-@onready var progress_bar: = $PanelContainer / MainContainer / Production / ProgressBar
-@onready var production_label: = $PanelContainer / MainContainer / Production / ProductionContainer / ProductionLabel
-@onready var power: = $PanelContainer / MainContainer / Power
-@onready var coal: = $PanelContainer / MainContainer / Coal
-@onready var enriched_coal: = $PanelContainer / MainContainer / EnrichedCoal
+@onready var progress_bar := $PanelContainer/MainContainer/Production/ProgressBar
+@onready var production_label := $PanelContainer/MainContainer/Production/ProductionContainer/ProductionLabel
+@onready var power := $PanelContainer/MainContainer/Power
+@onready var coal := $PanelContainer/MainContainer/Coal
+@onready var enriched_coal := $PanelContainer/MainContainer/EnrichedCoal
 
 var speed: float = 1
 var progress: float
 var goal: float = 1
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, progress / goal, 1.0 - exp(-50.0 * delta))
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if coal.count >= coal.required and power.count >= power.required:
         progress += speed * delta
         if progress >= goal:

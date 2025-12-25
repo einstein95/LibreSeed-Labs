@@ -2,14 +2,14 @@ extends Node2D
 
 signal got_free(node: Node2D)
 
-@onready var label: = $Label
+@onready var label := $Label
 
 
-func _ready() -> void :
+func _ready() -> void:
     visible = false
 
 
-func display(text: String, pos: Vector2) -> void :
+func display(text: String, pos: Vector2) -> void:
     label.text = text
 
     modulate.a = 0
@@ -29,6 +29,6 @@ func display(text: String, pos: Vector2) -> void :
     show()
 
 
-func remove() -> void :
+func remove() -> void:
     got_free.emit(self)
     hide()

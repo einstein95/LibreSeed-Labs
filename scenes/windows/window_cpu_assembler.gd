@@ -1,12 +1,12 @@
 extends WindowIndexed
 
-@onready var production_label: = $PanelContainer / MainContainer / Progress / ProductionContainer / ProductionLabel
-@onready var progress_bar: = $PanelContainer / MainContainer / Progress / ProgressBar
-@onready var power: = $PanelContainer / MainContainer / Power
-@onready var transistor: = $PanelContainer / MainContainer / Transistor
-@onready var core: = $PanelContainer / MainContainer / Core
-@onready var upgrade_button: = $UpgradeButton
-@onready var audio_player: = $AudioStreamPlayer2D
+@onready var production_label := $PanelContainer/MainContainer/Progress/ProductionContainer/ProductionLabel
+@onready var progress_bar := $PanelContainer/MainContainer/Progress/ProgressBar
+@onready var power := $PanelContainer/MainContainer/Power
+@onready var transistor := $PanelContainer/MainContainer/Transistor
+@onready var core := $PanelContainer/MainContainer/Core
+@onready var upgrade_button := $UpgradeButton
+@onready var audio_player := $AudioStreamPlayer2D
 
 var level: int
 var maxed: bool
@@ -16,19 +16,19 @@ var speed: float
 var goal: float = 1
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     update_all()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, progress / goal, 1.0 - exp(-50.0 * delta))
     production_label.text = Utils.print_string(speed / goal, false) + "/s"
     upgrade_button.disabled = !can_upgrade()
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if power.count >= power.required:
         if transistor.count >= transistor.required:
             progress += speed * delta
@@ -48,7 +48,7 @@ func process(delta: float) -> void :
         core.production = 0
 
 
-func update_all() -> void :
+func update_all() -> void:
     maxed = level >= 25
     if !maxed:
         cost = 2.5 * pow(10, 28) * pow(4.472, level + 1)
@@ -58,7 +58,7 @@ func update_all() -> void :
     power.set_required(power.limit)
 
     set_window_name(get_window_name())
-    $UpgradeButton / UpgradeContainer / CostContainer / Label.text = Utils.print_string(cost, true)
+    $UpgradeButton/UpgradeContainer/CostContainer/Label.text = Utils.print_string(cost, true)
     $UpgradeButton.visible = !maxed
 
     if maxed:
@@ -67,16 +67,16 @@ func update_all() -> void :
         $PanelContainer.theme_type_variation = "WindowPanelContainerFlatBottom"
 
 
-func upgrade() -> void :
+func upgrade() -> void:
     level += 1
 
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(2, 2, 2), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
-    $TitlePanel / TitleContainer / Title.visible_ratio = 0
+    $TitlePanel/TitleContainer/Title.visible_ratio = 0
     tween = create_tween()
-    tween.tween_property($TitlePanel / TitleContainer / Title, "visible_ratio", 1, 0.25)
+    tween.tween_property($TitlePanel/TitleContainer/Title, "visible_ratio", 1, 0.25)
 
     tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD)
@@ -94,12 +94,13 @@ func get_window_name() -> String:
 
 
 func can_upgrade() -> bool:
-    if cost > Globals.currencies["money"]: return false
+    if cost > Globals.currencies["money"]:
+        return false
 
     return !maxed
 
 
-func _on_upgrade_button_pressed() -> void :
+func _on_upgrade_button_pressed() -> void:
     if can_upgrade():
         Globals.currencies["money"] -= cost
         upgrade()
@@ -109,6 +110,6 @@ func _on_upgrade_button_pressed() -> void :
 
 func save() -> Dictionary:
     return super ().merged({
-        "level": level, 
+        "level": level,
         "progress": progress
     })

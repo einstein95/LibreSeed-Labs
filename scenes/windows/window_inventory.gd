@@ -1,18 +1,18 @@
 extends WindowIndexed
 
-@onready var inputs: = $PanelContainer / MainContainer / Input
-@onready var outputs: = $PanelContainer / MainContainer / Output
+@onready var inputs := $PanelContainer/MainContainer/Input
+@onready var outputs := $PanelContainer/MainContainer/Output
 
 var inputting: Dictionary[ResourceContainer, Array]
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
 
     update_resources()
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     for input: ResourceContainer in inputting:
         input.production = 0
         for output: ResourceContainer in inputting[input]:
@@ -20,7 +20,7 @@ func process(delta: float) -> void :
             input.production += output.production
 
 
-func update_visible_inputs() -> void :
+func update_visible_inputs() -> void:
     var has_free_input: bool = false
 
     for i: ResourceContainer in inputs.get_children():
@@ -42,15 +42,22 @@ func update_visible_inputs() -> void :
     Signals.window_moved.emit(self)
 
 
-func update_resources() -> void :
+func update_resources() -> void:
     inputting.clear()
     var new_resources: Dictionary
     var input_resources: Array[Dictionary]
 
     for i: ResourceContainer in inputs.get_children():
-        if i.resource.is_empty(): continue
-        var dict: Dictionary = {"resource": i.resource, "variation": i.variation}
-        if input_resources.has(dict): continue
+        if i.resource.is_empty():
+            continue
+
+        var dict: Dictionary = {
+            "resource": i.resource,
+            "variation": i.variation
+        }
+        if input_resources.has(dict):
+            continue
+
         input_resources.append(dict)
 
     for i: ResourceContainer in outputs.get_children():
@@ -75,7 +82,9 @@ func update_resources() -> void :
         i.set_resource(new_resources[i].resource, new_resources[i].variation)
 
     for i: ResourceContainer in inputs.get_children():
-        if i.resource.is_empty(): continue
+        if i.resource.is_empty():
+            continue
+
         for o: ResourceContainer in outputs.get_children():
             if o.resource == i.resource and o.variation == i.variation:
                 if inputting.has(o):
@@ -87,25 +96,25 @@ func update_resources() -> void :
     update_visible_inputs()
 
 
-func _on_0_resource_set() -> void :
+func _on_0_resource_set() -> void:
     update_resources()
 
 
-func _on_1_resource_set() -> void :
+func _on_1_resource_set() -> void:
     update_resources()
 
 
-func _on_2_resource_set() -> void :
+func _on_2_resource_set() -> void:
     update_resources()
 
 
-func _on_3_resource_set() -> void :
+func _on_3_resource_set() -> void:
     update_resources()
 
 
-func _on_4_resource_set() -> void :
+func _on_4_resource_set() -> void:
     update_resources()
 
 
-func _on_connection_set() -> void :
+func _on_connection_set() -> void:
     update_visible_inputs()

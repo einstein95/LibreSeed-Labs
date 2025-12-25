@@ -45,6 +45,14 @@ jobs:
           - preset_name: "Windows Desktop arm64"
             out_path: "bin/windows/arm64/LibreSeed Labs.exe"
             zip_name: "LibreSeed-Labs-windows-arm64"
+          # ---- macOS ----
+          - preset_name: "macOS"
+            out_path: "bin/mac/LibreSeed Labs.dmg"
+            zip_name: "LibreSeed-Labs-macOS"
+          # ---- Browser ----
+          - preset_name: "Web"
+            out_path: "bin/web/LibreSeed Labs.html"
+            zip_name: "LibreSeed-Labs-Web"
 
     steps:
       - name: Checkout
@@ -53,7 +61,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Godot 4.5 (with export templates)
-        uses: chickensoft-games/setup-godot@v2
+        uses: chickensoft-games/setup-godot@v2.3.2
         with:
           version: "4.5.0"
           include-templates: true

@@ -18,11 +18,11 @@ var dragged: bool
 var init_count: int
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     item_rect_changed.connect(_on_item_rect_changed)
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.selection_set.connect(_on_selection_set)
 
     global_position = global_position.clampf(-5000, 4650).snappedf(50)
@@ -46,11 +46,11 @@ func _ready() -> void :
         initialized.emit()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     return
 
 
-func close() -> void :
+func close() -> void:
     closing = true
     set_process(false)
     var tween: Tween = create_tween()
@@ -58,7 +58,7 @@ func close() -> void :
     tween.set_parallel()
     tween.tween_property(self, "modulate:a", 0, 0.2)
     tween.tween_property(self, "scale", Vector2(0, 0), 0.2)
-    tween.finished.connect( func() -> void : queue_free())
+    tween.finished.connect(func() -> void: queue_free())
 
     Signals.window_deleted.emit(self)
 
@@ -68,22 +68,25 @@ func close() -> void :
         Signals.dragging_set.emit()
 
 
-func move(pos: Vector2) -> void :
+func move(pos: Vector2) -> void:
     global_position = pos
 
 
-func grab(g: bool) -> void :
+func grab(g: bool) -> void:
     grabbing = g
     if grabbing:
         grabbing_pos = get_global_mouse_position() - global_position
     else:
         Signals.dragged.emit(self)
+
     Globals.dragging = grabbing
     Signals.dragging_set.emit()
 
 
-func _on_gui_input(event: InputEvent) -> void :
-    if closing: return
+func _on_gui_input(event: InputEvent) -> void:
+    if closing:
+        return
+
     if Globals.tool == Utils.tools.MOVE:
         Signals.movement_input.emit(event, global_position)
         return
@@ -92,6 +95,7 @@ func _on_gui_input(event: InputEvent) -> void :
         if event.index >= 1:
             Signals.movement_input.emit(event, global_position)
             return
+
         if event.pressed:
             get_parent().move_child(self, get_parent().get_child_count() - 1)
             dragged = false
@@ -112,6 +116,7 @@ func _on_gui_input(event: InputEvent) -> void :
         if event.index >= 1:
             Signals.movement_input.emit(event, global_position)
             return
+
         dragged = true
         if grabbing:
             var new_pos: Vector2 = (get_global_mouse_position() - grabbing_pos).snappedf(50).clampf(-5000, 5000)
@@ -124,54 +129,57 @@ func _on_gui_input(event: InputEvent) -> void :
         Signals.movement_input.emit(event, global_position)
 
 
-func process_set(enabled: bool) -> void :
+func process_set(enabled: bool) -> void:
     set_process(enabled)
 
 
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void :
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
     process_set(true)
     $TitlePanel.visible = true
     $PanelContainer.visible = true
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void :
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
     $TitlePanel.visible = grabbing
     $PanelContainer.visible = grabbing
 
 
-func _on_item_rect_changed() -> void :
-
+func _on_item_rect_changed() -> void:
     pivot_offset = size / 2
     $VisibleOnScreenNotifier2D.rect = Rect2(0, 0, size.x, size.y)
     Signals.window_moved.emit(self)
 
 
-func _exit_tree() -> void :
+func _exit_tree() -> void:
     Globals.selections.erase(self)
 
 
-func _on_selection_set() -> void :
+func _on_selection_set() -> void:
     if Globals.selections.has(self):
-        if Signals.move_selection.is_connected(_on_move_selection): return
+        if Signals.move_selection.is_connected(_on_move_selection):
+            return
+
         Signals.move_selection.connect(_on_move_selection)
     else:
-        if !Signals.move_selection.is_connected(_on_move_selection): return
+        if !Signals.move_selection.is_connected(_on_move_selection):
+            return
+
         Signals.move_selection.disconnect(_on_move_selection)
 
 
-func _on_move_selection(to: Vector2) -> void :
+func _on_move_selection(to: Vector2) -> void:
     move(global_position + to)
 
 
 func export() -> Dictionary:
     return {
-        "filename": scene_file_path.get_file(), 
+        "filename": scene_file_path.get_file(),
         "position": position
     }
 
 
 func save() -> Dictionary:
     return {
-        "filename": scene_file_path.get_file(), 
+        "filename": scene_file_path.get_file(),
         "position": position
     }

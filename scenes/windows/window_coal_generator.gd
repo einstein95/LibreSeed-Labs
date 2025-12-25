@@ -2,9 +2,9 @@ extends WindowIndexed
 
 const resource_multiplier: Dictionary = {"coal": 1, "coal_enriched": 2}
 
-@onready var progress_bar: = $PanelContainer / MainContainer / ConsumptionContainer / ConsumptionBar
-@onready var coal: = $PanelContainer / MainContainer / Coal
-@onready var power: = $PanelContainer / MainContainer / Power
+@onready var progress_bar := $PanelContainer/MainContainer/ConsumptionContainer/ConsumptionBar
+@onready var coal := $PanelContainer/MainContainer/Coal
+@onready var power := $PanelContainer/MainContainer/Power
 
 var speed: float
 var active: bool
@@ -13,18 +13,18 @@ var multiplier: float
 var time: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
 
     update_all()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, time / 10.0, 1.0 - exp(-50.0 * delta))
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if active:
         power.count = speed * multiplier * Attributes.get_attribute("power_multiplier")
         time -= consumption * delta
@@ -41,16 +41,16 @@ func process(delta: float) -> void :
             power.count = 0
 
 
-func update_all() -> void :
+func update_all() -> void:
     speed = 126
     consumption = 1
     set_window_name(get_window_name())
-    $PanelContainer / MainContainer / ConsumptionContainer / ConsumptionLabelContainer / ConsumptionLabel.text = Utils.print_string(consumption / 10, false) + "/s"
+    $PanelContainer/MainContainer/ConsumptionContainer/ConsumptionLabelContainer/ConsumptionLabel.text = Utils.print_string(consumption / 10, false) + "/s"
 
 
 func save() -> Dictionary:
     return super ().merged({
-        "active": active, 
-        "time": time, 
+        "active": active,
+        "time": time,
         "multiplier": multiplier
     })

@@ -10,16 +10,16 @@ var hovering: bool
 var dragging: bool
 var dimmed: bool
 var disabled: bool:
-    set(d): disabled = d;update_connector_animation()
+    set(d): disabled = d; update_connector_animation()
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     super ()
     container = get_parent()
     container.closing.connect(close)
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.connection_set.connect(_on_connection_set)
     Signals.connection_droppped.connect(_on_connection_dropped)
@@ -35,12 +35,12 @@ func _ready() -> void :
     update_all.call_deferred()
 
 
-func update_all() -> void :
+func update_all() -> void:
     update_settings()
     update_connector_button()
 
 
-func update_settings() -> void :
+func update_settings() -> void:
     if Data.colorblind:
         texture_scale = 0.5
     else:
@@ -52,7 +52,7 @@ func update_settings() -> void :
     queue_redraw()
 
 
-func update_connector_button() -> void :
+func update_connector_button() -> void:
     self_modulate = get_color()
     var t: String = get_connector_icon(has_connection())
     if !t.is_empty():
@@ -63,7 +63,7 @@ func update_connector_button() -> void :
     queue_redraw()
 
 
-func update_connector_animation() -> void :
+func update_connector_animation() -> void:
     if disabled:
         $AnimationPlayer.play("Disabled")
     else:
@@ -80,7 +80,7 @@ func update_connector_animation() -> void :
             $AnimationPlayer.play("RESET")
 
 
-func animate_scale() -> void :
+func animate_scale() -> void:
     var tween: Tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
     tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.1)
@@ -88,14 +88,19 @@ func animate_scale() -> void :
 
 
 func can_connect(resource: ResourceContainer, type: int) -> bool:
-    if type == self.type: return false
+    if type == self.type:
+        return false
 
     return container.can_connect(resource)
 
 
 func has_connection() -> bool:
-    if type == Utils.connections_types.OUTPUT: return container.outputs_id.size() > 0
-    if type == Utils.connections_types.INPUT: return !container.input_id.is_empty()
+    if type == Utils.connections_types.OUTPUT:
+        return container.outputs_id.size() > 0
+
+    if type == Utils.connections_types.INPUT:
+        return !container.input_id.is_empty()
+
     return false
 
 
@@ -164,16 +169,20 @@ func get_color() -> Color:
 
 
 func get_visibility() -> bool:
-    if type == Utils.connections_types.OUTPUT: return get_connector_color() != "black"
+    if type == Utils.connections_types.OUTPUT:
+        return get_connector_color() != "black"
+
     return true
 
 
-func close() -> void :
+func close() -> void:
     disabled = true
 
 
-func _on_gui_input(event: InputEvent) -> void :
-    if disabled: return
+func _on_gui_input(event: InputEvent) -> void:
+    if disabled:
+        return
+
     if Globals.tool == Utils.tools.MOVE:
         Signals.movement_input.emit(event, global_position)
         return
@@ -219,18 +228,23 @@ func _on_gui_input(event: InputEvent) -> void :
         Signals.movement_input.emit(event, global_position)
 
 
-func _on_connection_set() -> void :
+func _on_connection_set() -> void:
     update_connector_button()
 
 
-func _on_resource_set() -> void :
+func _on_resource_set() -> void:
     update_connector_button()
 
 
-func _on_connection_dropped(connection: String, type: int) -> void :
-    if !hovering: return
-    if disabled: return
-    if connection.is_empty(): return
+func _on_connection_dropped(connection: String, type: int) -> void:
+    if !hovering:
+        return
+
+    if disabled:
+        return
+
+    if connection.is_empty():
+        return
 
     var resource: ResourceContainer = Globals.desktop.get_resource(connection)
     if can_connect(resource, type):
@@ -245,7 +259,7 @@ func _on_connection_dropped(connection: String, type: int) -> void :
     dropped.emit(connection, type)
 
 
-func _on_highlight_connection(resource: ResourceContainer) -> void :
+func _on_highlight_connection(resource: ResourceContainer) -> void:
     if resource:
         if resource == container or container.outputs.has(resource) or container.input == resource:
             dimmed = false
@@ -256,21 +270,29 @@ func _on_highlight_connection(resource: ResourceContainer) -> void :
     update_connector_animation()
 
 
-func _on_connector_button_mouse_entered() -> void :
-    if disabled: return
+func _on_connector_button_mouse_entered() -> void:
+    if disabled:
+        return
+
     hovering = true
     scale = Vector2(1.2, 1.2)
-    if !has_connection(): return
+    if !has_connection():
+        return
+
     Signals.highlight_connection.emit(container)
 
 
-func _on_connector_button_mouse_exited() -> void :
-    if disabled: return
+func _on_connector_button_mouse_exited() -> void:
+    if disabled:
+        return
+
     hovering = false
     scale = Vector2(1, 1)
     Signals.highlight_connection.emit(null)
 
 
-func _on_settings_set(setting: String) -> void :
-    if setting != "colorblind": return
+func _on_settings_set(setting: String) -> void:
+    if setting != "colorblind":
+        return
+
     update_settings()

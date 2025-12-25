@@ -8,13 +8,13 @@ signal connection_out_set
 signal pulse
 signal closing
 
-@onready var count_label: = $Info / Count
-@onready var icon: = $ResourceButton / Icon
+@onready var count_label := $Info/Count
+@onready var icon := $ResourceButton/Icon
 
 @export var default_resource: String
 @export var default_variation: int
 @export var count: float:
-    set(c): count = c;needs_update = true
+    set(c): count = c; needs_update = true
 @export var limit: float = pow(10, 305)
 @export var required: float
 @export var placeholder_name: String = "empty"
@@ -29,7 +29,7 @@ var id: String
 var resource: String = default_resource
 var variation: int = default_variation
 var production: float:
-    set(p): production = p;needs_update = true
+    set(p): production = p; needs_update = true
 var data: Dictionary
 var type: int
 var print_type: int
@@ -47,7 +47,7 @@ var input: ResourceContainer
 var transfer: Array[ResourceContainer]
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     Signals.resource_renamed.connect(_on_resource_renamed)
     Signals.desktop_ready.connect(_on_desktop_ready)
 
@@ -57,7 +57,7 @@ func _enter_tree() -> void :
     validate_resource()
 
 
-func _ready() -> void :
+func _ready() -> void:
     initialized.emit()
 
     if id.is_empty():
@@ -75,13 +75,13 @@ func _ready() -> void :
     Signals.delete_connection.connect(_on_delete_connection)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     if needs_update:
         count_label.text = get_count_string()
         needs_update = false
 
 
-func tick() -> void :
+func tick() -> void:
     if type == 0:
         if floorf(count) >= transfer.size():
             var remainder: float = fmod(floorf(count), transfer.size())
@@ -122,10 +122,12 @@ func tick() -> void :
     elif type == 3:
         while count >= 1.0:
             var available_inputs: Array[ResourceContainer] = transfer.filter(
-                func(input): return input.count < input.limit
+                func(input):
+                    return input.count < input.limit
             )
 
-            if available_inputs.is_empty(): break
+            if available_inputs.is_empty():
+                break
 
             var available_count: float = count
             var num_inputs: int = available_inputs.size()
@@ -142,7 +144,7 @@ func tick() -> void :
                     count -= amount_to_give
             else:
                 for i: int in range(available_count):
-                    var random_input: ResourceContainer = available_inputs[randi() %num_inputs]
+                    var random_input: ResourceContainer = available_inputs[randi()%num_inputs]
 
                     if random_input.limit - random_input.count > 0:
                         random_input.count += 1
@@ -161,7 +163,7 @@ func tick() -> void :
             count -= amount
 
 
-func set_input(id: String) -> void :
+func set_input(id: String) -> void:
     if input:
         input.closing.disconnect(_on_input_closing)
         input.tick_set.disconnect(_on_input_paused)
@@ -184,9 +186,10 @@ func set_input(id: String) -> void :
     connection_in_set.emit()
 
 
-func add_output(output: String) -> void :
+func add_output(output: String) -> void:
     var container: ResourceContainer = Globals.desktop.get_resource(output)
-    if !container: return
+    if !container:
+        return
 
     outputs_id.append(output)
     outputs.append(container)
@@ -201,9 +204,10 @@ func add_output(output: String) -> void :
     update_connections()
 
 
-func remove_output(output: String) -> void :
+func remove_output(output: String) -> void:
     var container: ResourceContainer = Globals.desktop.get_resource(output)
-    if !container: return
+    if !container:
+        return
 
     outputs_id.erase(output)
     outputs.erase(container)
@@ -217,11 +221,11 @@ func remove_output(output: String) -> void :
     update_connections()
 
 
-func update_all() -> void :
+func update_all() -> void:
     if data.icon.is_empty():
-        $ResourceButton / Icon.texture = null
+        $ResourceButton/Icon.texture = null
     else:
-        $ResourceButton / Icon.texture = Resources.icons[(data.icon + ".png")]
+        $ResourceButton/Icon.texture = Resources.icons[(data.icon + ".png")]
 
     var display_name: String
     if resource.is_empty():
@@ -233,24 +237,24 @@ func update_all() -> void :
         var symbols: String = Utils.get_resource_symbols(data.symbols, variation)
         if !symbols.is_empty():
             display_name += " " + symbols
-    $Info / Name.text = display_name
+    $Info/Name.text = display_name
     if tr(display_name).length() >= 26:
-        $Info / Name.add_theme_font_size_override("font_size", 14)
+        $Info/Name.add_theme_font_size_override("font_size", 14)
     elif tr(display_name).length() >= 24:
-        $Info / Name.add_theme_font_size_override("font_size", 16)
+        $Info/Name.add_theme_font_size_override("font_size", 16)
     elif tr(display_name).length() >= 20:
-        $Info / Name.add_theme_font_size_override("font_size", 18)
+        $Info/Name.add_theme_font_size_override("font_size", 18)
     elif tr(display_name).length() >= 18:
-        $Info / Name.add_theme_font_size_override("font_size", 20)
+        $Info/Name.add_theme_font_size_override("font_size", 20)
 
-    $Info / Count.visible = !resource.is_empty()
+    $Info/Count.visible = !resource.is_empty()
     $ResourceButton.disabled = resource.is_empty()
 
     update_required()
     needs_update = true
 
 
-func update_required() -> void :
+func update_required() -> void:
     if required > 0:
         if print_type == 1:
             required_str = "/" + Utils.print_metric(required, hide_decimals)
@@ -260,7 +264,7 @@ func update_required() -> void :
         required_str = ""
 
 
-func update_connections() -> void :
+func update_connections() -> void:
     transfer.clear()
     for i: ResourceContainer in outputs:
         if i.paused or i.is_looping(self):
@@ -277,24 +281,26 @@ func update_connections() -> void :
 
 
 func should_tick() -> bool:
-    if paused: return false
-    if transfer.size() == 0: return false
+    if paused:
+        return false
+    if transfer.size() == 0:
+        return false
 
     return true
 
 
-func validate_resource() -> void :
+func validate_resource() -> void:
     if resource.is_empty():
         data = {
-            "name": "empty", 
-            "icon": "", 
-            "description": "", 
-            "type": 0, 
-            "print_type": 0, 
-            "suffix": "", 
-            "hide_decimals": true, 
-            "connection": "", 
-            "color": "", 
+            "name": "empty",
+            "icon": "",
+            "description": "",
+            "type": 0,
+            "print_type": 0,
+            "suffix": "",
+            "hide_decimals": true,
+            "connection": "",
+            "color": "",
             "symbols": ""
         }
     else:
@@ -309,8 +315,9 @@ func validate_resource() -> void :
     hide_decimals = data.hide_decimals
 
 
-func set_resource(r: String, v: int = variation) -> void :
-    if resource == r and variation == v: return
+func set_resource(r: String, v: int = variation) -> void:
+    if resource == r and variation == v:
+        return
     remove(count)
     resource = r
     variation = v
@@ -319,21 +326,21 @@ func set_resource(r: String, v: int = variation) -> void :
     update_all()
 
 
-func set_required(r: float) -> void :
+func set_required(r: float) -> void:
     required = r
     update_required()
     needs_update = true
 
 
-func add(amount: float) -> void :
+func add(amount: float) -> void:
     count += amount
 
 
-func remove(amount: float) -> void :
+func remove(amount: float) -> void:
     count -= amount
 
 
-func set_count(amount: float) -> void :
+func set_count(amount: float) -> void:
     count = min(amount, limit)
 
 
@@ -349,7 +356,7 @@ func pop_all() -> float:
     return r
 
 
-func close() -> void :
+func close() -> void:
     closing.emit()
     if Globals.connecting == id:
         Globals.connecting = ""
@@ -390,38 +397,48 @@ func get_connector_color() -> String:
 
 
 func can_connect(to: ResourceContainer) -> bool:
-    if !is_instance_valid(to): return false
-    if get_connection_shape() != to.get_connection_shape(): return false
-    if (get_connector_color() != "white" and to.get_connector_color() != "white") and get_connector_color() != to.get_connector_color(): return false
-    if !can_set(to.resource) or !to.can_set(resource): return false
-    if excluded_resources.has(to.resource): return false
-    if excluded_colors.has(to.get_connector_color()): return false
+    if !is_instance_valid(to):
+        return false
+    if get_connection_shape() != to.get_connection_shape():
+        return false
+    if (get_connector_color() != "white" and to.get_connector_color() != "white") and get_connector_color() != to.get_connector_color():
+        return false
+    if !can_set(to.resource) or !to.can_set(resource):
+        return false
+    if excluded_resources.has(to.resource):
+        return false
+    if excluded_colors.has(to.get_connector_color()):
+        return false
 
     return true
 
 
 func can_set(to: String) -> bool:
-    if force_resource and to != default_resource: return false
+    if force_resource and to != default_resource:
+        return false
 
     return true
 
 
 func is_looping(with: ResourceContainer, visited: Array[ResourceContainer] = []) -> bool:
     visited.append(self)
-    if with in visited: return true
+    if with in visited:
+        return true
 
     var checks: Array[ResourceContainer] = exporting.duplicate()
     checks.append_array(outputs)
     for i: ResourceContainer in checks:
-        if visited.has(i): continue
+        if visited.has(i):
+            continue
         if i.is_looping(with, visited):
             return true
 
     return false
 
 
-func animate_icon_in() -> void :
-    if animation_busy: return
+func animate_icon_in() -> void:
+    if animation_busy:
+        return
     var tween: Tween = create_tween()
     tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
     tween.tween_property(icon, "scale", Vector2(1.2, 1.2), 0.15)
@@ -430,15 +447,15 @@ func animate_icon_in() -> void :
     animation_busy = true
 
 
-func animate_icon_in_pop(value: float) -> void :
+func animate_icon_in_pop(value: float) -> void:
     animate_icon_in()
 
 
-func process_set(enabled: bool) -> void :
+func process_set(enabled: bool) -> void:
     set_process(enabled)
 
 
-func set_ticking(enabled: bool) -> void :
+func set_ticking(enabled: bool) -> void:
     paused = !enabled
     if paused:
         production = 0
@@ -451,79 +468,80 @@ func set_ticking(enabled: bool) -> void :
     tick_set.emit()
 
 
-func _on_resource_renamed(old_id: String, new_id: String) -> void :
+func _on_resource_renamed(old_id: String, new_id: String) -> void:
     if old_id == id:
         id = new_id
 
 
-func _on_input_paused() -> void :
+func _on_input_paused() -> void:
     input.update_connections()
 
 
-func _on_input_closing() -> void :
+func _on_input_closing() -> void:
     input.remove_output(id)
 
 
-func _on_input_resource_set() -> void :
+func _on_input_resource_set() -> void:
     if can_connect(input):
         set_resource(input.resource, input.variation)
     else:
         input.remove_output(id)
 
 
-func _on_output_paused(output: ResourceContainer) -> void :
+func _on_output_paused(output: ResourceContainer) -> void:
     update_connections()
 
 
-func _on_output_closing(output: ResourceContainer) -> void :
+func _on_output_closing(output: ResourceContainer) -> void:
     remove_output(output.id)
 
 
-func _on_output_resource_set(output: ResourceContainer) -> void :
+func _on_output_resource_set(output: ResourceContainer) -> void:
     if !can_connect(output):
         remove_output(output.id)
 
 
-func _on_tick() -> void :
+func _on_tick() -> void:
     tick()
 
 
-func _on_create_connection(output: String, input: String) -> void :
+func _on_create_connection(output: String, input: String) -> void:
     if output == id:
         if can_connect(Globals.desktop.get_resource(input)):
             add_output(input)
 
 
-func _on_delete_connection(output: String, input: String) -> void :
+func _on_delete_connection(output: String, input: String) -> void:
     if output == id:
         if outputs_id.has(input):
             remove_output(input)
 
 
-func _on_desktop_ready() -> void :
+func _on_desktop_ready() -> void:
     var to_connect: Array[String] = outputs_id.duplicate()
     outputs_id.clear()
     for i: String in to_connect:
-        if !can_connect(Globals.desktop.get_resource(i)): continue
+        if !can_connect(Globals.desktop.get_resource(i)):
+            continue
         add_output(i)
 
 
-func _on_animation_finished() -> void :
+func _on_animation_finished() -> void:
     animation_busy = false
 
 
 func export() -> Dictionary:
     return {
-        "id": id, 
+        "id": id,
         "outputs_id": outputs_id
     }
 
 
 func save() -> Dictionary:
     return {
-        "id": id, 
-        "resource": resource, 
-        "variation": variation, 
-        "count": count, 
+        "id": id,
+        "resource": resource,
+        "variation": variation,
+        "count": count,
         "outputs_id": outputs_id
     }

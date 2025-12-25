@@ -23,13 +23,13 @@ extends Control
 var current_rotation_radians: float = 0.0
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     current_rotation_radians += deg_to_rad(rotation_speed_dps) * delta
     current_rotation_radians = fmod(current_rotation_radians, PI * 2.0)
     queue_redraw()
 
 
-func _draw() -> void :
+func _draw() -> void:
     var center: Vector2 = size / 2.0
     var radius: float = min(size.x, size.y) / 2.0 - line_width / 2.0
 

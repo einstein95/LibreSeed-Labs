@@ -1,20 +1,20 @@
 extends Panel
 
-@onready var value_label: = $Value
+@onready var value_label := $Value
 var type: int
 
 
-func _ready() -> void :
+func _ready() -> void:
     type = int(Data.attributes[name].type)
 
 
-func update_all() -> void :
+func update_all() -> void:
     $Name.text = tr(Data.attributes[name].name)
 
     set_process(is_visible_in_tree())
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     value_label.text = get_value_string()
 
 
@@ -29,5 +29,5 @@ func get_value_string() -> String:
     return Globals.stats[name]
 
 
-func _on_visibility_changed() -> void :
+func _on_visibility_changed() -> void:
     update_all()

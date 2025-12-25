@@ -1,10 +1,10 @@
 extends WindowIndexed
 
-@onready var payload_in: = $PanelContainer / MainContainer / PayloadIn
-@onready var payload_out: = $PanelContainer / MainContainer / PayloadOut
+@onready var payload_in := $PanelContainer/MainContainer/PayloadIn
+@onready var payload_out := $PanelContainer/MainContainer/PayloadOut
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     var crit_chance: float = Attributes.get_attribute("breach_critical_chance")
     var crit_multiplier: float = Attributes.get_attribute("breach_critical_multiplier")
     if floorf(payload_in.count) > 0:
@@ -18,5 +18,5 @@ func process(delta: float) -> void :
     payload_out.production = payload_in.production * ((1 + crit_chance) * crit_multiplier)
 
 
-func _on_payload_in_resource_set() -> void :
+func _on_payload_in_resource_set() -> void:
     payload_out.set_resource(payload_in.resource, payload_in.variation)

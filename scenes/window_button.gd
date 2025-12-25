@@ -1,7 +1,7 @@
 extends Button
 
 const tutorial_windows: Dictionary = {
-    "upload": [Utils.tutorial_steps.SELECT_UPLOADER, Utils.tutorial_steps.ADD_UPLOADER], 
+    "upload": [Utils.tutorial_steps.SELECT_UPLOADER, Utils.tutorial_steps.ADD_UPLOADER],
     "collect": [Utils.tutorial_steps.SELECT_COLLECTOR, Utils.tutorial_steps.ADD_COLLECTOR]
 }
 
@@ -12,7 +12,7 @@ var placer: Button
 var starting_drag: Vector2
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.tutorial_step.connect(_on_tutorial_step)
     Signals.new_unlock.connect(_on_new_unlock)
 
@@ -20,7 +20,7 @@ func _ready() -> void :
     update_tutorial()
 
 
-func update_all() -> void :
+func update_all() -> void:
     var unlocked: bool = is_unlocked()
 
     if unlocked:
@@ -38,7 +38,7 @@ func update_all() -> void :
     visible = unlocked or !Data.windows[name].hidden
 
 
-func update_tutorial() -> void :
+func update_tutorial() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.SELECT_UPLOADER and name == "upload":
         Signals.desktop_point_to.emit(null)
         Signals.interface_point_to.emit(self)
@@ -48,30 +48,31 @@ func update_tutorial() -> void :
 
 
 func is_unlocked() -> bool:
-    if !Data.windows[name].requirement.is_empty() and !Globals.unlocks[Data.windows[name].requirement]: return false
+    if !Data.windows[name].requirement.is_empty() and !Globals.unlocks[Data.windows[name].requirement]:
+        return false
 
     return Globals.money_level >= Data.windows[name].level
 
 
-func _on_visibility_changed() -> void :
+func _on_visibility_changed() -> void:
     update_all()
 
 
-func _on_pressed() -> void :
+func _on_pressed() -> void:
     selected.emit(name)
     Sound.play("click_toggle2")
 
 
-func _on_tutorial_step() -> void :
+func _on_tutorial_step() -> void:
     update_all()
     update_tutorial()
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_all()
 
 
-func _on_gui_input(event: InputEvent) -> void :
+func _on_gui_input(event: InputEvent) -> void:
     if event is InputEventScreenTouch:
         if event.is_pressed():
             starting_drag = event.position
@@ -98,10 +99,11 @@ func _on_gui_input(event: InputEvent) -> void :
         modulate.a = 1
 
 
-func _on_mouse_entered() -> void :
-    if disabled: return
+func _on_mouse_entered() -> void:
+    if disabled:
+        return
     hovered.emit(name)
 
 
-func _on_mouse_exited() -> void :
+func _on_mouse_exited() -> void:
     hovered.emit("")

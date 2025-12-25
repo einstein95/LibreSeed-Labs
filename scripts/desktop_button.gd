@@ -4,12 +4,12 @@ var dragged: bool
 var cancel_press: bool
 
 
-func _init() -> void :
+func _init() -> void:
     button_mask = 0
     toggle_mode = true
 
 
-func _gui_input(event: InputEvent) -> void :
+func _gui_input(event: InputEvent) -> void:
     if event is InputEventScreenTouch:
         if event.index >= 1:
             Signals.movement_input.emit(event, global_position)

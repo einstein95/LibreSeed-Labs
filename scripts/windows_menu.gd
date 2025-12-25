@@ -88,7 +88,9 @@ func set_category(category: String) -> void :
 
         var count: int
         for i: String in Data.windows:
-            if Data.windows[i].category != category: continue
+            if Data.windows[i].category != category:
+                continue
+
             var instance: Control = preload("res://scenes/window_button.tscn").instantiate()
             instance.name = i
             instance.selected.connect(_on_window_selected)
@@ -126,7 +128,8 @@ func set_window(window: String) -> void :
 
 
 func update_window() -> void :
-    if cur_window.is_empty(): return
+    if cur_window.is_empty():
+        return
 
     limit = Attributes.get_window_attribute(cur_window, "limit")
     active = Globals.window_count[cur_window]
@@ -156,7 +159,8 @@ func update_tutorial() -> void :
 
 
 func can_add() -> bool:
-    if limit >= 0 and active >= limit: return false
+    if limit >= 0 and active >= limit:
+        return false
 
     return true
 

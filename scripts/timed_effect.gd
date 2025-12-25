@@ -5,14 +5,14 @@ var time_left: float
 var attributes: Dictionary
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.tick.connect(_on_tick)
     time_left = duration
 
     Attributes.apply_attribute_dict(attributes)
 
 
-func tick(delta: float) -> void :
+func tick(delta: float) -> void:
     if time_left > 0:
         time_left -= delta
     else:
@@ -21,5 +21,5 @@ func tick(delta: float) -> void :
         queue_free()
 
 
-func _on_tick() -> void :
+func _on_tick() -> void:
     tick(0.05 * Attributes.get_attribute("time_multiplier") * Attributes.get_attribute("offline_time_multiplier"))

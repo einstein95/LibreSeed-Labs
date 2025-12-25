@@ -1,9 +1,11 @@
 extends Node
 
-const to_load: Array[String] = ["attributes", "connectors", "resources", "symbols", 
-"currencies", "files", "windows", "upgrades", "storage", "guides", "research", 
-"milestones", "perks", "boosts", "services", "stats", "achievements", "requests", 
-"themes"]
+const to_load: Array[String] = [
+    "attributes", "connectors", "resources", "symbols",
+    "currencies", "files", "windows", "upgrades", "storage", "guides", "research",
+    "milestones", "perks", "boosts", "services", "stats", "achievements", "requests",
+    "themes"
+]
 
 var attributes: Dictionary
 var connectors: Dictionary
@@ -46,15 +48,11 @@ var wiping: bool
 var settings_set: bool
 
 
-func _init() -> void :
+func _init() -> void:
     for i: String in to_load:
         load_data(i)
 
-    if OS.get_name() == "Windows":
-        scale = 0.7
-    elif OS.get_name() == "Linux":
-        scale = 0.7
-    elif OS.get_name() == "macOS":
+    if OS.get_name() in ["Windows", "Linux", "macOS"]:
         scale = 0.7
     elif OS.get_name() == "Android":
         scale = snappedf(0.6 * DisplayServer.screen_get_scale(), 0.1)
@@ -66,7 +64,7 @@ func _init() -> void :
         language = OS.get_locale()
 
 
-func _ready() -> void :
+func _ready() -> void:
     loading = get_data_from_config(load_save_file("user://savegame.dat"))
     if loading.is_empty():
         loading = get_data_from_config(load_save_file("user://savegame_backup.dat"))
@@ -84,7 +82,7 @@ func _ready() -> void :
     load_schematics()
 
 
-func set_setting(setting: String, value) -> void :
+func set_setting(setting: String, value) -> void:
     if value != get(setting):
         set(setting, value)
         update_setting(setting)
@@ -93,7 +91,7 @@ func set_setting(setting: String, value) -> void :
     Signals.setting_set.emit(setting)
 
 
-func update_setting(setting: String) -> void :
+func update_setting(setting: String) -> void:
     if setting == "fps_limit":
         Engine.max_fps = fps_limit
     elif setting == "mute_sfx":
@@ -112,7 +110,7 @@ func update_setting(setting: String) -> void :
         TranslationServer.set_locale(language)
 
 
-func load_data(property: String) -> void :
+func load_data(property: String) -> void:
     var file: FileAccess = FileAccess.open("res://data/" + property + ".json", FileAccess.READ)
     var json: Variant = JSON.parse_string(file.get_as_text())
     set(property, json)
@@ -128,14 +126,16 @@ func save_data_file(path: String) -> ConfigFile:
 func load_save_file(path: String) -> ConfigFile:
     var file: ConfigFile = ConfigFile.new()
     if file.load_encrypted_pass(path, "wb4Y2glKOoikSazubWWf") != OK:
-        if file.load(path) != OK: return null
+        if file.load(path) != OK:
+            return null
 
     return file
 
 
 func load_save_string(string: String) -> ConfigFile:
     var file: ConfigFile = ConfigFile.new()
-    if file.parse(string) != OK: return null
+    if file.parse(string) != OK:
+        return null
 
     return file
 
@@ -172,7 +172,7 @@ func get_data_from_config(file: ConfigFile) -> Dictionary:
         return {}
 
 
-func save_config() -> void :
+func save_config() -> void:
     var file: ConfigFile = ConfigFile.new()
     var save: Dictionary = save()
     for i: String in save:
@@ -183,7 +183,8 @@ func save_config() -> void :
 
 func load_config() -> bool:
     var file: ConfigFile = ConfigFile.new()
-    if file.load("user://config.dat") != OK: return false
+    if file.load("user://config.dat") != OK:
+        return false
 
     for i: String in file.get_section_keys("config"):
         set(i, file.get_value("config", i))
@@ -191,7 +192,7 @@ func load_config() -> bool:
     return true
 
 
-func save_schematic(name: String, data: Dictionary) -> void :
+func save_schematic(name: String, data: Dictionary) -> void:
     var file: ConfigFile = ConfigFile.new()
 
     var dir_access: DirAccess = DirAccess.open("user://")
@@ -206,7 +207,9 @@ func save_schematic(name: String, data: Dictionary) -> void :
     while true:
         var suffix = "" if id == 0 else str(id)
         path = dir.path_join(base_name + suffix + ".dat")
-        if not dir_access.file_exists(path): break
+        if not dir_access.file_exists(path):
+            break
+
         id += 1
 
     file.set_value("schematic", "windows", data["windows"])
@@ -219,12 +222,12 @@ func save_schematic(name: String, data: Dictionary) -> void :
         add_schematic(path.get_file().get_basename(), data)
 
 
-func add_schematic(schematic: String, data: Dictionary) -> void :
+func add_schematic(schematic: String, data: Dictionary) -> void:
     schematics[schematic] = data
     Signals.new_schematic.emit(schematic)
 
 
-func delete_schematic(schematic: String) -> void :
+func delete_schematic(schematic: String) -> void:
     schematics.erase(schematic)
     var dir_access: DirAccess = DirAccess.open("user://")
     dir_access.remove("schematics".path_join(schematic + ".dat"))
@@ -233,11 +236,18 @@ func delete_schematic(schematic: String) -> void :
 
 func load_schematic(path: String) -> Dictionary:
     var file: ConfigFile = ConfigFile.new()
-    if file.load(path) != OK: return {}
+    if file.load(path) != OK:
+        return {}
 
-    if !file.has_section("schematic"): return {}
-    if !file.has_section_key("schematic", "windows"): return {}
-    if !file.has_section_key("schematic", "connectors"): return {}
+    if !file.has_section("schematic"):
+        return {}
+
+    if !file.has_section_key("schematic", "windows"):
+        return {}
+
+    if !file.has_section_key("schematic", "connectors"):
+        return {}
+
 
     var data: Dictionary
     data["windows"] = file.get_value("schematic", "windows")
@@ -249,12 +259,15 @@ func load_schematic(path: String) -> Dictionary:
     return data
 
 
-func load_schematics() -> void :
+func load_schematics() -> void:
     var dir_access: DirAccess = DirAccess.open("user://")
-    if !dir_access.dir_exists("schematics"): return
+    if !dir_access.dir_exists("schematics"):
+        return
 
     for i: String in dir_access.get_files_at("user://schematics"):
-        if !i.ends_with(".dat"): continue
+        if !i.ends_with(".dat"):
+            continue
+
         var schem: Dictionary = load_schematic("user://schematics".path_join(i))
         if !schem.is_empty():
             schematics[i.get_basename()] = load_schematic("user://schematics".path_join(i))
@@ -262,16 +275,16 @@ func load_schematics() -> void :
 
 func save() -> Dictionary:
     return {
-        "fps_limit": fps_limit, 
-        "glow": glow, 
-        "colorblind": colorblind, 
-        "scientific": scientific, 
-        "mute_sfx": mute_sfx, 
-        "volume_sfx": volume_sfx, 
-        "mute_windows": mute_windows, 
-        "volume_windows": volume_windows, 
-        "mute_bgm": mute_bgm, 
-        "volume_bgm": volume_bgm, 
-        "scale": scale, 
+        "fps_limit": fps_limit,
+        "glow": glow,
+        "colorblind": colorblind,
+        "scientific": scientific,
+        "mute_sfx": mute_sfx,
+        "volume_sfx": volume_sfx,
+        "mute_windows": mute_windows,
+        "volume_windows": volume_windows,
+        "mute_bgm": mute_bgm,
+        "volume_bgm": volume_bgm,
+        "scale": scale,
         "language": language
     }

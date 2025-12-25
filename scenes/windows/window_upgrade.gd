@@ -2,27 +2,27 @@ extends WindowIndexed
 
 @export var upgrade: String
 @export var lvl_multiplier: float
-@onready var audio_player: = $AudioStreamPlayer2D
-@onready var progress_bar: = $PanelContainer / MainContainer / Progress / ProgressBar
-@onready var cost: = $PanelContainer / MainContainer / Cost
-@onready var boost: = $PanelContainer / MainContainer / Boost
+@onready var audio_player := $AudioStreamPlayer2D
+@onready var progress_bar := $PanelContainer/MainContainer/Progress/ProgressBar
+@onready var cost := $PanelContainer/MainContainer/Cost
+@onready var boost := $PanelContainer/MainContainer/Boost
 
 var multiplier: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.new_upgrade.connect(_on_new_upgrade)
 
     update_upgrade()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, cost.count / cost.required, 1.0 - exp(-50.0 * delta))
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     var levels: int
     while cost.count >= cost.required:
         levels += 1
@@ -46,13 +46,14 @@ func process(delta: float) -> void :
     boost.count = multiplier
 
 
-func update_upgrade() -> void :
+func update_upgrade() -> void:
     cost.set_required(floorf(Data.upgrades[upgrade].cost * pow(10, Data.upgrades[upgrade].cost_e) * pow(Data.upgrades[upgrade].cost_inc, Globals.upgrades[upgrade])))
     multiplier = lvl_multiplier ** Globals.upgrades[upgrade]
-    $PanelContainer / MainContainer / Progress / ProgressContainer / LevelLabel.text = str(Globals.upgrades[upgrade])
+    $PanelContainer/MainContainer/Progress/ProgressContainer/LevelLabel.text = str(Globals.upgrades[upgrade])
 
 
-func _on_new_upgrade(u: String, levels: int) -> void :
-    if u != upgrade: return
+func _on_new_upgrade(u: String, levels: int) -> void:
+    if u != upgrade:
+        return
 
     update_upgrade()

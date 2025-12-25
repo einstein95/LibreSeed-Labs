@@ -2,7 +2,7 @@
 class_name RichTextHeadEffect
 extends RichTextEffect
 
-var bbcode: = "heading"
+var bbcode := "heading"
 
 
 func _process_custom_fx(char_fx: CharFXTransform) -> bool:

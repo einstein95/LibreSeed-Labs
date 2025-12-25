@@ -4,7 +4,7 @@ var stat: String
 var amount: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     stat = Data.achievements[name].stat
     amount = Data.achievements[name].requirement * (10 ** Data.achievements[name].requirement_e)
     super ()

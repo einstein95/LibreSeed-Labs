@@ -8,7 +8,7 @@ var resizing_top: bool
 var resizing_bottom: bool
 
 
-func _ready() -> void :
+func _ready() -> void:
     selection.tree_exiting.connect(_on_selection_tree_exiting)
     Signals.selection_set.connect(_on_selection_set)
 
@@ -18,18 +18,18 @@ func _ready() -> void :
     tween.tween_property(self, "self_modulate:a", 1, 0.7)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     position = selection.position
     size = selection.size
     scale = selection.scale
     pivot_offset = size / 2
 
 
-func _on_selection_set() -> void :
+func _on_selection_set() -> void:
     queue_free()
     set_process(false)
 
 
-func _on_selection_tree_exiting() -> void :
+func _on_selection_tree_exiting() -> void:
     queue_free()
     set_process(false)

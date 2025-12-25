@@ -5,15 +5,15 @@ extends WindowIndexed
 @export var stat: String
 @export_range(0.0, 1.0) var firewall_ratio: float = 0.5
 
-@onready var firewall_label: = $PanelContainer / MainContainer / Firewall / ProgressContainer / Amount
-@onready var firewall_bar: = $PanelContainer / MainContainer / Firewall / ProgressBar
-@onready var breach_label: = $PanelContainer / MainContainer / Breached / ProgressContainer / Amount
-@onready var breach_bar: = $PanelContainer / MainContainer / Breached / ProgressBar
-@onready var time_label: = $PanelContainer / MainContainer / Time / ProgressContainer / Amount
-@onready var time_bar: = $PanelContainer / MainContainer / Time / ProgressBar
-@onready var breach_damage: = $PanelContainer / MainContainer / BreachDamage
-@onready var infection_damage: = $PanelContainer / MainContainer / InfectionDamage
-@onready var vulnerability: = $PanelContainer / MainContainer / Vulnerability
+@onready var firewall_label := $PanelContainer/MainContainer/Firewall/ProgressContainer/Amount
+@onready var firewall_bar := $PanelContainer/MainContainer/Firewall/ProgressBar
+@onready var breach_label := $PanelContainer/MainContainer/Breached/ProgressContainer/Amount
+@onready var breach_bar := $PanelContainer/MainContainer/Breached/ProgressBar
+@onready var time_label := $PanelContainer/MainContainer/Time/ProgressContainer/Amount
+@onready var time_bar := $PanelContainer/MainContainer/Time/ProgressBar
+@onready var breach_damage := $PanelContainer/MainContainer/BreachDamage
+@onready var infection_damage := $PanelContainer/MainContainer/InfectionDamage
+@onready var vulnerability := $PanelContainer/MainContainer/Vulnerability
 
 var firewall: float
 var max_firewall: float
@@ -26,7 +26,7 @@ var max_breach_str: String
 var detected: bool
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.new_unlock.connect(_on_new_unlock)
 
@@ -36,7 +36,7 @@ func _ready() -> void :
         reset()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     firewall_bar.value = lerpf(firewall_bar.value, firewall / max_firewall, 1.0 - exp(-50.0 * delta))
     firewall_label.text = Utils.print_string(firewall, true) + "/" + max_firewall_str
@@ -46,7 +46,7 @@ func _process(delta: float) -> void :
     time_label.text = "%.0fs" % time
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     if breach_damage.count > 0 or infection_damage.count > 0:
         var p_damage: float = breach_damage.pop_all()
         var i_damage: float = infection_damage.count * delta
@@ -84,7 +84,7 @@ func damage_firewall(amount: float) -> float:
     return delta
 
 
-func breach() -> void :
+func breach() -> void:
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(1, 2, 1), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
@@ -97,7 +97,7 @@ func breach() -> void :
     reset()
 
 
-func fail() -> void :
+func fail() -> void:
     reset()
 
     var tween: Tween = create_tween()
@@ -105,7 +105,7 @@ func fail() -> void :
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
 
-func level_up(times: int) -> void :
+func level_up(times: int) -> void:
     data.level = min(data.level + times, data.max_level)
 
     var tween: Tween = create_tween()
@@ -118,11 +118,10 @@ func level_up(times: int) -> void :
     tween.tween_property(self, "scale", Vector2(1, 1), 0.25)
 
 
-
     reset()
 
 
-func level_down(times: int) -> void :
+func level_down(times: int) -> void:
     data.level = max(data.level - times, 0)
 
     var tween: Tween = create_tween()
@@ -135,11 +134,10 @@ func level_down(times: int) -> void :
     tween.tween_property(self, "scale", Vector2(1, 1), 0.25)
 
 
-
     reset()
 
 
-func reset() -> void :
+func reset() -> void:
     update_goal()
     breached = 0
     firewall = max_firewall
@@ -148,7 +146,7 @@ func reset() -> void :
     detected = false
 
 
-func update_goal() -> void :
+func update_goal() -> void:
     var total: float = floorf(40.0 * (2 ** (float(get_level() + defense))) * Attributes.get_attribute("breach_layers_multiplier") * Attributes.get_window_attribute(window, "layers_multiplier"))
     max_breach = total * (1.0 - firewall_ratio)
     max_firewall = total * firewall_ratio
@@ -157,26 +155,26 @@ func update_goal() -> void :
     max_breach_str = Utils.print_string(max_breach, true)
     max_firewall_str = Utils.print_string(max_firewall, true)
 
-    $PanelContainer / MainContainer / Level / Info / Count.text = tr("level") + " %0.f" % data.level + "/%.0f" % (data.max_level)
+    $PanelContainer/MainContainer/Level/Info/Count.text = tr("level") + " %0.f" % data.level + "/%.0f" % (data.max_level)
 
 
-func update_visible_damages() -> void :
-    $PanelContainer / MainContainer / InfectionDamage.visible = Globals.unlocks["research.infection_damage"]
-    $PanelContainer / MainContainer / Vulnerability.visible = Globals.unlocks["research.injection"]
+func update_visible_damages() -> void:
+    $PanelContainer/MainContainer/InfectionDamage.visible = Globals.unlocks["research.infection_damage"]
+    $PanelContainer/MainContainer/Vulnerability.visible = Globals.unlocks["research.injection"]
 
 
 func get_level() -> int:
     return data.level
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_visible_damages()
 
 
 func save() -> Dictionary:
     return super ().merged({
-        "breached": breached, 
-        "firewall": firewall, 
-        "time": time, 
+        "breached": breached,
+        "firewall": firewall,
+        "time": time,
         "detected": detected
     })

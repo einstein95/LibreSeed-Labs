@@ -4,18 +4,18 @@ var window: String
 var grab_pos: Vector2
 
 
-func _ready() -> void :
+func _ready() -> void:
     icon = load("res://textures/icons/" + Data.windows[window].icon + ".png")
 
     Globals.dragging = true
     Signals.dragging_set.emit()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     global_position = get_global_mouse_position() - size / 2
 
 
-func place() -> void :
+func place() -> void:
     if Globals.max_window_count >= 200:
         Signals.notify.emit("exclamation", "build_limit_reached")
         Sound.play("error")
@@ -32,7 +32,7 @@ func place() -> void :
     queue_free()
 
 
-func cancel() -> void :
+func cancel() -> void:
     Globals.dragging = false
     Signals.dragging_set.emit()
 

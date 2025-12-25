@@ -3,8 +3,8 @@ class_name Connector extends Node2D
 const OFFSET: float = 25
 const EXTENSION: float = 45
 
-@onready var glow: = $Glow
-@onready var pivot: = $Pivot
+@onready var glow := $Glow
+@onready var pivot := $Pivot
 
 var output_id: String
 var input_id: String
@@ -27,12 +27,12 @@ var thresholds: Array[float]
 var rid: RID
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     rid = RenderingServer.canvas_item_create()
     RenderingServer.canvas_item_set_parent(rid, get_canvas_item())
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.tool_set.connect(_on_tool_set)
     Signals.selection_set.connect(_on_selection_set)
     Signals.connection_deleted.connect(_on_connection_deleted)
@@ -68,7 +68,7 @@ func _ready() -> void :
     update_points()
 
 
-func draw_update() -> void :
+func draw_update() -> void:
     if rid:
         RenderingServer.canvas_item_clear(rid)
         for i: int in (points.size() - 1):
@@ -85,8 +85,9 @@ func draw_update() -> void :
                 break
 
 
-func update_points() -> void :
-    if !is_node_ready(): return
+func update_points() -> void:
+    if !is_node_ready():
+        return
 
     if pulse_tween and pulse_tween.is_valid():
         pulse_tween.kill()
@@ -169,7 +170,7 @@ func update_points() -> void :
     draw_update()
 
 
-func set_progress(p: float) -> void :
+func set_progress(p: float) -> void:
     progress = p
     draw_update()
 
@@ -178,8 +179,10 @@ func get_pivot_visibility() -> bool:
     return has_pivot or Globals.editing_connection
 
 
-func _on_pulse() -> void :
-    if glow.visible: return
+func _on_pulse() -> void:
+    if glow.visible:
+        return
+
     glow.global_position = points[0] - Vector2(12, 12)
     glow.visible = true
     pulse_tween = create_tween()
@@ -189,11 +192,11 @@ func _on_pulse() -> void :
     pulse_tween.finished.connect(_on_glow_tween_finished)
 
 
-func _on_glow_tween_finished() -> void :
+func _on_glow_tween_finished() -> void:
     glow.visible = false
 
 
-func _on_control_gui_input(event: InputEvent) -> void :
+func _on_control_gui_input(event: InputEvent) -> void:
     if Globals.tool == Utils.tools.MOVE:
         Signals.movement_input.emit(event, pivot.global_position)
         return
@@ -234,34 +237,38 @@ func _on_control_gui_input(event: InputEvent) -> void :
         Signals.movement_input.emit(event, pivot.global_position)
 
 
-func _on_pivot_mouse_entered() -> void :
+func _on_pivot_mouse_entered() -> void:
     Signals.highlight_connection.emit(input)
     pivot.scale = Vector2(1.2, 1.2)
 
 
-func _on_pivot_mouse_exited() -> void :
+func _on_pivot_mouse_exited() -> void:
     Signals.highlight_connection.emit(null)
     pivot.scale = Vector2(1, 1)
 
 
-func _on_tool_set() -> void :
+func _on_tool_set() -> void:
     pivot.visible = get_pivot_visibility()
 
 
-func _on_selection_set() -> void :
+func _on_selection_set() -> void:
     if Globals.connector_selection.has(pivot):
-        if Signals.move_connectors.is_connected(_on_move_connectors): return
+        if Signals.move_connectors.is_connected(_on_move_connectors):
+            return
+
         Signals.move_connectors.connect(_on_move_connectors)
     else:
-        if !Signals.move_connectors.is_connected(_on_move_connectors): return
+        if !Signals.move_connectors.is_connected(_on_move_connectors):
+            return
+
         Signals.move_connectors.disconnect(_on_move_connectors)
 
 
-func _on_move_connectors(offset: Vector2) -> void :
+func _on_move_connectors(offset: Vector2) -> void:
     pivot_pos += offset
 
 
-func _on_highlight_connection(resource: ResourceContainer) -> void :
+func _on_highlight_connection(resource: ResourceContainer) -> void:
     if resource:
         if resource == output or output.outputs.has(resource):
             modulate = Color(1, 1, 1)
@@ -274,7 +281,7 @@ func _on_highlight_connection(resource: ResourceContainer) -> void :
         z_index = 0
 
 
-func add_horizontal_path(from_pos: Vector2, to_x: float, then_to: Vector2) -> void :
+func add_horizontal_path(from_pos: Vector2, to_x: float, then_to: Vector2) -> void:
     points.append(from_pos)
     points.append(from_pos + Vector2(EXTENSION, 0))
     points.append(Vector2(from_pos.x + EXTENSION, to_x))
@@ -283,7 +290,7 @@ func add_horizontal_path(from_pos: Vector2, to_x: float, then_to: Vector2) -> vo
     points.append(then_to)
 
 
-func add_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void :
+func add_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void:
     points.append(from_pos)
     points.append(Vector2(pivot.x, from_pos.y))
     points.append(pivot)
@@ -291,7 +298,7 @@ func add_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void 
     points.append(to_pos)
 
 
-func add_extended_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void :
+func add_extended_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void:
     points.append(from_pos)
     points.append(from_pos + Vector2(EXTENSION, 0))
     points.append(Vector2(from_pos.x + EXTENSION, pivot.y))
@@ -300,7 +307,7 @@ func add_extended_pivot_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2)
     points.append(to_pos)
 
 
-func add_reverse_extended_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void :
+func add_reverse_extended_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector2) -> void:
     points.append(from_pos)
     points.append(Vector2(pivot.x, from_pos.y))
     points.append(pivot)
@@ -309,19 +316,19 @@ func add_reverse_extended_path(from_pos: Vector2, pivot: Vector2, to_pos: Vector
     points.append(to_pos)
 
 
-func _on_connection_deleted(output: String, input: String) -> void :
+func _on_connection_deleted(output: String, input: String) -> void:
     if input == input_id:
         visible = false
         set_process(false)
         queue_free()
 
 
-func _exit_tree() -> void :
+func _exit_tree() -> void:
     RenderingServer.free_rid(rid)
 
 
 func save() -> Dictionary:
     return {
-        "pivot_pos": pivot_pos, 
+        "pivot_pos": pivot_pos,
         "has_pivot": has_pivot
     }

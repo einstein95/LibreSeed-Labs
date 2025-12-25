@@ -1,9 +1,9 @@
 extends GPUParticles2D
 
 
-func _ready() -> void :
+func _ready() -> void:
     emitting = true
 
 
-func _on_finished() -> void :
+func _on_finished() -> void:
     queue_free()

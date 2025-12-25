@@ -1,11 +1,11 @@
 extends Panel
 
-@onready var value_label: = $Value
+@onready var value_label := $Value
 var type: int
 var suffix: String
 
 
-func _ready() -> void :
+func _ready() -> void:
     type = int(Data.stats[name].type)
     suffix = Data.stats[name].suffix
 
@@ -13,11 +13,11 @@ func _ready() -> void :
     set_process(false)
 
 
-func update_all() -> void :
+func update_all() -> void:
     $Name.text = tr(Data.stats[name].name)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     value_label.text = get_value_string()
 
 
@@ -32,10 +32,10 @@ func get_value_string() -> String:
         3:
             return Utils.print_metric(Globals.stats[name], false) + suffix
         4:
-            return "%02d:%02d:%02d" % [Globals.stats[name] / 3600, int(Globals.stats[name]) %3600 / 60, int(Globals.stats[name]) %60]
+            return "%02d:%02d:%02d" % [Globals.stats[name] / 3600, int(Globals.stats[name]) % 3600 / 60, int(Globals.stats[name]) % 60]
     return Globals.stats[name]
 
 
-func _on_visibility_changed() -> void :
+func _on_visibility_changed() -> void:
     update_all()
     set_process(is_visible_in_tree())

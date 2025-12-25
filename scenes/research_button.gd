@@ -1,7 +1,7 @@
 @tool
 extends Button
 
-@onready var animation: = $AnimationPlayer
+@onready var animation := $AnimationPlayer
 
 @export var x: float:
     set(value):
@@ -13,15 +13,16 @@ extends Button
         update_radial_pos()
 
 
-func _ready() -> void :
-    if Engine.is_editor_hint(): return
+func _ready() -> void:
+    if Engine.is_editor_hint():
+        return
     Signals.new_research.connect(_on_new_research)
     Signals.new_unlock.connect(_on_new_unlock)
 
     $Icon.texture = load("res://textures/icons/" + Data.research[name].icon + ".png")
 
 
-func update_state() -> void :
+func update_state() -> void:
     var owned: bool = Globals.research[name]
     var requirement_met: bool = Data.research[name].requirement.is_empty()
     if !requirement_met:
@@ -47,24 +48,25 @@ func update_state() -> void :
         animation.play("RESET")
 
 
-func _on_visibility_changed() -> void :
-    if Engine.is_editor_hint(): return
+func _on_visibility_changed() -> void:
+    if Engine.is_editor_hint():
+        return
     update_state()
 
 
-func _on_pressed() -> void :
+func _on_pressed() -> void:
     Signals.research_selected.emit(name)
     Sound.play("click_toggle")
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_state()
 
 
-func _on_new_research(research: String, levels: int) -> void :
+func _on_new_research(research: String, levels: int) -> void:
     if research == name:
         animation.play("Upgrade")
 
 
-func update_radial_pos() -> void :
+func update_radial_pos() -> void:
     position = Vector2(-40 + x * 120, -40 + y * 120)

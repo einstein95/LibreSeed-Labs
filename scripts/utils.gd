@@ -1,31 +1,94 @@
 extends Node
 
-enum tools{CURSOR, MOVE, SELECT, CONNECTION}
-enum menu_types{NONE, SIDE, WINDOWS, SCHEMATICS}
-enum menus{UPGRADES, STORAGE, TOKENS, PORTAL, SUPPORT, GUIDE, ACHIEVEMENTS, SETTINGS}
-enum window_menus{NETWORK, CPU, GPU, RESEARCH, HACKING, CODING, UTILITY}
-enum resource_types{MATERIAL, FLOW, BOOST, MATERIAL_LIMITED, SETTING, FLUID}
-enum print_types{STANDARD, METRIC, MULTIPLIER, PERCENTAGE}
-enum connections_types{NONE, OUTPUT, INPUT}
-enum file_variations{SCANNED = 1 << 0, VALIDATED = 1 << 1, COMPRESSED = 1 << 2, 
-COMPRESSED2 = 1 << 3, COMPRESSED3 = 1 << 4, ENHANCED = 1 << 5, ENHANCED2 = 1 << 6, 
-ENHANCED3 = 1 << 7, INFECTED = 1 << 8, REFINED = 1 << 9, DISTILLED = 1 << 10, 
-ANALYZED = 1 << 11, HACKED = 1 << 12, CORRUPTED = 1 << 13, AI = 1 << 14}
-enum damage_variation{STEALTH = 1}
-enum code_variations{FIXED = 1, BUGGED = 2, OPTIMIZED = 4}
-enum tutorial_steps{PRESS, DRAG_DOWNLOAD_CONNECTOR, CONNECT_DOWNLOADER, PRESS2, 
-DRAG_BIN_CONNECTOR, PRESS3, OPEN_MENU, SELECT_UPLOADER, ADD_UPLOADER, 
-DRAG_UPLOADER, MOVE_UPLOADER, DRAG_FILE_CONNECTOR, CONNECT_FILE, 
-DRAG_UPLOAD_CONNECTOR, CONNECT_UPLOADER, PRESS4, OPEN_MENU2, SELECT_COLLECTOR, 
-ADD_COLLECTOR, DRAG_MONEY_CONNECTOR, CONNECT_MONEY, PRESS5, SELECT_BIN, 
-DELETE_BIN, PRESS6, DONE}
+enum tools {
+    CURSOR,
+    MOVE,
+    SELECT,
+    CONNECTION
+}
+enum menu_types {
+    NONE,
+    SIDE,
+    WINDOWS,
+    SCHEMATICS
+}
+enum menus {
+    UPGRADES,
+    STORAGE,
+    TOKENS,
+    PORTAL,
+    GUIDE,
+    ACHIEVEMENTS,
+    SETTINGS
+}
+enum window_menus {NETWORK, CPU, GPU, RESEARCH, HACKING, CODING, UTILITY}
+enum resource_types {MATERIAL, FLOW, BOOST, MATERIAL_LIMITED, SETTING, FLUID}
+enum print_types {STANDARD, METRIC, MULTIPLIER, PERCENTAGE}
+enum connections_types {NONE, OUTPUT, INPUT}
+enum file_variations {
+    SCANNED = 1 << 0,
+    VALIDATED = 1 << 1,
+    COMPRESSED = 1 << 2,
+    COMPRESSED2 = 1 << 3,
+    COMPRESSED3 = 1 << 4,
+    ENHANCED = 1 << 5,
+    ENHANCED2 = 1 << 6,
+    ENHANCED3 = 1 << 7,
+    INFECTED = 1 << 8,
+    REFINED = 1 << 9,
+    DISTILLED = 1 << 10,
+    ANALYZED = 1 << 11,
+    HACKED = 1 << 12,
+    CORRUPTED = 1 << 13,
+    AI = 1 << 14
+}
+enum damage_variation {
+    STEALTH = 1
+}
+enum code_variations {
+    FIXED = 1,
+    BUGGED = 2,
+    OPTIMIZED = 4
+}
+enum tutorial_steps {
+    PRESS,
+    DRAG_DOWNLOAD_CONNECTOR,
+    CONNECT_DOWNLOADER,
+    PRESS2,
+    DRAG_BIN_CONNECTOR,
+    PRESS3,
+    OPEN_MENU,
+    SELECT_UPLOADER,
+    ADD_UPLOADER,
+    DRAG_UPLOADER,
+    MOVE_UPLOADER,
+    DRAG_FILE_CONNECTOR,
+    CONNECT_FILE,
+    DRAG_UPLOAD_CONNECTOR,
+    CONNECT_UPLOADER,
+    PRESS4,
+    OPEN_MENU2,
+    SELECT_COLLECTOR,
+    ADD_COLLECTOR,
+    DRAG_MONEY_CONNECTOR,
+    CONNECT_MONEY,
+    PRESS5,
+    SELECT_BIN,
+    DELETE_BIN,
+    PRESS6,
+    DONE
+}
 
-const suffixes: Array[String] = ["", "k", "m", "b", "t", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", 
-"aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az", "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp", 
-"bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz", "ca", "cb", "cc", "cd", "ce", "cf", "cg", "ch", "ci", "cj", "ck", "cl", "cm", "cn", "co", "cp", 
-"cq", "cr", "cs", "ct", "cu", "cv", "cw", "cx", "cy", "cz", "da", "db", "dc", "dd", "de", "df", "dg", "dh", "di", "dj", "dk", "dl", "dm", "dn", "do", "dp", 
-"dq", "dr", "ds", "dt", "du", "dv", "dw", "dx", "dy", "dz"]
-const metric: Array[String] = ["", "K", "M", "G", "T", "P", "E", "Z", "Y", "R", "Q"]
+const suffixes: Array[String] = [
+    "", "k", "m", "b", "t", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap",
+    "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az", "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp",
+    "bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz", "ca", "cb", "cc", "cd", "ce", "cf", "cg", "ch", "ci", "cj", "ck", "cl", "cm", "cn", "co", "cp",
+    "cq", "cr", "cs", "ct", "cu", "cv", "cw", "cx", "cy", "cz", "da", "db", "dc", "dd", "de", "df", "dg", "dh", "di", "dj", "dk", "dl", "dm", "dn", "do", "dp",
+    "dq", "dr", "ds", "dt", "du", "dv", "dw", "dx", "dy", "dz"
+]
+const metric: Array[String] = [
+    "", "K", "M", "G", "T", "P", "E", "Z", "Y", "R", "Q"
+]
 
 
 func print_string(value: float, hide_decimals: bool = true) -> String:
@@ -133,8 +196,12 @@ func can_add_window(window: String) -> bool:
         limit = Attributes.get_attribute(Data.windows[window].group)
         active = Globals.group_count[Data.windows[window].group]
 
-    if limit >= 0 and active >= limit: return false
-    if !Data.windows[window].requirement.is_empty() and !Globals.unlocks[Data.windows[window].requirement]: return false
+    if limit >= 0 and active >= limit:
+        return false
+
+    if !Data.windows[window].requirement.is_empty() and !Globals.unlocks[Data.windows[window].requirement]:
+        return false
+
 
     return true
 

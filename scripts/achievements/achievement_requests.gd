@@ -1,12 +1,12 @@
 extends Achievement
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.new_request.connect(_on_new_request)
 
 
-func _on_new_request(request: String) -> void :
+func _on_new_request(request: String) -> void:
     if !unlocked and check_progress():
         unlock()
 

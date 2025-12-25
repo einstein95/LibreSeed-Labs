@@ -3,7 +3,7 @@ extends Sprite2D
 @export var pointing: VisibleOnScreenNotifier2D
 
 
-func _ready() -> void :
+func _ready() -> void:
     pointing.screen_entered.connect(_on_screen_entered)
     pointing.screen_exited.connect(_on_screen_exited)
     pointing.tree_exiting.connect(_on_pointing_tree_exiting)
@@ -19,7 +19,7 @@ func _ready() -> void :
     tween.set_loops()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     var screen_center: Vector2 = get_parent().size / 2
     var target_screen_pos: Vector2 = pointing.global_position - Globals.camera_center + screen_center
     var direction: Vector2 = (target_screen_pos - screen_center).normalized()
@@ -40,15 +40,15 @@ func _process(delta: float) -> void :
     rotation = direction.angle() + PI * 1 / 2
 
 
-func _on_screen_entered() -> void :
+func _on_screen_entered() -> void:
     visible = false
     set_process(false)
 
 
-func _on_screen_exited() -> void :
+func _on_screen_exited() -> void:
     visible = true
     set_process(true)
 
 
-func _on_pointing_tree_exiting() -> void :
+func _on_pointing_tree_exiting() -> void:
     queue_free()

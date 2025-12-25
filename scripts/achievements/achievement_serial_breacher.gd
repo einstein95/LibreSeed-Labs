@@ -4,18 +4,18 @@ var timer: Timer = Timer.new()
 var breaches: Dictionary = {"anonymous": false, "corporation": false, "government": false}
 
 
-func _enter_tree() -> void :
+func _enter_tree() -> void:
     add_child(timer)
     timer.timeout.connect(_on_timer_timeout)
     timer.one_shot = true
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.breached.connect(_on_breached)
 
 
-func _on_breached(breach: WindowIndexed) -> void :
+func _on_breached(breach: WindowIndexed) -> void:
     match breach.window:
         "breach_anonymous":
             breaches["anonymous"] = true
@@ -27,7 +27,7 @@ func _on_breached(breach: WindowIndexed) -> void :
         timer.start(1)
 
 
-func _on_timer_timeout() -> void :
+func _on_timer_timeout() -> void:
     if !unlocked and breaches["anonymous"] and breaches["corporation"] and breaches["government"]:
         unlock()
     else:

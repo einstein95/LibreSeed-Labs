@@ -1,13 +1,13 @@
 extends WindowIndexed
 
-@onready var boost: = $PanelContainer / MainContainer / Boost
-@onready var clocks: = $PanelContainer / MainContainer / Clocks
-@onready var main_clock: = $PanelContainer / MainContainer / Clocks / Clock
-@onready var overclock: = $PanelContainer / MainContainer / Overclock
-@onready var heat: = $PanelContainer / MainContainer / Heat
-@onready var heat_bar: = $PanelContainer / MainContainer / HeatProgressBar
-@onready var add_button: = $ActionContainer / AddButton
-@onready var upgrade_button: = $ActionContainer / UpgradeButton
+@onready var boost := $PanelContainer/MainContainer/Boost
+@onready var clocks := $PanelContainer/MainContainer/Clocks
+@onready var main_clock := $PanelContainer/MainContainer/Clocks/Clock
+@onready var overclock := $PanelContainer/MainContainer/Overclock
+@onready var heat := $PanelContainer/MainContainer/Heat
+@onready var heat_bar := $PanelContainer/MainContainer/HeatProgressBar
+@onready var add_button := $ActionContainer/AddButton
+@onready var upgrade_button := $ActionContainer/UpgradeButton
 
 var count: int
 var level: int
@@ -17,7 +17,7 @@ var upgrade_cost: float
 var speed: float
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.new_unlock.connect(_on_new_unlock)
     Attributes.attributes["price_multiplier"].changed.connect(_on_attribute_changed)
@@ -28,14 +28,14 @@ func _ready() -> void :
     update_all()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     add_button.disabled = !can_purchase()
     upgrade_button.disabled = !can_upgrade()
     heat_bar.value = heat.count
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     var overclock_bonus: float = (1.0 + overclock.count)
     if heat.count >= 100:
         overclock_bonus = 1.0
@@ -45,7 +45,7 @@ func process(delta: float) -> void :
     heat.count = ((overclock.count + 1) ** 2) * 50
 
 
-func update_all() -> void :
+func update_all() -> void:
     upgrade_maxed = level >= 200
     add_cost = 1 * pow(10, 6) * pow(1000, count) * Attributes.get_attribute("price_multiplier")
     upgrade_cost = 4 * pow(10, 3) * pow(4, level + 1) * Attributes.get_attribute("price_multiplier")
@@ -57,51 +57,53 @@ func update_all() -> void :
     heat_bar.visible = Globals.unlocks["research.overclocking"]
 
     set_window_name(get_window_name())
-    $ActionContainer / AddButton / UpgradeContainer / CostContainer / Label.text = Utils.print_string(add_cost, true)
-    $ActionContainer / UpgradeButton / UpgradeContainer / CostContainer / Label.text = Utils.print_string(upgrade_cost, true)
-    $ActionContainer / AddButton.visible = count < Attributes.get_window_attribute(window, "maximum_cores") - 1
-    $ActionContainer / UpgradeButton.visible = !upgrade_maxed
-    $ActionContainer / ColorRect.visible = count < Attributes.get_window_attribute(window, "maximum_cores") - 1 and !upgrade_maxed
+    $ActionContainer/AddButton/UpgradeContainer/CostContainer/Label.text = Utils.print_string(add_cost, true)
+    $ActionContainer/UpgradeButton/UpgradeContainer/CostContainer/Label.text = Utils.print_string(upgrade_cost, true)
+    $ActionContainer/AddButton.visible = count < Attributes.get_window_attribute(window, "maximum_cores") - 1
+    $ActionContainer/UpgradeButton.visible = !upgrade_maxed
+    $ActionContainer/ColorRect.visible = count < Attributes.get_window_attribute(window, "maximum_cores") - 1 and !upgrade_maxed
 
-    for i: Control in $PanelContainer / MainContainer / Clocks.get_children():
+    for i: Control in $PanelContainer/MainContainer/Clocks.get_children():
         i.visible = i.get_index() <= (count + Attributes.get_window_attribute(window, "extra_cores"))
 
     if count < 4 and !upgrade_maxed:
-        $ActionContainer / AddButton.theme_type_variation = "WindowButtonBottom1"
-        $ActionContainer / UpgradeButton.theme_type_variation = "WindowButtonBottom3"
+        $ActionContainer/AddButton.theme_type_variation = "WindowButtonBottom1"
+        $ActionContainer/UpgradeButton.theme_type_variation = "WindowButtonBottom3"
         $PanelContainer.theme_type_variation = "WindowPanelContainerFlatBottom"
     elif count >= 4 and !upgrade_maxed:
-        $ActionContainer / UpgradeButton.theme_type_variation = "WindowButtonBottom2"
+        $ActionContainer/UpgradeButton.theme_type_variation = "WindowButtonBottom2"
         $PanelContainer.theme_type_variation = "WindowPanelContainerFlatBottom"
     elif count < 4 and upgrade_maxed:
-        $ActionContainer / AddButton.theme_type_variation = "WindowButtonBottom2"
+        $ActionContainer/AddButton.theme_type_variation = "WindowButtonBottom2"
         $PanelContainer.theme_type_variation = "WindowPanelContainerFlatBottom"
     else:
         $PanelContainer.theme_type_variation = "WindowPanelContainer"
 
 
 func can_purchase() -> bool:
-    if add_cost > Globals.currencies["money"]: return false
+    if add_cost > Globals.currencies["money"]:
+        return false
 
     return count < Attributes.get_window_attribute(window, "maximum_cores")
 
 
 func can_upgrade() -> bool:
-    if upgrade_cost > Globals.currencies["money"]: return false
+    if upgrade_cost > Globals.currencies["money"]:
+        return false
 
     return !upgrade_maxed
 
 
-func add() -> void :
+func add() -> void:
     count += 1
 
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(2, 2, 2), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
-    $TitlePanel / TitleContainer / Title.visible_ratio = 0
+    $TitlePanel/TitleContainer/Title.visible_ratio = 0
     tween = create_tween()
-    tween.tween_property($TitlePanel / TitleContainer / Title, "visible_ratio", 1, 0.25)
+    tween.tween_property($TitlePanel/TitleContainer/Title, "visible_ratio", 1, 0.25)
 
     tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD)
@@ -114,16 +116,16 @@ func add() -> void :
     update_all()
 
 
-func upgrade() -> void :
+func upgrade() -> void:
     level += 1
 
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(2, 2, 2), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
-    $TitlePanel / TitleContainer / Title.visible_ratio = 0
+    $TitlePanel/TitleContainer/Title.visible_ratio = 0
     tween = create_tween()
-    tween.tween_property($TitlePanel / TitleContainer / Title, "visible_ratio", 1, 0.25)
+    tween.tween_property($TitlePanel/TitleContainer/Title, "visible_ratio", 1, 0.25)
 
     tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD)
@@ -140,7 +142,7 @@ func get_window_name() -> String:
     return super () + " " + tr("mk.") + str(level)
 
 
-func _on_add_button_pressed() -> void :
+func _on_add_button_pressed() -> void:
     if can_purchase():
         Globals.currencies["money"] -= add_cost
         add()
@@ -148,7 +150,7 @@ func _on_add_button_pressed() -> void :
     Sound.play("click_toggle")
 
 
-func _on_upgrade_button_pressed() -> void :
+func _on_upgrade_button_pressed() -> void:
     if can_upgrade():
         Globals.currencies["money"] -= upgrade_cost
         upgrade()
@@ -156,16 +158,16 @@ func _on_upgrade_button_pressed() -> void :
     Sound.play("click_toggle")
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_all()
 
 
-func _on_attribute_changed() -> void :
+func _on_attribute_changed() -> void:
     update_all()
 
 
 func save() -> Dictionary:
     return super ().merged({
-        "count": count, 
+        "count": count,
         "level": level
     })

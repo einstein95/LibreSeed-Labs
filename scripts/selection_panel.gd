@@ -3,12 +3,12 @@ extends Panel
 var center: Vector2
 
 
-func _ready() -> void :
+func _ready() -> void:
     Signals.selecting.connect(_on_selecting)
     Signals.selected.connect(_on_selected)
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     if get_global_mouse_position().x >= center.x:
         size.x = get_global_mouse_position().x - center.x
         global_position.x = center.x
@@ -24,7 +24,7 @@ func _process(delta: float) -> void :
         global_position.y = get_global_mouse_position().y
 
 
-func _on_input_blocker_gui_input(event: InputEvent) -> void :
+func _on_input_blocker_gui_input(event: InputEvent) -> void:
     if event is InputEventScreenTouch:
         if event.is_pressed():
             if Globals.tool == Utils.tools.MOVE:
@@ -38,7 +38,7 @@ func _on_input_blocker_gui_input(event: InputEvent) -> void :
             Signals.movement_input.emit(event, Vector2(-10000, -10000))
 
 
-func _on_selecting() -> void :
+func _on_selecting() -> void:
     center = get_global_mouse_position()
     global_position = get_global_mouse_position()
     visible = true
@@ -47,7 +47,7 @@ func _on_selecting() -> void :
     Signals.dragging_set.emit()
 
 
-func _on_selected() -> void :
+func _on_selected() -> void:
     var windows: Array[WindowContainer]
     var connectors: Array[Control]
     for i: WindowContainer in get_tree().get_nodes_in_group("window"):
@@ -83,6 +83,6 @@ func _on_selected() -> void :
         Sound.play("close")
 
 
-func hide() -> void :
+func hide() -> void:
     super ()
     set_process(false)

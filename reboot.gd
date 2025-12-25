@@ -2,15 +2,16 @@ extends Control
 
 @export var section: int
 
-@onready var progress_bar: = $SkipContainer / ProgressBar
-@onready var skip_timer: = $Timer
+@onready var progress_bar := $SkipContainer/ProgressBar
+@onready var skip_timer := $Timer
 
 
-func _ready() -> void :
+func _ready() -> void:
     $AnimationPlayer.play("Intro")
 
     for i: String in Globals.upgrades:
-        if !Data.upgrades.has(i): continue
+        if !Data.upgrades.has(i):
+            continue
         if !Data.upgrades[i].permanent:
             Globals.upgrades[i] = 0
 
@@ -40,7 +41,9 @@ func _ready() -> void :
         Globals.group_count[i] = 0
 
     for i: String in Globals.currencies:
-        if i == "token": continue
+        if i == "token":
+            continue
+
         Globals.currencies[i] = 0
 
     Globals.hack_level = 0
@@ -51,18 +54,18 @@ func _ready() -> void :
     Globals.stats.reborns += 1
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     if skip_timer.is_stopped():
         progress_bar.value = 0
     else:
         progress_bar.value = 1 - skip_timer.time_left
 
 
-func boot() -> void :
+func boot() -> void:
     get_tree().change_scene_to_file("res://Main.tscn")
 
 
-func _on_gui_input(event: InputEvent) -> void :
+func _on_gui_input(event: InputEvent) -> void:
     if event is InputEventScreenTouch:
         if event.is_pressed():
             var tween: Tween = create_tween()
@@ -74,7 +77,7 @@ func _on_gui_input(event: InputEvent) -> void :
             skip_timer.stop()
 
 
-func _on_timer_timeout() -> void :
+func _on_timer_timeout() -> void:
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate:a", 0, 0.5)
     tween.finished.connect(boot)

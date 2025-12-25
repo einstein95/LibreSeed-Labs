@@ -1,15 +1,15 @@
 extends WindowIndexed
 
-@onready var collect_button: = $CollectButton
+@onready var collect_button := $CollectButton
 
 var collecting: Array[ResourceContainer]
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Signals.tutorial_step.connect(_on_tutorial_step)
 
-    for i: ResourceContainer in $PanelContainer / MainContainer.get_children():
+    for i: ResourceContainer in $PanelContainer/MainContainer.get_children():
         i.resource_set.connect(_on_resource_set)
 
     if !Globals.tutorial_done and Globals.tutorial_step <= Utils.tutorial_steps.ADD_COLLECTOR:
@@ -21,7 +21,7 @@ func _ready() -> void :
     update_tutorial()
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     super (delta)
 
     collect_button.disabled = true
@@ -31,23 +31,23 @@ func process(delta: float) -> void :
             collect_button.disabled = false
 
 
-func update_valid_inputs() -> void :
+func update_valid_inputs() -> void:
     collecting.clear()
-    for i: ResourceContainer in $PanelContainer / MainContainer.get_children():
+    for i: ResourceContainer in $PanelContainer/MainContainer.get_children():
         if !i.resource.is_empty():
             collecting.append(i)
 
 
-func update_visible_inputs() -> void :
+func update_visible_inputs() -> void:
     var has_free_input: bool = false
 
-    for i: ResourceContainer in $PanelContainer / MainContainer.get_children():
+    for i: ResourceContainer in $PanelContainer/MainContainer.get_children():
         if !i.get_node("InputConnector").has_connection():
             has_free_input = true
             break
 
     var shown_invalid: bool = false
-    for i: ResourceContainer in $PanelContainer / MainContainer.get_children():
+    for i: ResourceContainer in $PanelContainer/MainContainer.get_children():
         if i.get_node("InputConnector").has_connection():
             i.visible = true
         else:
@@ -57,7 +57,7 @@ func update_visible_inputs() -> void :
     Signals.window_moved.emit(self)
 
 
-func update_tutorial() -> void :
+func update_tutorial() -> void:
     if Globals.tutorial_step == Utils.tutorial_steps.CONNECT_MONEY:
         Signals.interface_point_to.emit(null)
         Signals.desktop_point_to.emit($"PanelContainer/MainContainer/Input/InputConnector")
@@ -71,26 +71,26 @@ func update_tutorial() -> void :
         can_drag = false
         $TitlePanel.mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
 
-    for i: ResourceContainer in $PanelContainer / MainContainer.get_children():
+    for i: ResourceContainer in $PanelContainer/MainContainer.get_children():
         i.get_node("InputConnector").disabled = !Globals.tutorial_done and Globals.tutorial_step != Utils.tutorial_steps.CONNECT_MONEY
 
 
-func _on_resource_set() -> void :
+func _on_resource_set() -> void:
     update_valid_inputs()
 
 
-func _on_collect_button_pressed() -> void :
+func _on_collect_button_pressed() -> void:
     for i: ResourceContainer in collecting:
         Globals.currencies[i.resource] += i.pop_all()
 
     Sound.play("cash_register")
 
 
-func _on_connection_set() -> void :
+func _on_connection_set() -> void:
     update_visible_inputs()
     if Globals.tutorial_step == Utils.tutorial_steps.CONNECT_MONEY:
         Globals.set_tutorial_step(Utils.tutorial_steps.CONNECT_MONEY + 1)
 
 
-func _on_tutorial_step() -> void :
+func _on_tutorial_step() -> void:
     update_tutorial()

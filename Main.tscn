@@ -88,7 +88,6 @@
 [ext_resource type="Script" uid="uid://x64ummcpnmkr" path="res://scripts/portal_popup.gd" id="91"]
 [ext_resource type="Script" uid="uid://4saa1gkhrbcb" path="res://scripts/wipe_popup.gd" id="92"]
 [ext_resource type="Script" uid="uid://d2sy47nbo12pn" path="res://scripts/rest_tab.gd" id="93"]
-[ext_resource type="Script" uid="uid://21afd0mgokmb" path="res://scripts/ad_prompt.gd" id="94"]
 [ext_resource type="Script" uid="uid://nb5304scgo1o" path="res://scripts/popup_schematic.gd" id="95"]
 [ext_resource type="Texture2D" uid="uid://mbrbl6fxx1" path="res://textures/icons/brain.png" id="96"]
 [ext_resource type="Script" uid="uid://hpjpfswkfe21" path="res://scripts/sync_popup.gd" id="97"]
@@ -924,7 +923,6 @@ NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Portal"): "resear
 level_unlocks = {
 NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Upgrades"): 3,
 NodePath("Main/MainContainer/Overlay/ProgressButtons/Container/Tokens"): 4,
-NodePath("Main/MainContainer/Overlay/ExtrasButtons/Container/Support"): 5,
 NodePath("Main/MainContainer/Overlay/ScreenButtons/Container/Research"): 9,
 NodePath("Main/MainContainer/Overlay/BottomButtons/SchematicsButton/Schematics"): 6
 }
@@ -2448,74 +2446,6 @@ focus_mode = 0
 theme_type_variation = &"TabButton"
 text = "action_enter"
 
-[node name="Support" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"ShadowPanelContainer"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support"]
-layout_mode = 2
-theme_override_constants/separation = -1
-
-[node name="TitlePanel" type="Panel" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_type_variation = &"OverlayPanelTitle"
-
-[node name="TitleContainer" type="HBoxContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = -15.0
-offset_bottom = -15.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel/TitleContainer"]
-self_modulate = Color(0.567, 0.69465, 0.9, 1)
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("66")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/TitlePanel/TitleContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "menu_support"
-
-[node name="Support" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_type_variation = &"MenuPanel"
-
-[node name="ReloadButton" type="Button" parent="HUD/Main/MainContainer/Overlay/Menus/Support/VBoxContainer/Support"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_colors/icon_disabled_color = Color(0.270064, 0.332386, 0.457031, 1)
-theme_override_colors/icon_hover_color = Color(0.567, 0.69465, 0.9, 1)
-theme_override_colors/icon_pressed_color = Color(1, 0.521569, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.567, 0.69465, 0.9, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ovcoh")
-icon = ExtResource("74")
-flat = true
-expand_icon = true
-
 [node name="Guide" type="PanelContainer" parent="HUD/Main/MainContainer/Overlay/Menus"]
 visible = false
 layout_mode = 1
@@ -3635,17 +3565,6 @@ icon = ExtResource("75")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Support" type="Button" parent="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"ButtonMenu"
-toggle_mode = true
-icon = ExtResource("54")
-icon_alignment = 1
-expand_icon = true
-
 [node name="DragControl" type="Control" parent="HUD/Main"]
 visible = false
 layout_mode = 1
@@ -4021,109 +3940,6 @@ size_flags_horizontal = 3
 focus_mode = 0
 theme_type_variation = &"WindowButtonBottom2"
 text = "action_close"
-
-[node name="AdPrompt" type="PanelContainer" parent="HUD/Main/Popups"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -309.0
-offset_top = -183.0
-offset_right = 309.0
-offset_bottom = 183.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"ShadowPanelContainer"
-script = ExtResource("94")
-
-[node name="PortalContainer" type="VBoxContainer" parent="HUD/Main/Popups/AdPrompt"]
-layout_mode = 2
-theme_override_constants/separation = -1
-
-[node name="TitlePanel" type="Panel" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_type_variation = &"TitlePanel"
-
-[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/TitlePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "menu_watch_ad"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MainPanel" type="PanelContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_type_variation = &"WindowPanelContainerFlatBottom"
-
-[node name="InfoContainer" type="VBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-text = "menu_watch_ad_desc"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="UnlockLabel" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
-layout_mode = 2
-text = "you_will_receive"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer/HBoxContainer"]
-self_modulate = Color(0.567, 0.69465, 0.9, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("62")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="HUD/Main/Popups/AdPrompt/PortalContainer/MainPanel/InfoContainer/HBoxContainer"]
-layout_mode = 2
-text = "50"
-
-[node name="Buttons" type="HBoxContainer" parent="HUD/Main/Popups/AdPrompt/PortalContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Cancel" type="Button" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"WindowButtonBottom1"
-text = "action_cancel"
-
-[node name="ColorRect" type="ColorRect" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
-custom_minimum_size = Vector2(2, 0)
-layout_mode = 2
-color = Color(0.101961, 0.12549, 0.172549, 1)
-
-[node name="Watch" type="Button" parent="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme_type_variation = &"WindowButtonBottom3"
-text = "action_watch"
 
 [node name="AddSchematic" type="PanelContainer" parent="HUD/Main/Popups"]
 visible = false
@@ -4545,7 +4361,6 @@ environment = SubResource("Environment_23xmf")
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Settings" to="HUD" method="_on_settings_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Achievements" to="HUD" method="_on_achievements_pressed"]
 [connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Guide" to="HUD" method="_on_guide_pressed"]
-[connection signal="pressed" from="HUD/Main/MainContainer/Overlay/ExtrasButtons/Container/Support" to="HUD" method="_on_support_pressed"]
 [connection signal="mouse_entered" from="HUD/Main/DragControl/UpDrag" to="HUD/Main/DragControl" method="_on_up_drag_mouse_entered"]
 [connection signal="mouse_exited" from="HUD/Main/DragControl/UpDrag" to="HUD/Main/DragControl" method="_on_up_drag_mouse_exited"]
 [connection signal="mouse_entered" from="HUD/Main/DragControl/RightDrag" to="HUD/Main/DragControl" method="_on_right_drag_mouse_entered"]
@@ -4562,8 +4377,6 @@ environment = SubResource("Environment_23xmf")
 [connection signal="pressed" from="HUD/Main/Popups/Wipe/PortalContainer/Buttons/Confirm" to="HUD/Main/Popups/Wipe" method="_on_confirm_pressed"]
 [connection signal="pressed" from="HUD/Main/Popups/RestTime/PortalContainer/MainPanel/Toggle" to="HUD/Main/Popups/RestTime" method="_on_toggle_pressed"]
 [connection signal="pressed" from="HUD/Main/Popups/RestTime/PortalContainer/Cancel" to="HUD/Main/Popups/RestTime" method="_on_cancel_pressed"]
-[connection signal="pressed" from="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/AdPrompt" method="_on_cancel_pressed"]
-[connection signal="pressed" from="HUD/Main/Popups/AdPrompt/PortalContainer/Buttons/Watch" to="HUD/Main/Popups/AdPrompt" method="_on_watch_pressed"]
 [connection signal="pressed" from="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons/Cancel" to="HUD/Main/Popups/AddSchematic" method="_on_cancel_pressed"]
 [connection signal="pressed" from="HUD/Main/Popups/AddSchematic/PortalContainer/Buttons/Save" to="HUD/Main/Popups/AddSchematic" method="_on_save_pressed"]
 [connection signal="text_changed" from="HUD/Main/Popups/SaveSync/SyncContainer/MainPanel/InfoContainer/Code" to="HUD/Main/Popups/SaveSync" method="_on_code_text_changed"]

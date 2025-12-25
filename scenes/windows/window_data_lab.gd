@@ -1,12 +1,12 @@
 extends WindowIndexed
 
-@onready var progress_bar: = $PanelContainer / MainContainer / ProgressBar
-@onready var research_power: = $PanelContainer / MainContainer / ResearchPower
-@onready var boost: = $PanelContainer / MainContainer / Boost
-@onready var file: = $PanelContainer / MainContainer / File
-@onready var points: = $PanelContainer / MainContainer / Points
-@onready var upgrade_button: = $UpgradeButton
-@onready var audio_player: = $AudioStreamPlayer2D
+@onready var progress_bar := $PanelContainer/MainContainer/ProgressBar
+@onready var research_power := $PanelContainer/MainContainer/ResearchPower
+@onready var boost := $PanelContainer/MainContainer/Boost
+@onready var file := $PanelContainer/MainContainer/File
+@onready var points := $PanelContainer/MainContainer/Points
+@onready var upgrade_button := $UpgradeButton
+@onready var audio_player := $AudioStreamPlayer2D
 
 var level: int
 var progress: float
@@ -16,7 +16,7 @@ var base_research: float
 var maxed: bool
 
 
-func _ready() -> void :
+func _ready() -> void:
     super ()
     Attributes.attributes["price_multiplier"].changed.connect(_on_attribute_changed)
     Signals.new_unlock.connect(_on_new_unlock)
@@ -24,13 +24,13 @@ func _ready() -> void :
     update_all()
 
 
-func _process(delta: float) -> void :
+func _process(delta: float) -> void:
     super (delta)
     progress_bar.value = lerpf(progress_bar.value, progress, 1.0 - exp(-50.0 * delta))
     upgrade_button.disabled = !can_upgrade()
 
 
-func process(delta: float) -> void :
+func process(delta: float) -> void:
     var multiplier: float = base_research * Attributes.get_attribute("research_multiplier")
     research_power.count = speed * (1 + boost.count) * Attributes.get_attribute("research_speed_multiplier")
 
@@ -53,13 +53,13 @@ func process(delta: float) -> void :
     points.production = min(research_power.count, file.production) * multiplier
 
 
-func update_all() -> void :
+func update_all() -> void:
     maxed = level >= 200
     cost = 2 * pow(10, 9) * pow(4, level + 1) * Attributes.get_attribute("price_multiplier")
 
     speed = 0.2 * pow(2, level)
     set_window_name(get_window_name())
-    $UpgradeButton / UpgradeContainer / CostContainer / Label.text = Utils.print_string(cost, true)
+    $UpgradeButton/UpgradeContainer/CostContainer/Label.text = Utils.print_string(cost, true)
 
     if Data.files.has(file.resource):
         base_research = Data.files[file.resource].research * Utils.get_variation_research_multiplier(file.variation)
@@ -77,21 +77,22 @@ func update_all() -> void :
 
 
 func can_upgrade() -> bool:
-    if cost > Globals.currencies["money"]: return false
+    if cost > Globals.currencies["money"]:
+        return false
 
     return !maxed
 
 
-func upgrade() -> void :
+func upgrade() -> void:
     level += 1
 
     var tween: Tween = create_tween()
     tween.tween_property(self, "modulate", Color(2, 2, 2), 0.2)
     tween.tween_property(self, "modulate", Color(1, 1, 1), 0.25)
 
-    $TitlePanel / TitleContainer / Title.visible_ratio = 0
+    $TitlePanel/TitleContainer/Title.visible_ratio = 0
     tween = create_tween()
-    tween.tween_property($TitlePanel / TitleContainer / Title, "visible_ratio", 1, 0.25)
+    tween.tween_property($TitlePanel/TitleContainer/Title, "visible_ratio", 1, 0.25)
 
     tween = create_tween()
     tween.set_trans(Tween.TRANS_QUAD)
@@ -108,11 +109,11 @@ func get_window_name() -> String:
     return super () + " " + tr("lv.") + " " + str(level + 1)
 
 
-func _on_file_resource_set() -> void :
+func _on_file_resource_set() -> void:
     update_all()
 
 
-func _on_upgrade_button_pressed() -> void :
+func _on_upgrade_button_pressed() -> void:
     if can_upgrade():
         Globals.currencies["money"] -= cost
         upgrade()
@@ -120,16 +121,16 @@ func _on_upgrade_button_pressed() -> void :
     Sound.play("click_toggle")
 
 
-func _on_attribute_changed() -> void :
+func _on_attribute_changed() -> void:
     update_all()
 
 
-func _on_new_unlock(unlock: String) -> void :
+func _on_new_unlock(unlock: String) -> void:
     update_all()
 
 
 func save() -> Dictionary:
     return super ().merged({
-        "level": level, 
+        "level": level,
         "progress": progress
     })

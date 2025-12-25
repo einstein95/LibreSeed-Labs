@@ -4,7 +4,7 @@ var target: Control
 var starting_pos: Vector2
 
 
-func _ready() -> void :
+func _ready() -> void:
     emitting = true
 
     var tween: Tween = create_tween()
